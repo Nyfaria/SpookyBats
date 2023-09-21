@@ -8,14 +8,14 @@
     "${mod_authors}"
   ],
   "license": "ARR",
-  "icon": "assets/modid/icon.png",
+  "icon": "assets/${mod_id}/icon.png",
   "environment": "*",
   "entrypoints": {
     "main": [
-      "com.nyfaria.nyfsmultiloader.ExampleMod"
+      "com.nyfaria.spookybats.SpookyBats"
     ],
     "client": [
-      "com.nyfaria.nyfsmultiloader.ExampleModClient"
+      "com.nyfaria.spookybats.SpookyBatsClient"
     ]
   },
   "mixins": [
