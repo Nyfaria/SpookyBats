@@ -1,0 +1,9 @@
+{
+  "entity.spookybats.creeper_bat": "Creeper Bat",
+  "entity.spookybats.pumpkin_bat": "Pumpkin Bat",
+  "item.spookybats.creeper_bat_spawn_egg": "Creeper Bat Spawn Egg",
+  "item.spookybats.pumpkin_bat_spawn_egg": "Pumpkin Bat Spawn Egg",
+  "item.spookybats.pumpkin_chocolate_bar": "Pumpkin Chocolate Bar",
+  "item.spookybats.tnt_lollipop": "TNT Lollipop",
+  "itemGroup.spookybats.tab": "Spooky Bats"
+}

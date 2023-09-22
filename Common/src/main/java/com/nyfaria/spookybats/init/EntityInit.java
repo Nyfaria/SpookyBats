@@ -1,6 +1,9 @@
 package com.nyfaria.spookybats.init;
 
 import com.nyfaria.spookybats.Constants;
+import com.nyfaria.spookybats.entity.CreeperBat;
+import com.nyfaria.spookybats.entity.SpookyBat;
+import com.nyfaria.spookybats.platform.Services;
 import com.nyfaria.spookybats.registration.RegistrationProvider;
 import com.nyfaria.spookybats.registration.RegistryObject;
 import net.minecraft.core.registries.Registries;
@@ -18,16 +21,21 @@ import java.util.function.Supplier;
 public class EntityInit {
     public static final RegistrationProvider<EntityType<?>> ENTITIES = RegistrationProvider.get(Registries.ENTITY_TYPE, Constants.MODID);
     public static final List<AttributesRegister<?>> attributeSuppliers = new ArrayList<>();
-    public static final RegistryObject<EntityType<Bat>> PUMPKIN_BAT = registerEntity("pumpkin_bat", ()->EntityType.Builder.of(Bat::new, MobCategory.AMBIENT), Bat::createAttributes);
+    public static final RegistryObject<EntityType<SpookyBat>> PUMPKIN_BAT = registerEntity("pumpkin_bat", ()->EntityType.Builder.of(SpookyBat::new, MobCategory.MONSTER).sized(0.5F, 0.9F), SpookyBat::createAttributes,0xCB7438);
+    public static final RegistryObject<EntityType<CreeperBat>> CREEPER_BAT = registerEntity("creeper_bat", ()->EntityType.Builder.of(CreeperBat::new, MobCategory.MONSTER).sized(0.5F, 0.9F), SpookyBat::createAttributes,0x85C280);
 
     private static <T extends Entity> RegistryObject<EntityType<T>> registerEntity(String name, Supplier<EntityType.Builder<T>> supplier) {
         return ENTITIES.register(name, () -> supplier.get().build(Constants.MODID + ":" + name));
     }
 
+    private static <T extends LivingEntity> RegistryObject<EntityType<T>> registerEntity(String name, Supplier<EntityType.Builder<T>> supplier,Supplier<AttributeSupplier.Builder> attributeSupplier,  int secondaryColor) {
+        return registerEntity(name, supplier, attributeSupplier, 0x392F24, secondaryColor);
+    }
     private static <T extends LivingEntity> RegistryObject<EntityType<T>> registerEntity(String name, Supplier<EntityType.Builder<T>> supplier,
-                                                                                         Supplier<AttributeSupplier.Builder> attributeSupplier) {
+                                                                                         Supplier<AttributeSupplier.Builder> attributeSupplier, int primaryColor, int secondaryColor) {
         RegistryObject<EntityType<T>> entityTypeSupplier = registerEntity(name, supplier);
         attributeSuppliers.add(new AttributesRegister<>(entityTypeSupplier, attributeSupplier));
+        ItemInit.ITEMS.register(name + "_spawn_egg", () -> Services.PLATFORM.createSpawnEggItem(entityTypeSupplier, primaryColor, secondaryColor));
         return entityTypeSupplier;
     }
 

@@ -1,5 +1,8 @@
 package com.nyfaria.spookybats.datagen;
 
+import com.nyfaria.spookybats.init.EntityInit;
+import com.nyfaria.spookybats.init.ItemInit;
+import com.nyfaria.spookybats.registration.RegistryObject;
 import net.minecraft.data.loot.EntityLootSubProvider;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.flag.FeatureFlags;
@@ -23,6 +26,8 @@ public class ModEntityLootTables extends EntityLootSubProvider {
 
     @Override
     public void generate() {
+        dropSingle(EntityInit.PUMPKIN_BAT.get(), ItemInit.PUMPKIN_CHOCOLATE_BAR.get());
+        dropSingle(EntityInit.CREEPER_BAT.get(), ItemInit.TNT_LOLLIPOP.get());
     }
 
     private void multiDrops(EntityType<?> type, LootEntry... entries) {
@@ -58,7 +63,7 @@ public class ModEntityLootTables extends EntityLootSubProvider {
 
     @Override
     protected Stream<EntityType<?>> getKnownEntityTypes() {
-        return List.<EntityType<?>>of().stream();
+        return EntityInit.ENTITIES.getEntries().stream().map(RegistryObject::get);
     }
 
     record LootEntry(Item item, NumberProvider numberProvider) {}

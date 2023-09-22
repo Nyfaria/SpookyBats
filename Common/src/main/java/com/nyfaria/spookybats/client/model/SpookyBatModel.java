@@ -19,9 +19,10 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.Mth;
 import net.minecraft.world.entity.ambient.Bat;
 
-public class PumpkinBat<T extends Bat> extends HierarchicalModel<T> {
+public class SpookyBatModel<T extends Bat> extends HierarchicalModel<T> {
 	// This layer location should be baked with EntityRendererProvider.Context in the entity renderer and passed into this model's constructor
-	public static final ModelLayerLocation LAYER_LOCATION = new ModelLayerLocation(new ResourceLocation(Constants.MODID, "pumpkin_bat"), "main");
+	public static final ModelLayerLocation LAYER_LOCATION = new ModelLayerLocation(new ResourceLocation(Constants.MODID, "spooky_bat"), "main");
+	public static final ModelLayerLocation OVERLAY_LOCATION = new ModelLayerLocation(new ResourceLocation(Constants.MODID, "bat_overlay"), "overlay");
 	private final ModelPart root;
 	private final ModelPart head;
 	private final ModelPart body;
@@ -30,7 +31,7 @@ public class PumpkinBat<T extends Bat> extends HierarchicalModel<T> {
 	private final ModelPart rightWingTip;
 	private final ModelPart leftWingTip;
 
-	public PumpkinBat(ModelPart pRoot) {
+	public SpookyBatModel(ModelPart pRoot) {
 		this.root = pRoot;
 		this.head = pRoot.getChild("head");
 		this.body = pRoot.getChild("body");
@@ -43,18 +44,18 @@ public class PumpkinBat<T extends Bat> extends HierarchicalModel<T> {
 	public ModelPart root() {
 		return this.root;
 	}
-	public static LayerDefinition createBodyLayer() {
+	public static LayerDefinition createBodyLayer(CubeDeformation pCubeDeformation) {
 		MeshDefinition meshdefinition = new MeshDefinition();
 		PartDefinition partdefinition = meshdefinition.getRoot();
 
-		PartDefinition head = partdefinition.addOrReplaceChild("head", CubeListBuilder.create().texOffs(0, 0).addBox(-4.75F, 2, -3.5F, 10.0F, 8.0F, 8.0F, new CubeDeformation(0.0F)), PartPose.offset(-0.25F, 4.5F, 2.5F));
-		head.addOrReplaceChild("right_ear", CubeListBuilder.create().texOffs(28, 0).addBox(3.0F, -15.5F, 1.0F, 3.0F, 4.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offset(0.25F, 14.5F, -2.5F));
-		head.addOrReplaceChild("left_ear", CubeListBuilder.create().texOffs(28, 0).mirror().addBox(-5.0F, -15.5F, 2.0F, 3.0F, 4.0F, 2.0F, new CubeDeformation(0.0F)).mirror(false), PartPose.offset(-0.75F, 14.5F, -3.5F));
-		PartDefinition body = partdefinition.addOrReplaceChild("body", CubeListBuilder.create().texOffs(0, 16).addBox(-3.0F, -4.0F, -2.5F, 6.0F, 8.0F, 5.0F, new CubeDeformation(0.0F)), PartPose.offset(0.0F, 14.0F, 3.0F));
-		PartDefinition leftWing = body.addOrReplaceChild("left_wing", CubeListBuilder.create().texOffs(22, 16).addBox(0.0F, -6.5F, 0.0F, 9.0F, 13.0F, 0.0F, new CubeDeformation(0.0F)), PartPose.offset(3.0F, -0.5F, 0.0F));
-		leftWing.addOrReplaceChild("left_wing_tip", CubeListBuilder.create().texOffs(0, 29).addBox(0.0F, -6.5F, 0.0F, 8.0F, 13.0F, 0.0F, new CubeDeformation(0.0F)), PartPose.offset(9.0F, 0.0F, 0.0F));
-		PartDefinition rightWing = body.addOrReplaceChild("right_wing", CubeListBuilder.create().texOffs(22, 16).mirror().addBox(-9.0F, -6.5F, 0.0F, 9.0F, 13.0F, 0.0F, new CubeDeformation(0.0F)).mirror(false), PartPose.offset(-3.0F, -0.5F, 0.0F));
-		rightWing.addOrReplaceChild("right_wing_tip", CubeListBuilder.create().texOffs(0, 29).mirror().addBox(-8.0F, -6.5F, 0.0F, 8.0F, 13.0F, 0.0F, new CubeDeformation(0.0F)).mirror(false), PartPose.offset(-9.0F, 0.0F, 0.0F));
+		PartDefinition head = partdefinition.addOrReplaceChild("head", CubeListBuilder.create().texOffs(0, 0).addBox(-4.75F, 2, -3.5F, 10.0F, 8.0F, 8.0F, pCubeDeformation), PartPose.offset(-0.25F, 4.5F, 2.5F));
+		head.addOrReplaceChild("right_ear", CubeListBuilder.create().texOffs(28, 0).addBox(3.0F, -15.5F, 1.0F, 3.0F, 4.0F, 2.0F, pCubeDeformation), PartPose.offset(0.25F, 14.5F, -2.5F));
+		head.addOrReplaceChild("left_ear", CubeListBuilder.create().texOffs(28, 0).mirror().addBox(-5.0F, -15.5F, 2.0F, 3.0F, 4.0F, 2.0F, pCubeDeformation).mirror(false), PartPose.offset(-0.75F, 14.5F, -3.5F));
+		PartDefinition body = partdefinition.addOrReplaceChild("body", CubeListBuilder.create().texOffs(0, 16).addBox(-3.0F, -4.0F, -2.5F, 6.0F, 8.0F, 5.0F, pCubeDeformation), PartPose.offset(0.0F, 14.0F, 3.0F));
+		PartDefinition leftWing = body.addOrReplaceChild("left_wing", CubeListBuilder.create().texOffs(22, 16).addBox(0.0F, -6.5F, 0.0F, 9.0F, 13.0F, 0.0F, pCubeDeformation), PartPose.offset(3.0F, -0.5F, 0.0F));
+		leftWing.addOrReplaceChild("left_wing_tip", CubeListBuilder.create().texOffs(0, 29).addBox(0.0F, -6.5F, 0.0F, 8.0F, 13.0F, 0.0F, pCubeDeformation), PartPose.offset(9.0F, 0.0F, 0.0F));
+		PartDefinition rightWing = body.addOrReplaceChild("right_wing", CubeListBuilder.create().texOffs(22, 16).mirror().addBox(-9.0F, -6.5F, 0.0F, 9.0F, 13.0F, 0.0F, pCubeDeformation).mirror(false), PartPose.offset(-3.0F, -0.5F, 0.0F));
+		rightWing.addOrReplaceChild("right_wing_tip", CubeListBuilder.create().texOffs(0, 29).mirror().addBox(-8.0F, -6.5F, 0.0F, 8.0F, 13.0F, 0.0F, pCubeDeformation).mirror(false), PartPose.offset(-9.0F, 0.0F, 0.0F));
 
 		return LayerDefinition.create(meshdefinition, 64, 64);
 	}

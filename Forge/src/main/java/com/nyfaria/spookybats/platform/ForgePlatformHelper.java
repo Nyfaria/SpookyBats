@@ -1,10 +1,15 @@
 package com.nyfaria.spookybats.platform;
 
 import com.nyfaria.spookybats.platform.services.IPlatformHelper;
+import com.nyfaria.spookybats.registration.RegistryObject;
+import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.Mob;
+import net.minecraft.world.item.SpawnEggItem;
+import net.minecraftforge.common.ForgeSpawnEggItem;
 import net.minecraftforge.fml.ModList;
 import net.minecraftforge.fml.loading.FMLLoader;
 
-public class ForgePlatformHelper implements IPlatformHelper {
+public class ForgePlatformHelper<T extends Mob> implements IPlatformHelper<T> {
 
     @Override
     public String getPlatformName() {
@@ -22,5 +27,10 @@ public class ForgePlatformHelper implements IPlatformHelper {
     public boolean isDevelopmentEnvironment() {
 
         return !FMLLoader.isProduction();
+    }
+
+    @Override
+    public SpawnEggItem createSpawnEggItem(RegistryObject<EntityType<T>> entityTypeRegistryObject, int primaryColor, int secondaryColor) {
+        return new ForgeSpawnEggItem(entityTypeRegistryObject, primaryColor,secondaryColor, new SpawnEggItem.Properties());
     }
 }

@@ -1,6 +1,11 @@
 package com.nyfaria.spookybats.platform.services;
 
-public interface IPlatformHelper {
+import com.nyfaria.spookybats.registration.RegistryObject;
+import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.Mob;
+import net.minecraft.world.item.SpawnEggItem;
+
+public interface IPlatformHelper<T extends Mob> {
 
     /**
      * Gets the name of the current platform
@@ -33,4 +38,5 @@ public interface IPlatformHelper {
 
         return isDevelopmentEnvironment() ? "development" : "production";
     }
+    SpawnEggItem createSpawnEggItem(RegistryObject<EntityType<T>> entityTypeRegistryObject, int primaryColor, int secondaryColor);
 }
