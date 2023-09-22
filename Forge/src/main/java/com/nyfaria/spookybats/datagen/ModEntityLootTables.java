@@ -16,10 +16,13 @@ import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
 import net.minecraft.world.level.storage.loot.providers.number.NumberProvider;
 import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Stream;
 
 public class ModEntityLootTables extends EntityLootSubProvider {
+
+    private List<EntityType<?>> TYPES = new ArrayList<>();
     protected ModEntityLootTables() {
         super(FeatureFlags.REGISTRY.allFlags());
     }
@@ -50,6 +53,7 @@ public class ModEntityLootTables extends EntityLootSubProvider {
     }
 
     private void dropSingle(EntityType<?> entityType, Item item) {
+        TYPES.add(entityType);
         dropSetAmount(entityType, item, 1);
     }
 
@@ -64,7 +68,7 @@ public class ModEntityLootTables extends EntityLootSubProvider {
 
     @Override
     protected Stream<EntityType<?>> getKnownEntityTypes() {
-        return EntityInit.ENTITIES.getEntries().stream().map(RegistryObject::get);
+        return TYPES.stream();
     }
 
     record LootEntry(Item item, NumberProvider numberProvider) {}
