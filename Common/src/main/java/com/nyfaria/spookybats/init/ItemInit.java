@@ -19,7 +19,7 @@ public class ItemInit {
 
     public static final RegistryObject<Item> PUMPKIN_CHOCOLATE_BAR = ITEMS.register("pumpkin_chocolate_bar", () -> new Item(getItemProperties().food(new FoodProperties.Builder().effect(new MobEffectInstance(MobEffects.GLOWING,100),1).build())));
     public static final RegistryObject<Item> TNT_LOLLIPOP = ITEMS.register("tnt_lollipop", () -> new Item(getItemProperties().food(new FoodProperties.Builder().effect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE,100),1).build())));
-
+    public static final RegistryObject<Item> WITCHES_BREW = ITEMS.register("witches_brew", () -> new Item(getItemProperties().food(new FoodProperties.Builder().effect(new MobEffectInstance(MobEffects.INVISIBILITY,100),1).build())));
     public static final RegistrationProvider<CreativeModeTab> CREATIVE_MODE_TABS = RegistrationProvider.get(Registries.CREATIVE_MODE_TAB, Constants.MODID);
     public static final RegistryObject<CreativeModeTab> TAB = CREATIVE_MODE_TABS.register(Constants.MODID, () -> CreativeModeTab.builder(CreativeModeTab.Row.TOP, 0)
             .icon(() -> new ItemStack(Items.DIRT))

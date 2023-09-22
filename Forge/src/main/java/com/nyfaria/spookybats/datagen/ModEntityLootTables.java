@@ -28,6 +28,7 @@ public class ModEntityLootTables extends EntityLootSubProvider {
     public void generate() {
         dropSingle(EntityInit.PUMPKIN_BAT.get(), ItemInit.PUMPKIN_CHOCOLATE_BAR.get());
         dropSingle(EntityInit.CREEPER_BAT.get(), ItemInit.TNT_LOLLIPOP.get());
+        dropSingle(EntityInit.WITCH_BAT.get(), ItemInit.WITCHES_BREW.get());
     }
 
     private void multiDrops(EntityType<?> type, LootEntry... entries) {

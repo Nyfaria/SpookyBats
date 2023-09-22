@@ -1,5 +1,6 @@
 package com.nyfaria.spookybats.client.renderer.layer;
 
+import com.nyfaria.spookybats.client.model.PumpkinBatModel;
 import com.nyfaria.spookybats.client.model.SpookyBatModel;
 import com.nyfaria.spookybats.entity.CreeperBat;
 import net.minecraft.client.model.EntityModel;
@@ -14,7 +15,7 @@ public class BatPowerLayer extends EnergySwirlLayer<CreeperBat, SpookyBatModel<C
 
    public BatPowerLayer(RenderLayerParent<CreeperBat, SpookyBatModel<CreeperBat>> pRenderer, EntityModelSet pModelSet) {
       super(pRenderer);
-      this.model = new SpookyBatModel<>(pModelSet.bakeLayer(SpookyBatModel.OVERLAY_LOCATION));
+      this.model = new SpookyBatModel<>(pModelSet.bakeLayer(PumpkinBatModel.OVERLAY_LOCATION));
    }
 
    protected float xOffset(float pTickCount) {

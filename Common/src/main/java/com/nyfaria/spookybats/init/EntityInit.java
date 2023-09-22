@@ -23,6 +23,7 @@ public class EntityInit {
     public static final List<AttributesRegister<?>> attributeSuppliers = new ArrayList<>();
     public static final RegistryObject<EntityType<SpookyBat>> PUMPKIN_BAT = registerEntity("pumpkin_bat", ()->EntityType.Builder.of(SpookyBat::new, MobCategory.MONSTER).sized(0.5F, 0.9F), SpookyBat::createAttributes,0xCB7438);
     public static final RegistryObject<EntityType<CreeperBat>> CREEPER_BAT = registerEntity("creeper_bat", ()->EntityType.Builder.of(CreeperBat::new, MobCategory.MONSTER).sized(0.5F, 0.9F), SpookyBat::createAttributes,0x85C280);
+    public static final RegistryObject<EntityType<SpookyBat>> WITCH_BAT = registerEntity("witch_bat", ()->EntityType.Builder.of(SpookyBat::new, MobCategory.MONSTER).sized(0.5F, 0.9F), SpookyBat::createAttributes,0x361758);
 
     private static <T extends Entity> RegistryObject<EntityType<T>> registerEntity(String name, Supplier<EntityType.Builder<T>> supplier) {
         return ENTITIES.register(name, () -> supplier.get().build(Constants.MODID + ":" + name));

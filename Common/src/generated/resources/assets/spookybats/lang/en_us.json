@@ -1,9 +1,12 @@
 {
   "entity.spookybats.creeper_bat": "Creeper Bat",
   "entity.spookybats.pumpkin_bat": "Pumpkin Bat",
+  "entity.spookybats.witch_bat": "Witch Bat",
   "item.spookybats.creeper_bat_spawn_egg": "Creeper Bat Spawn Egg",
   "item.spookybats.pumpkin_bat_spawn_egg": "Pumpkin Bat Spawn Egg",
   "item.spookybats.pumpkin_chocolate_bar": "Pumpkin Chocolate Bar",
   "item.spookybats.tnt_lollipop": "TNT Lollipop",
+  "item.spookybats.witch_bat_spawn_egg": "Witch Bat Spawn Egg",
+  "item.spookybats.witches_brew": "Witches Brew",
   "itemGroup.spookybats.tab": "Spooky Bats"
 }

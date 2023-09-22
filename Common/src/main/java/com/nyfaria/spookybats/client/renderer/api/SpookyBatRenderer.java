@@ -18,9 +18,7 @@ public class SpookyBatRenderer<T extends SpookyBat> extends MobRenderer<T, Spook
     public SpookyBatRenderer(EntityRendererProvider.Context p_173929_, SpookyBatModel<T> model) {
         super(p_173929_, model, 0.25F);
     }
-    public SpookyBatRenderer(EntityRendererProvider.Context p_173929_) {
-        super(p_173929_, new SpookyBatModel<>(p_173929_.bakeLayer(SpookyBatModel.LAYER_LOCATION)), 0.25F);
-    }
+
 
     /**
      * Returns the location of an entity's texture.
