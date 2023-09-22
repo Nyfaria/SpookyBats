@@ -17,5 +17,4 @@ public class SpookyBat extends Bat {
     public static <T extends Mob> boolean checkSpawnRules(EntityType<T> tEntityType, ServerLevelAccessor serverLevelAccessor, MobSpawnType spawnType, BlockPos pos, RandomSource randomSource) {
         return true;
     }
-
 }
