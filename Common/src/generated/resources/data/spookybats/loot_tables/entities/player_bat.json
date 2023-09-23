@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:entity",
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "entity": "killer_player",
+              "function": "minecraft:fill_player_head"
+            },
+            {
+              "add": false,
+              "count": 1.0,
+              "function": "minecraft:set_count"
+            }
+          ],
+          "name": "minecraft:player_head"
+        }
+      ],
+      "rolls": 1.0
+    }
+  ],
+  "random_sequence": "spookybats:entities/player_bat"
+}

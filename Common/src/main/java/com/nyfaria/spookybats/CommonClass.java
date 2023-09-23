@@ -32,6 +32,7 @@ public class CommonClass {
         SpawnPlacements.register(EntityInit.HEROBRINE_BAT.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, SpookyBat::checkSpawnRules);
         SpawnPlacements.register(EntityInit.STEVE_BAT.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, SpookyBat::checkSpawnRules);
         SpawnPlacements.register(EntityInit.SKELETON_BAT.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, SpookyBat::checkSpawnRules);
+        SpawnPlacements.register(EntityInit.WITHER_SKELETON_BAT.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, SpookyBat::checkSpawnRules);
         SpawnPlacements.register(EntityInit.UNDEAD_BAT.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, SpookyBat::checkSpawnRules);
         SpawnPlacements.register(EntityInit.PLAYER_BAT.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, SpookyBat::checkSpawnRules);
 

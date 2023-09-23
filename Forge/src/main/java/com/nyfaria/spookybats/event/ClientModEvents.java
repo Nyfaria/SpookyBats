@@ -28,6 +28,7 @@ public class ClientModEvents {
         event.registerEntityRenderer(EntityInit.ALEX_BAT.get(), context->new SpookyBatRenderer<>(context, new HatBatModel<>(context.bakeLayer(HatBatModel.LAYER_LOCATION))));
         event.registerEntityRenderer(EntityInit.HEROBRINE_BAT.get(), context->new EmissiveBatRenderer(context, new HatBatModel<>(context.bakeLayer(HatBatModel.LAYER_LOCATION)),"herobrine_bat"));
         event.registerEntityRenderer(EntityInit.SKELETON_BAT.get(), context->new SpookyBatRenderer<>(context, new SkeletonBatModel<>(context.bakeLayer(SkeletonBatModel.LAYER_LOCATION))));
+        event.registerEntityRenderer(EntityInit.WITHER_SKELETON_BAT.get(), context->new SpookyBatRenderer<>(context, new SkeletonBatModel<>(context.bakeLayer(SkeletonBatModel.LAYER_LOCATION))));
         event.registerEntityRenderer(EntityInit.UNDEAD_BAT.get(), context->new SpookyBatRenderer<>(context, new UndeadBatModel<>(context.bakeLayer(UndeadBatModel.LAYER_LOCATION))));
         event.registerEntityRenderer(EntityInit.PLAYER_BAT.get(), context->new PlayerBatRenderer(context, new HatBatModel<>(context.bakeLayer(HatBatModel.LAYER_LOCATION))));
 

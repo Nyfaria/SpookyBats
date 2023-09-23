@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:entity",
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "add": false,
+              "count": 1.0,
+              "function": "minecraft:set_count"
+            }
+          ],
+          "name": "spookybats:wither_skull_candy"
+        }
+      ],
+      "rolls": 1.0
+    }
+  ],
+  "random_sequence": "spookybats:entities/wither_skeleton_bat"
+}
