@@ -3,9 +3,11 @@ package com.nyfaria.spookybats.event;
 import com.nyfaria.spookybats.client.model.HatBatModel;
 import com.nyfaria.spookybats.client.model.PumpkinBatModel;
 import com.nyfaria.spookybats.client.model.SkeletonBatModel;
+import com.nyfaria.spookybats.client.model.UndeadBatModel;
 import com.nyfaria.spookybats.client.model.WitchBatModel;
 import com.nyfaria.spookybats.client.renderer.CreeperBatRenderer;
 import com.nyfaria.spookybats.client.renderer.EmissiveBatRenderer;
+import com.nyfaria.spookybats.client.renderer.PlayerBatRenderer;
 import com.nyfaria.spookybats.client.renderer.api.SpookyBatRenderer;
 import com.nyfaria.spookybats.init.EntityInit;
 import net.minecraft.client.model.geom.builders.CubeDeformation;
@@ -26,6 +28,9 @@ public class ClientModEvents {
         event.registerEntityRenderer(EntityInit.ALEX_BAT.get(), context->new SpookyBatRenderer<>(context, new HatBatModel<>(context.bakeLayer(HatBatModel.LAYER_LOCATION))));
         event.registerEntityRenderer(EntityInit.HEROBRINE_BAT.get(), context->new EmissiveBatRenderer(context, new HatBatModel<>(context.bakeLayer(HatBatModel.LAYER_LOCATION)),"herobrine_bat"));
         event.registerEntityRenderer(EntityInit.SKELETON_BAT.get(), context->new SpookyBatRenderer<>(context, new SkeletonBatModel<>(context.bakeLayer(SkeletonBatModel.LAYER_LOCATION))));
+        event.registerEntityRenderer(EntityInit.UNDEAD_BAT.get(), context->new SpookyBatRenderer<>(context, new UndeadBatModel<>(context.bakeLayer(UndeadBatModel.LAYER_LOCATION))));
+        event.registerEntityRenderer(EntityInit.PLAYER_BAT.get(), context->new PlayerBatRenderer(context, new HatBatModel<>(context.bakeLayer(HatBatModel.LAYER_LOCATION))));
+
     }
 
     @SubscribeEvent
@@ -35,5 +40,6 @@ public class ClientModEvents {
         event.registerLayerDefinition(WitchBatModel.LAYER_LOCATION, WitchBatModel::createBodyLayer);
         event.registerLayerDefinition(HatBatModel.LAYER_LOCATION, HatBatModel::createBodyLayer);
         event.registerLayerDefinition(SkeletonBatModel.LAYER_LOCATION, SkeletonBatModel::createBodyLayer);
+        event.registerLayerDefinition(UndeadBatModel.LAYER_LOCATION, UndeadBatModel::createBodyLayer);
     }
 }

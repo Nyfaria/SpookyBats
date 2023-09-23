@@ -3,6 +3,7 @@ package com.nyfaria.spookybats;
 import com.nyfaria.spookybats.client.model.*;
 import com.nyfaria.spookybats.client.renderer.CreeperBatRenderer;
 import com.nyfaria.spookybats.client.renderer.EmissiveBatRenderer;
+import com.nyfaria.spookybats.client.renderer.PlayerBatRenderer;
 import com.nyfaria.spookybats.client.renderer.api.SpookyBatRenderer;
 import com.nyfaria.spookybats.init.EntityInit;
 import net.fabricmc.api.ClientModInitializer;
@@ -22,6 +23,8 @@ public class SpookyBatsClient implements ClientModInitializer {
         EntityRendererRegistry.register(EntityInit.HEROBRINE_BAT.get(), context->new EmissiveBatRenderer(context, new HatBatModel<>(context.bakeLayer(HatBatModel.LAYER_LOCATION)),"herobrine_bat"));
         EntityRendererRegistry.register(EntityInit.SKELETON_BAT.get(), context->new SpookyBatRenderer<>(context, new SkeletonBatModel<>(context.bakeLayer(SkeletonBatModel.LAYER_LOCATION))));
         EntityRendererRegistry.register(EntityInit.UNDEAD_BAT.get(), context->new SpookyBatRenderer<>(context, new UndeadBatModel<>(context.bakeLayer(UndeadBatModel.LAYER_LOCATION))));
+        EntityRendererRegistry.register(EntityInit.PLAYER_BAT.get(), context->new PlayerBatRenderer(context, new HatBatModel<>(context.bakeLayer(HatBatModel.LAYER_LOCATION))));
+
         EntityModelLayerRegistry.registerModelLayer(PumpkinBatModel.LAYER_LOCATION, ()-> PumpkinBatModel.createBodyLayer(CubeDeformation.NONE));
         EntityModelLayerRegistry.registerModelLayer(WitchBatModel.LAYER_LOCATION, WitchBatModel::createBodyLayer);
         EntityModelLayerRegistry.registerModelLayer(SkeletonBatModel.LAYER_LOCATION, SkeletonBatModel::createBodyLayer);

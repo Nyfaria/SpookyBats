@@ -48,4 +48,7 @@ public class HatBatModel<T extends SpookyBat> extends SpookyBatModel<T> {
 		return LayerDefinition.create(meshdefinition, 64, 64);
 	}
 
+	public void hideForPlayer(){
+		this.body.visible = false;
+	}
 }

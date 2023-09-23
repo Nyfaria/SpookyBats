@@ -4,7 +4,6 @@ package com.nyfaria.spookybats.client.model;// Made with Blockbench 4.8.3
 
 
 import com.nyfaria.spookybats.Constants;
-import com.nyfaria.spookybats.client.model.SpookyBatModel;
 import com.nyfaria.spookybats.entity.SpookyBat;
 import net.minecraft.client.model.geom.ModelLayerLocation;
 import net.minecraft.client.model.geom.ModelPart;
