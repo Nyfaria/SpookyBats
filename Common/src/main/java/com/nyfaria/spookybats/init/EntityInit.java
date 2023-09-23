@@ -3,6 +3,7 @@ package com.nyfaria.spookybats.init;
 import com.nyfaria.spookybats.Constants;
 import com.nyfaria.spookybats.entity.CreeperBat;
 import com.nyfaria.spookybats.entity.FireProofBat;
+import com.nyfaria.spookybats.entity.MonsterBat;
 import com.nyfaria.spookybats.entity.SpookyBat;
 import com.nyfaria.spookybats.platform.Services;
 import com.nyfaria.spookybats.registration.RegistrationProvider;
@@ -28,7 +29,7 @@ public class EntityInit {
     public static final RegistryObject<EntityType<SpookyBat>> STEVE_BAT = registerEntityWithEgg("steve_bat", ()->EntityType.Builder.of(SpookyBat::new, MobCategory.MONSTER).sized(0.5F, 0.9F), SpookyBat::createAttributes,0x00CCCC);
     public static final RegistryObject<EntityType<SpookyBat>> ALEX_BAT = registerEntityWithEgg("alex_bat", ()->EntityType.Builder.of(SpookyBat::new, MobCategory.MONSTER).sized(0.5F, 0.9F), SpookyBat::createAttributes,0x94C892);
     public static final RegistryObject<EntityType<SpookyBat>> HEROBRINE_BAT = registerEntityWithEgg("herobrine_bat", ()->EntityType.Builder.of(SpookyBat::new, MobCategory.MONSTER).sized(0.5F, 0.9F), SpookyBat::createAttributes,0x0093DD);
-    public static final RegistryObject<EntityType<SpookyBat>> SKELETON_BAT = registerEntityWithEgg("skeleton_bat", ()->EntityType.Builder.of(SpookyBat::new, MobCategory.MONSTER).sized(0.5F, 0.9F), SpookyBat::createAttributes,0xFFFFFF);
+    public static final RegistryObject<EntityType<MonsterBat>> SKELETON_BAT = registerEntityWithEgg("skeleton_bat", ()->EntityType.Builder.of(MonsterBat::new, MobCategory.MONSTER).sized(0.5F, 0.9F), SpookyBat::createAttributes,0xFFFFFF);
     public static final RegistryObject<EntityType<FireProofBat>> WITHER_SKELETON_BAT = registerEntityWithEgg("wither_skeleton_bat", ()->EntityType.Builder.of(FireProofBat::new, MobCategory.MONSTER).sized(0.5F, 0.9F), SpookyBat::createAttributes,0x444444,0x000000);
     public static final RegistryObject<EntityType<FireProofBat>> UNDEAD_BAT = registerEntityWithEgg("undead_bat", ()->EntityType.Builder.of(FireProofBat::new, MobCategory.MONSTER).sized(0.5F, 0.9F), SpookyBat::createAttributes,0x914431);
     public static final RegistryObject<EntityType<SpookyBat>> PLAYER_BAT = registerEntityWithEgg("player_bat", ()->EntityType.Builder.of(SpookyBat::new, MobCategory.MONSTER).sized(0.5F, 0.9F), SpookyBat::createAttributes,0xF600FF);

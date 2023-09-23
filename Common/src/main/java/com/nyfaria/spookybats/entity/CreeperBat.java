@@ -5,7 +5,7 @@ import net.minecraft.world.entity.PowerableMob;
 import net.minecraft.world.entity.ambient.Bat;
 import net.minecraft.world.level.Level;
 
-public class CreeperBat extends SpookyBat implements PowerableMob {
+public class CreeperBat extends MonsterBat implements PowerableMob {
     public CreeperBat(EntityType<? extends Bat> entityType, Level level) {
         super(entityType, level);
     }
@@ -13,5 +13,10 @@ public class CreeperBat extends SpookyBat implements PowerableMob {
     @Override
     public boolean isPowered() {
         return tickCount % 1200 < 600;
+    }
+
+    @Override
+    protected boolean isSunSensitive() {
+        return false;
     }
 }
