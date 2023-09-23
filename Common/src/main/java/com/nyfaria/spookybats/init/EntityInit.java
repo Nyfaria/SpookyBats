@@ -28,6 +28,7 @@ public class EntityInit {
     public static final RegistryObject<EntityType<SpookyBat>> ALEX_BAT = registerEntity("alex_bat", ()->EntityType.Builder.of(SpookyBat::new, MobCategory.MONSTER).sized(0.5F, 0.9F), SpookyBat::createAttributes,0x94C892);
     public static final RegistryObject<EntityType<SpookyBat>> HEROBRINE_BAT = registerEntity("herobrine_bat", ()->EntityType.Builder.of(SpookyBat::new, MobCategory.MONSTER).sized(0.5F, 0.9F), SpookyBat::createAttributes,0x94C892);
     public static final RegistryObject<EntityType<SpookyBat>> SKELETON_BAT = registerEntity("skeleton_bat", ()->EntityType.Builder.of(SpookyBat::new, MobCategory.MONSTER).sized(0.5F, 0.9F), SpookyBat::createAttributes,0xFFFFFF);
+    public static final RegistryObject<EntityType<SpookyBat>> UNDEAD_BAT = registerEntity("undead_bat", ()->EntityType.Builder.of(SpookyBat::new, MobCategory.MONSTER).sized(0.5F, 0.9F), SpookyBat::createAttributes,0x914431);
 
     private static <T extends Entity> RegistryObject<EntityType<T>> registerEntity(String name, Supplier<EntityType.Builder<T>> supplier) {
         return ENTITIES.register(name, () -> supplier.get().build(Constants.MODID + ":" + name));

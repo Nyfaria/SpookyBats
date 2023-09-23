@@ -76,11 +76,12 @@ public class SpookyBatModel<T extends SpookyBat> extends HierarchicalModel<T> {
 			this.rightWingTip.yRot = this.rightWing.yRot * 0.5F;
 			this.leftWingTip.yRot = -this.rightWing.yRot * 0.5F;
 		}
-
 	}
+
 	public Vector3f getHeadPos(){
 		return new Vector3f(-0.25F, 11.5F, 0F);
 	}
+
 	@Override
 	public void renderToBuffer(PoseStack poseStack, VertexConsumer vertexConsumer, int packedLight, int packedOverlay, float red, float green, float blue, float alpha) {
 		head.render(poseStack, vertexConsumer, packedLight, packedOverlay, red, green, blue, alpha);

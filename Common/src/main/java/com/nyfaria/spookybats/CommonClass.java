@@ -4,6 +4,8 @@ import com.nyfaria.spookybats.entity.SpookyBat;
 import com.nyfaria.spookybats.init.BlockInit;
 import com.nyfaria.spookybats.init.EntityInit;
 import com.nyfaria.spookybats.init.ItemInit;
+import com.nyfaria.spookybats.registration.RegistryObject;
+import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.SpawnPlacements;
 import net.minecraft.world.level.levelgen.Heightmap;
 
@@ -23,12 +25,17 @@ public class CommonClass {
     }
 
     public static void placements() {
-        SpawnPlacements.register(EntityInit.PUMPKIN_BAT.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, SpookyBat::checkSpawnRules);
+        registerSpawn(EntityInit.PUMPKIN_BAT);
         SpawnPlacements.register(EntityInit.CREEPER_BAT.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, SpookyBat::checkSpawnRules);
         SpawnPlacements.register(EntityInit.WITCH_BAT.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, SpookyBat::checkSpawnRules);
         SpawnPlacements.register(EntityInit.ALEX_BAT.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, SpookyBat::checkSpawnRules);
         SpawnPlacements.register(EntityInit.HEROBRINE_BAT.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, SpookyBat::checkSpawnRules);
         SpawnPlacements.register(EntityInit.STEVE_BAT.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, SpookyBat::checkSpawnRules);
         SpawnPlacements.register(EntityInit.SKELETON_BAT.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, SpookyBat::checkSpawnRules);
+        SpawnPlacements.register(EntityInit.UNDEAD_BAT.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, SpookyBat::checkSpawnRules);
+    }
+
+    public static void registerSpawn(RegistryObject<EntityType<SpookyBat>> entityType) {
+        SpawnPlacements.register(entityType.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, SpookyBat::checkSpawnRules);
     }
 }
