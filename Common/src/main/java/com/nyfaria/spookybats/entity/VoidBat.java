@@ -15,7 +15,9 @@ public class VoidBat extends SpookyBat {
 		super.tick();
 
 		LivingEntity attacker = this.getLastHurtByMob();
-		if (attacker == null) return;
-		attacker.changeDimension(this.getServer().getLevel(Level.END));
+		if (attacker != null) {
+			if (attacker.level().dimension() != Level.END)
+				attacker.changeDimension(attacker.getServer().getLevel(Level.END));
+		}
 	}
 }
