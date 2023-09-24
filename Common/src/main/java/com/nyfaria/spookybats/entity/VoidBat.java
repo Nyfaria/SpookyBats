@@ -20,4 +20,5 @@ public class VoidBat extends SpookyBat {
 
 		return super.hurt($$0, $$1);
 	}
+
 }
