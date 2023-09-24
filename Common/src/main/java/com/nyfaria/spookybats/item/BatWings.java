@@ -1,10 +1,12 @@
 package com.nyfaria.spookybats.item;
 
+import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.ArmorMaterials;
 import net.minecraft.world.item.ElytraItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
+import org.jetbrains.annotations.Nullable;
 
 public class BatWings extends Item {
     public BatWings(Properties $$2) {
@@ -12,6 +14,9 @@ public class BatWings extends Item {
     }
 
 
+    public @Nullable EquipmentSlot getEquipmentSlot(ItemStack stack) {
+        return EquipmentSlot.CHEST;
+    }
 
     public boolean canElytraFly(ItemStack stack, net.minecraft.world.entity.LivingEntity entity) {
         return true;
