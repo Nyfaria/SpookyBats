@@ -13,7 +13,7 @@
               "function": "minecraft:set_count"
             }
           ],
-          "name": "spookybats:spider_eye_lollipop"
+          "name": "spookybats:generic_candy"
         }
       ],
       "rolls": 1.0

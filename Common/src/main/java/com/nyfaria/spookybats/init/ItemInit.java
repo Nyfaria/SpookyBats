@@ -28,7 +28,7 @@ public class ItemInit {
     public static final RegistryObject<Item> SKULL_CANDY = registerCandy("skull_candy", MobEffects.NIGHT_VISION);
     public static final RegistryObject<Item> WITHER_SKULL_CANDY = registerCandy("wither_skull_candy", MobEffects.WITHER);
     public static final RegistryObject<Item> ZOMBIE_FLESH_LOLLIPOP = registerCandy("zombie_flesh_lollipop", MobEffects.HUNGER);
-    public static final RegistryObject<Item> GENERIC_CANDY = registerCandy("spider_eye_lollipop", MobEffects.ABSORPTION);
+    public static final RegistryObject<Item> GENERIC_CANDY = registerCandy("generic_candy", MobEffects.ABSORPTION);
     public static final RegistryObject<Item> SUSPICIOUS_CANDY = registerCandy("suspicious_candy", MobEffects.CONFUSION);
 
     public static final RegistrationProvider<CreativeModeTab> CREATIVE_MODE_TABS = RegistrationProvider.get(Registries.CREATIVE_MODE_TAB, Constants.MODID);

@@ -28,6 +28,7 @@ public class ModItemModelProvider extends ItemModelProvider {
 
         Stream.of(
                         ItemInit.PUMPKIN_CHOCOLATE_BAR,
+                        ItemInit.GENERIC_CANDY,
                         ItemInit.SUSPICIOUS_CANDY,
                         ItemInit.TNT_LOLLIPOP
                 )

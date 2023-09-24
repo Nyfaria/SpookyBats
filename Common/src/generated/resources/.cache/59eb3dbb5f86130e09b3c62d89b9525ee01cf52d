@@ -1,11 +1,11 @@
-// 1.20.1	2023-09-23T12:11:07.1187245	Loot Tables
-b96dd376261ab1c64f04c539a8d83da8684f1f6d data/spookybats/loot_tables/entities/alex_bat.json
+// 1.20.1	2023-09-24T10:57:30.2933257	Loot Tables
+e0c043d4f93610133257d150d2c05ef2d3e87036 data/spookybats/loot_tables/entities/alex_bat.json
 69677a9b0efe221e9d3978e3284aca3c93c842dc data/spookybats/loot_tables/entities/creeper_bat.json
 491088a58eac347973bb21b83c2c2d8cfe039d44 data/spookybats/loot_tables/entities/herobrine_bat.json
 33492d497567e0fdad7b9751688d3a741c3ca583 data/spookybats/loot_tables/entities/player_bat.json
 7ffac104d2f587afc772233b91ae95f757105989 data/spookybats/loot_tables/entities/pumpkin_bat.json
 2f89f04ae8753b1861a74be2855e7d9396c4dd6f data/spookybats/loot_tables/entities/skeleton_bat.json
-b52e052ba9ed3814dc0200047352085d5e689e30 data/spookybats/loot_tables/entities/steve_bat.json
+57d3c49cc0c896f9776b63f10911b5350dd105e9 data/spookybats/loot_tables/entities/steve_bat.json
 6494544afb35ffd95c008a74211003844516a210 data/spookybats/loot_tables/entities/undead_bat.json
 29d59a065d8954b5436948c8107b84f3b95e1f53 data/spookybats/loot_tables/entities/witch_bat.json
 53791ff17e19ed145571e95788719a3761858595 data/spookybats/loot_tables/entities/wither_skeleton_bat.json
