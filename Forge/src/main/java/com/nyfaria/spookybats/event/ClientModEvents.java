@@ -8,6 +8,7 @@ import com.nyfaria.spookybats.client.model.WitchBatModel;
 import com.nyfaria.spookybats.client.renderer.CreeperBatRenderer;
 import com.nyfaria.spookybats.client.renderer.EmissiveBatRenderer;
 import com.nyfaria.spookybats.client.renderer.PlayerBatRenderer;
+import com.nyfaria.spookybats.client.renderer.VoidBatRender;
 import com.nyfaria.spookybats.client.renderer.api.SpookyBatRenderer;
 import com.nyfaria.spookybats.init.EntityInit;
 import net.minecraft.client.model.geom.builders.CubeDeformation;
@@ -31,6 +32,7 @@ public class ClientModEvents {
         event.registerEntityRenderer(EntityInit.WITHER_SKELETON_BAT.get(), context->new SpookyBatRenderer<>(context, new SkeletonBatModel<>(context.bakeLayer(SkeletonBatModel.LAYER_LOCATION))));
         event.registerEntityRenderer(EntityInit.UNDEAD_BAT.get(), context->new EmissiveBatRenderer(context, new UndeadBatModel<>(context.bakeLayer(UndeadBatModel.LAYER_LOCATION)), "undead_bat"));
         event.registerEntityRenderer(EntityInit.PLAYER_BAT.get(), context->new PlayerBatRenderer(context, new HatBatModel<>(context.bakeLayer(HatBatModel.LAYER_LOCATION))));
+        event.registerEntityRenderer(EntityInit.VOID_BAT.get(), context->new VoidBatRender(context, new HatBatModel<>(context.bakeLayer(HatBatModel.LAYER_LOCATION))));
 
     }
 

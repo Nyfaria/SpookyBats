@@ -49,7 +49,7 @@ public class ItemInit {
     }
 
     public static RegistryObject<Item> registerCandy(String name, MobEffect effect){
-        RegistryObject<Item> item = ITEMS.register(name, () -> new Item(getItemProperties().food(new FoodProperties.Builder().effect(new MobEffectInstance(effect,100),1).build())));
+        RegistryObject<Item> item = ITEMS.register(name, () -> new Item(getItemProperties().food(new FoodProperties.Builder().alwaysEat().nutrition(1).saturationMod(0.5f).fast().effect(new MobEffectInstance(effect,100),1).build())));
         ITEM_LIST.add(item);
         return item;
     }
