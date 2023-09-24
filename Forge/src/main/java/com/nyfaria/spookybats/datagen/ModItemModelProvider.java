@@ -30,6 +30,8 @@ public class ModItemModelProvider extends ItemModelProvider {
                         ItemInit.PUMPKIN_CHOCOLATE_BAR,
                         ItemInit.GENERIC_CANDY,
                         ItemInit.SUSPICIOUS_CANDY,
+                        ItemInit.SKULL_CANDY,
+                        ItemInit.WITHER_SKULL_CANDY,
                         ItemInit.TNT_LOLLIPOP
                 )
                 .map(Supplier::get)
