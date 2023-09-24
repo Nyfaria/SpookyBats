@@ -7,9 +7,9 @@ import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import org.jetbrains.annotations.Nullable;
 
-public class VoidBatRender extends SpookyBatRenderer<SpookyBat> {
+public class VoidBatRenderer extends SpookyBatRenderer<SpookyBat> {
 
-    public VoidBatRender(EntityRendererProvider.Context p_173929_, SpookyBatModel<SpookyBat> model) {
+    public VoidBatRenderer(EntityRendererProvider.Context p_173929_, SpookyBatModel<SpookyBat> model) {
         super(p_173929_, model);
     }
 
