@@ -2,6 +2,7 @@ package com.nyfaria.spookybats.init;
 
 import com.nyfaria.spookybats.Constants;
 import com.nyfaria.spookybats.item.BatWings;
+import com.nyfaria.spookybats.platform.Services;
 import com.nyfaria.spookybats.registration.RegistrationProvider;
 import com.nyfaria.spookybats.registration.RegistryObject;
 import net.minecraft.core.registries.Registries;
@@ -23,7 +24,7 @@ public class ItemInit {
     public static final List<RegistryObject<Item>> SPAWN_EGG_LIST = new ArrayList<>();
     public static final RegistrationProvider<Item> ITEMS = RegistrationProvider.get(Registries.ITEM, Constants.MODID);
 
-    public static final RegistryObject<Item> BAT_WINGS = ITEMS.register("bat_wings", () -> new BatWings(getItemProperties()));
+    public static final RegistryObject<Item> BAT_WINGS = ITEMS.register("bat_wings", () -> new BatWings(Services.PLATFORM.getElytraItemProperties()));
 
     public static final RegistryObject<Item> PUMPKIN_CHOCOLATE_BAR = registerCandy("pumpkin_chocolate_bar",MobEffects.GLOWING);
     public static final RegistryObject<Item> TNT_LOLLIPOP = registerCandy("tnt_lollipop", MobEffects.DAMAGE_RESISTANCE);

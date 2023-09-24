@@ -6,11 +6,18 @@ import com.nyfaria.spookybats.client.renderer.EmissiveBatRenderer;
 import com.nyfaria.spookybats.client.renderer.PlayerBatRenderer;
 import com.nyfaria.spookybats.client.renderer.VoidBatRenderer;
 import com.nyfaria.spookybats.client.renderer.api.SpookyBatRenderer;
+import com.nyfaria.spookybats.client.renderer.layer.BatWingsLayer;
 import com.nyfaria.spookybats.init.EntityInit;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityModelLayerRegistry;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
+import net.fabricmc.fabric.api.client.rendering.v1.LivingEntityFeatureRenderEvents;
+import net.fabricmc.fabric.api.client.rendering.v1.LivingEntityFeatureRendererRegistrationCallback;
+import net.fabricmc.fabric.impl.client.rendering.EntityRendererRegistryImpl;
 import net.minecraft.client.model.geom.builders.CubeDeformation;
+import net.minecraft.client.renderer.entity.player.PlayerRenderer;
+import net.minecraft.tags.EntityTypeTags;
+import net.minecraft.world.entity.EntityType;
 
 public class SpookyBatsClient implements ClientModInitializer {
     
@@ -34,5 +41,11 @@ public class SpookyBatsClient implements ClientModInitializer {
         EntityModelLayerRegistry.registerModelLayer(HatBatModel.LAYER_LOCATION, HatBatModel::createBodyLayer);
         EntityModelLayerRegistry.registerModelLayer(UndeadBatModel.LAYER_LOCATION, UndeadBatModel::createBodyLayer);
         EntityModelLayerRegistry.registerModelLayer(PumpkinBatModel.OVERLAY_LOCATION, ()-> PumpkinBatModel.createBodyLayer(new CubeDeformation(0.1f)));
+
+        LivingEntityFeatureRendererRegistrationCallback.EVENT.register((entityType, entityRenderer, registrationHelper, context) -> {
+            if(entityType == EntityType.PLAYER){
+                registrationHelper.register(new BatWingsLayer<>((PlayerRenderer)entityRenderer, context.getModelSet()));
+            }
+        });
     }
 }

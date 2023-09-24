@@ -54,8 +54,10 @@ public class BatWingsModel<T extends LivingEntity> extends AgeableListModel<T> {
 //            flap = flapAmount / 10f;
 //            if(flap < 0){
 //                flap = flap;
-//            }
-            flap = Mth.clamp(Mth.sin(pAgeInTicks) * 1.5F, -1.0f, 1.0f);
+
+            if(f1 <= -1) {
+                flap = Mth.clamp(Mth.sin(pAgeInTicks) * 1.5F, -1.0f, 1.0f);
+            }
         } else if (pEntity.isCrouching()) {
             f = 0.6981317F;
             f1 = (-(float)Math.PI / 4F);

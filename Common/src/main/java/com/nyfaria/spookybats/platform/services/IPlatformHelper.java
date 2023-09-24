@@ -3,6 +3,7 @@ package com.nyfaria.spookybats.platform.services;
 import com.nyfaria.spookybats.registration.RegistryObject;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.Mob;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.SpawnEggItem;
 
 public interface IPlatformHelper<T extends Mob> {
@@ -39,4 +40,8 @@ public interface IPlatformHelper<T extends Mob> {
         return isDevelopmentEnvironment() ? "development" : "production";
     }
     SpawnEggItem createSpawnEggItem(RegistryObject<EntityType<T>> entityTypeRegistryObject, int primaryColor, int secondaryColor);
+
+    default Item.Properties getElytraItemProperties() {
+        return new Item.Properties();
+    }
 }
