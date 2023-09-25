@@ -35,6 +35,8 @@ public class ModLangProvider extends LanguageProvider {
         EntityInit.ENTITIES.getEntries().forEach(this::entityLang);
         BlockInit.BLOCKS.getEntries().forEach(this::blockLang);
         add("itemGroup." + Constants.MODID + ".tab", Constants.MOD_NAME);
+        add("advancements." + Constants.MODID + ".massacre", "Bat Massacre");
+        add("advancements." + Constants.MODID + ".massacre.desc", "You MONSTER! You killed so many bats, and earned yourself a Pair of Bat Wings!");
     }
 
     protected void itemLang(RegistryObject<Item> entry) {

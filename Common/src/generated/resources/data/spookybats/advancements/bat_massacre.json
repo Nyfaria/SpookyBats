@@ -1,0 +1,38 @@
+{
+  "criteria": {
+    "bat_wings": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "spookybats:bat_wings"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "background": "minecraft:textures/gui/advancements/backgrounds/husbandry.png",
+    "description": {
+      "translate": "advancements.spookybats.massacre.desc"
+    },
+    "frame": "challenge",
+    "hidden": false,
+    "icon": {
+      "item": "spookybats:bat_wings"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancements.spookybats.massacre"
+    }
+  },
+  "requirements": [
+    [
+      "bat_wings"
+    ]
+  ],
+  "sends_telemetry_event": true
+}
