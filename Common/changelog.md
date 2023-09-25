@@ -1,4 +1,4 @@
-### Version 1.0.0 Beta
+### Version 0.1.0 Beta
 - Initial release!
 - Included bats:
   - Pumpkin Bat
