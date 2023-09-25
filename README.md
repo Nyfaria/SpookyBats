@@ -19,5 +19,5 @@ We also plan on adding some cool new bat variants, possibly some fitting various
 **Note:** This mod works on both Forge and Fabric!
 
 ## Links
-Discord server: https://discord.gg/wM4CKTbFVN
+Discord server: https://discord.gg/wM4CKTbFVN <br>
 Mod link: https://curseforge.com/minecraft/mc-mods/spooky-bats/
