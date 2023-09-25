@@ -20,3 +20,4 @@ We also plan on adding some cool new bat variants, possibly some fitting various
 
 ## Links
 Discord server: https://discord.gg/wM4CKTbFVN
+Mod link: https://curseforge.com/minecraft/mc-mods/spooky-bats/
