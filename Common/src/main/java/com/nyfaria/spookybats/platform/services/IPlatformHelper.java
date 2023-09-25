@@ -42,6 +42,6 @@ public interface IPlatformHelper<T extends Mob> {
     SpawnEggItem createSpawnEggItem(RegistryObject<EntityType<T>> entityTypeRegistryObject, int primaryColor, int secondaryColor);
 
     default Item.Properties getElytraItemProperties() {
-        return new Item.Properties();
+        return new Item.Properties().stacksTo(1);
     }
 }

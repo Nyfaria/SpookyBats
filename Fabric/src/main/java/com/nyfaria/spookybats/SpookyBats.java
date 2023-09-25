@@ -19,16 +19,16 @@ public class SpookyBats implements ModInitializer {
         EntityInit.attributeSuppliers.forEach(
                 p -> FabricDefaultAttributeRegistry.register(p.entityTypeSupplier().get(), p.factory().get().build())
         );
-        BiomeModifications.addSpawn(BiomeSelectors.foundInOverworld(), MobCategory.MONSTER, EntityInit.PUMPKIN_BAT.get(), 20, 1, 5);
-        BiomeModifications.addSpawn(BiomeSelectors.foundInOverworld(), MobCategory.MONSTER, EntityInit.CREEPER_BAT.get(), 20, 1, 5);
-        BiomeModifications.addSpawn(BiomeSelectors.includeByKey(Biomes.SWAMP,Biomes.MANGROVE_SWAMP), MobCategory.MONSTER, EntityInit.WITCH_BAT.get(), 20, 1, 5);
-        BiomeModifications.addSpawn(BiomeSelectors.foundInOverworld(), MobCategory.MONSTER, EntityInit.STEVE_BAT.get(), 20, 1, 5);
-        BiomeModifications.addSpawn(BiomeSelectors.foundInOverworld(), MobCategory.MONSTER, EntityInit.ALEX_BAT.get(), 20, 1, 5);
-        BiomeModifications.addSpawn(BiomeSelectors.foundInOverworld(), MobCategory.MONSTER, EntityInit.HEROBRINE_BAT.get(), 20, 1, 5);
-        BiomeModifications.addSpawn(BiomeSelectors.foundInOverworld(), MobCategory.MONSTER, EntityInit.SKELETON_BAT.get(), 20, 1, 5);
-        BiomeModifications.addSpawn(BiomeSelectors.foundInTheNether(), MobCategory.MONSTER, EntityInit.WITHER_SKELETON_BAT.get(), 20, 1, 5);
-        BiomeModifications.addSpawn(BiomeSelectors.foundInTheNether(), MobCategory.MONSTER, EntityInit.UNDEAD_BAT.get(), 20, 1, 5);
-        BiomeModifications.addSpawn(BiomeSelectors.foundInOverworld(), MobCategory.MONSTER, EntityInit.PLAYER_BAT.get(), 20, 1, 5);
+        BiomeModifications.addSpawn(BiomeSelectors.foundInOverworld(), MobCategory.MONSTER, EntityInit.PUMPKIN_BAT.get(), 5, 1, 3);
+        BiomeModifications.addSpawn(BiomeSelectors.foundInOverworld(), MobCategory.MONSTER, EntityInit.CREEPER_BAT.get(), 5, 1, 3);
+        BiomeModifications.addSpawn(BiomeSelectors.includeByKey(Biomes.SWAMP,Biomes.MANGROVE_SWAMP), MobCategory.MONSTER, EntityInit.WITCH_BAT.get(), 5, 1, 3);
+        BiomeModifications.addSpawn(BiomeSelectors.foundInOverworld(), MobCategory.MONSTER, EntityInit.STEVE_BAT.get(), 5, 1, 3);
+        BiomeModifications.addSpawn(BiomeSelectors.foundInOverworld(), MobCategory.MONSTER, EntityInit.ALEX_BAT.get(), 5, 1, 3);
+        BiomeModifications.addSpawn(BiomeSelectors.foundInOverworld(), MobCategory.MONSTER, EntityInit.HEROBRINE_BAT.get(), 5, 1, 3);
+        BiomeModifications.addSpawn(BiomeSelectors.foundInOverworld(), MobCategory.MONSTER, EntityInit.SKELETON_BAT.get(), 5, 1, 3);
+        BiomeModifications.addSpawn(BiomeSelectors.foundInTheNether(), MobCategory.MONSTER, EntityInit.WITHER_SKELETON_BAT.get(), 5, 1, 3);
+        BiomeModifications.addSpawn(BiomeSelectors.foundInTheNether(), MobCategory.MONSTER, EntityInit.UNDEAD_BAT.get(), 5, 1, 3);
+        BiomeModifications.addSpawn(BiomeSelectors.foundInOverworld(), MobCategory.MONSTER, EntityInit.PLAYER_BAT.get(), 5, 1, 3);
 
         CommonClass.placements();
     }

@@ -14,6 +14,23 @@
             }
           ],
           "name": "spookybats:generic_candy"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "chance": 0.01,
+              "condition": "minecraft:random_chance"
+            }
+          ],
+          "functions": [
+            {
+              "add": false,
+              "count": 1.0,
+              "function": "minecraft:set_count"
+            }
+          ],
+          "name": "spookybats:bat_wings"
         }
       ],
       "rolls": 1.0

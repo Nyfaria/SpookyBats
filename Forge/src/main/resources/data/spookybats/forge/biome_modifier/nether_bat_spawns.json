@@ -4,15 +4,15 @@
   "spawners": [
     {
       "type": "spookybats:undead_bat",
-      "weight": 20,
+      "weight": 5,
       "minCount": 1,
-      "maxCount": 5
+      "maxCount": 3
     },
     {
       "type": "spookybats:wither_skeleton_bat",
-      "weight": 20,
+      "weight": 5,
       "minCount": 1,
-      "maxCount": 5
+      "maxCount": 3
     }
   ]
 }

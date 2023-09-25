@@ -39,6 +39,6 @@ public class FabricPlatformHelper<T extends Mob> implements IPlatformHelper<T> {
 
     @Override
     public Item.Properties getElytraItemProperties() {
-        return new FabricItemSettings().equipmentSlot((stack)-> EquipmentSlot.CHEST);
+        return new FabricItemSettings().equipmentSlot((stack)-> EquipmentSlot.CHEST).stacksTo(1);
     }
 }

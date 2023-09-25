@@ -1,3 +1,13 @@
 ### Version 1.0.0
 - Initial release.
-- Pumpkin Bat!
+- Pumpkin Bat
+- Creeper Bat
+- Witch Bat
+- Steve Bat
+- Alex Bat
+- Herobrine Bat (or maybe not?)
+- Skeleton Bat
+- Wither Skelton Bat
+- Undead Bat
+- Player Bat
+- Void Bat (Doesn't spawn naturally)

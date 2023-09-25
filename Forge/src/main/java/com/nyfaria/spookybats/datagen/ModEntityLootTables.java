@@ -2,7 +2,6 @@ package com.nyfaria.spookybats.datagen;
 
 import com.nyfaria.spookybats.init.EntityInit;
 import com.nyfaria.spookybats.init.ItemInit;
-import com.nyfaria.spookybats.registration.RegistryObject;
 import net.minecraft.data.loot.EntityLootSubProvider;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.flag.FeatureFlags;
@@ -14,6 +13,7 @@ import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
 import net.minecraft.world.level.storage.loot.functions.FillPlayerHead;
 import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
+import net.minecraft.world.level.storage.loot.predicates.LootItemRandomChanceCondition;
 import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
 import net.minecraft.world.level.storage.loot.providers.number.NumberProvider;
 import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
@@ -25,6 +25,7 @@ import java.util.stream.Stream;
 public class ModEntityLootTables extends EntityLootSubProvider {
 
     private List<EntityType<?>> TYPES = new ArrayList<>();
+
     protected ModEntityLootTables() {
         super(FeatureFlags.REGISTRY.allFlags());
     }
@@ -39,7 +40,7 @@ public class ModEntityLootTables extends EntityLootSubProvider {
         playerHead(EntityInit.PLAYER_BAT.get());
         dropSingle(EntityInit.STEVE_BAT.get(), ItemInit.GENERIC_CANDY.get());
         dropSingle(EntityInit.ALEX_BAT.get(), ItemInit.GENERIC_CANDY.get());
-        dropSingle(EntityInit.UNDEAD_BAT.get(),ItemInit.ZOMBIE_FLESH_LOLLIPOP.get());
+        dropSingle(EntityInit.UNDEAD_BAT.get(), ItemInit.ZOMBIE_FLESH_LOLLIPOP.get());
         dropSingle(EntityInit.HEROBRINE_BAT.get(), ItemInit.SUSPICIOUS_CANDY.get());
     }
 
@@ -71,7 +72,12 @@ public class ModEntityLootTables extends EntityLootSubProvider {
         builder.withPool(LootPool.lootPool()
                 .setRolls(ConstantValue.exactly(1))
                 .add(LootItem.lootTableItem(item)
-                        .apply(SetItemCountFunction.setCount(ConstantValue.exactly(amount)))));
+                        .apply(SetItemCountFunction.setCount(ConstantValue.exactly(amount))))
+                .add(LootItem.lootTableItem(ItemInit.BAT_WINGS.get())
+                        .when(LootItemRandomChanceCondition.randomChance(0.01f))
+                        .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1)))
+                )
+        );
         add(entityType, builder);
     }
 
@@ -82,7 +88,13 @@ public class ModEntityLootTables extends EntityLootSubProvider {
                 .setRolls(ConstantValue.exactly(1))
                 .add(LootItem.lootTableItem(Items.PLAYER_HEAD)
                         .apply(FillPlayerHead.fillPlayerHead(LootContext.EntityTarget.KILLER_PLAYER))
-                        .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1)))));
+                        .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                .add(LootItem.lootTableItem(ItemInit.BAT_WINGS.get())
+                        .when(LootItemRandomChanceCondition.randomChance(0.01f))
+                        .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1)))
+
+                )
+        );
         add(entityType, builder);
     }
 
@@ -91,5 +103,6 @@ public class ModEntityLootTables extends EntityLootSubProvider {
         return TYPES.stream();
     }
 
-    record LootEntry(Item item, NumberProvider numberProvider) {}
+    record LootEntry(Item item, NumberProvider numberProvider) {
+    }
 }
