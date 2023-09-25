@@ -37,7 +37,7 @@ public class ItemInit {
 
     public static final RegistrationProvider<CreativeModeTab> CREATIVE_MODE_TABS = RegistrationProvider.get(Registries.CREATIVE_MODE_TAB, Constants.MODID);
     public static final RegistryObject<CreativeModeTab> TAB = CREATIVE_MODE_TABS.register(Constants.MODID, () -> CreativeModeTab.builder(CreativeModeTab.Row.TOP, 0)
-            .icon(() -> new ItemStack(ItemInit.PUMPKIN_CHOCOLATE_BAR.get()))
+            .icon(() -> new ItemStack(ItemInit.WITCHES_BREW.get()))
             .displayItems(
                     (itemDisplayParameters, output) -> {
                         SPAWN_EGG_LIST.forEach((registryObject) -> output.accept(new ItemStack(registryObject.get())));

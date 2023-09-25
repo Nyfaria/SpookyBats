@@ -13,3 +13,7 @@
   - Player Bat
   - Void Bat (Doesn't spawn naturally)
 - Each bat drops a unique edible candy
+
+### Version 1.0.0
+- Redid banner
+- Changed icon of mod group
