@@ -1,13 +1,15 @@
-### Version 1.0.0
-- Initial release.
-- Pumpkin Bat
-- Creeper Bat
-- Witch Bat
-- Steve Bat
-- Alex Bat
-- Herobrine Bat (or maybe not?)
-- Skeleton Bat
-- Wither Skelton Bat
-- Undead Bat
-- Player Bat
-- Void Bat (Doesn't spawn naturally)
+### Version 1.0.0 Beta
+- Initial release!
+- Included bats:
+  - Pumpkin Bat
+  - Creeper Bat
+  - Witch Bat
+  - Steve Bat
+  - Alex Bat
+  - Herobrine Bat
+  - Skeleton Bat
+  - Wither Skelton Bat
+  - Undead Bat
+  - Player Bat
+  - Void Bat (Doesn't spawn naturally)
+- Each bat drops a unique edible candy
