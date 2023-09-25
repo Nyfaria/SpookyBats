@@ -1,5 +1,5 @@
 
-![spookybats-banner](https://github.com/Nyfaria/SpookyBats/assets/94301223/ef61206d-ffb7-471f-a653-26e94e3a5ff2)
+![baner](https://github.com/Nyfaria/SpookyBats/assets/94301223/de38b3ab-baec-4f5c-a145-d9e60d986363)
 
 ## General Info
 
