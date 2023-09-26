@@ -14,6 +14,7 @@
   - Void Bat (Doesn't spawn naturally)
 - Each bat drops a unique edible candy
 
-### Version 1.0.0
+### Version 0.2.0 Beta
 - Redid banner
 - Changed icon of mod group
+- Slightly reword internal mod description
