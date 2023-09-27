@@ -1,8 +1,7 @@
 package com.nyfaria.spookybats;
 
-import com.nyfaria.spookybats.entity.CreeperBat;
 import com.nyfaria.spookybats.entity.MonsterBat;
-import com.nyfaria.spookybats.entity.SpookyBat;
+import com.nyfaria.spookybats.entity.api.SpookyBat;
 import com.nyfaria.spookybats.init.BlockInit;
 import com.nyfaria.spookybats.init.EntityInit;
 import com.nyfaria.spookybats.init.ItemInit;

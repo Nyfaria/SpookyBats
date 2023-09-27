@@ -1,7 +1,7 @@
 package com.nyfaria.spookybats.client.model;
 
 import com.nyfaria.spookybats.Constants;
-import com.nyfaria.spookybats.entity.SpookyBat;
+import com.nyfaria.spookybats.entity.api.SpookyBat;
 import net.minecraft.client.model.geom.ModelLayerLocation;
 import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.model.geom.PartPose;

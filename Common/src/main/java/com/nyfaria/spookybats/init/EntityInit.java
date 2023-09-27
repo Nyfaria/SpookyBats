@@ -2,10 +2,10 @@ package com.nyfaria.spookybats.init;
 
 import com.nyfaria.spookybats.Constants;
 import com.nyfaria.spookybats.entity.*;
+import com.nyfaria.spookybats.entity.api.SpookyBat;
 import com.nyfaria.spookybats.platform.Services;
 import com.nyfaria.spookybats.registration.RegistrationProvider;
 import com.nyfaria.spookybats.registration.RegistryObject;
-import net.minecraft.core.BlockPos;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;

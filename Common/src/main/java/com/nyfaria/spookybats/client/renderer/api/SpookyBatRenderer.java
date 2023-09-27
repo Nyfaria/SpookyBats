@@ -2,7 +2,7 @@ package com.nyfaria.spookybats.client.renderer.api;
 
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.nyfaria.spookybats.client.model.SpookyBatModel;
-import com.nyfaria.spookybats.entity.SpookyBat;
+import com.nyfaria.spookybats.entity.api.SpookyBat;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.entity.MobRenderer;
 import net.minecraft.core.registries.BuiltInRegistries;

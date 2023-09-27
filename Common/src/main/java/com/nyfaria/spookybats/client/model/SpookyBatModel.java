@@ -5,7 +5,7 @@ package com.nyfaria.spookybats.client.model;// Made with Blockbench 4.8.3
 
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
-import com.nyfaria.spookybats.entity.SpookyBat;
+import com.nyfaria.spookybats.entity.api.SpookyBat;
 import net.minecraft.client.model.HierarchicalModel;
 import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.util.Mth;
@@ -60,7 +60,7 @@ public class SpookyBatModel<T extends SpookyBat> extends HierarchicalModel<T> {
 			this.leftWing.setPos(0.0F, 0.0F, 0.0F);
 			this.body.xRot = ((float)Math.PI / 4F) + Mth.cos(pAgeInTicks * 0.1F) * 0.15F;
 			this.body.yRot = 0.0F;
-			this.rightWing.yRot = Mth.cos(pAgeInTicks * 74.48451F * ((float)Math.PI / 180F)) * (float)Math.PI * 0.25F;
+			this.rightWing.yRot = Mth.cos(pAgeInTicks * SpookyBat.FLAP_DEGREES_PER_TICK * ((float)Math.PI / 180F)) * (float)Math.PI * 0.25F;
 			this.leftWing.yRot = -this.rightWing.yRot;
 			this.rightWingTip.yRot = this.rightWing.yRot * 0.5F;
 			this.leftWingTip.yRot = -this.rightWing.yRot * 0.5F;
