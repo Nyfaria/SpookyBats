@@ -1,5 +1,6 @@
 package com.nyfaria.spookybats.entity.api;
 
+import com.nyfaria.spookybats.entity.ai.control.BatMoveControl;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.syncher.EntityDataAccessor;
@@ -38,12 +39,10 @@ public class SpookyBat extends PathfinderMob {
     private static final EntityDataAccessor<Byte> DATA_ID_FLAGS = SynchedEntityData.defineId(SpookyBat.class, EntityDataSerializers.BYTE);
     private static final int FLAG_RESTING = 1;
     private static final TargetingConditions BAT_RESTING_TARGETING = TargetingConditions.forNonCombat().range(4.0D);
-    @Nullable
-    private BlockPos targetPosition;
 
     public SpookyBat(EntityType<? extends SpookyBat> pEntityType, Level pLevel) {
         super(pEntityType, pLevel);
-        this.moveControl = new FlyingMoveControl(this, 10, false);
+        this.moveControl = new BatMoveControl(this, 10);
         if (!pLevel.isClientSide) {
             this.setResting(true);
         }
@@ -159,29 +158,6 @@ public class SpookyBat extends PathfinderMob {
                     if (!flag) {
                         this.level().levelEvent((Player) null, 1025, blockpos, 0);
                     }
-                }
-            } else {
-                if (this.targetPosition != null && (!this.level().isEmptyBlock(this.targetPosition) || this.targetPosition.getY() <= this.level().getMinBuildHeight())) {
-                    this.targetPosition = null;
-                }
-
-                if (this.targetPosition == null || this.random.nextInt(30) == 0 || this.targetPosition.closerToCenterThan(this.position(), 2.0D)) {
-                    this.targetPosition = BlockPos.containing(this.getX() + (double) this.random.nextInt(7) - (double) this.random.nextInt(7), this.getY() + (double) this.random.nextInt(6) - 2.0D, this.getZ() + (double) this.random.nextInt(7) - (double) this.random.nextInt(7));
-                }
-
-                double d2 = (double) this.targetPosition.getX() + 0.5D - this.getX();
-                double d0 = (double) this.targetPosition.getY() + 0.1D - this.getY();
-                double d1 = (double) this.targetPosition.getZ() + 0.5D - this.getZ();
-                Vec3 vec3 = this.getDeltaMovement();
-                Vec3 vec31 = vec3.add((Math.signum(d2) * 0.5D - vec3.x) * (double) 0.1F, (Math.signum(d0) * (double) 0.7F - vec3.y) * (double) 0.1F, (Math.signum(d1) * 0.5D - vec3.z) * (double) 0.1F);
-
-                this.setDeltaMovement(vec31);
-                float f = (float) (Mth.atan2(vec31.z, vec31.x) * (double) (180F / (float) Math.PI)) - 90.0F;
-                float f1 = Mth.wrapDegrees(f - this.getYRot());
-                this.zza = 0.5F;
-                this.setYRot(this.getYRot() + f1);
-                if (this.random.nextInt(100) == 0 && this.level().getBlockState(blockpos1).isRedstoneConductor(this.level(), blockpos1)) {
-                    this.setResting(true);
                 }
             }
         }
