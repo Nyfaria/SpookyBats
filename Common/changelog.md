@@ -22,4 +22,4 @@
   - Player bats now flee monsters and have a revenge goal
   - Herobrine bat attacks players
 - Bat model changes
-  - Blah
+  - Make pumpkin and undead bats slightly bigger

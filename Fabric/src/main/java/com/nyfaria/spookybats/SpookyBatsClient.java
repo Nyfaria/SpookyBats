@@ -1,10 +1,7 @@
 package com.nyfaria.spookybats;
 
 import com.nyfaria.spookybats.client.model.*;
-import com.nyfaria.spookybats.client.renderer.CreeperBatRenderer;
-import com.nyfaria.spookybats.client.renderer.EmissiveBatRenderer;
-import com.nyfaria.spookybats.client.renderer.PlayerBatRenderer;
-import com.nyfaria.spookybats.client.renderer.VoidBatRenderer;
+import com.nyfaria.spookybats.client.renderer.*;
 import com.nyfaria.spookybats.client.renderer.api.SpookyBatRenderer;
 import com.nyfaria.spookybats.client.renderer.layer.BatWingsLayer;
 import com.nyfaria.spookybats.init.EntityInit;
@@ -23,7 +20,8 @@ public class SpookyBatsClient implements ClientModInitializer {
     
     @Override
     public void onInitializeClient() {
-        EntityRendererRegistry.register(EntityInit.PUMPKIN_BAT.get(), context->new EmissiveBatRenderer(context, new PumpkinBatModel<>(context.bakeLayer(PumpkinBatModel.LAYER_LOCATION)), "pumpkin_bat"));
+        EntityRendererRegistry.register(EntityInit.PUMPKIN_BAT.get(), context->new MascotBatRenderer(context, new PumpkinBatModel<>(context.bakeLayer(PumpkinBatModel.LAYER_LOCATION)), "pumpkin_bat"));
+        EntityRendererRegistry.register(EntityInit.UNDEAD_BAT.get(), context->new MascotBatRenderer(context, new UndeadBatModel<>(context.bakeLayer(UndeadBatModel.LAYER_LOCATION)), "undead_bat"));
         EntityRendererRegistry.register(EntityInit.CREEPER_BAT.get(), CreeperBatRenderer::new);
         EntityRendererRegistry.register(EntityInit.WITCH_BAT.get(), context->new SpookyBatRenderer<>(context, new WitchBatModel<>(context.bakeLayer(WitchBatModel.LAYER_LOCATION))));
         EntityRendererRegistry.register(EntityInit.STEVE_BAT.get(), context->new SpookyBatRenderer<>(context, new HatBatModel<>(context.bakeLayer(HatBatModel.LAYER_LOCATION))));
@@ -31,7 +29,6 @@ public class SpookyBatsClient implements ClientModInitializer {
         EntityRendererRegistry.register(EntityInit.HEROBRINE_BAT.get(), context->new EmissiveBatRenderer(context, new HatBatModel<>(context.bakeLayer(HatBatModel.LAYER_LOCATION)),"herobrine_bat"));
         EntityRendererRegistry.register(EntityInit.SKELETON_BAT.get(), context->new SpookyBatRenderer<>(context, new SkeletonBatModel<>(context.bakeLayer(SkeletonBatModel.LAYER_LOCATION))));
         EntityRendererRegistry.register(EntityInit.WITHER_SKELETON_BAT.get(), context->new SpookyBatRenderer<>(context, new SkeletonBatModel<>(context.bakeLayer(SkeletonBatModel.LAYER_LOCATION))));
-        EntityRendererRegistry.register(EntityInit.UNDEAD_BAT.get(), context->new EmissiveBatRenderer(context, new UndeadBatModel<>(context.bakeLayer(UndeadBatModel.LAYER_LOCATION)), "undead_bat"));
         EntityRendererRegistry.register(EntityInit.PLAYER_BAT.get(), context->new PlayerBatRenderer(context, new HatBatModel<>(context.bakeLayer(HatBatModel.LAYER_LOCATION))));
         EntityRendererRegistry.register(EntityInit.VOID_BAT.get(), context->new VoidBatRenderer(context, new HatBatModel<>(context.bakeLayer(HatBatModel.LAYER_LOCATION))));
 
