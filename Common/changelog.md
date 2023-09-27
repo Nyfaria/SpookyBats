@@ -18,3 +18,8 @@
 - Redid banner
 - Changed icon of mod group
 - Slightly reword internal mod description
+- Bat AI changes
+  - Player bats now flee monsters and have a revenge goal
+  - Herobrine bat attacks players
+- Bat model changes
+  - Blah
