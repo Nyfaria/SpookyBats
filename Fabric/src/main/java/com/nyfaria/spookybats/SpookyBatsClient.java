@@ -26,7 +26,7 @@ public class SpookyBatsClient implements ClientModInitializer {
         EntityRendererRegistry.register(EntityInit.WITCH_BAT.get(), context->new SpookyBatRenderer<>(context, new WitchBatModel<>(context.bakeLayer(WitchBatModel.LAYER_LOCATION))));
         EntityRendererRegistry.register(EntityInit.STEVE_BAT.get(), context->new SpookyBatRenderer<>(context, new HatBatModel<>(context.bakeLayer(HatBatModel.LAYER_LOCATION))));
         EntityRendererRegistry.register(EntityInit.ALEX_BAT.get(), context->new SpookyBatRenderer<>(context, new HatBatModel<>(context.bakeLayer(HatBatModel.LAYER_LOCATION))));
-        EntityRendererRegistry.register(EntityInit.HEROBRINE_BAT.get(), context->new EmissiveBatRenderer(context, new HatBatModel<>(context.bakeLayer(HatBatModel.LAYER_LOCATION)),"herobrine_bat"));
+        EntityRendererRegistry.register(EntityInit.HEROBRINE_BAT.get(), context->new EmissiveBatRenderer(context, new HerobrineBatModel<>(context.bakeLayer(HerobrineBatModel.LAYER_LOCATION)), "herobrine_bat"));
         EntityRendererRegistry.register(EntityInit.SKELETON_BAT.get(), context->new SpookyBatRenderer<>(context, new SkeletonBatModel<>(context.bakeLayer(SkeletonBatModel.LAYER_LOCATION))));
         EntityRendererRegistry.register(EntityInit.WITHER_SKELETON_BAT.get(), context->new SpookyBatRenderer<>(context, new SkeletonBatModel<>(context.bakeLayer(SkeletonBatModel.LAYER_LOCATION))));
         EntityRendererRegistry.register(EntityInit.PLAYER_BAT.get(), context->new PlayerBatRenderer(context, new HatBatModel<>(context.bakeLayer(HatBatModel.LAYER_LOCATION))));
@@ -37,6 +37,7 @@ public class SpookyBatsClient implements ClientModInitializer {
         EntityModelLayerRegistry.registerModelLayer(SkeletonBatModel.LAYER_LOCATION, SkeletonBatModel::createBodyLayer);
         EntityModelLayerRegistry.registerModelLayer(HatBatModel.LAYER_LOCATION, HatBatModel::createBodyLayer);
         EntityModelLayerRegistry.registerModelLayer(UndeadBatModel.LAYER_LOCATION, UndeadBatModel::createBodyLayer);
+        EntityModelLayerRegistry.registerModelLayer(HerobrineBatModel.LAYER_LOCATION, HerobrineBatModel::createBodyLayer);
         EntityModelLayerRegistry.registerModelLayer(PumpkinBatModel.OVERLAY_LOCATION, ()-> PumpkinBatModel.createBodyLayer(new CubeDeformation(0.1f)));
 
         LivingEntityFeatureRendererRegistrationCallback.EVENT.register((entityType, entityRenderer, registrationHelper, context) -> {
