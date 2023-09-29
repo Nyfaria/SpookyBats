@@ -23,3 +23,4 @@
   - Herobrine bat attacks players
 - Bat model changes
   - Make pumpkin and undead bats slightly bigger
+  - Retexture creeper bat
