@@ -5,6 +5,7 @@ import com.nyfaria.spookybats.client.model.SpookyBatModel;
 import com.nyfaria.spookybats.entity.api.SpookyBat;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.entity.MobRenderer;
+import net.minecraft.client.renderer.entity.layers.ItemInHandLayer;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.Mth;
@@ -17,6 +18,7 @@ public class SpookyBatRenderer<T extends SpookyBat> extends MobRenderer<T, Spook
 
     public SpookyBatRenderer(EntityRendererProvider.Context p_173929_, SpookyBatModel<T> model) {
         super(p_173929_, model, 0.25F);
+        this.addLayer(new ItemInHandLayer<>(this, p_173929_.getItemInHandRenderer()));
     }
 
 

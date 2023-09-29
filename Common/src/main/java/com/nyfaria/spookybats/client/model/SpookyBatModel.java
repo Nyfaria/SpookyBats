@@ -5,13 +5,16 @@ package com.nyfaria.spookybats.client.model;// Made with Blockbench 4.8.3
 
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
+import com.mojang.math.Axis;
 import com.nyfaria.spookybats.entity.api.SpookyBat;
+import net.minecraft.client.model.ArmedModel;
 import net.minecraft.client.model.HierarchicalModel;
 import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.util.Mth;
+import net.minecraft.world.entity.HumanoidArm;
 import org.joml.Vector3f;
 
-public class SpookyBatModel<T extends SpookyBat> extends HierarchicalModel<T> {
+public class SpookyBatModel<T extends SpookyBat> extends HierarchicalModel<T> implements ArmedModel {
 	protected final ModelPart root;
 	protected final ModelPart head;
 	protected final ModelPart body;
@@ -75,5 +78,16 @@ public class SpookyBatModel<T extends SpookyBat> extends HierarchicalModel<T> {
 	public void renderToBuffer(PoseStack poseStack, VertexConsumer vertexConsumer, int packedLight, int packedOverlay, float red, float green, float blue, float alpha) {
 		head.render(poseStack, vertexConsumer, packedLight, packedOverlay, red, green, blue, alpha);
 		body.render(poseStack, vertexConsumer, packedLight, packedOverlay, red, green, blue, alpha);
+	}
+	@Override
+	public void translateToHand(HumanoidArm humanoidArm, PoseStack pPoseStack) {
+		this.root.translateAndRotate(pPoseStack);
+		this.body.translateAndRotate(pPoseStack);
+		this.rightWing.translateAndRotate(pPoseStack);
+		this.rightWingTip.translateAndRotate(pPoseStack);
+		pPoseStack.scale(0.7F, 0.7F, 0.7F);
+		pPoseStack.mulPose(Axis.XP.rotationDegrees(-40.0f));
+		pPoseStack.mulPose(Axis.YP.rotationDegrees(-10.0f));
+		pPoseStack.translate(0,-0.5f,-0.5f);
 	}
 }
