@@ -21,6 +21,8 @@
 - Bat AI changes
   - Player bats now flee monsters and have a revenge goal
   - Herobrine bat attacks players
+  - Make witch bat either have regeneration or resistance when below certain amounnt of health
 - Bat model changes
   - Make pumpkin and undead bats slightly bigger
   - Retexture creeper bat
+  - Touch up witch bat model and add cape and broom
