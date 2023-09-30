@@ -1,5 +1,6 @@
 package com.nyfaria.spookybats.entity;
 
+import com.nyfaria.spookybats.entity.ai.TeleportAwayGoal;
 import com.nyfaria.spookybats.entity.api.SpookyBat;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.util.RandomSource;
@@ -27,6 +28,7 @@ public class HerobrineBat extends SpookyBat {
 	@Override
 	protected void registerGoals() {
 		super.registerGoals();
+		this.goalSelector.addGoal(2, new TeleportAwayGoal(this));
 		this.goalSelector.addGoal(0, new MeleeAttackGoal(this, 1, true));
 		this.targetSelector.addGoal(0, new NearestAttackableTargetGoal<>(this, Player.class, true));
 	}
@@ -52,6 +54,6 @@ public class HerobrineBat extends SpookyBat {
 	public static AttributeSupplier.Builder createHerobrineBatAttributes() {
 		return SpookyBat
 			.createBatAttributes()
-			.add(Attributes.ATTACK_DAMAGE, 7);
+			.add(Attributes.ATTACK_DAMAGE, 2);
 	}
 }
