@@ -22,9 +22,11 @@
   - Player bats now flee monsters and have a revenge goal
   - Herobrine bat attacks players
   - Herobrine bat teleports away when under certain health
+  - Make wither skeleton attack players
   - Make witch bat either have regeneration or resistance when below certain amounnt of health
 - Bat model changes
   - Make pumpkin and undead bats slightly bigger
   - Herobrine bat has a diamond sword in hand
+  - Retexture skeleton and wither skeleton
   - Retexture creeper bat
   - Touch up witch bat model and add cape and broom
