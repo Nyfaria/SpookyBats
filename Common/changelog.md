@@ -17,6 +17,7 @@
 ### Version 0.2.0 Beta
 - Redid banner
 - Changed icon of mod group
+- Adjusted bat spawn egg colors
 - Slightly reword internal mod description
 - Bat AI changes
   - Player bats now flee monsters and have a revenge goal
