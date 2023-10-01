@@ -11,10 +11,7 @@ import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.food.FoodProperties;
-import net.minecraft.world.item.CreativeModeTab;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Items;
+import net.minecraft.world.item.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,7 +21,7 @@ public class ItemInit {
     public static final List<RegistryObject<Item>> SPAWN_EGG_LIST = new ArrayList<>();
     public static final RegistrationProvider<Item> ITEMS = RegistrationProvider.get(Registries.ITEM, Constants.MODID);
 
-    public static final RegistryObject<Item> BAT_WINGS = ITEMS.register("bat_wings", () -> new BatWings(Services.PLATFORM.getElytraItemProperties()));
+    public static final RegistryObject<Item> BAT_WINGS = ITEMS.register("bat_wings", () -> new BatWings(Services.PLATFORM.getElytraItemProperties().rarity(Rarity.UNCOMMON)));
 
     public static final RegistryObject<Item> PUMPKIN_CHOCOLATE_BAR = registerCandy("pumpkin_chocolate_bar",MobEffects.GLOWING);
     public static final RegistryObject<Item> TNT_LOLLIPOP = registerCandy("tnt_lollipop", MobEffects.DAMAGE_RESISTANCE);

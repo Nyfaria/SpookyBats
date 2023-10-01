@@ -18,6 +18,7 @@
 - Redid banner
 - Changed icon of mod group
 - Adjusted bat spawn egg colors
+- Add uncommon rarity to bat wings
 - Slightly reword internal mod description
 - Bat AI changes
   - Player bats now flee monsters and have a revenge goal
