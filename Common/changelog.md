@@ -1,18 +1,5 @@
-### Version 0.1.0 Beta
-- Initial release!
-- Included bats:
-  - Pumpkin Bat
-  - Creeper Bat
-  - Witch Bat
-  - Steve Bat
-  - Alex Bat
-  - Herobrine Bat
-  - Skeleton Bat
-  - Wither Skelton Bat
-  - Undead Bat
-  - Player Bat
-  - Void Bat (Doesn't spawn naturally)
-- Each bat drops a unique edible candy
+### Version 0.2.1 Beta
+- Fixed bug where some bats had no animation
 
 ### Version 0.2.0 Beta
 - Redid banner
@@ -32,3 +19,19 @@
   - Retexture skeleton and wither skeleton
   - Retexture creeper bat
   - Touch up witch bat model and add cape and broom
+
+### Version 0.1.0 Beta
+- Initial release!
+- Included bats:
+  - Pumpkin Bat
+  - Creeper Bat
+  - Witch Bat
+  - Steve Bat
+  - Alex Bat
+  - Herobrine Bat
+  - Skeleton Bat
+  - Wither Skelton Bat
+  - Undead Bat
+  - Player Bat
+  - Void Bat (Doesn't spawn naturally)
+- Each bat drops a unique edible candy

@@ -55,8 +55,5 @@ public class HatBatModel<T extends SpookyBat> extends SpookyBatModel<T> {
 		this.body.visible = false;
 	}
 
-	@Override
-	public void setupAnim(SpookyBat pEntity, float pLimbSwing, float pLimbSwingAmount, float pAgeInTicks, float pNetHeadYaw, float pHeadPitch) {
 
-	}
 }
