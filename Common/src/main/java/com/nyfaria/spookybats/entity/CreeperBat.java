@@ -3,21 +3,41 @@ package com.nyfaria.spookybats.entity;
 import com.nyfaria.spookybats.entity.api.SpookyBat;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.PowerableMob;
-import net.minecraft.world.entity.ambient.Bat;
+import net.minecraft.world.level.GameRules;
 import net.minecraft.world.level.Level;
 
 public class CreeperBat extends MonsterBat implements PowerableMob {
-    public CreeperBat(EntityType<? extends SpookyBat> entityType, Level level) {
-        super(entityType, level);
-    }
+	private boolean hasExplodedOnce = false;
 
-    @Override
-    public boolean isPowered() {
-        return tickCount % 1200 < 600;
-    }
+	public CreeperBat(EntityType<? extends SpookyBat> entityType, Level level) {
+		super(entityType, level);
+	}
 
-    @Override
-    protected boolean isSunSensitive() {
-        return false;
-    }
+	@Override
+	public boolean isPowered() {
+		return tickCount % 1200 < 600;
+	}
+
+	@Override
+	protected boolean isSunSensitive() {
+		return false;
+	}
+
+	@Override
+	protected void tickDeath() {
+		super.tickDeath();
+
+		if (isPowered()) {
+			boolean isMobExplosionType = this.level().getGameRules().getBoolean(GameRules.RULE_MOBGRIEFING);
+
+			Level.ExplosionInteraction destructionType = isMobExplosionType
+				? Level.ExplosionInteraction.MOB
+				: Level.ExplosionInteraction.NONE;
+
+			if (!this.level().isClientSide && !hasExplodedOnce) {
+				this.level().explode(this, this.getX(), this.getY(), this.getZ(), 1, destructionType);
+				hasExplodedOnce = true;
+			}
+		}
+	}
 }
