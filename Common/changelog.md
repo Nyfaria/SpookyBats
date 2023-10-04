@@ -1,3 +1,6 @@
+### Version 0.3.0 Beta
+- Make undead bat accents fade out as bat loses health
+
 ### Version 0.2.1 Beta
 - Fixed bug where some bats had no animation
 

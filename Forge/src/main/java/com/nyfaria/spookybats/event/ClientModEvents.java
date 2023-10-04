@@ -22,7 +22,7 @@ public class ClientModEvents {
     @SubscribeEvent
     public static void onEntityRenderers(EntityRenderersEvent.RegisterRenderers event) {
         event.registerEntityRenderer(EntityInit.PUMPKIN_BAT.get(), context -> new MascotBatRenderer(context, new PumpkinBatModel<>(context.bakeLayer(PumpkinBatModel.LAYER_LOCATION)), "pumpkin_bat"));
-        event.registerEntityRenderer(EntityInit.UNDEAD_BAT.get(), context -> new MascotBatRenderer(context, new UndeadBatModel<>(context.bakeLayer(UndeadBatModel.LAYER_LOCATION)), "undead_bat"));
+        event.registerEntityRenderer(EntityInit.UNDEAD_BAT.get(), context -> new UndeadBatRenderer(context, new UndeadBatModel<>(context.bakeLayer(UndeadBatModel.LAYER_LOCATION)), "undead_bat"));
         event.registerEntityRenderer(EntityInit.CREEPER_BAT.get(), CreeperBatRenderer::new);
         event.registerEntityRenderer(EntityInit.WITCH_BAT.get(), context -> new SpookyBatRenderer<>(context, new WitchBatModel<>(context.bakeLayer(WitchBatModel.LAYER_LOCATION))));
         event.registerEntityRenderer(EntityInit.STEVE_BAT.get(), context -> new SpookyBatRenderer<>(context, new HatBatModel<>(context.bakeLayer(HatBatModel.LAYER_LOCATION))));
@@ -32,7 +32,6 @@ public class ClientModEvents {
         event.registerEntityRenderer(EntityInit.WITHER_SKELETON_BAT.get(), context -> new SpookyBatRenderer<>(context, new SkeletonBatModel<>(context.bakeLayer(SkeletonBatModel.LAYER_LOCATION))));
         event.registerEntityRenderer(EntityInit.PLAYER_BAT.get(), context -> new PlayerBatRenderer(context, new HatBatModel<>(context.bakeLayer(HatBatModel.LAYER_LOCATION))));
         event.registerEntityRenderer(EntityInit.VOID_BAT.get(), context -> new VoidBatRenderer(context, new HatBatModel<>(context.bakeLayer(HatBatModel.LAYER_LOCATION))));
-
     }
 
     @SubscribeEvent
