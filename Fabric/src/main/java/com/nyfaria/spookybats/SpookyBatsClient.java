@@ -17,8 +17,8 @@ public class SpookyBatsClient implements ClientModInitializer {
     
     @Override
     public void onInitializeClient() {
-        EntityRendererRegistry.register(EntityInit.PUMPKIN_BAT.get(), context->new MascotBatRenderer(context, new PumpkinBatModel<>(context.bakeLayer(PumpkinBatModel.LAYER_LOCATION)), "pumpkin_bat"));
-        EntityRendererRegistry.register(EntityInit.UNDEAD_BAT.get(), context->new UndeadBatRenderer(context, new UndeadBatModel<>(context.bakeLayer(UndeadBatModel.LAYER_LOCATION)), "undead_bat"));
+        EntityRendererRegistry.register(EntityInit.PUMPKIN_BAT.get(), context->new PumpkinBatRenderer(context, new PumpkinBatModel<>(context.bakeLayer(PumpkinBatModel.LAYER_LOCATION)), "pumpkin_bat"));
+        EntityRendererRegistry.register(EntityInit.UNDEAD_BAT.get(), context->new UndeadBatRenderer(context, new UndeadBatModel<>(context.bakeLayer(UndeadBatModel.LAYER_LOCATION))));
         EntityRendererRegistry.register(EntityInit.CREEPER_BAT.get(), CreeperBatRenderer::new);
         EntityRendererRegistry.register(EntityInit.WITCH_BAT.get(), context->new SpookyBatRenderer<>(context, new WitchBatModel<>(context.bakeLayer(WitchBatModel.LAYER_LOCATION))));
         EntityRendererRegistry.register(EntityInit.STEVE_BAT.get(), context->new SpookyBatRenderer<>(context, new HatBatModel<>(context.bakeLayer(HatBatModel.LAYER_LOCATION))));

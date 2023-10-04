@@ -5,8 +5,8 @@ import com.nyfaria.spookybats.client.model.SpookyBatModel;
 import com.nyfaria.spookybats.entity.api.SpookyBat;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 
-public class MascotBatRenderer extends EmissiveBatRenderer {
-	public MascotBatRenderer(EntityRendererProvider.Context context, SpookyBatModel<SpookyBat> model, String name) {
+public class PumpkinBatRenderer extends EmissiveBatRenderer {
+	public PumpkinBatRenderer(EntityRendererProvider.Context context, SpookyBatModel<SpookyBat> model, String name) {
 		super(context, model, name);
 	}
 
