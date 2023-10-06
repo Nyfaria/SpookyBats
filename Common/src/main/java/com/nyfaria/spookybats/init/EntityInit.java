@@ -21,6 +21,7 @@ import java.util.function.Supplier;
 public class EntityInit {
     public static final RegistrationProvider<EntityType<?>> ENTITIES = RegistrationProvider.get(Registries.ENTITY_TYPE, Constants.MODID);
     public static final List<AttributesRegister<?>> attributeSuppliers = new ArrayList<>();
+
     public static final RegistryObject<EntityType<SpookyBat>> PUMPKIN_BAT = registerEntityWithEgg("pumpkin_bat", ()->EntityType.Builder.of(SpookyBat::new, MobCategory.MONSTER).sized(0.5F, 0.9F), SpookyBat::createBatAttributes,0xdd993e);
     public static final RegistryObject<EntityType<CreeperBat>> CREEPER_BAT = registerEntityWithEgg("creeper_bat", ()->EntityType.Builder.of(CreeperBat::new, MobCategory.MONSTER).sized(0.5F, 0.9F), SpookyBat::createBatAttributes,0x4fbc44);
     public static final RegistryObject<EntityType<WitchBat>> WITCH_BAT = registerEntityWithEgg("witch_bat", ()->EntityType.Builder.of(WitchBat::new, MobCategory.MONSTER).sized(0.5F, 0.9F), SpookyBat::createBatAttributes,0xe388c2);
@@ -32,7 +33,6 @@ public class EntityInit {
     public static final RegistryObject<EntityType<FireProofBat>> UNDEAD_BAT = registerEntityWithEgg("undead_bat", ()->EntityType.Builder.of(FireProofBat::new, MobCategory.MONSTER).sized(0.5F, 0.9F), SpookyBat::createBatAttributes,0x323133, 0xac6646);
     public static final RegistryObject<EntityType<SpookyBat>> PLAYER_BAT = registerEntityWithEgg("player_bat", ()->EntityType.Builder.of(SpookyBat::new, MobCategory.MONSTER).sized(0.5F, 0.9F), SpookyBat::createBatAttributes,0x423743);
     public static final RegistryObject<EntityType<VoidBat>> VOID_BAT = registerEntityWithEgg("void_bat", ()->EntityType.Builder.of(VoidBat::new, MobCategory.MONSTER).sized(0.5F, 0.9F), SpookyBat::createBatAttributes,0x2b3b39, 0x29615e);
-
 
     private static <T extends Entity> RegistryObject<EntityType<T>> registerEntity(String name, Supplier<EntityType.Builder<T>> supplier) {
         return ENTITIES.register(name, () -> supplier.get().build(Constants.MODID + ":" + name));
