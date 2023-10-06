@@ -2,6 +2,7 @@
 - Make undead bat accents fade out as bat loses health
 - Make creeper bat explode if killed when charged
 - Make creeper bat's glint only apply to its head
+- Fix floating pixels in undead bat texture
 
 ### Version 0.2.1 Beta
 - Fixed bug where some bats had no animation
