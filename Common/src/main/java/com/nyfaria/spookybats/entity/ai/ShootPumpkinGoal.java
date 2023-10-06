@@ -35,8 +35,7 @@ public class ShootPumpkinGoal extends Goal {
 
 		ThrowableItemProjectile projectile = new ThrownEgg(world, bat);
 		projectile.setItem(pumpkin);
-//		projectile.setPos(this.bat.getXRot(), this.bat.getYRot());
-//		projectile.setDeltaMovement(0.0F, 0.72F, 0F);
+		projectile.shootFromRotation(this.bat, this.bat.getXRot(), this.bat.getYRot(), 0.0F, 0.72F, 0F);
 
 		// TODO: Is this logic okay?
 		if (attackTarget == null || !canAttack(attackTarget)) return;
