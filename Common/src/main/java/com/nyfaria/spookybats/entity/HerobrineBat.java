@@ -35,7 +35,9 @@ public class HerobrineBat extends SpookyBat {
 
 	@Override
 	protected void populateDefaultEquipmentSlots(RandomSource $$0, DifficultyInstance $$1) {
-		this.setItemSlot(EquipmentSlot.MAINHAND, new ItemStack(Items.DIAMOND_SWORD));
+		if (this.random.nextInt(2) == 0)
+			this.setItemSlot(EquipmentSlot.MAINHAND, new ItemStack(Items.DIAMOND_SWORD));
+
 		super.populateDefaultEquipmentSlots($$0, $$1);
 	}
 
