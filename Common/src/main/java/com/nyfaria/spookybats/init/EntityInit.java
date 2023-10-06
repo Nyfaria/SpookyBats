@@ -22,7 +22,7 @@ public class EntityInit {
     public static final RegistrationProvider<EntityType<?>> ENTITIES = RegistrationProvider.get(Registries.ENTITY_TYPE, Constants.MODID);
     public static final List<AttributesRegister<?>> attributeSuppliers = new ArrayList<>();
 
-    public static final RegistryObject<EntityType<SpookyBat>> PUMPKIN_BAT = registerEntityWithEgg("pumpkin_bat", ()->EntityType.Builder.of(SpookyBat::new, MobCategory.MONSTER).sized(0.5F, 0.9F), SpookyBat::createBatAttributes,0xdd993e);
+    public static final RegistryObject<EntityType<PumpkinBat>> PUMPKIN_BAT = registerEntityWithEgg("pumpkin_bat", ()->EntityType.Builder.of(PumpkinBat::new, MobCategory.MONSTER).sized(0.5F, 0.9F), SpookyBat::createBatAttributes,0xdd993e);
     public static final RegistryObject<EntityType<CreeperBat>> CREEPER_BAT = registerEntityWithEgg("creeper_bat", ()->EntityType.Builder.of(CreeperBat::new, MobCategory.MONSTER).sized(0.5F, 0.9F), SpookyBat::createBatAttributes,0x4fbc44);
     public static final RegistryObject<EntityType<WitchBat>> WITCH_BAT = registerEntityWithEgg("witch_bat", ()->EntityType.Builder.of(WitchBat::new, MobCategory.MONSTER).sized(0.5F, 0.9F), SpookyBat::createBatAttributes,0xe388c2);
     public static final RegistryObject<EntityType<PlayerBat>> STEVE_BAT = registerEntityWithEgg("steve_bat", ()->EntityType.Builder.of(PlayerBat::new, MobCategory.MONSTER).sized(0.5F, 0.9F), PlayerBat::createPlayerBatAttributes,0x679cb8);
