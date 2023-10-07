@@ -1,6 +1,9 @@
 package com.nyfaria.spookybats.entity.api;
 
+import com.nyfaria.spookybats.client.renderer.GhostBatRenderer;
+import com.nyfaria.spookybats.entity.GhostBat;
 import com.nyfaria.spookybats.entity.ai.control.BatMoveControl;
+import com.nyfaria.spookybats.init.EntityInit;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.syncher.EntityDataAccessor;
@@ -83,6 +86,13 @@ public class SpookyBat extends PathfinderMob {
 
     protected SoundEvent getDeathSound() {
         return SoundEvents.BAT_DEATH;
+    }
+
+    @Override
+    protected void tickDeath() {
+        if (this.random.nextInt(25) == 0) {
+            // Handle spawning of ghost bat here
+        }
     }
 
     /**

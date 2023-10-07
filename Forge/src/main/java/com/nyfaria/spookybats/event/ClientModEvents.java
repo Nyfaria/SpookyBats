@@ -1,13 +1,10 @@
 package com.nyfaria.spookybats.event;
 
-import com.nyfaria.spookybats.client.model.HatBatModel;
-import com.nyfaria.spookybats.client.model.PumpkinBatModel;
-import com.nyfaria.spookybats.client.model.SkeletonBatModel;
-import com.nyfaria.spookybats.client.model.UndeadBatModel;
-import com.nyfaria.spookybats.client.model.WitchBatModel;
+import com.nyfaria.spookybats.client.model.*;
 import com.nyfaria.spookybats.client.renderer.*;
 import com.nyfaria.spookybats.client.renderer.api.SpookyBatRenderer;
 import com.nyfaria.spookybats.client.renderer.layer.BatWingsLayer;
+import com.nyfaria.spookybats.entity.GhostBat;
 import com.nyfaria.spookybats.init.EntityInit;
 import net.minecraft.client.model.geom.builders.CubeDeformation;
 import net.minecraft.client.renderer.entity.player.PlayerRenderer;
@@ -25,6 +22,8 @@ public class ClientModEvents {
         event.registerEntityRenderer(EntityInit.UNDEAD_BAT.get(), context -> new UndeadBatRenderer(context, new UndeadBatModel<>(context.bakeLayer(UndeadBatModel.LAYER_LOCATION))));
         event.registerEntityRenderer(EntityInit.CREEPER_BAT.get(), CreeperBatRenderer::new);
         event.registerEntityRenderer(EntityInit.WITCH_BAT.get(), context -> new SpookyBatRenderer<>(context, new WitchBatModel<>(context.bakeLayer(WitchBatModel.LAYER_LOCATION))));
+        event.registerEntityRenderer(EntityInit.SCULK_BAT.get(), context -> new SculkBatRenderer(context, new SculkBatModel<>(context.bakeLayer(SculkBatModel.LAYER_LOCATION)), "sculk_bat"));
+        event.registerEntityRenderer(EntityInit.GHOST_BAT.get(), context -> new GhostBatRenderer(context, new GhostBatModel<>(context.bakeLayer(GhostBatModel.LAYER_LOCATION))));
         event.registerEntityRenderer(EntityInit.STEVE_BAT.get(), context -> new SpookyBatRenderer<>(context, new HatBatModel<>(context.bakeLayer(HatBatModel.LAYER_LOCATION))));
         event.registerEntityRenderer(EntityInit.ALEX_BAT.get(), context -> new SpookyBatRenderer<>(context, new HatBatModel<>(context.bakeLayer(HatBatModel.LAYER_LOCATION))));
         event.registerEntityRenderer(EntityInit.HEROBRINE_BAT.get(), context -> new EmissiveBatRenderer(context, new HatBatModel<>(context.bakeLayer(HatBatModel.LAYER_LOCATION)), "herobrine_bat"));
@@ -42,6 +41,8 @@ public class ClientModEvents {
         event.registerLayerDefinition(HatBatModel.LAYER_LOCATION, HatBatModel::createBodyLayer);
         event.registerLayerDefinition(SkeletonBatModel.LAYER_LOCATION, SkeletonBatModel::createBodyLayer);
         event.registerLayerDefinition(UndeadBatModel.LAYER_LOCATION, UndeadBatModel::createBodyLayer);
+        event.registerLayerDefinition(SculkBatModel.LAYER_LOCATION, SculkBatModel::createBodyLayer);
+        event.registerLayerDefinition(GhostBatModel.LAYER_LOCATION, GhostBatModel::createBodyLayer);
     }
 
     @SubscribeEvent
