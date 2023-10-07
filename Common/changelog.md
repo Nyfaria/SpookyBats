@@ -6,6 +6,7 @@
 - Make witch bat be able to apply a bigger variety of potion effects
 - Increase witch bat health to 14
 - Make herobrine bats only have a 1/3 chance of spawning with diamond sword
+- Make creeper bats afraid of cats and ocelots
 
 ### Version 0.2.1 Beta
 - Fixed bug where some bats had no animation

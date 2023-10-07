@@ -3,6 +3,9 @@ package com.nyfaria.spookybats.entity;
 import com.nyfaria.spookybats.entity.api.SpookyBat;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.PowerableMob;
+import net.minecraft.world.entity.ai.goal.AvoidEntityGoal;
+import net.minecraft.world.entity.animal.Cat;
+import net.minecraft.world.entity.animal.Ocelot;
 import net.minecraft.world.level.GameRules;
 import net.minecraft.world.level.Level;
 
@@ -11,6 +14,13 @@ public class CreeperBat extends MonsterBat implements PowerableMob {
 
 	public CreeperBat(EntityType<? extends SpookyBat> entityType, Level level) {
 		super(entityType, level);
+	}
+
+	@Override
+	protected void registerGoals() {
+		super.registerGoals();
+		this.goalSelector.addGoal(1, new AvoidEntityGoal<>(this, Ocelot.class, 6.0F, 1.0, 1.2));
+		this.goalSelector.addGoal(1, new AvoidEntityGoal<>(this, Cat.class, 6.0F, 1.0, 1.2));
 	}
 
 	@Override
