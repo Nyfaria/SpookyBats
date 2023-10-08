@@ -14,7 +14,7 @@
   - Make creeper bats afraid of cats and ocelots
   - Make pumpkin bats shoot pumpkins at enemies
   - Make wither skeleton bats not immune to fire
-  - Add particles when herobrine bat telepors away
+  - Add particles when herobrine bat teleports away
 
 ### Version 0.2.1 Beta
 - Fixed bug where some bats had no animation
