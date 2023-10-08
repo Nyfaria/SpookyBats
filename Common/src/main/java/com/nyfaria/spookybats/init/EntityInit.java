@@ -36,6 +36,15 @@ public class EntityInit {
     public static final RegistryObject<EntityType<SpookyBat>> PLAYER_BAT = registerEntityWithEgg("player_bat", ()->EntityType.Builder.of(SpookyBat::new, MobCategory.MONSTER).sized(0.5F, 0.9F), SpookyBat::createBatAttributes,0x423743);
     public static final RegistryObject<EntityType<VoidBat>> VOID_BAT = registerEntityWithEgg("void_bat", ()->EntityType.Builder.of(VoidBat::new, MobCategory.MONSTER).sized(0.5F, 0.9F), SpookyBat::createBatAttributes,0x2b3b39, 0x29615e);
 
+
+
+
+
+
+
+    public static final RegistryObject<EntityType<JackOLanternProjectile>> JACK_O_LANTERN_PROJECTILE = registerEntity("jack_o_lantern_projectile", ()->EntityType.Builder.<JackOLanternProjectile>of(JackOLanternProjectile::new, MobCategory.MISC).sized(0.25F, 0.25F).clientTrackingRange(4));
+
+
     private static <T extends Entity> RegistryObject<EntityType<T>> registerEntity(String name, Supplier<EntityType.Builder<T>> supplier) {
         return ENTITIES.register(name, () -> supplier.get().build(Constants.MODID + ":" + name));
     }

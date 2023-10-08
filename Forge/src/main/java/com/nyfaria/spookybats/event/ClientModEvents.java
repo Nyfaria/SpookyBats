@@ -7,6 +7,7 @@ import com.nyfaria.spookybats.client.renderer.layer.BatWingsLayer;
 import com.nyfaria.spookybats.entity.GhostBat;
 import com.nyfaria.spookybats.init.EntityInit;
 import net.minecraft.client.model.geom.builders.CubeDeformation;
+import net.minecraft.client.renderer.entity.ThrownItemRenderer;
 import net.minecraft.client.renderer.entity.player.PlayerRenderer;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.EntityRenderersEvent;
@@ -31,6 +32,7 @@ public class ClientModEvents {
         event.registerEntityRenderer(EntityInit.WITHER_SKELETON_BAT.get(), context -> new SpookyBatRenderer<>(context, new SkeletonBatModel<>(context.bakeLayer(SkeletonBatModel.LAYER_LOCATION))));
         event.registerEntityRenderer(EntityInit.PLAYER_BAT.get(), context -> new PlayerBatRenderer(context, new HatBatModel<>(context.bakeLayer(HatBatModel.LAYER_LOCATION))));
         event.registerEntityRenderer(EntityInit.VOID_BAT.get(), context -> new VoidBatRenderer(context, new HatBatModel<>(context.bakeLayer(HatBatModel.LAYER_LOCATION))));
+        event.registerEntityRenderer(EntityInit.JACK_O_LANTERN_PROJECTILE.get(), context -> new ThrownItemRenderer<>(context, 1.0f, true));
     }
 
     @SubscribeEvent

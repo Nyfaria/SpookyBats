@@ -1,4 +1,5 @@
 {
+  "parent": "spookybats:bat_death",
   "criteria": {
     "bat_wings": {
       "conditions": {
@@ -20,7 +21,7 @@
       "translate": "advancements.spookybats.massacre.desc"
     },
     "frame": "challenge",
-    "hidden": false,
+    "hidden": true,
     "icon": {
       "item": "spookybats:bat_wings"
     },

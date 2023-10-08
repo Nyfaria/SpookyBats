@@ -17,7 +17,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ItemInit {
-    public static final List<RegistryObject<Item>> ITEM_LIST = new ArrayList<>();
+    public static final List<RegistryObject<Item>> CANDY_LIST = new ArrayList<>();
     public static final List<RegistryObject<Item>> SPAWN_EGG_LIST = new ArrayList<>();
     public static final RegistrationProvider<Item> ITEMS = RegistrationProvider.get(Registries.ITEM, Constants.MODID);
 
@@ -38,7 +38,7 @@ public class ItemInit {
             .displayItems(
                     (itemDisplayParameters, output) -> {
                         SPAWN_EGG_LIST.forEach((registryObject) -> output.accept(new ItemStack(registryObject.get())));
-                        ITEM_LIST.forEach((registryObject) -> output.accept(new ItemStack(registryObject.get())));
+                        CANDY_LIST.forEach((registryObject) -> output.accept(new ItemStack(registryObject.get())));
                     }).title(Component.translatable("itemGroup." + Constants.MODID + ".tab"))
             .build());
 
@@ -51,7 +51,7 @@ public class ItemInit {
 
     public static RegistryObject<Item> registerCandy(String name, MobEffect effect){
         RegistryObject<Item> item = ITEMS.register(name, () -> new Item(getItemProperties().food(new FoodProperties.Builder().alwaysEat().nutrition(1).saturationMod(0.5f).fast().effect(new MobEffectInstance(effect,100),1).build())));
-        ITEM_LIST.add(item);
+        CANDY_LIST.add(item);
         return item;
     }
 }

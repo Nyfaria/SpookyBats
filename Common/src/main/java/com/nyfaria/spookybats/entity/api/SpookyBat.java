@@ -1,7 +1,5 @@
 package com.nyfaria.spookybats.entity.api;
 
-import com.nyfaria.spookybats.client.renderer.GhostBatRenderer;
-import com.nyfaria.spookybats.entity.GhostBat;
 import com.nyfaria.spookybats.entity.ai.control.BatMoveControl;
 import com.nyfaria.spookybats.init.EntityInit;
 import net.minecraft.core.BlockPos;
@@ -9,6 +7,7 @@ import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.util.Mth;
@@ -23,7 +22,6 @@ import net.minecraft.world.entity.PathfinderMob;
 import net.minecraft.world.entity.Pose;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
-import net.minecraft.world.entity.ai.control.FlyingMoveControl;
 import net.minecraft.world.entity.ai.control.MoveControl;
 import net.minecraft.world.entity.ai.navigation.FlyingPathNavigation;
 import net.minecraft.world.entity.ai.navigation.PathNavigation;
@@ -90,11 +88,24 @@ public class SpookyBat extends PathfinderMob {
 
     @Override
     protected void tickDeath() {
+        spawnOnDeath();
         super.tickDeath();
-        
-        if (this.random.nextInt(25) == 0) {
-            // Handle spawning of ghost bat here
+    }
+
+    protected void spawnOnDeath() {
+        if (spawnsGhostBat() && deathTime == 19 && !this.level().isClientSide) {
+            if (this.random.nextInt(ghostBatChance()) == 0) {
+                EntityInit.GHOST_BAT.get().spawn((ServerLevel) this.level(), blockPosition(), MobSpawnType.CONVERSION);
+            }
         }
+    }
+
+    public boolean spawnsGhostBat() {
+        return true;
+    }
+
+    protected int ghostBatChance() {
+        return 20;
     }
 
     /**
@@ -111,12 +122,7 @@ public class SpookyBat extends PathfinderMob {
     }
 
     public static AttributeSupplier.Builder createBatAttributes() {
-        return Mob
-                .createMobAttributes()
-                .add(Attributes.FLYING_SPEED, 0.5f)
-                .add(Attributes.MAX_HEALTH, 6.0D)
-                .add(Attributes.ATTACK_DAMAGE, 1)
-                .add(Attributes.FLYING_SPEED);
+        return Mob.createMobAttributes().add(Attributes.FLYING_SPEED, 0.5f).add(Attributes.MAX_HEALTH, 6.0D).add(Attributes.ATTACK_DAMAGE, 1).add(Attributes.FLYING_SPEED);
     }
 
     public boolean isResting() {

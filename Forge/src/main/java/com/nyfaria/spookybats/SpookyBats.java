@@ -1,5 +1,6 @@
 package com.nyfaria.spookybats;
 
+import com.nyfaria.spookybats.datagen.BatSpawnsProvider;
 import com.nyfaria.spookybats.datagen.ModAdvancementProvider;
 import com.nyfaria.spookybats.datagen.ModBlockStateProvider;
 import com.nyfaria.spookybats.datagen.ModItemModelProvider;
@@ -40,5 +41,6 @@ public class SpookyBats {
         generator.addProvider(includeClient, new ModBlockStateProvider(packOutput, existingFileHelper));
         generator.addProvider(includeClient, new ModLangProvider(packOutput));
         generator.addProvider(includeServer, new ModAdvancementProvider(packOutput,event.getLookupProvider(), existingFileHelper));
+        generator.addProvider(includeServer, new BatSpawnsProvider(packOutput,event.getLookupProvider()));
     }
 }

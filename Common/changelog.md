@@ -1,7 +1,7 @@
 ### Version 0.3.0 Beta
 - Add ghost bat
 - Add sculk bat
-- Make herobrine bats only spawn at night
+- Make herobrine bats only spawn in the Dark
 - Bat model changes
   - Make creeper bat's glint only apply to its head
   - Make undead bat accents fade out as bat loses health
@@ -13,7 +13,6 @@
   - Make witch bat be able to apply a bigger variety of potion effects
   - Make creeper bats afraid of cats and ocelots
   - Make pumpkin bats shoot pumpkins at enemies
-  - Make wither skeleton bats not immune to fire
   - Add particles when herobrine bat teleports away
 
 ### Version 0.2.1 Beta

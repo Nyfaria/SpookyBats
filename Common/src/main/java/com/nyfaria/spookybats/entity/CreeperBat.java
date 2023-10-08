@@ -10,7 +10,6 @@ import net.minecraft.world.level.GameRules;
 import net.minecraft.world.level.Level;
 
 public class CreeperBat extends MonsterBat implements PowerableMob {
-	private boolean hasExplodedOnce = false;
 
 	public CreeperBat(EntityType<? extends SpookyBat> entityType, Level level) {
 		super(entityType, level);
@@ -35,19 +34,18 @@ public class CreeperBat extends MonsterBat implements PowerableMob {
 
 	@Override
 	protected void tickDeath() {
-		super.tickDeath();
 
-		if (isPowered()) {
+		if (isPowered() && deathTime == 5) {
 			boolean isMobExplosionType = this.level().getGameRules().getBoolean(GameRules.RULE_MOBGRIEFING);
 
 			Level.ExplosionInteraction destructionType = isMobExplosionType
 				? Level.ExplosionInteraction.MOB
 				: Level.ExplosionInteraction.NONE;
 
-			if (!this.level().isClientSide && !hasExplodedOnce) {
+			if (!this.level().isClientSide) {
 				this.level().explode(this, this.getX(), this.getY(), this.getZ(), 1, destructionType);
-				hasExplodedOnce = true;
 			}
 		}
+		super.tickDeath();
 	}
 }

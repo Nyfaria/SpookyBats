@@ -35,6 +35,11 @@ public class WitherSkeletonBat extends MonsterBat {
 		return canAttack;
 	}
 
+	@Override
+	public boolean fireImmune() {
+		return true;
+	}
+
 	public static AttributeSupplier.Builder createWitherSkeletonBatAttributes() {
 		return SpookyBat
 			.createBatAttributes()

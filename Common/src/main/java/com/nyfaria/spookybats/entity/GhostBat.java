@@ -37,4 +37,9 @@ public class GhostBat extends SpookyBat {
 		if (canAttack) ((LivingEntity) target).addEffect(new MobEffectInstance(MobEffects.LEVITATION, 20*3, 0), this);
 		return canAttack;
 	}
+
+	@Override
+	public boolean spawnsGhostBat() {
+		return false;
+	}
 }

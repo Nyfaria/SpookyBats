@@ -57,7 +57,7 @@ public class BatMoveControl extends MoveControl {
     private void randomMovement(boolean hasTarget) {
         BlockPos blockpos = mob.blockPosition();
         BlockPos blockpos1 = blockpos.above();
-        if(!hasTarget) {
+        if (!hasTarget) {
             if (this.targetPosition != null && (!mob.level().isEmptyBlock(this.targetPosition) || this.targetPosition.getY() <= mob.level().getMinBuildHeight())) {
                 this.targetPosition = null;
             }

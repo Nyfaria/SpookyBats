@@ -37,6 +37,10 @@ public class ModLangProvider extends LanguageProvider {
         add("itemGroup." + Constants.MODID + ".tab", Constants.MOD_NAME);
         add("advancements." + Constants.MODID + ".massacre", "Bat Massacre");
         add("advancements." + Constants.MODID + ".massacre.desc", "You MONSTER! You killed so many bats, and earned yourself a Pair of Bat Wings!");
+        add("advancements." + Constants.MODID + ".bat_death", "Bat Death");
+        add("advancements." + Constants.MODID + ".bat_death.desc", "You killed a bat, and earned yourself some candy!");
+        add("advancements." + Constants.MODID + ".candy_collection", "Candy Collection");
+        add("advancements." + Constants.MODID + ".candy_collection.desc", "Collect all the candy!");
     }
 
     protected void itemLang(RegistryObject<Item> entry) {
