@@ -29,11 +29,6 @@ public class WitherSkeletonBat extends MonsterBat {
 	}
 
 	@Override
-	public boolean fireImmune() {
-		return true;
-	}
-
-	@Override
 	public boolean doHurtTarget(Entity target) {
 		boolean canAttack = super.canAttack((LivingEntity) target) && target instanceof LivingEntity;
 		if (canAttack) ((LivingEntity) target).addEffect(new MobEffectInstance(MobEffects.WITHER, 50, 0), this);

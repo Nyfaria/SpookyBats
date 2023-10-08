@@ -1,17 +1,19 @@
 ### Version 0.3.0 Beta
 - Add ghost bat
 - Add sculk bat
+- Make herobrine bats only spawn at night
 - Bat model changes
   - Make creeper bat's glint only apply to its head
   - Make undead bat accents fade out as bat loses health
   - Increase witch bat health to 14
   - Fix floating pixels in undead bat texture
   - Make herobrine bats only have a 1/3 chance of spawning with diamond sword
-- Bat AI changes
+- Bat AI changes 
   - Make creeper bat explode if killed when charged
   - Make witch bat be able to apply a bigger variety of potion effects
   - Make creeper bats afraid of cats and ocelots
   - Make pumpkin bats shoot pumpkins at enemies
+  - Make wither skeleton bats not immune to fire
   - Add particles when herobrine bat telepors away
 
 ### Version 0.2.1 Beta

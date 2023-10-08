@@ -20,7 +20,7 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.ServerLevelAccessor;
 import org.jetbrains.annotations.Nullable;
 
-public class HerobrineBat extends SpookyBat {
+public class HerobrineBat extends MonsterBat {
 	public HerobrineBat(EntityType<? extends SpookyBat> entityType, Level level) {
 		super(entityType, level);
 	}
@@ -31,6 +31,11 @@ public class HerobrineBat extends SpookyBat {
 		this.goalSelector.addGoal(1, new TeleportAwayGoal(this));
 		this.goalSelector.addGoal(0, new MeleeAttackGoal(this, 1, true));
 		this.targetSelector.addGoal(0, new NearestAttackableTargetGoal<>(this, Player.class, true));
+	}
+
+	@Override
+	protected boolean isSunSensitive() {
+		return false;
 	}
 
 	@Override
