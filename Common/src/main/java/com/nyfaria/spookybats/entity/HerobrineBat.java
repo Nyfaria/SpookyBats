@@ -28,7 +28,7 @@ public class HerobrineBat extends SpookyBat {
 	@Override
 	protected void registerGoals() {
 		super.registerGoals();
-		this.goalSelector.addGoal(2, new TeleportAwayGoal(this));
+		this.goalSelector.addGoal(1, new TeleportAwayGoal(this));
 		this.goalSelector.addGoal(0, new MeleeAttackGoal(this, 1, true));
 		this.targetSelector.addGoal(0, new NearestAttackableTargetGoal<>(this, Player.class, true));
 	}

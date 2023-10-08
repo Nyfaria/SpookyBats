@@ -12,6 +12,7 @@
   - Make witch bat be able to apply a bigger variety of potion effects
   - Make creeper bats afraid of cats and ocelots
   - Make pumpkin bats shoot pumpkins at enemies
+  - Add particles when herobrine bat telepors away
 
 ### Version 0.2.1 Beta
 - Fixed bug where some bats had no animation

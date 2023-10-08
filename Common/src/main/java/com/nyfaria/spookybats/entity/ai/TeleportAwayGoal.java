@@ -1,6 +1,7 @@
 package com.nyfaria.spookybats.entity.ai;
 
 import com.nyfaria.spookybats.entity.api.SpookyBat;
+import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.world.entity.ai.goal.Goal;
 import net.minecraft.world.phys.Vec3;
 
@@ -33,6 +34,14 @@ public class TeleportAwayGoal extends Goal {
 		double destZ = mob.getRandom().nextInt(2) == 0
 			? batPos.z + randZ
 			: batPos.z - randZ;
+
+		mob.level().addParticle(
+			ParticleTypes.PORTAL,
+			mob.getX(),
+			mob.getRandomY(),
+			mob.getZ(),
+			0, 0, 0
+		);
 
 		mob.teleportTo(destX, destY, destZ);
 	}
