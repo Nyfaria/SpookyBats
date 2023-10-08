@@ -90,6 +90,8 @@ public class SpookyBat extends PathfinderMob {
 
     @Override
     protected void tickDeath() {
+        super.tickDeath();
+        
         if (this.random.nextInt(25) == 0) {
             // Handle spawning of ghost bat here
         }
