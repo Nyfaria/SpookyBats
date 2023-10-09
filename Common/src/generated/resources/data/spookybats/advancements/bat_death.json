@@ -202,14 +202,14 @@
   "requirements": [
     [
       "pumpkin_bat",
-      "witch_bat",
-      "herobrine_bat",
-      "skeleton_bat",
       "creeper_bat",
-      "ghost_bat",
+      "witch_bat",
       "sculk_bat",
+      "ghost_bat",
       "steve_bat",
       "alex_bat",
+      "herobrine_bat",
+      "skeleton_bat",
       "wither_skeleton_bat",
       "undead_bat",
       "player_bat",

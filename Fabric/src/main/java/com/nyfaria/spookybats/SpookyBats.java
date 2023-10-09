@@ -29,6 +29,7 @@ public class SpookyBats implements ModInitializer {
         BiomeModifications.addSpawn(BiomeSelectors.foundInTheNether(), MobCategory.MONSTER, EntityInit.WITHER_SKELETON_BAT.get(), 5, 1, 3);
         BiomeModifications.addSpawn(BiomeSelectors.foundInTheNether(), MobCategory.MONSTER, EntityInit.UNDEAD_BAT.get(), 5, 1, 3);
         BiomeModifications.addSpawn(BiomeSelectors.foundInOverworld(), MobCategory.MONSTER, EntityInit.PLAYER_BAT.get(), 5, 1, 3);
+        BiomeModifications.addSpawn(BiomeSelectors.includeByKey(Biomes.DEEP_DARK), MobCategory.MONSTER, EntityInit.SCULK_BAT.get(), 5, 1, 3);
 
         CommonClass.placements();
     }

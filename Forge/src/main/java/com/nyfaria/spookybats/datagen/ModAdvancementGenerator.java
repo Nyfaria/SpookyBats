@@ -19,23 +19,13 @@ import java.util.function.Consumer;
 public class ModAdvancementGenerator implements ForgeAdvancementProvider.AdvancementGenerator {
     @Override
     public void generate(HolderLookup.Provider registries, Consumer<Advancement> saver, ExistingFileHelper existingFileHelper) {
-        Advancement bats = Advancement.Builder.advancement()
+        Advancement.Builder batsBuilder = Advancement.Builder.advancement()
                 .display(ItemInit.WITCHES_BREW.get(), Component.translatable("advancements.spookybats.bat_death"), Component.translatable("advancements.spookybats.bat_death.desc"), new ResourceLocation("textures/gui/advancements/backgrounds/husbandry.png"), FrameType.TASK, true, true, false)
-                .requirements(RequirementsStrategy.OR)
-                .addCriterion("pumpkin_bat", KilledTrigger.TriggerInstance.playerKilledEntity(EntityPredicate.Builder.entity().of(EntityInit.PUMPKIN_BAT.get())))
-                .addCriterion("witch_bat", KilledTrigger.TriggerInstance.playerKilledEntity(EntityPredicate.Builder.entity().of(EntityInit.WITCH_BAT.get())))
-                .addCriterion("herobrine_bat", KilledTrigger.TriggerInstance.playerKilledEntity(EntityPredicate.Builder.entity().of(EntityInit.HEROBRINE_BAT.get())))
-                .addCriterion("skeleton_bat", KilledTrigger.TriggerInstance.playerKilledEntity(EntityPredicate.Builder.entity().of(EntityInit.SKELETON_BAT.get())))
-                .addCriterion("creeper_bat", KilledTrigger.TriggerInstance.playerKilledEntity(EntityPredicate.Builder.entity().of(EntityInit.CREEPER_BAT.get())))
-                .addCriterion("ghost_bat", KilledTrigger.TriggerInstance.playerKilledEntity(EntityPredicate.Builder.entity().of(EntityInit.GHOST_BAT.get())))
-                .addCriterion("sculk_bat", KilledTrigger.TriggerInstance.playerKilledEntity(EntityPredicate.Builder.entity().of(EntityInit.SCULK_BAT.get())))
-                .addCriterion("steve_bat", KilledTrigger.TriggerInstance.playerKilledEntity(EntityPredicate.Builder.entity().of(EntityInit.STEVE_BAT.get())))
-                .addCriterion("alex_bat", KilledTrigger.TriggerInstance.playerKilledEntity(EntityPredicate.Builder.entity().of(EntityInit.ALEX_BAT.get())))
-                .addCriterion("wither_skeleton_bat", KilledTrigger.TriggerInstance.playerKilledEntity(EntityPredicate.Builder.entity().of(EntityInit.WITHER_SKELETON_BAT.get())))
-                .addCriterion("undead_bat", KilledTrigger.TriggerInstance.playerKilledEntity(EntityPredicate.Builder.entity().of(EntityInit.UNDEAD_BAT.get())))
-                .addCriterion("player_bat", KilledTrigger.TriggerInstance.playerKilledEntity(EntityPredicate.Builder.entity().of(EntityInit.PLAYER_BAT.get())))
-                .addCriterion("void_bat", KilledTrigger.TriggerInstance.playerKilledEntity(EntityPredicate.Builder.entity().of(EntityInit.VOID_BAT.get())))
-                .save(saver, "spookybats:bat_death");
+                .requirements(RequirementsStrategy.OR);
+        EntityInit.BATS.forEach(
+                (registryObject) -> batsBuilder.addCriterion(registryObject.getId().getPath(), KilledTrigger.TriggerInstance.playerKilledEntity(EntityPredicate.Builder.entity().of(registryObject.get())))
+        );
+        Advancement bats = batsBuilder.save(saver, "spookybats:bat_death");
         Advancement.Builder.advancement()
                 .parent(bats)
                 .display(ItemInit.BAT_WINGS.get(), Component.translatable("advancements.spookybats.massacre"), Component.translatable("advancements.spookybats.massacre.desc"), new ResourceLocation("textures/gui/advancements/backgrounds/husbandry.png"), FrameType.CHALLENGE, true, true, true)

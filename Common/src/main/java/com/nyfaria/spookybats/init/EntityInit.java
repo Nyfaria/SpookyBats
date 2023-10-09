@@ -19,6 +19,7 @@ import java.util.List;
 import java.util.function.Supplier;
 
 public class EntityInit {
+    public static final  List<RegistryObject<? extends EntityType<? extends LivingEntity>>> BATS = new ArrayList<>();
     public static final RegistrationProvider<EntityType<?>> ENTITIES = RegistrationProvider.get(Registries.ENTITY_TYPE, Constants.MODID);
     public static final List<AttributesRegister<?>> attributeSuppliers = new ArrayList<>();
 
@@ -58,7 +59,7 @@ public class EntityInit {
         attributeSuppliers.add(new AttributesRegister<>(entityTypeSupplier, attributeSupplier));
         RegistryObject<Item>item = ItemInit.ITEMS.register(name + "_spawn_egg", () -> Services.PLATFORM.createSpawnEggItem(entityTypeSupplier, primaryColor, secondaryColor));
         ItemInit.SPAWN_EGG_LIST.add(item);
-
+        BATS.add(entityTypeSupplier);
         return entityTypeSupplier;
     }
 
