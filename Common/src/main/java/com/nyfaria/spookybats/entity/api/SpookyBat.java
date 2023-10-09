@@ -48,6 +48,7 @@ public class SpookyBat extends PathfinderMob {
             this.setResting(true);
         }
 
+        this.xpReward = 2;
     }
 
     public boolean isFlapping() {

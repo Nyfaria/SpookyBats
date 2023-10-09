@@ -15,7 +15,9 @@ import net.minecraft.world.level.ServerLevelAccessor;
 public class MonsterBat extends SpookyBat {
     public MonsterBat(EntityType<? extends SpookyBat> entityType, Level level) {
         super(entityType, level);
+        this.xpReward = 4;
     }
+    
     public void aiStep() {
         if (this.isAlive()) {
             boolean flag = this.isSunSensitive() && this.isSunBurnTick();
