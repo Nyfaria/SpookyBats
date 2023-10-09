@@ -31,6 +31,7 @@ public class ItemInit {
     public static final RegistryObject<Item> ZOMBIE_FLESH_LOLLIPOP = registerCandy("zombie_flesh_lollipop", MobEffects.HUNGER);
     public static final RegistryObject<Item> GENERIC_CANDY = registerCandy("generic_candy", MobEffects.ABSORPTION);
     public static final RegistryObject<Item> SUSPICIOUS_CANDY = registerCandy("suspicious_candy", MobEffects.CONFUSION);
+    public static final RegistryObject<Item> SCULK_CANDY = registerCandy("sculk_candy", MobEffects.DARKNESS);
 
     public static final RegistrationProvider<CreativeModeTab> CREATIVE_MODE_TABS = RegistrationProvider.get(Registries.CREATIVE_MODE_TAB, Constants.MODID);
     public static final RegistryObject<CreativeModeTab> TAB = CREATIVE_MODE_TABS.register(Constants.MODID, () -> CreativeModeTab.builder(CreativeModeTab.Row.TOP, 0)
