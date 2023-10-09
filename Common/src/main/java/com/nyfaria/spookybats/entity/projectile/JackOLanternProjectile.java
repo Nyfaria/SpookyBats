@@ -1,14 +1,10 @@
-package com.nyfaria.spookybats.entity;
+package com.nyfaria.spookybats.entity.projectile;
 
 import com.nyfaria.spookybats.init.EntityInit;
-import com.nyfaria.spookybats.init.ItemInit;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.EquipmentSlot;
-import net.minecraft.world.entity.ItemBasedSteering;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.projectile.ThrowableItemProjectile;
-import net.minecraft.world.entity.projectile.ThrowableProjectile;
-import net.minecraft.world.entity.projectile.ThrownEgg;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;

@@ -1,19 +1,14 @@
 package com.nyfaria.spookybats.entity;
 
 import com.nyfaria.spookybats.entity.api.SpookyBat;
+import com.nyfaria.spookybats.entity.projectile.JackOLanternProjectile;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.goal.RangedAttackGoal;
-import net.minecraft.world.entity.ai.goal.target.HurtByTargetGoal;
 import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
 import net.minecraft.world.entity.monster.RangedAttackMob;
-import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.entity.projectile.AbstractArrow;
-import net.minecraft.world.entity.projectile.ProjectileUtil;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
 
 public class PumpkinBat extends SpookyBat implements RangedAttackMob {
@@ -28,10 +23,9 @@ public class PumpkinBat extends SpookyBat implements RangedAttackMob {
 		this.targetSelector.addGoal(0, new NearestAttackableTargetGoal<>(this, LivingEntity.class, false, entity->entity.getItemBySlot(EquipmentSlot.HEAD).isEmpty()));
 	}
 
-
 	@Override
 	public void performRangedAttack(LivingEntity target, float velocity) {
-		JackOLanternProjectile abstractarrowentity = new JackOLanternProjectile(this.level(),this);
+		JackOLanternProjectile abstractarrowentity = new JackOLanternProjectile(this.level(), this);
 		double d0 = target.getX() - this.getX();
 		double d1 = target.getY(0.3333333333333333D) - abstractarrowentity.getY();
 		double d2 = target.getZ() - this.getZ();
@@ -41,5 +35,4 @@ public class PumpkinBat extends SpookyBat implements RangedAttackMob {
 		this.level().addFreshEntity(abstractarrowentity);
 		this.setTarget(null);
 	}
-
 }

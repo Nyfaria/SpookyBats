@@ -25,6 +25,18 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
+    "sculk_candy": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "spookybats:sculk_candy"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "skull_candy": {
       "conditions": {
         "items": [
@@ -138,6 +150,9 @@
     ],
     [
       "suspicious_candy"
+    ],
+    [
+      "sculk_candy"
     ]
   ],
   "sends_telemetry_event": true

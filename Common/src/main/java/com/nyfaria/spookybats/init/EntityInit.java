@@ -3,6 +3,7 @@ package com.nyfaria.spookybats.init;
 import com.nyfaria.spookybats.Constants;
 import com.nyfaria.spookybats.entity.*;
 import com.nyfaria.spookybats.entity.api.SpookyBat;
+import com.nyfaria.spookybats.entity.projectile.JackOLanternProjectile;
 import com.nyfaria.spookybats.platform.Services;
 import com.nyfaria.spookybats.registration.RegistrationProvider;
 import com.nyfaria.spookybats.registration.RegistryObject;
@@ -26,7 +27,7 @@ public class EntityInit {
     public static final RegistryObject<EntityType<PumpkinBat>> PUMPKIN_BAT = registerEntityWithEgg("pumpkin_bat", ()->EntityType.Builder.of(PumpkinBat::new, MobCategory.MONSTER).sized(0.5F, 0.9F), SpookyBat::createBatAttributes,0xdd993e);
     public static final RegistryObject<EntityType<CreeperBat>> CREEPER_BAT = registerEntityWithEgg("creeper_bat", ()->EntityType.Builder.of(CreeperBat::new, MobCategory.MONSTER).sized(0.5F, 0.9F), SpookyBat::createBatAttributes,0x4fbc44);
     public static final RegistryObject<EntityType<WitchBat>> WITCH_BAT = registerEntityWithEgg("witch_bat", ()->EntityType.Builder.of(WitchBat::new, MobCategory.MONSTER).sized(0.5F, 0.9F), WitchBat::createWitchBatAttributes,0xe388c2);
-    public static final RegistryObject<EntityType<SpookyBat>> SCULK_BAT = registerEntityWithEgg("sculk_bat", ()->EntityType.Builder.of(SpookyBat::new, MobCategory.MONSTER).sized(0.5F, 0.9F), SpookyBat::createBatAttributes,0x0e151c, 0xa2af86);
+    public static final RegistryObject<EntityType<SpookyBat>> SCULK_BAT = registerEntityWithEgg("sculk_bat", ()->EntityType.Builder.of(SpookyBat::new, MobCategory.MONSTER).sized(0.5F, 0.9F), SpookyBat::createBatAttributes,0x0e151c, 0x009295);
     public static final RegistryObject<EntityType<GhostBat>> GHOST_BAT = registerEntityWithEgg("ghost_bat", ()->EntityType.Builder.of(GhostBat::new, MobCategory.MONSTER).sized(0.5F, 0.9F), GhostBat::createGhostBatAttributes,0x7c7781, 0xbdbdc4);
     public static final RegistryObject<EntityType<PlayerBat>> STEVE_BAT = registerEntityWithEgg("steve_bat", ()->EntityType.Builder.of(PlayerBat::new, MobCategory.MONSTER).sized(0.5F, 0.9F), PlayerBat::createPlayerBatAttributes,0x679cb8);
     public static final RegistryObject<EntityType<PlayerBat>> ALEX_BAT = registerEntityWithEgg("alex_bat", ()->EntityType.Builder.of(PlayerBat::new, MobCategory.MONSTER).sized(0.5F, 0.9F), PlayerBat::createPlayerBatAttributes,0xf7bd80);
