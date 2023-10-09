@@ -1,5 +1,4 @@
 # Version 0.3.0 Beta
-___
 ## Additions
 - Add ghost bat
 - Add sculk bat and sculk candy
@@ -23,14 +22,12 @@ ___
 #### Undead Bat
 - Fix floating pixels in texture
 - Accents now fade out with loss of health
-___
+
 # Version 0.2.1 Beta
-___
- ## Bug Fixes
+## Bug Fixes
 - Fixed a bug where some bats had no animation
-___
+
 # Version 0.2.0 Beta
-___
 ## Changes
 ### Misc Changes
 - Redid banner
@@ -60,11 +57,9 @@ ___
 - Are slightly bigger
 #### Undead Bats
 - Are slightly bigger
-___
-# Version 0.1.0 Beta
-___
-## Initial release!
 
+# Version 0.1.0 Beta
+## Initial release!
 ### Bats
   - Pumpkin Bat
   - Creeper Bat
@@ -79,4 +74,3 @@ ___
   - Void Bat (Doesn't spawn naturally)
 ### Features
 - Each bat drops a unique edible candy
-___
