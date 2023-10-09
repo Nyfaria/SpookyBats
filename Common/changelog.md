@@ -1,46 +1,71 @@
-### Version 0.3.0 Beta
+# Version 0.3.0 Beta
+___
+## Additions
 - Add ghost bat
 - Add sculk bat and sculk candy
-- Make all bats drop some XP when killed
-- Make herobrine bats only spawn in the Dark
-- Bat model changes
-  - Make creeper bat's glint only apply to its head
-  - Make undead bat accents fade out as bat loses health
-  - Increase witch bat health to 14
-  - Fix floating pixels in undead bat texture
-  - Make herobrine bats only have a 1/3 chance of spawning with diamond sword
-- Bat AI changes 
-  - Make creeper bat explode if killed when charged
-  - Make witch bat be able to apply a bigger variety of potion effects
-  - Make creeper bats afraid of cats and ocelots
-  - Make pumpkin bats shoot jack-o-lanterns at players and some other mobs
-  - Add particles when herobrine bat teleports away
-
-### Version 0.2.1 Beta
-- Fixed bug where some bats had no animation
-
-### Version 0.2.0 Beta
+## Changes
+### Bat Changes
+#### All Bats
+- Now drop some XP when killed
+#### Herobrine Bat
+- Now only spawn in the Dark
+- Particles added to Teleport
+- Now have a 1/3 chance of spawning with a diamond sword
+#### Creeper Bat
+- Make glint only apply to its head
+- Now Explode if they Die while Charged
+- Are now afraid of Cats and Ocelots
+#### Witch Bat
+- Now Applies a larger variety of potion-effects
+- Increased health to 14
+#### Pumpkin Bat
+- Now shoots jack-o-lanterns at players and other mobs
+#### Undead Bat
+- Fix floating pixels in texture
+- Accents now fade out with loss of health
+___
+# Version 0.2.1 Beta
+___
+ ## Bug Fixes
+- Fixed a bug where some bats had no animation
+___
+# Version 0.2.0 Beta
+___
+## Changes
+### Misc Changes
 - Redid banner
 - Changed icon of mod group
 - Adjusted bat spawn egg colors
 - Add uncommon rarity to bat wings
 - Slightly reword internal mod description
-- Bat AI changes
-  - Player bats now flee monsters and have a revenge goal
-  - Herobrine bat attacks players
-  - Herobrine bat teleports away when under certain health
-  - Make wither skeleton attack players
-  - Make witch bat either have regeneration or resistance when below certain amounnt of health
-- Bat model changes
-  - Make pumpkin and undead bats slightly bigger
-  - Herobrine bat has a diamond sword in hand
-  - Retexture skeleton and wither skeleton
-  - Retexture creeper bat
-  - Touch up witch bat model and add cape and broom
+### Bat Changes
+#### Player Bats
+  - Now flee monsters and have a revenge goal
+#### Herobrine Bats
+ - Now attacks players
+ - Now has a Diamond Sword equipped
+ - Now teleport away when under certain health
+#### Wither Skeleton Bats
+- Now attack players
+- Have a new Texture
+#### Skeleton Bats
+- Have a new texture
+#### Creeper Bats
+- Have a new texture
+#### Witch Bats
+- Now either have regeneration or resistance when below certain amount of health
+- Updated Model
+  - Cape and Broom!
+#### Pumpkin Bats
+- Are slightly bigger
+#### Undead Bats
+- Are slightly bigger
+___
+# Version 0.1.0 Beta
+___
+## Initial release!
 
-### Version 0.1.0 Beta
-- Initial release!
-- Included bats:
+### Bats
   - Pumpkin Bat
   - Creeper Bat
   - Witch Bat
@@ -52,4 +77,6 @@
   - Undead Bat
   - Player Bat
   - Void Bat (Doesn't spawn naturally)
+### Features
 - Each bat drops a unique edible candy
+___
