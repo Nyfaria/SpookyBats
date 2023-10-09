@@ -1,6 +1,7 @@
 ### Version 0.3.0 Beta
 - Add ghost bat
 - Add sculk bat and sculk candy
+- Make all bats drop some XP when killed
 - Make herobrine bats only spawn in the Dark
 - Bat model changes
   - Make creeper bat's glint only apply to its head
