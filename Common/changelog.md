@@ -1,3 +1,11 @@
+# Version 0.4.0 Beta
+## Changes
+### Bat Changes
+#### Undead Bat
+- Now has AI to shoot entity with fireballs as revenge goal
+#### Herobrine Bat
+- Increased XP reward
+
 # Version 0.3.0 Beta
 ## Additions
 - Add ghost bat

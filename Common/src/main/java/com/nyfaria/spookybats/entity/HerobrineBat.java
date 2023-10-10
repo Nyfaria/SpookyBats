@@ -23,6 +23,7 @@ import org.jetbrains.annotations.Nullable;
 public class HerobrineBat extends MonsterBat {
 	public HerobrineBat(EntityType<? extends SpookyBat> entityType, Level level) {
 		super(entityType, level);
+		this.xpReward = 7;
 	}
 
 	@Override
