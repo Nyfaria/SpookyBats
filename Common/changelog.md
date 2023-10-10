@@ -5,6 +5,8 @@
 - Now has AI to shoot entity with fireballs as revenge goal
 #### Herobrine Bat
 - Increased XP reward
+#### Ghost Bat
+- Make attackers levitate for a short time
 
 # Version 0.3.0 Beta
 ## Additions
