@@ -1,3 +1,9 @@
+# Version 0.4.0 Beta
+## Changes
+### Bat Changes
+#### Undead Bats
+- Add a revenge goal where it shoots fireballs at enemies
+
 # Version 0.3.1 Beta
 ## Changes
 ### Bat Changes
