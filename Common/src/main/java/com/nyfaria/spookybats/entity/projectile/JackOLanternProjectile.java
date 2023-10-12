@@ -27,8 +27,10 @@ public class JackOLanternProjectile extends ThrowableItemProjectile {
     @Override
     protected void onHitEntity(EntityHitResult entityHitResult) {
         super.onHitEntity(entityHitResult);
-        entityHitResult.getEntity().setItemSlot(EquipmentSlot.HEAD, new ItemStack(Items.JACK_O_LANTERN));
 
+        if (entityHitResult.getEntity() instanceof LivingEntity target && target.getItemBySlot(EquipmentSlot.HEAD).isEmpty()) {
+            target.setItemSlot(EquipmentSlot.HEAD, new ItemStack(Items.JACK_O_LANTERN));
+        }
     }
 
     @Override

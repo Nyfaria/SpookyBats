@@ -1,12 +1,14 @@
-# Version 0.4.0 Beta
+# Version 0.3.1 Beta
 ## Changes
 ### Bat Changes
-#### Undead Bat
-- Now has AI to shoot entity with fireballs as revenge goal
+#### Hostile Bats
+- Fix hostile bats spawning in claims
 #### Herobrine Bat
 - Increased XP reward
 #### Ghost Bat
 - Make attackers levitate for a short time
+#### Pumpkin Bat
+- Fixed jack-o-lantern projectile replacing head slots with jack-o-lanterns
 
 # Version 0.3.0 Beta
 ## Additions

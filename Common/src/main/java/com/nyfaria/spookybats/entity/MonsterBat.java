@@ -7,12 +7,13 @@ import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.MobSpawnType;
 import net.minecraft.world.entity.ambient.Bat;
+import net.minecraft.world.entity.monster.Enemy;
 import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.ServerLevelAccessor;
 
-public class MonsterBat extends SpookyBat {
+public class MonsterBat extends SpookyBat implements Enemy {
     public MonsterBat(EntityType<? extends SpookyBat> entityType, Level level) {
         super(entityType, level);
         this.xpReward = 4;

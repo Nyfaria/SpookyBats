@@ -7,9 +7,10 @@ import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
+import net.minecraft.world.entity.monster.Enemy;
 import net.minecraft.world.level.Level;
 
-public class WitchBat extends SpookyBat {
+public class WitchBat extends SpookyBat implements Enemy {
 	public WitchBat(EntityType<? extends SpookyBat> pEntityType, Level pLevel) {
 		super(pEntityType, pLevel);
 	}
