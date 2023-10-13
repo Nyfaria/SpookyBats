@@ -30,6 +30,7 @@ public class SpookyBatsClient implements ClientModInitializer {
         EntityRendererRegistry.register(EntityInit.SKELETON_BAT.get(), context->new SpookyBatRenderer<>(context, new SkeletonBatModel<>(context.bakeLayer(SkeletonBatModel.LAYER_LOCATION))));
         EntityRendererRegistry.register(EntityInit.WITHER_SKELETON_BAT.get(), context->new SpookyBatRenderer<>(context, new SkeletonBatModel<>(context.bakeLayer(SkeletonBatModel.LAYER_LOCATION))));
         EntityRendererRegistry.register(EntityInit.PLAYER_BAT.get(), context->new PlayerBatRenderer(context, new HatBatModel<>(context.bakeLayer(HatBatModel.LAYER_LOCATION))));
+        EntityRendererRegistry.register(EntityInit.EVIL_BAT.get(), context -> new SpookyBatRenderer<>(context, new EvilBatModel<>(context.bakeLayer(EvilBatModel.LAYER_LOCATION))));
         EntityRendererRegistry.register(EntityInit.VOID_BAT.get(), context->new VoidBatRenderer(context, new HatBatModel<>(context.bakeLayer(HatBatModel.LAYER_LOCATION))));
 
 
@@ -44,6 +45,7 @@ public class SpookyBatsClient implements ClientModInitializer {
         EntityModelLayerRegistry.registerModelLayer(PumpkinBatModel.OVERLAY_LOCATION, ()-> PumpkinBatModel.createBodyLayer(new CubeDeformation(0.1f)));
         EntityModelLayerRegistry.registerModelLayer(SculkBatModel.LAYER_LOCATION, SculkBatModel::createBodyLayer);
         EntityModelLayerRegistry.registerModelLayer(GhostBatModel.LAYER_LOCATION, GhostBatModel::createBodyLayer);
+        EntityModelLayerRegistry.registerModelLayer(EvilBatModel.LAYER_LOCATION, EvilBatModel::createBodyLayer);
 
         LivingEntityFeatureRendererRegistrationCallback.EVENT.register((entityType, entityRenderer, registrationHelper, context) -> {
             if (entityType == EntityType.PLAYER) {

@@ -39,20 +39,20 @@ public class BatSpawnsProvider extends DatapackBuiltinEntriesProvider {
     public static void bootStrap(BootstapContext<BiomeModifier> context) {
         context.register(OVERWORLD,
                 new ForgeBiomeModifiers.AddSpawnsBiomeModifier(context.lookup(Registries.BIOME).getOrThrow(BiomeTags.IS_OVERWORLD), List.of(
-                        new MobSpawnSettings.SpawnerData(EntityInit.PUMPKIN_BAT.get(), 5, 1, 3),
+                        new MobSpawnSettings.SpawnerData(EntityInit.PUMPKIN_BAT.get(), 7, 1, 3),
                         new MobSpawnSettings.SpawnerData(EntityInit.CREEPER_BAT.get(), 5, 1, 3),
                         new MobSpawnSettings.SpawnerData(EntityInit.STEVE_BAT.get(), 5, 1, 3),
                         new MobSpawnSettings.SpawnerData(EntityInit.ALEX_BAT.get(), 5, 1, 3),
-                        new MobSpawnSettings.SpawnerData(EntityInit.HEROBRINE_BAT.get(), 5, 1, 3),
+                        new MobSpawnSettings.SpawnerData(EntityInit.HEROBRINE_BAT.get(), 4, 1, 1),
                         new MobSpawnSettings.SpawnerData(EntityInit.SKELETON_BAT.get(), 5, 1, 3),
-                        new MobSpawnSettings.SpawnerData(EntityInit.PLAYER_BAT.get(), 5, 1, 3)
+                        new MobSpawnSettings.SpawnerData(EntityInit.PLAYER_BAT.get(), 5, 1, 2)
                 )
                 )
         );
         context.register(NETHER,
                 new ForgeBiomeModifiers.AddSpawnsBiomeModifier(context.lookup(Registries.BIOME).getOrThrow(BiomeTags.IS_NETHER), List.of(
                         new MobSpawnSettings.SpawnerData(EntityInit.WITHER_SKELETON_BAT.get(), 5, 1, 3),
-                        new MobSpawnSettings.SpawnerData(EntityInit.UNDEAD_BAT.get(), 5, 1, 3)
+                        new MobSpawnSettings.SpawnerData(EntityInit.UNDEAD_BAT.get(), 7, 1, 3)
                 )
                 )
         );
@@ -64,7 +64,7 @@ public class BatSpawnsProvider extends DatapackBuiltinEntriesProvider {
         );
         context.register(DEEP_DARK,
                 new ForgeBiomeModifiers.AddSpawnsBiomeModifier( HolderSet.direct(context.lookup(Registries.BIOME).get(Biomes.DEEP_DARK).get()), List.of(
-                        new MobSpawnSettings.SpawnerData(EntityInit.SCULK_BAT.get(), 5, 1, 3)
+                        new MobSpawnSettings.SpawnerData(EntityInit.SCULK_BAT.get(), 6, 1, 3)
                 )
                 )
         );

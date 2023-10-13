@@ -1,7 +1,8 @@
-// 1.20.1	2023-10-09T13:38:19.6547935	Item Models: spookybats
+// 1.20.1	2023-10-12T20:34:13.0636176	Item Models: spookybats
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/spookybats/models/item/alex_bat_spawn_egg.json
 679c6e6b8baefa1f8eb7e1aaffc3ebc0139a0770 assets/spookybats/models/item/bat_wings.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/spookybats/models/item/creeper_bat_spawn_egg.json
+63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/spookybats/models/item/evil_bat_spawn_egg.json
 253216f49efdad96b5457e9d7baf662389d5bfb7 assets/spookybats/models/item/generic_candy.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/spookybats/models/item/ghost_bat_spawn_egg.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/spookybats/models/item/herobrine_bat_spawn_egg.json
