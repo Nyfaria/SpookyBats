@@ -16,10 +16,10 @@ public class VoidBat extends SpookyBat {
 	public boolean hurt(DamageSource $$0, float $$1) {
 		LivingEntity attacker = this.getLastHurtByMob();
 		boolean canTeleport = attacker != null && attacker.level().dimension() != Level.END;
+
 		if (canTeleport)
 			attacker.changeDimension(attacker.getServer().getLevel(Level.END));
 
 		return super.hurt($$0, $$1);
 	}
-
 }

@@ -28,6 +28,20 @@
       },
       "trigger": "minecraft:player_killed_entity"
     },
+    "evil_bat": {
+      "conditions": {
+        "entity": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "type": "spookybats:evil_bat"
+            }
+          }
+        ]
+      },
+      "trigger": "minecraft:player_killed_entity"
+    },
     "ghost_bat": {
       "conditions": {
         "entity": [
@@ -213,7 +227,8 @@
       "wither_skeleton_bat",
       "undead_bat",
       "player_bat",
-      "void_bat"
+      "void_bat",
+      "evil_bat"
     ]
   ],
   "sends_telemetry_event": true

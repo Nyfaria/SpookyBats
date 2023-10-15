@@ -1,5 +1,9 @@
 # Version 0.4.0 Beta
+## Additions
+- Add Evil Bat
 ## Changes
+### Misc Changes
+- Staggered spawn rates of bats
 ### Bat Changes
 #### Undead Bats
 - Add a revenge goal where it shoots fireballs at enemies

@@ -1,6 +1,7 @@
 package com.nyfaria.spookybats.init;
 
 import com.nyfaria.spookybats.Constants;
+import com.nyfaria.spookybats.client.model.EvilBatModel;
 import com.nyfaria.spookybats.entity.*;
 import com.nyfaria.spookybats.entity.api.SpookyBat;
 import com.nyfaria.spookybats.entity.projectile.JackOLanternProjectile;
@@ -39,6 +40,8 @@ public class EntityInit {
     public static final RegistryObject<EntityType<SpookyBat>> PLAYER_BAT = registerEntityWithEgg("player_bat", ()->EntityType.Builder.of(SpookyBat::new, MobCategory.MONSTER).sized(0.5F, 0.9F), SpookyBat::createBatAttributes,0x423743);
     public static final RegistryObject<EntityType<VoidBat>> VOID_BAT = registerEntityWithEgg("void_bat", ()->EntityType.Builder.of(VoidBat::new, MobCategory.MONSTER).sized(0.5F, 0.9F), SpookyBat::createBatAttributes,0x2b3b39, 0x29615e);
     public static final RegistryObject<EntityType<WitchsBroom>> WITCHS_BROOM = registerLivingEntity("witchs_broom", ()->EntityType.Builder.of(WitchsBroom::new, MobCategory.MISC).sized(1F, 0.4F), WitchsBroom::createAttributes);
+    public static final RegistryObject<EntityType<EvilBat>> EVIL_BAT = registerEntityWithEgg("evil_bat", ()->EntityType.Builder.of(EvilBat::new, MobCategory.MONSTER).sized(0.5F, 0.9F), EvilBat::createEvilBatAttributes, 0x942121);
+
 
 
 
@@ -69,6 +72,7 @@ public class EntityInit {
         RegistryObject<Item>item = ItemInit.ITEMS.register(name + "_spawn_egg", () -> Services.PLATFORM.createSpawnEggItem(entityTypeSupplier, primaryColor, secondaryColor));
         ItemInit.SPAWN_EGG_LIST.add(item);
         BATS.add(entityTypeSupplier);
+
         return entityTypeSupplier;
     }
 
