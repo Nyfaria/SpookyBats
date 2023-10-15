@@ -6,29 +6,6 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "conditions": [
-            {
-              "chance": 1.0,
-              "condition": "minecraft:random_chance"
-            }
-          ],
-          "functions": [
-            {
-              "add": false,
-              "count": 1.0,
-              "function": "minecraft:set_count"
-            }
-          ],
-          "name": "spookybats:witches_brew"
-        },
-        {
-          "type": "minecraft:item",
-          "conditions": [
-            {
-              "chance": 0.1,
-              "condition": "minecraft:random_chance"
-            }
-          ],
           "functions": [
             {
               "add": false,
@@ -59,5 +36,5 @@
       "rolls": 1.0
     }
   ],
-  "random_sequence": "spookybats:entities/witch_bat"
+  "random_sequence": "spookybats:entities/witchs_broom"
 }

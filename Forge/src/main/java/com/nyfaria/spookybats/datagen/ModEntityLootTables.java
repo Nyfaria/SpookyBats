@@ -34,7 +34,11 @@ public class ModEntityLootTables extends EntityLootSubProvider {
     public void generate() {
         dropSingle(EntityInit.PUMPKIN_BAT.get(), ItemInit.PUMPKIN_CHOCOLATE_BAR.get());
         dropSingle(EntityInit.CREEPER_BAT.get(), ItemInit.TNT_LOLLIPOP.get());
-        dropSingle(EntityInit.WITCH_BAT.get(), ItemInit.WITCHES_BREW.get());
+        multiDrops(EntityInit.WITCH_BAT.get(), ConstantValue.exactly(1),
+                new LootEntry(ItemInit.WITCHES_BREW.get(), 1.0f, ConstantValue.exactly(1)),
+                new LootEntry(ItemInit.WITCHS_BROOM.get(), 0.1f, ConstantValue.exactly(1))
+        );
+//        dropSingle(EntityInit.WITCH_BAT.get(), ItemInit.WITCHES_BREW.get());
         dropSingle(EntityInit.SKELETON_BAT.get(), ItemInit.SKULL_CANDY.get());
         dropSingle(EntityInit.WITHER_SKELETON_BAT.get(), ItemInit.WITHER_SKULL_CANDY.get());
         playerHead(EntityInit.PLAYER_BAT.get());
@@ -43,15 +47,25 @@ public class ModEntityLootTables extends EntityLootSubProvider {
         dropSingle(EntityInit.UNDEAD_BAT.get(), ItemInit.ZOMBIE_FLESH_LOLLIPOP.get());
         dropSingle(EntityInit.HEROBRINE_BAT.get(), ItemInit.SUSPICIOUS_CANDY.get());
         dropSingle(EntityInit.SCULK_BAT.get(), ItemInit.SCULK_CANDY.get());
+        dropSingle(EntityInit.WITCHS_BROOM.get(), ItemInit.WITCHS_BROOM.get());
     }
 
-    private void multiDrops(EntityType<?> type, LootEntry... entries) {
+    private void multiDrops(EntityType<?> type, NumberProvider rolls, LootEntry... entries) {
+        TYPES.add(type);
         LootPool.Builder pool = LootPool.lootPool();
-        pool.setRolls(ConstantValue.exactly(1));
+        pool.setRolls(rolls);
         for (LootEntry entry : entries) {
-            pool.add(LootItem.lootTableItem(entry.item()).apply(SetItemCountFunction.setCount(entry.numberProvider())));
+            pool.add(LootItem.lootTableItem(entry.item())
+                    .when(LootItemRandomChanceCondition.randomChance(entry.chance()))
+                    .apply(SetItemCountFunction.setCount(entry.numberProvider())));
         }
-        this.add(type, LootTable.lootTable().withPool(pool));
+        pool.add(LootItem.lootTableItem(ItemInit.BAT_WINGS.get())
+                .when(LootItemRandomChanceCondition.randomChance(0.01f))
+                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1)))
+        );
+        LootTable.Builder builder = LootTable.lootTable();
+        builder.withPool(pool);
+        add(type, builder);
     }
 
     private void dropRange(EntityType<?> entityType, Item item, float min, float max) {
@@ -82,6 +96,7 @@ public class ModEntityLootTables extends EntityLootSubProvider {
         add(entityType, builder);
     }
 
+
     private void playerHead(EntityType<?> entityType) {
         TYPES.add(entityType);
         LootTable.Builder builder = LootTable.lootTable();
@@ -104,6 +119,11 @@ public class ModEntityLootTables extends EntityLootSubProvider {
         return TYPES.stream();
     }
 
-    record LootEntry(Item item, NumberProvider numberProvider) {
+    record LootEntry(Item item, float chance, NumberProvider numberProvider) {
+    }
+
+    @Override
+    protected boolean canHaveLootTable(EntityType<?> pEntityType) {
+        return true;
     }
 }

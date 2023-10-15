@@ -22,7 +22,8 @@ import java.util.stream.Collectors;
 public class ModLangProvider extends LanguageProvider {
     protected static final Map<String, String> REPLACE_LIST = ImmutableMap.of(
             "tnt", "TNT",
-            "sus", ""
+            "sus", "",
+            "witchs","Witch's"
     );
 
     public ModLangProvider(PackOutput gen) {
