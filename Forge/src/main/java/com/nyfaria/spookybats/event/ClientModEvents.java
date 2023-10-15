@@ -36,6 +36,7 @@ public class ClientModEvents {
         event.registerEntityRenderer(EntityInit.VOID_BAT.get(), context -> new VoidBatRenderer(context, new HatBatModel<>(context.bakeLayer(HatBatModel.LAYER_LOCATION))));
 
         event.registerEntityRenderer(EntityInit.JACK_O_LANTERN_PROJECTILE.get(), context -> new ThrownItemRenderer<>(context, 1.0f, true));
+        event.registerEntityRenderer(EntityInit.WITCHS_BROOM.get(),WitchsBroomRenderer::new);
     }
 
     @SubscribeEvent
@@ -48,6 +49,7 @@ public class ClientModEvents {
         event.registerLayerDefinition(UndeadBatModel.LAYER_LOCATION, UndeadBatModel::createBodyLayer);
         event.registerLayerDefinition(SculkBatModel.LAYER_LOCATION, SculkBatModel::createBodyLayer);
         event.registerLayerDefinition(GhostBatModel.LAYER_LOCATION, GhostBatModel::createBodyLayer);
+        event.registerLayerDefinition(WitchsBroomModel.LAYER_LOCATION, WitchsBroomModel::createBodyLayer);
         event.registerLayerDefinition(EvilBatModel.LAYER_LOCATION, EvilBatModel::createBodyLayer);
     }
 

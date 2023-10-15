@@ -36,7 +36,8 @@ public class ModItemModelProvider extends ItemModelProvider {
                         ItemInit.ZOMBIE_FLESH_LOLLIPOP,
                         ItemInit.WITCHES_BREW,
                         ItemInit.BAT_WINGS,
-                        ItemInit.SCULK_CANDY
+                        ItemInit.SCULK_CANDY,
+                        ItemInit.WITCHS_BROOM
                 )
                 .map(Supplier::get)
                 .forEach(this::simpleGeneratedModel);

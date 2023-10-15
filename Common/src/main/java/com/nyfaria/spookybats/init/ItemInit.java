@@ -2,6 +2,7 @@ package com.nyfaria.spookybats.init;
 
 import com.nyfaria.spookybats.Constants;
 import com.nyfaria.spookybats.item.BatWings;
+import com.nyfaria.spookybats.item.WitchsBroomItem;
 import com.nyfaria.spookybats.platform.Services;
 import com.nyfaria.spookybats.registration.RegistrationProvider;
 import com.nyfaria.spookybats.registration.RegistryObject;
@@ -32,6 +33,7 @@ public class ItemInit {
     public static final RegistryObject<Item> GENERIC_CANDY = registerCandy("generic_candy", MobEffects.ABSORPTION);
     public static final RegistryObject<Item> SUSPICIOUS_CANDY = registerCandy("suspicious_candy", MobEffects.CONFUSION);
     public static final RegistryObject<Item> SCULK_CANDY = registerCandy("sculk_candy", MobEffects.DARKNESS);
+    public static final RegistryObject<Item> WITCHS_BROOM = ITEMS.register("witchs_broom", ()->new WitchsBroomItem(getItemProperties().stacksTo(1)));
 
     public static final RegistrationProvider<CreativeModeTab> CREATIVE_MODE_TABS = RegistrationProvider.get(Registries.CREATIVE_MODE_TAB, Constants.MODID);
     public static final RegistryObject<CreativeModeTab> TAB = CREATIVE_MODE_TABS.register(Constants.MODID, () -> CreativeModeTab.builder(CreativeModeTab.Row.TOP, 0)
@@ -40,6 +42,7 @@ public class ItemInit {
                     (itemDisplayParameters, output) -> {
                         SPAWN_EGG_LIST.forEach((registryObject) -> output.accept(new ItemStack(registryObject.get())));
                         CANDY_LIST.forEach((registryObject) -> output.accept(new ItemStack(registryObject.get())));
+                        output.accept(WITCHS_BROOM.get());
                     }).title(Component.translatable("itemGroup." + Constants.MODID + ".tab"))
             .build());
 
