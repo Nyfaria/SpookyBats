@@ -34,7 +34,6 @@ public class CreeperBat extends MonsterBat implements PowerableMob {
 
 	@Override
 	protected void tickDeath() {
-
 		if (isPowered() && deathTime == 5) {
 			boolean isMobExplosionType = this.level().getGameRules().getBoolean(GameRules.RULE_MOBGRIEFING);
 
@@ -46,6 +45,7 @@ public class CreeperBat extends MonsterBat implements PowerableMob {
 				this.level().explode(this, this.getX(), this.getY(), this.getZ(), 1, destructionType);
 			}
 		}
+
 		super.tickDeath();
 	}
 }

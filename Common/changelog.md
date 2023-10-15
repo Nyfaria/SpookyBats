@@ -7,6 +7,8 @@
 ### Bat Changes
 #### Undead Bats
 - Add a revenge goal where it shoots fireballs at enemies
+#### Herobrine Bats
+- Make herobrine bat sometimes summon an evil bat when killed
 
 # Version 0.3.1 Beta
 ## Changes

@@ -2,6 +2,7 @@ package com.nyfaria.spookybats.entity;
 
 import com.nyfaria.spookybats.entity.ai.TeleportAwayGoal;
 import com.nyfaria.spookybats.entity.api.SpookyBat;
+import com.nyfaria.spookybats.init.EntityInit;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.DifficultyInstance;
@@ -52,6 +53,22 @@ public class HerobrineBat extends MonsterBat {
 	public SpawnGroupData finalizeSpawn(ServerLevelAccessor level, DifficultyInstance difficulty, MobSpawnType $$2, @Nullable SpawnGroupData $$3, @Nullable CompoundTag $$4) {
 		this.populateDefaultEquipmentSlots(level.getRandom(), difficulty);
 		return super.finalizeSpawn(level, difficulty, $$2, $$3, $$4);
+	}
+
+	@Override
+	protected void tickDeath() {
+		if (deathTime == 5 && this.random.nextInt(1) == 0) {
+			EvilBat evilBat = EntityInit.EVIL_BAT.get().create(this.level());
+			evilBat.moveTo(this.getX(), this.getY(), this.getZ(), this.getYRot(), 0);
+			this.level().addFreshEntity(evilBat);
+		}
+
+		super.tickDeath();
+	}
+
+	@Override
+	public boolean spawnsGhostBat() {
+		return false;
 	}
 
 	@Override
