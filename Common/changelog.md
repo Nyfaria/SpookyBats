@@ -1,6 +1,7 @@
 # Version 0.4.0 Beta
 ## Additions
 - Add Evil Bat
+- Add Witch's Broom
 ## Changes
 ### Misc Changes
 - Staggered spawn rates of bats
