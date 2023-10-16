@@ -1,3 +1,8 @@
+# Version 0.4.1 Beta
+## Changes
+### Ghost Bat
+- Remove levitation upon hitting because of bug
+
 # Version 0.4.0 Beta
 ## Additions
 - Add Evil Bat

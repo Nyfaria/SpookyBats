@@ -33,15 +33,15 @@ public class GhostBat extends SpookyBat {
 			.add(Attributes.MAX_HEALTH, 2);
 	}
 
-	@Override
-	public boolean hurt(DamageSource pSource, float pAmount) {
-		if (this.getLastHurtByMob() != null) {
-			LivingEntity attacker = this.getLastHurtByMob();
-			attacker.addEffect(new MobEffectInstance(MobEffects.LEVITATION, 20 * 2, 0));
-		}
-
-		return super.hurt(pSource, pAmount);
-	}
+//	@Override
+//	public boolean hurt(DamageSource pSource, float pAmount) {
+//		if (this.getLastHurtByMob() != null) {
+//			LivingEntity attacker = this.getLastHurtByMob();
+//			attacker.addEffect(new MobEffectInstance(MobEffects.LEVITATION, 20 * 2, 0));
+//		}
+//
+//		return super.hurt(pSource, pAmount);
+//	}
 
 	@Override
 	public boolean spawnsGhostBat() {
