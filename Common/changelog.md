@@ -1,3 +1,8 @@
+# Version 0.5.0 Beta
+## Changes
+### Ghost Bat
+- Add back levitation when hitting functionality
+
 # Version 0.4.1 Beta
 ## Changes
 ### Ghost Bat

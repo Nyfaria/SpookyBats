@@ -35,14 +35,13 @@ public class GhostBat extends SpookyBat {
 	}
 
 	@Override
-	protected void tickDeath() {
-		this.getDeltaMovement().add(
-			this.getDeltaMovement().x,
-			this.getDeltaMovement().y * deathTime,
-			this.getDeltaMovement().z
-		);
+	public boolean hurt(DamageSource pSource, float pAmount) {
+		if (this.getLastHurtByMob() != null) {
+			LivingEntity attacker = this.getLastHurtByMob();
+			attacker.addEffect(new MobEffectInstance(MobEffects.LEVITATION, 20 * 2, 0));
+		}
 
-		super.tickDeath();
+		return super.hurt(pSource, pAmount);
 	}
 
 	@Override
