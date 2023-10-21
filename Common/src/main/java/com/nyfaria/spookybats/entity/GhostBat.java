@@ -14,7 +14,6 @@ import net.minecraft.world.entity.ai.goal.AvoidEntityGoal;
 import net.minecraft.world.entity.ai.goal.FleeSunGoal;
 import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.phys.Vec3;
 
 public class GhostBat extends SpookyBat {
 	public GhostBat(EntityType<? extends SpookyBat> pEntityType, Level pLevel) {
@@ -39,6 +38,7 @@ public class GhostBat extends SpookyBat {
 		if (this.getLastHurtByMob() != null) {
 			LivingEntity attacker = this.getLastHurtByMob();
 			attacker.addEffect(new MobEffectInstance(MobEffects.LEVITATION, 20 * 2, 0));
+//			this.setLastHurtByMob(null);
 		}
 
 		return super.hurt(pSource, pAmount);

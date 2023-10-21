@@ -126,6 +126,20 @@
       },
       "trigger": "minecraft:player_killed_entity"
     },
+    "slime_bat": {
+      "conditions": {
+        "entity": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "type": "spookybats:slime_bat"
+            }
+          }
+        ]
+      },
+      "trigger": "minecraft:player_killed_entity"
+    },
     "steve_bat": {
       "conditions": {
         "entity": [
@@ -225,6 +239,7 @@
       "herobrine_bat",
       "skeleton_bat",
       "wither_skeleton_bat",
+      "slime_bat",
       "undead_bat",
       "player_bat",
       "void_bat",

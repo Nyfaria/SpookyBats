@@ -6,7 +6,7 @@
       "type": "spookybats:pumpkin_bat",
       "maxCount": 3,
       "minCount": 1,
-      "weight": 5
+      "weight": 7
     },
     {
       "type": "spookybats:creeper_bat",
@@ -28,9 +28,9 @@
     },
     {
       "type": "spookybats:herobrine_bat",
-      "maxCount": 3,
+      "maxCount": 1,
       "minCount": 1,
-      "weight": 5
+      "weight": 4
     },
     {
       "type": "spookybats:skeleton_bat",
@@ -40,7 +40,7 @@
     },
     {
       "type": "spookybats:player_bat",
-      "maxCount": 3,
+      "maxCount": 2,
       "minCount": 1,
       "weight": 5
     }

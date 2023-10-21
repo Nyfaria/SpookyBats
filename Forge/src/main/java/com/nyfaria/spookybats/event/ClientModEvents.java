@@ -34,6 +34,7 @@ public class ClientModEvents {
         event.registerEntityRenderer(EntityInit.PLAYER_BAT.get(), context -> new PlayerBatRenderer(context, new HatBatModel<>(context.bakeLayer(HatBatModel.LAYER_LOCATION))));
         event.registerEntityRenderer(EntityInit.EVIL_BAT.get(), context -> new SpookyBatRenderer<>(context, new EvilBatModel<>(context.bakeLayer(EvilBatModel.LAYER_LOCATION))));
         event.registerEntityRenderer(EntityInit.VOID_BAT.get(), context -> new VoidBatRenderer(context, new HatBatModel<>(context.bakeLayer(HatBatModel.LAYER_LOCATION))));
+        event.registerEntityRenderer(EntityInit.SLIME_BAT.get(), context -> new SlimeBatRenderer(context, new SlimeBatModel<>(context.bakeLayer(SlimeBatModel.LAYER_LOCATION))));
 
         event.registerEntityRenderer(EntityInit.JACK_O_LANTERN_PROJECTILE.get(), context -> new ThrownItemRenderer<>(context, 1.0f, true));
         event.registerEntityRenderer(EntityInit.WITCHS_BROOM.get(),WitchsBroomRenderer::new);
@@ -51,6 +52,7 @@ public class ClientModEvents {
         event.registerLayerDefinition(GhostBatModel.LAYER_LOCATION, GhostBatModel::createBodyLayer);
         event.registerLayerDefinition(WitchsBroomModel.LAYER_LOCATION, WitchsBroomModel::createBodyLayer);
         event.registerLayerDefinition(EvilBatModel.LAYER_LOCATION, EvilBatModel::createBodyLayer);
+        event.registerLayerDefinition(SlimeBatModel.LAYER_LOCATION, SlimeBatModel::createBodyLayer);
     }
 
     @SubscribeEvent
