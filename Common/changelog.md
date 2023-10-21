@@ -3,6 +3,8 @@
 - New bats:
   - Slime bat
 ## Changes
+### Undead Bat
+- Add cooldown to fireball projectile
 ### Ghost Bat
 - Add back levitation when hitting functionality
 
