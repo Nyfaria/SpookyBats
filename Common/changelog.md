@@ -1,4 +1,7 @@
 # Version 0.5.0 Beta
+## Additions
+- New bats:
+  - Slime bat
 ## Changes
 ### Ghost Bat
 - Add back levitation when hitting functionality
