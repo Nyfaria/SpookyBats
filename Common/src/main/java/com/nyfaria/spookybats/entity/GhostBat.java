@@ -3,6 +3,7 @@ package com.nyfaria.spookybats.entity;
 import com.mojang.blaze3d.shaders.Effect;
 import com.nyfaria.spookybats.entity.api.SpookyBat;
 import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.world.damagesource.DamageTypes;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.Entity;
@@ -35,14 +36,15 @@ public class GhostBat extends SpookyBat {
 
 	@Override
 	public boolean hurt(DamageSource pSource, float pAmount) {
-		if (this.getLastHurtByMob() != null) {
-			LivingEntity attacker = this.getLastHurtByMob();
-			attacker.addEffect(new MobEffectInstance(MobEffects.LEVITATION, 20 * 2, 0));
-//			this.setLastHurtByMob(null);
+		if (pSource.is(DamageTypes.PLAYER_ATTACK) || pSource.is(DamageTypes.MOB_ATTACK)) {
+			LivingEntity attacker = (LivingEntity) pSource.getEntity();
+			attacker.addEffect(new MobEffectInstance(MobEffects.LEVITATION, 20*3));
 		}
 
 		return super.hurt(pSource, pAmount);
 	}
+
+
 
 	@Override
 	public boolean spawnsGhostBat() {

@@ -7,6 +7,8 @@
 ### Undead Bat
 - Add cooldown to fireball projectile
 ### Ghost Bat
+- Add back levitation for attackers
+- Fix potential bug of levitation lasting for a longer time than it should be
 
 # Version 0.4.1 Beta
 ## Changes
