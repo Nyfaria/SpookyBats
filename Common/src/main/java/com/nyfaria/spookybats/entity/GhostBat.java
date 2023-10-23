@@ -1,12 +1,10 @@
 package com.nyfaria.spookybats.entity;
 
-import com.mojang.blaze3d.shaders.Effect;
 import com.nyfaria.spookybats.entity.api.SpookyBat;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.damagesource.DamageTypes;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
-import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
@@ -43,8 +41,6 @@ public class GhostBat extends SpookyBat {
 
 		return super.hurt(pSource, pAmount);
 	}
-
-
 
 	@Override
 	public boolean spawnsGhostBat() {
