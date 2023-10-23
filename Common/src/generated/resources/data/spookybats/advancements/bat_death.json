@@ -42,6 +42,20 @@
       },
       "trigger": "minecraft:player_killed_entity"
     },
+    "experience_orb_bat": {
+      "conditions": {
+        "entity": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "type": "spookybats:experience_orb_bat"
+            }
+          }
+        ]
+      },
+      "trigger": "minecraft:player_killed_entity"
+    },
     "ghost_bat": {
       "conditions": {
         "entity": [
@@ -242,6 +256,7 @@
       "slime_bat",
       "undead_bat",
       "player_bat",
+      "experience_orb_bat",
       "void_bat",
       "evil_bat"
     ]

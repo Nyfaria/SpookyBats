@@ -1,7 +1,6 @@
 package com.nyfaria.spookybats.init;
 
 import com.nyfaria.spookybats.Constants;
-import com.nyfaria.spookybats.client.model.EvilBatModel;
 import com.nyfaria.spookybats.entity.*;
 import com.nyfaria.spookybats.entity.api.SpookyBat;
 import com.nyfaria.spookybats.entity.projectile.JackOLanternProjectile;
@@ -14,7 +13,6 @@ import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.MobCategory;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
-import net.minecraft.world.entity.animal.horse.Horse;
 import net.minecraft.world.item.Item;
 
 import java.util.ArrayList;
@@ -39,10 +37,11 @@ public class EntityInit {
     public static final RegistryObject<EntityType<SpookyBat>> SLIME_BAT = registerEntityWithEgg("slime_bat", ()->EntityType.Builder.of(SpookyBat::new, MobCategory.MONSTER).sized(0.5F, 0.9F), SpookyBat::createBatAttributes,0x48a549);
     public static final RegistryObject<EntityType<UndeadBat>> UNDEAD_BAT = registerEntityWithEgg("undead_bat", ()->EntityType.Builder.of(UndeadBat::new, MobCategory.MONSTER).sized(0.5F, 0.9F), SpookyBat::createBatAttributes,0x323133, 0xac6646);
     public static final RegistryObject<EntityType<SpookyBat>> PLAYER_BAT = registerEntityWithEgg("player_bat", ()->EntityType.Builder.of(SpookyBat::new, MobCategory.MONSTER).sized(0.5F, 0.9F), SpookyBat::createBatAttributes,0x423743);
+    public static final RegistryObject<EntityType<ExperienceOrbBat>> EXPERIENCE_ORB_BAT = registerEntityWithEgg("experience_orb_bat", ()->EntityType.Builder.of(ExperienceOrbBat::new, MobCategory.MONSTER).sized(0.5F, 0.9F), ExperienceOrbBat::createXPOrbBatAttributes,0x75f64a);
     public static final RegistryObject<EntityType<VoidBat>> VOID_BAT = registerEntityWithEgg("void_bat", ()->EntityType.Builder.of(VoidBat::new, MobCategory.MONSTER).sized(0.5F, 0.9F), SpookyBat::createBatAttributes,0x2b3b39, 0x29615e);
-    public static final RegistryObject<EntityType<WitchsBroom>> WITCHS_BROOM = registerLivingEntity("witchs_broom", ()->EntityType.Builder.of(WitchsBroom::new, MobCategory.MISC).sized(1F, 0.4F), WitchsBroom::createAttributes);
     public static final RegistryObject<EntityType<EvilBat>> EVIL_BAT = registerEntityWithEgg("evil_bat", ()->EntityType.Builder.of(EvilBat::new, MobCategory.MONSTER).sized(0.5F, 0.9F), EvilBat::createEvilBatAttributes, 0x942121);
 
+    public static final RegistryObject<EntityType<WitchsBroom>> WITCHS_BROOM = registerLivingEntity("witchs_broom", ()->EntityType.Builder.of(WitchsBroom::new, MobCategory.MISC).sized(1F, 0.4F), WitchsBroom::createAttributes);
 
 
 

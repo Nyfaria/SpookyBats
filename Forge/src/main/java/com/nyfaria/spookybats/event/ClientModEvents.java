@@ -4,8 +4,6 @@ import com.nyfaria.spookybats.client.model.*;
 import com.nyfaria.spookybats.client.renderer.*;
 import com.nyfaria.spookybats.client.renderer.api.SpookyBatRenderer;
 import com.nyfaria.spookybats.client.renderer.layer.BatWingsLayer;
-import com.nyfaria.spookybats.entity.GhostBat;
-import com.nyfaria.spookybats.entity.api.SpookyBat;
 import com.nyfaria.spookybats.init.EntityInit;
 import net.minecraft.client.model.geom.builders.CubeDeformation;
 import net.minecraft.client.renderer.entity.ThrownItemRenderer;
@@ -35,6 +33,7 @@ public class ClientModEvents {
         event.registerEntityRenderer(EntityInit.EVIL_BAT.get(), context -> new SpookyBatRenderer<>(context, new EvilBatModel<>(context.bakeLayer(EvilBatModel.LAYER_LOCATION))));
         event.registerEntityRenderer(EntityInit.VOID_BAT.get(), context -> new VoidBatRenderer(context, new HatBatModel<>(context.bakeLayer(HatBatModel.LAYER_LOCATION))));
         event.registerEntityRenderer(EntityInit.SLIME_BAT.get(), context -> new SlimeBatRenderer(context, new SlimeBatModel<>(context.bakeLayer(SlimeBatModel.LAYER_LOCATION))));
+        event.registerEntityRenderer(EntityInit.EXPERIENCE_ORB_BAT.get(), context -> new EmissiveBatRenderer(context, new ExperienceOrbBatModel<>(context.bakeLayer(ExperienceOrbBatModel.LAYER_LOCATION)), "experience_orb_bat"));
 
         event.registerEntityRenderer(EntityInit.JACK_O_LANTERN_PROJECTILE.get(), context -> new ThrownItemRenderer<>(context, 1.0f, true));
         event.registerEntityRenderer(EntityInit.WITCHS_BROOM.get(),WitchsBroomRenderer::new);
@@ -53,6 +52,7 @@ public class ClientModEvents {
         event.registerLayerDefinition(WitchsBroomModel.LAYER_LOCATION, WitchsBroomModel::createBodyLayer);
         event.registerLayerDefinition(EvilBatModel.LAYER_LOCATION, EvilBatModel::createBodyLayer);
         event.registerLayerDefinition(SlimeBatModel.LAYER_LOCATION, SlimeBatModel::createBodyLayer);
+        event.registerLayerDefinition(ExperienceOrbBatModel.LAYER_LOCATION, ExperienceOrbBatModel::createBodyLayer);
     }
 
     @SubscribeEvent

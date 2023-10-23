@@ -2,11 +2,11 @@
 ## Additions
 - New bats:
   - Slime bat
+  - Experience orb bat
 ## Changes
 ### Undead Bat
 - Add cooldown to fireball projectile
 ### Ghost Bat
-- Add back levitation when hitting functionality
 
 # Version 0.4.1 Beta
 ## Changes

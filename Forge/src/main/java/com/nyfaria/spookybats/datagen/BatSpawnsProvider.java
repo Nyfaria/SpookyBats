@@ -30,6 +30,7 @@ public class BatSpawnsProvider extends DatapackBuiltinEntriesProvider {
     private static final ResourceKey<BiomeModifier> OVERWORLD = ResourceKey.create(ForgeRegistries.Keys.BIOME_MODIFIERS, new ResourceLocation(Constants.MODID, "nether_bat_spawns"));
     private static final ResourceKey<BiomeModifier> NETHER = ResourceKey.create(ForgeRegistries.Keys.BIOME_MODIFIERS, new ResourceLocation(Constants.MODID, "overworld_bat_spawns"));
     private static final ResourceKey<BiomeModifier> SWAMP = ResourceKey.create(ForgeRegistries.Keys.BIOME_MODIFIERS, new ResourceLocation(Constants.MODID, "swamp_bat_spawns"));
+    private static final ResourceKey<BiomeModifier> MOUNTAIN = ResourceKey.create(ForgeRegistries.Keys.BIOME_MODIFIERS, new ResourceLocation(Constants.MODID, "mountain_bat_spawns"));
     private static final ResourceKey<BiomeModifier> DEEP_DARK = ResourceKey.create(ForgeRegistries.Keys.BIOME_MODIFIERS, new ResourceLocation(Constants.MODID, "deep_dark_bat_spawns"));
 
     public BatSpawnsProvider(PackOutput output, CompletableFuture<HolderLookup.Provider> registries) {
@@ -58,7 +59,14 @@ public class BatSpawnsProvider extends DatapackBuiltinEntriesProvider {
         );
         context.register(SWAMP,
                 new ForgeBiomeModifiers.AddSpawnsBiomeModifier(context.lookup(Registries.BIOME).getOrThrow(Tags.Biomes.IS_SWAMP), List.of(
-                        new MobSpawnSettings.SpawnerData(EntityInit.WITCH_BAT.get(), 5, 1, 3)
+                        new MobSpawnSettings.SpawnerData(EntityInit.WITCH_BAT.get(), 5, 1, 3),
+                        new MobSpawnSettings.SpawnerData(EntityInit.EXPERIENCE_ORB_BAT.get(), 3, 1, 1)
+                )
+                )
+        );
+        context.register(MOUNTAIN,
+                new ForgeBiomeModifiers.AddSpawnsBiomeModifier(context.lookup(Registries.BIOME).getOrThrow(Tags.Biomes.IS_MOUNTAIN), List.of(
+                        new MobSpawnSettings.SpawnerData(EntityInit.EXPERIENCE_ORB_BAT.get(), 3, 1, 1)
                 )
                 )
         );
