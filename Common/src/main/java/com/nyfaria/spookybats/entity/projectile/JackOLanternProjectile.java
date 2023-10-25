@@ -9,7 +9,10 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.EntityHitResult;
+import net.minecraft.world.phys.HitResult;
 
 public class JackOLanternProjectile extends ThrowableItemProjectile {
     public JackOLanternProjectile(EntityType<? extends JackOLanternProjectile> $$0, Level $$1) {
@@ -22,6 +25,12 @@ public class JackOLanternProjectile extends ThrowableItemProjectile {
 
     public JackOLanternProjectile(Level $$0, double $$1, double $$2, double $$3) {
         super(EntityInit.JACK_O_LANTERN_PROJECTILE.get(), $$1, $$2, $$3, $$0);
+    }
+
+    @Override
+    protected void onHit(HitResult $$0) {
+        super.onHit($$0);
+        this.discard();
     }
 
     @Override
