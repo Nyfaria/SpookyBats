@@ -4,6 +4,8 @@
   - Slime bat
   - Experience orb bat
 ## Changes
+### Pumpkin Bats
+- Fix pumpkin bat projectiles existing forever in the world
 ### Undead Bat
 - Add cooldown to fireball projectile
 ### Ghost Bat
