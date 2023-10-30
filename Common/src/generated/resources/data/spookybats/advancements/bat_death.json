@@ -196,6 +196,20 @@
       },
       "trigger": "minecraft:player_killed_entity"
     },
+    "winged_turmoil": {
+      "conditions": {
+        "entity": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "type": "spookybats:winged_turmoil"
+            }
+          }
+        ]
+      },
+      "trigger": "minecraft:player_killed_entity"
+    },
     "witch_bat": {
       "conditions": {
         "entity": [
@@ -258,7 +272,8 @@
       "player_bat",
       "experience_orb_bat",
       "void_bat",
-      "evil_bat"
+      "evil_bat",
+      "winged_turmoil"
     ]
   ],
   "sends_telemetry_event": true

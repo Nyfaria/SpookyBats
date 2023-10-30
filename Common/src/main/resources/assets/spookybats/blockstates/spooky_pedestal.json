@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "lit=false": {
+      "model": "spookybats:block/spooky_pedestal"
+    },
+    "lit=true": {
+      "model": "spookybats:block/spooky_pedestal_on"
+    }
+  }
+}

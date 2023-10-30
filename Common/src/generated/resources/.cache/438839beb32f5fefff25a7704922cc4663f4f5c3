@@ -1,4 +1,4 @@
-// 1.20.1	2023-10-22T21:15:59.1554987	Item Models: spookybats
+// 1.20.1	2023-10-30T08:48:27.9073559	Item Models: spookybats
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/spookybats/models/item/alex_bat_spawn_egg.json
 679c6e6b8baefa1f8eb7e1aaffc3ebc0139a0770 assets/spookybats/models/item/bat_wings.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/spookybats/models/item/creeper_bat_spawn_egg.json
@@ -15,11 +15,13 @@ c633e56bfa49d1de83f1a4ad59248e26a0e87f2b assets/spookybats/models/item/pumpkin_c
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/spookybats/models/item/skeleton_bat_spawn_egg.json
 0ee85940a7f4ebf62cc843188b32cf30f594f469 assets/spookybats/models/item/skull_candy.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/spookybats/models/item/slime_bat_spawn_egg.json
+5250e8dd61687eaf439808a8168395df62c9d643 assets/spookybats/models/item/spooky_pedestal.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/spookybats/models/item/steve_bat_spawn_egg.json
 6c8c523c153c57173607815a1549ef07d77d032f assets/spookybats/models/item/suspicious_candy.json
 d160729d45d804e297af82a1f37f693cd0deaf32 assets/spookybats/models/item/tnt_lollipop.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/spookybats/models/item/undead_bat_spawn_egg.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/spookybats/models/item/void_bat_spawn_egg.json
+63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/spookybats/models/item/winged_turmoil_spawn_egg.json
 4a74928c5d3b4ad99459be7fbf2861884cca1963 assets/spookybats/models/item/witches_brew.json
 c466c0782bd17c4bd39fa79f422209b5fd0f316e assets/spookybats/models/item/witchs_broom.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/spookybats/models/item/witch_bat_spawn_egg.json

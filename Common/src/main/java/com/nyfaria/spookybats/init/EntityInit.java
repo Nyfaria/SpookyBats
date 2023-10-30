@@ -40,6 +40,7 @@ public class EntityInit {
     public static final RegistryObject<EntityType<ExperienceOrbBat>> EXPERIENCE_ORB_BAT = registerEntityWithEgg("experience_orb_bat", ()->EntityType.Builder.of(ExperienceOrbBat::new, MobCategory.MONSTER).sized(0.5F, 0.9F), ExperienceOrbBat::createXPOrbBatAttributes,0x75f64a);
     public static final RegistryObject<EntityType<VoidBat>> VOID_BAT = registerEntityWithEgg("void_bat", ()->EntityType.Builder.of(VoidBat::new, MobCategory.MONSTER).sized(0.5F, 0.9F), SpookyBat::createBatAttributes,0x2b3b39, 0x29615e);
     public static final RegistryObject<EntityType<EvilBat>> EVIL_BAT = registerEntityWithEgg("evil_bat", ()->EntityType.Builder.of(EvilBat::new, MobCategory.MONSTER).sized(0.5F, 0.9F), EvilBat::createEvilBatAttributes, 0x942121);
+    public static final RegistryObject<EntityType<WingedTurmoil>> WINGED_TURMOIL = registerEntityWithEgg("winged_turmoil", ()->EntityType.Builder.of(WingedTurmoil::new, MobCategory.MONSTER).sized(0.8F, 3.2F), WingedTurmoil::createWingedTurmoilAttributes, 0x942121);
 
     public static final RegistryObject<EntityType<WitchsBroom>> WITCHS_BROOM = registerLivingEntity("witchs_broom", ()->EntityType.Builder.of(WitchsBroom::new, MobCategory.MISC).sized(1F, 0.4F), WitchsBroom::createAttributes);
 

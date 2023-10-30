@@ -1,6 +1,7 @@
 package com.nyfaria.spookybats.datagen;
 
 import com.nyfaria.spookybats.Constants;
+import com.nyfaria.spookybats.init.BlockInit;
 import com.nyfaria.spookybats.init.ItemInit;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
@@ -42,9 +43,11 @@ public class ModItemModelProvider extends ItemModelProvider {
                 .map(Supplier::get)
                 .forEach(this::simpleGeneratedModel);
         ItemInit.ITEMS.getEntries().stream().filter(item -> item.get() instanceof SpawnEggItem).map(Supplier::get).forEach(this::spawnEgg);
-        // Stream.of()
-        //         .map(Supplier::get)
-        //         .forEach(this::simpleBlockItemModel);
+         Stream.of(
+                         BlockInit.SPOOKY_PEDESTAL
+                 )
+                 .map(Supplier::get)
+                 .forEach(this::simpleBlockItemModel);
     }
 
     protected ItemModelBuilder simpleBlockItemModel(Block block) {

@@ -1,4 +1,5 @@
-// 1.20.1	2023-10-15T09:57:02.0298127	Loot Tables
+// 1.20.1	2023-10-30T08:48:27.9088436	Loot Tables
+05dd4db408d4ebd2e9fe2abb3d7dd463922f6650 data/spookybats/loot_tables/blocks/spooky_pedestal.json
 7395b8c4939c24bd0a110a5221d5c6b6ac9101a6 data/spookybats/loot_tables/entities/alex_bat.json
 a43b98bc6248b514cf69939e1f5861ffd43db912 data/spookybats/loot_tables/entities/creeper_bat.json
 74449fec4965a5f8fef1418dc0411ee81642e5c6 data/spookybats/loot_tables/entities/herobrine_bat.json

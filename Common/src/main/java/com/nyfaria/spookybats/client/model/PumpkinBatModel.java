@@ -14,6 +14,7 @@ import net.minecraft.client.model.geom.builders.LayerDefinition;
 import net.minecraft.client.model.geom.builders.MeshDefinition;
 import net.minecraft.client.model.geom.builders.PartDefinition;
 import net.minecraft.resources.ResourceLocation;
+import org.joml.Vector3f;
 
 public class PumpkinBatModel<T extends SpookyBat> extends SpookyBatModel<T> {
 	// This layer location should be baked with EntityRendererProvider.Context in the entity renderer and passed into this model's constructor
@@ -46,5 +47,6 @@ public class PumpkinBatModel<T extends SpookyBat> extends SpookyBatModel<T> {
 
 		return LayerDefinition.create(meshdefinition, 64, 64);
 	}
+
 
 }
