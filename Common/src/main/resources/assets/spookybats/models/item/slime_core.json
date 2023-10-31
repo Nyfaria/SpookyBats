@@ -79,6 +79,32 @@
 			}
 		}
 	],
+	"display": {
+		"firstperson_righthand": {
+			"rotation": [6, 0, 0],
+			"translation": [0, 0, -0.75],
+			"scale": [1, 1, 0.875]
+		},
+		"firstperson_lefthand": {
+			"rotation": [6, 0, 0],
+			"translation": [0, 0, -0.75],
+			"scale": [1, 1, 0.875]
+		},
+		"ground": {
+			"translation": [0, -0.5, 0],
+			"scale": [0.8, 0.8, 0.8]
+		},
+		"gui": {
+			"rotation": [31.94, -45.13, 8.09],
+			"translation": [0, -0.75, 0]
+		},
+		"head": {
+			"translation": [0, 9.5, 0]
+		},
+		"fixed": {
+			"translation": [0, -0.5, 0]
+		}
+	},
 	"groups": [
 		{
 			"name": "slime_bat_core",
