@@ -1,17 +1,6 @@
 package com.nyfaria.spookybats.client;
 
-import com.nyfaria.spookybats.client.model.EvilBatModel;
-import com.nyfaria.spookybats.client.model.ExperienceOrbBatModel;
-import com.nyfaria.spookybats.client.model.GhostBatModel;
-import com.nyfaria.spookybats.client.model.HatBatModel;
-import com.nyfaria.spookybats.client.model.PumpkinBatModel;
-import com.nyfaria.spookybats.client.model.SculkBatModel;
-import com.nyfaria.spookybats.client.model.SkeletonBatModel;
-import com.nyfaria.spookybats.client.model.SlimeBatModel;
-import com.nyfaria.spookybats.client.model.UndeadBatModel;
-import com.nyfaria.spookybats.client.model.WingedTurmoilModel;
-import com.nyfaria.spookybats.client.model.WitchBatModel;
-import com.nyfaria.spookybats.client.model.WitchsBroomModel;
+import com.nyfaria.spookybats.client.model.*;
 import com.nyfaria.spookybats.client.renderer.CreeperBatRenderer;
 import com.nyfaria.spookybats.client.renderer.EmissiveBatRenderer;
 import com.nyfaria.spookybats.client.renderer.GhostBatRenderer;
@@ -23,6 +12,7 @@ import com.nyfaria.spookybats.client.renderer.UndeadBatRenderer;
 import com.nyfaria.spookybats.client.renderer.VoidBatRenderer;
 import com.nyfaria.spookybats.client.renderer.WitchsBroomRenderer;
 import com.nyfaria.spookybats.client.renderer.api.SpookyBatRenderer;
+import com.nyfaria.spookybats.entity.api.SpookyBat;
 import com.nyfaria.spookybats.init.EntityInit;
 import net.minecraft.client.model.geom.ModelLayerLocation;
 import net.minecraft.client.model.geom.builders.CubeDeformation;
@@ -54,11 +44,11 @@ public class CommonClientClass {
                 new Renderers(EntityInit.VOID_BAT, context -> new VoidBatRenderer(context, new HatBatModel<>(context.bakeLayer(HatBatModel.LAYER_LOCATION)))),
                 new Renderers(EntityInit.SLIME_BAT, context -> new SlimeBatRenderer(context, new SlimeBatModel<>(context.bakeLayer(SlimeBatModel.LAYER_LOCATION)))),
                 new Renderers(EntityInit.EXPERIENCE_ORB_BAT, context -> new EmissiveBatRenderer(context, new ExperienceOrbBatModel<>(context.bakeLayer(ExperienceOrbBatModel.LAYER_LOCATION)), "experience_orb_bat")),
+                new Renderers(EntityInit.SHULKER_BAT, context -> new SpookyBatRenderer<>(context, new ShulkerBatModel<>(context.bakeLayer(ShulkerBatModel.LAYER_LOCATION)))),
                 new Renderers(EntityInit.WINGED_TURMOIL, context -> new SpookyBatRenderer<>(context, new WingedTurmoilModel<>(context.bakeLayer(WingedTurmoilModel.LAYER_LOCATION)),2f)),
                 new Renderers(EntityInit.JACK_O_LANTERN_PROJECTILE, context -> new ThrownItemRenderer<>(context, 1.0f, true)),
                 new Renderers(EntityInit.WITCHS_BROOM, WitchsBroomRenderer::new)
         );
-
     }
 
     public static List<LayerDefinitions> getLayerDefinitions() {
@@ -75,6 +65,7 @@ public class CommonClientClass {
                 new LayerDefinitions(EvilBatModel.LAYER_LOCATION, EvilBatModel.createBodyLayer()),
                 new LayerDefinitions(SlimeBatModel.LAYER_LOCATION, SlimeBatModel.createBodyLayer()),
                 new LayerDefinitions(ExperienceOrbBatModel.LAYER_LOCATION, ExperienceOrbBatModel.createBodyLayer()),
+                new LayerDefinitions(ShulkerBatModel.LAYER_LOCATION, ShulkerBatModel.createBodyLayer()),
                 new LayerDefinitions(WingedTurmoilModel.LAYER_LOCATION, WingedTurmoilModel.createBodyLayer())
         );
     }

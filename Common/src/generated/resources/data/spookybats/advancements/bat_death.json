@@ -126,6 +126,20 @@
       },
       "trigger": "minecraft:player_killed_entity"
     },
+    "shulker_bat": {
+      "conditions": {
+        "entity": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "type": "spookybats:shulker_bat"
+            }
+          }
+        ]
+      },
+      "trigger": "minecraft:player_killed_entity"
+    },
     "skeleton_bat": {
       "conditions": {
         "entity": [
@@ -271,6 +285,7 @@
       "undead_bat",
       "player_bat",
       "experience_orb_bat",
+      "shulker_bat",
       "void_bat",
       "evil_bat",
       "winged_turmoil"

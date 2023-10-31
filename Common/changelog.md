@@ -1,3 +1,9 @@
+# Version 0.6.0 Beta
+## Additions
+- New bats:
+  - Shulker bat
+  - Winged Turmoil boss
+
 # Version 0.5.0 Beta
 ## Additions
 - New bats:
