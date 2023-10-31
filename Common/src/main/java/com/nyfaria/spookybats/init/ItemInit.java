@@ -37,10 +37,11 @@ public class ItemInit {
     public static final RegistryObject<Item> SCULK_CANDY = registerCandy("sculk_candy", MobEffects.DARKNESS);
     public static final RegistryObject<Item> WITCHS_BROOM = ITEMS.register("witchs_broom", ()->new WitchsBroomItem(getItemProperties().stacksTo(1)));
 
-    public static final RegistryObject<Item> SKULK_CORE = ITEMS.register("skulk_core", ()->new CoreItem(getItemProperties().stacksTo(1), Blocks.REINFORCED_DEEPSLATE));
-    public static final RegistryObject<Item> SHULKER_CORE = ITEMS.register("shulker_core", ()->new CoreItem(getItemProperties().stacksTo(1), Blocks.PURPUR_PILLAR));
-    public static final RegistryObject<Item> SLIME_CORE = ITEMS.register("slime_core", ()->new CoreItem(getItemProperties().stacksTo(1), Blocks.CHISELED_STONE_BRICKS));
-    public static final RegistryObject<Item> UNDEAD_CORE = ITEMS.register("undead_core", ()->new CoreItem(getItemProperties().stacksTo(1), Blocks.GILDED_BLACKSTONE));
+    public static final RegistryObject<Item> SCULK_CORE = ITEMS.register("sculk_core", ()->new CoreItem(getItemProperties().stacksTo(1), Blocks.REINFORCED_DEEPSLATE));
+    public static final RegistryObject<Item>  SHULKER_CORE = ITEMS.register("shulker_core", ()->new CoreItem(getItemProperties().stacksTo(1), Blocks.PURPUR_PILLAR));
+    public static final RegistryObject<Item>  SLIME_CORE = ITEMS.register("slime_core", ()->new CoreItem(getItemProperties().stacksTo(1), Blocks.CHISELED_STONE_BRICKS));
+    public static final RegistryObject<Item>  UNDEAD_CORE = ITEMS.register("undead_core", ()->new CoreItem(getItemProperties().stacksTo(1), Blocks.GILDED_BLACKSTONE));
+
     public static final RegistrationProvider<CreativeModeTab> CREATIVE_MODE_TABS = RegistrationProvider.get(Registries.CREATIVE_MODE_TAB, Constants.MODID);
     public static final RegistryObject<CreativeModeTab> TAB = CREATIVE_MODE_TABS.register(Constants.MODID, () -> CreativeModeTab.builder(CreativeModeTab.Row.TOP, 0)
             .icon(() -> new ItemStack(ItemInit.WITCHES_BREW.get()))
@@ -49,7 +50,7 @@ public class ItemInit {
                         SPAWN_EGG_LIST.forEach((registryObject) -> output.accept(new ItemStack(registryObject.get())));
                         CANDY_LIST.forEach((registryObject) -> output.accept(new ItemStack(registryObject.get())));
                         output.accept(WITCHS_BROOM.get());
-                        output.accept(SKULK_CORE.get());
+                        output.accept(SCULK_CORE.get());
                         output.accept(SHULKER_CORE.get());
                         output.accept(SLIME_CORE.get());
                         output.accept(UNDEAD_CORE.get());

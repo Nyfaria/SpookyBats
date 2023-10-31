@@ -3,6 +3,8 @@
 - New bats:
   - Shulker bat
   - Winged Turmoil boss
+- New Structure:
+  - Altar of Turmoil
 
 # Version 0.5.0 Beta
 ## Additions

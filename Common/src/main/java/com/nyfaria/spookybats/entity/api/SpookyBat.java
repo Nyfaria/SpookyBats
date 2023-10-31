@@ -10,8 +10,10 @@ import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
+import net.minecraft.tags.BiomeTags;
 import net.minecraft.util.Mth;
 import net.minecraft.util.RandomSource;
+import net.minecraft.world.Difficulty;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityDimensions;
@@ -26,10 +28,15 @@ import net.minecraft.world.entity.ai.control.MoveControl;
 import net.minecraft.world.entity.ai.navigation.FlyingPathNavigation;
 import net.minecraft.world.entity.ai.navigation.PathNavigation;
 import net.minecraft.world.entity.ai.targeting.TargetingConditions;
+import net.minecraft.world.entity.monster.Slime;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.level.ChunkPos;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.ServerLevelAccessor;
+import net.minecraft.world.level.WorldGenLevel;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.levelgen.WorldgenRandom;
 import net.minecraft.world.phys.Vec3;
 
 import javax.annotation.Nullable;
@@ -245,5 +252,24 @@ public class SpookyBat extends PathfinderMob {
 
     public static <T extends Mob> boolean checkSpookyBatSpawnRules(EntityType<T> tEntityType, ServerLevelAccessor serverLevelAccessor, MobSpawnType spawnType, BlockPos pos, RandomSource randomSource) {
         return true;
+    }
+    public static boolean checkSlimeSpawnRules(EntityType<SpookyBat> $$0, LevelAccessor $$1, MobSpawnType $$2, BlockPos $$3, RandomSource $$4) {
+        if ($$1.getDifficulty() != Difficulty.PEACEFUL) {
+            if ($$1.getBiome($$3).is(BiomeTags.ALLOWS_SURFACE_SLIME_SPAWNS) && $$3.getY() > 50 && $$3.getY() < 70 && $$4.nextFloat() < 0.5F && $$4.nextFloat() < $$1.getMoonBrightness() && $$1.getMaxLocalRawBrightness($$3) <= $$4.nextInt(8)) {
+                return checkMobSpawnRules($$0, $$1, $$2, $$3, $$4);
+            }
+
+            if (!($$1 instanceof WorldGenLevel)) {
+                return false;
+            }
+
+            ChunkPos $$5 = new ChunkPos($$3);
+            boolean $$6 = WorldgenRandom.seedSlimeChunk($$5.x, $$5.z, ((WorldGenLevel)$$1).getSeed(), 987234911L).nextInt(10) == 0;
+            if ($$4.nextInt(10) == 0 && $$6 && $$3.getY() < 40) {
+                return checkMobSpawnRules($$0, $$1, $$2, $$3, $$4);
+            }
+        }
+
+        return false;
     }
 }

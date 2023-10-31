@@ -1,6 +1,7 @@
 package com.nyfaria.spookybats.client;
 
 import com.nyfaria.spookybats.client.model.*;
+import com.nyfaria.spookybats.client.renderer.BlockProjectileRenderer;
 import com.nyfaria.spookybats.client.renderer.CreeperBatRenderer;
 import com.nyfaria.spookybats.client.renderer.EmissiveBatRenderer;
 import com.nyfaria.spookybats.client.renderer.GhostBatRenderer;
@@ -47,7 +48,8 @@ public class CommonClientClass {
                 new Renderers(EntityInit.SHULKER_BAT, context -> new SpookyBatRenderer<>(context, new ShulkerBatModel<>(context.bakeLayer(ShulkerBatModel.LAYER_LOCATION)))),
                 new Renderers(EntityInit.WINGED_TURMOIL, context -> new SpookyBatRenderer<>(context, new WingedTurmoilModel<>(context.bakeLayer(WingedTurmoilModel.LAYER_LOCATION)),2f)),
                 new Renderers(EntityInit.JACK_O_LANTERN_PROJECTILE, context -> new ThrownItemRenderer<>(context, 1.0f, true)),
-                new Renderers(EntityInit.WITCHS_BROOM, WitchsBroomRenderer::new)
+                new Renderers(EntityInit.WITCHS_BROOM, WitchsBroomRenderer::new),
+                new Renderers(EntityInit.BLOCK_PROJECTILE, BlockProjectileRenderer::new)
         );
     }
 

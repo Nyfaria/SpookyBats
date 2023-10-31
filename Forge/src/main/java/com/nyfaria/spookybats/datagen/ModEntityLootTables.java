@@ -38,16 +38,29 @@ public class ModEntityLootTables extends EntityLootSubProvider {
                 new LootEntry(ItemInit.WITCHES_BREW.get(), 1.0f, ConstantValue.exactly(1)),
                 new LootEntry(ItemInit.WITCHS_BROOM.get(), 0.1f, ConstantValue.exactly(1))
         );
-//        dropSingle(EntityInit.WITCH_BAT.get(), ItemInit.WITCHES_BREW.get());
         dropSingle(EntityInit.SKELETON_BAT.get(), ItemInit.SKULL_CANDY.get());
         dropSingle(EntityInit.WITHER_SKELETON_BAT.get(), ItemInit.WITHER_SKULL_CANDY.get());
         playerHead(EntityInit.PLAYER_BAT.get());
         dropSingle(EntityInit.STEVE_BAT.get(), ItemInit.GENERIC_CANDY.get());
         dropSingle(EntityInit.ALEX_BAT.get(), ItemInit.GENERIC_CANDY.get());
-        dropSingle(EntityInit.UNDEAD_BAT.get(), ItemInit.ZOMBIE_FLESH_LOLLIPOP.get());
+        multiDrops(EntityInit.UNDEAD_BAT.get(), ConstantValue.exactly(1),
+                new LootEntry(ItemInit.ZOMBIE_FLESH_LOLLIPOP.get(), 1.0f, ConstantValue.exactly(1)),
+                new LootEntry(ItemInit.UNDEAD_CORE.get(), 0.01f, ConstantValue.exactly(1))
+                );
         dropSingle(EntityInit.HEROBRINE_BAT.get(), ItemInit.SUSPICIOUS_CANDY.get());
-        dropSingle(EntityInit.SCULK_BAT.get(), ItemInit.SCULK_CANDY.get());
+        multiDrops(EntityInit.SCULK_BAT.get(), ConstantValue.exactly(1),
+                new LootEntry(ItemInit.SCULK_CANDY.get(), 1.0f, ConstantValue.exactly(1)),
+                new LootEntry(ItemInit.SCULK_CORE.get(), 0.01f, ConstantValue.exactly(1))
+        );
         dropSingle(EntityInit.WITCHS_BROOM.get(), ItemInit.WITCHS_BROOM.get());
+        multiDrops(EntityInit.SHULKER_BAT.get(), ConstantValue.exactly(1),
+                new LootEntry(ItemInit.GENERIC_CANDY.get(), 1.0f, ConstantValue.exactly(1)),
+                new LootEntry(ItemInit.SHULKER_CORE.get(), 0.01f, ConstantValue.exactly(1))
+        );
+        multiDrops(EntityInit.SLIME_BAT.get(), ConstantValue.exactly(1),
+                new LootEntry(ItemInit.GENERIC_CANDY.get(), 1.0f, ConstantValue.exactly(1)),
+                new LootEntry(ItemInit.SLIME_CORE.get(), 0.01f, ConstantValue.exactly(1))
+        );
     }
 
     private void multiDrops(EntityType<?> type, NumberProvider rolls, LootEntry... entries) {
