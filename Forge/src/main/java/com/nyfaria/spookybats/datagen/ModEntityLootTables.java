@@ -54,7 +54,6 @@ public class ModEntityLootTables extends EntityLootSubProvider {
         );
         dropSingle(EntityInit.WITCHS_BROOM.get(), ItemInit.WITCHS_BROOM.get());
         multiDrops(EntityInit.SHULKER_BAT.get(), ConstantValue.exactly(1),
-                new LootEntry(ItemInit.GENERIC_CANDY.get(), 1.0f, ConstantValue.exactly(1)),
                 new LootEntry(ItemInit.SHULKER_CORE.get(), 0.01f, ConstantValue.exactly(1))
         );
         multiDrops(EntityInit.SLIME_BAT.get(), ConstantValue.exactly(1),
