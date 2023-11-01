@@ -1,5 +1,12 @@
 
 ![baner](https://github.com/Nyfaria/SpookyBats/assets/94301223/de38b3ab-baec-4f5c-a145-d9e60d986363)
+[![CurseForge Downloads](https://img.shields.io/curseforge/dt/915336?logo=curseforge)](https://img.shields.io/curseforge/dt/915336?logo=curseforge&label=Downloads&color=%2300D620
+) ![Modrinth Downloads](https://img.shields.io/modrinth/dt/SNIKP4CT?logo=modrinth&label=Downloads&color=%2300D620)
+![Modrinth Game Versions](https://img.shields.io/modrinth/game-versions/SNIKP4CT?label=MC%20Versions&color=%2300D620)
+
+
+
+
 
 ## General Info
 
