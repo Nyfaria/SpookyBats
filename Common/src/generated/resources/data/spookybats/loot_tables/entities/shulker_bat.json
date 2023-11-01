@@ -8,23 +8,6 @@
           "type": "minecraft:item",
           "conditions": [
             {
-              "chance": 1.0,
-              "condition": "minecraft:random_chance"
-            }
-          ],
-          "functions": [
-            {
-              "add": false,
-              "count": 1.0,
-              "function": "minecraft:set_count"
-            }
-          ],
-          "name": "spookybats:sculk_candy"
-        },
-        {
-          "type": "minecraft:item",
-          "conditions": [
-            {
               "chance": 0.01,
               "condition": "minecraft:random_chance"
             }
@@ -36,7 +19,7 @@
               "function": "minecraft:set_count"
             }
           ],
-          "name": "spookybats:sculk_core"
+          "name": "spookybats:shulker_core"
         },
         {
           "type": "minecraft:item",
@@ -59,5 +42,5 @@
       "rolls": 1.0
     }
   ],
-  "random_sequence": "spookybats:entities/sculk_bat"
+  "random_sequence": "spookybats:entities/shulker_bat"
 }

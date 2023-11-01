@@ -6,6 +6,12 @@
       "entries": [
         {
           "type": "minecraft:item",
+          "conditions": [
+            {
+              "chance": 1.0,
+              "condition": "minecraft:random_chance"
+            }
+          ],
           "functions": [
             {
               "add": false,
@@ -14,6 +20,23 @@
             }
           ],
           "name": "spookybats:zombie_flesh_lollipop"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "chance": 0.01,
+              "condition": "minecraft:random_chance"
+            }
+          ],
+          "functions": [
+            {
+              "add": false,
+              "count": 1.0,
+              "function": "minecraft:set_count"
+            }
+          ],
+          "name": "spookybats:undead_core"
         },
         {
           "type": "minecraft:item",

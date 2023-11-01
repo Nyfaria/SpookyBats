@@ -275,7 +275,6 @@
       "creeper_bat",
       "witch_bat",
       "sculk_bat",
-      "ghost_bat",
       "steve_bat",
       "alex_bat",
       "herobrine_bat",
@@ -286,8 +285,9 @@
       "player_bat",
       "experience_orb_bat",
       "shulker_bat",
-      "void_bat",
+      "ghost_bat",
       "evil_bat",
+      "void_bat",
       "winged_turmoil"
     ]
   ],

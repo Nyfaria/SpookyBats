@@ -1,3 +1,7 @@
+# Version 0.6.1 Beta
+## Bug Fixes
+ - Fixed Loot tables for bats from recent updates.
+
 # Version 0.6.0 Beta
 ## Additions
 - New bats:
