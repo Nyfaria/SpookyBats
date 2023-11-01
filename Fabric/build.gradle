@@ -117,6 +117,9 @@ publishMods {
                 requires {
                     slug = "fabric-api"
                 }
+                requires {
+                    slug = "smartbrainlib"
+                }
             }
         }
         if (modrinth_publishing_enabled.toBoolean()) {
@@ -126,6 +129,9 @@ publishMods {
                 minecraftVersions.add(minecraft_version)
                 requires {
                     slug = "fabric-api"
+                }
+                requires {
+                    slug = "smartbrainlib"
                 }
             }
         }

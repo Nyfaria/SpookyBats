@@ -152,6 +152,9 @@ publishMods {
                 projectId = curseforge_project_id
                 accessToken = curseforge_token
                 minecraftVersions.add(minecraft_version)
+                requires {
+                    slug = "smartbrainlib"
+                }
             }
         }
         if (modrinth_publishing_enabled.toBoolean()) {
@@ -159,6 +162,9 @@ publishMods {
                 accessToken = modrinth_token
                 projectId = modrinth_project_id
                 minecraftVersions.add(minecraft_version)
+                requires {
+                    slug = "smartbrainlib"
+                }
             }
         }
     }
