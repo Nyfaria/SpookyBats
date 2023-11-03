@@ -1,6 +1,13 @@
+# Version 1.0.0
+## Additions
+- New "bitesized jelly" candy
+## Changes
+### Slime Bat
+- Drops bitesized jelly
+
 # Version 0.6.1 Beta
 ## Bug Fixes
- - Fixed Loot tables for bats from recent updates.
+ - Fixed Loot tables for bats from recent updates
 
 # Version 0.6.0 Beta
 ## Additions

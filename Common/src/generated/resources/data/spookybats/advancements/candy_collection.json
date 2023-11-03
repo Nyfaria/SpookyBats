@@ -1,6 +1,18 @@
 {
   "parent": "spookybats:bat_death",
   "criteria": {
+    "bitesized_jelly": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "spookybats:bitesized_jelly"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "generic_candy": {
       "conditions": {
         "items": [
@@ -153,6 +165,9 @@
     ],
     [
       "sculk_candy"
+    ],
+    [
+      "bitesized_jelly"
     ]
   ],
   "sends_telemetry_event": true

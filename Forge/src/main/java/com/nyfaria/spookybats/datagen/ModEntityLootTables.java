@@ -46,7 +46,7 @@ public class ModEntityLootTables extends EntityLootSubProvider {
         multiDrops(EntityInit.UNDEAD_BAT.get(), ConstantValue.exactly(1),
                 new LootEntry(ItemInit.ZOMBIE_FLESH_LOLLIPOP.get(), 1.0f, ConstantValue.exactly(1)),
                 new LootEntry(ItemInit.UNDEAD_CORE.get(), 0.01f, ConstantValue.exactly(1))
-                );
+        );
         dropSingle(EntityInit.HEROBRINE_BAT.get(), ItemInit.SUSPICIOUS_CANDY.get());
         multiDrops(EntityInit.SCULK_BAT.get(), ConstantValue.exactly(1),
                 new LootEntry(ItemInit.SCULK_CANDY.get(), 1.0f, ConstantValue.exactly(1)),
@@ -57,7 +57,7 @@ public class ModEntityLootTables extends EntityLootSubProvider {
                 new LootEntry(ItemInit.SHULKER_CORE.get(), 0.01f, ConstantValue.exactly(1))
         );
         multiDrops(EntityInit.SLIME_BAT.get(), ConstantValue.exactly(1),
-                new LootEntry(ItemInit.GENERIC_CANDY.get(), 1.0f, ConstantValue.exactly(1)),
+                new LootEntry(ItemInit.BITESIZED_JELLY.get(), 1.0f, ConstantValue.exactly(1)),
                 new LootEntry(ItemInit.SLIME_CORE.get(), 0.01f, ConstantValue.exactly(1))
         );
     }

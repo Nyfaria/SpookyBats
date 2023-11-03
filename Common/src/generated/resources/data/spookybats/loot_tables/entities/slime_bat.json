@@ -19,7 +19,7 @@
               "function": "minecraft:set_count"
             }
           ],
-          "name": "spookybats:generic_candy"
+          "name": "spookybats:bitesized_jelly"
         },
         {
           "type": "minecraft:item",
