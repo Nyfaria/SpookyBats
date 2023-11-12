@@ -28,7 +28,6 @@ import net.minecraft.world.level.biome.BiomeSpecialEffects;
 import net.minecraft.world.level.biome.Biomes;
 import net.minecraft.world.level.biome.MobSpawnSettings;
 import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.LeavesBlock;
 import net.minecraft.world.level.block.RotatedPillarBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.levelgen.GenerationStep;
@@ -36,7 +35,6 @@ import net.minecraft.world.level.levelgen.Heightmap;
 import net.minecraft.world.level.levelgen.blockpredicates.BlockPredicate;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.feature.Feature;
-import net.minecraft.world.level.levelgen.feature.RandomSelectorFeature;
 import net.minecraft.world.level.levelgen.feature.configurations.TreeConfiguration;
 import net.minecraft.world.level.levelgen.feature.featuresize.ThreeLayersFeatureSize;
 import net.minecraft.world.level.levelgen.feature.foliageplacers.DarkOakFoliagePlacer;
@@ -81,7 +79,7 @@ public class WorldGenProvider extends DatapackBuiltinEntriesProvider {
 
     public static void spawns(BootstapContext<BiomeModifier> context) {
         context.register(OVERWORLD,
-                new ForgeBiomeModifiers.AddSpawnsBiomeModifier(context.lookup(Registries.BIOME).getOrThrow(BiomeTags.IS_OVERWORLD), CommonSpawning.OVERWORLD_SPAWNS)
+                new ForgeBiomeModifiers.AddSpawnsBiomeModifier(context.lookup(Registries.BIOME).getOrThrow(BiomeTags.IS_OVERWORLD), CommonSpawning.SPOOKY_OAK_FOREST_SPAWNS)
         );
         context.register(NETHER,
                 new ForgeBiomeModifiers.AddSpawnsBiomeModifier(context.lookup(Registries.BIOME).getOrThrow(BiomeTags.IS_NETHER), CommonSpawning.NETHER_SPAWNS)
@@ -136,7 +134,7 @@ public class WorldGenProvider extends DatapackBuiltinEntriesProvider {
 
     public static void biomes(BootstapContext<Biome> context) {
         MobSpawnSettings.Builder builder = new MobSpawnSettings.Builder();
-        CommonSpawning.OVERWORLD_SPAWNS.forEach(spawnerData -> builder.addSpawn(MobCategory.MONSTER, spawnerData));
+        CommonSpawning.SPOOKY_OAK_FOREST_SPAWNS.forEach(spawnerData -> builder.addSpawn(MobCategory.MONSTER, spawnerData));
         context.register(CommonClass.SPOOKY_OAK_FOREST,
                 new Biome.BiomeBuilder()
                         .specialEffects(

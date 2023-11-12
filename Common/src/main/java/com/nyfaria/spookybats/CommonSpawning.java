@@ -10,7 +10,7 @@ import net.minecraft.world.level.levelgen.Heightmap;
 import java.util.List;
 
 public class CommonSpawning {
-    public static List<MobSpawnSettings.SpawnerData> OVERWORLD_SPAWNS =
+    public static List<MobSpawnSettings.SpawnerData> SPOOKY_OAK_FOREST_SPAWNS =
             List.of(
                     new MobSpawnSettings.SpawnerData(EntityInit.PUMPKIN_BAT.get(), 7, 1, 3),
                     new MobSpawnSettings.SpawnerData(EntityInit.CREEPER_BAT.get(), 5, 1, 3),

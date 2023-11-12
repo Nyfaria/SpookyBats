@@ -16,9 +16,6 @@ public class SpookyBats implements ModInitializer {
         EntityInit.attributeSuppliers.forEach(
                 p -> FabricDefaultAttributeRegistry.register(p.entityTypeSupplier().get(), p.factory().get().build())
         );
-        CommonSpawning.OVERWORLD_SPAWNS.forEach(spawnerData ->
-                BiomeModifications.addSpawn(BiomeSelectors.foundInOverworld(), MobCategory.MONSTER, spawnerData.type, spawnerData.getWeight().asInt(), spawnerData.minCount, spawnerData.maxCount)
-        );
         CommonSpawning.NETHER_SPAWNS.forEach(spawnerData ->
                 BiomeModifications.addSpawn(BiomeSelectors.foundInTheNether(), MobCategory.MONSTER, spawnerData.type, spawnerData.getWeight().asInt(), spawnerData.minCount, spawnerData.maxCount)
         );
