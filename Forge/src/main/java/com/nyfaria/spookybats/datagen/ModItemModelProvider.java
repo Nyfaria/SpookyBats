@@ -38,16 +38,19 @@ public class ModItemModelProvider extends ItemModelProvider {
                         ItemInit.WITCHES_BREW,
                         ItemInit.BAT_WINGS,
                         ItemInit.SCULK_CANDY,
-                        ItemInit.WITCHS_BROOM
+                        ItemInit.WITCHS_BROOM,
+                        ItemInit.BITESIZED_JELLY
                 )
                 .map(Supplier::get)
                 .forEach(this::simpleGeneratedModel);
         ItemInit.ITEMS.getEntries().stream().filter(item -> item.get() instanceof SpawnEggItem).map(Supplier::get).forEach(this::spawnEgg);
-         Stream.of(
-                         BlockInit.SPOOKY_PEDESTAL
-                 )
-                 .map(Supplier::get)
-                 .forEach(this::simpleBlockItemModel);
+        Stream.of(
+                        BlockInit.SPOOKY_PEDESTAL,
+                        BlockInit.SPOOKY_OAK.leaves(),
+                        BlockInit.SPOOKY_OAK.log()
+                )
+                .map(Supplier::get)
+                .forEach(this::simpleBlockItemModel);
     }
 
     protected ItemModelBuilder simpleBlockItemModel(Block block) {
@@ -67,10 +70,12 @@ public class ModItemModelProvider extends ItemModelProvider {
         String name = getName(item);
         return singleTexture(name, parent, "layer0", modLoc("item/" + name));
     }
+
     protected ItemModelBuilder spawnEgg(Item block) {
         String name = getName(block);
         return withExistingParent(name, mcLoc("item/template_spawn_egg"));
     }
+
     protected String getName(Item item) {
         return ForgeRegistries.ITEMS.getKey(item).getPath();
     }

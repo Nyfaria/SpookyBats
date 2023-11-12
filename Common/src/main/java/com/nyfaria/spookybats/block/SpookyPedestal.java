@@ -2,6 +2,7 @@ package com.nyfaria.spookybats.block;
 
 import com.nyfaria.spookybats.block.entity.SpookyPedestalBlockEntity;
 import com.nyfaria.spookybats.init.BlockInit;
+import com.nyfaria.spookybats.init.ItemInit;
 import com.nyfaria.spookybats.item.CoreItem;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.InteractionHand;
@@ -66,4 +67,5 @@ public class SpookyPedestal extends BaseEntityBlock {
     public <T extends BlockEntity> BlockEntityTicker<T> getTicker(Level level, BlockState state, BlockEntityType<T> blockEntityType) {
         return !level.isClientSide ? createTickerHelper(blockEntityType, BlockInit.SPOOKY_PEDESTAL_BLOCK_ENTITY.get(), (world, pos, pState, be)->be.tick(world,pos,pState,be)) : null;
     }
+
 }

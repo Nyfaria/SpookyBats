@@ -1,10 +1,12 @@
 package com.nyfaria.spookybats.datagen;
 
 import com.nyfaria.spookybats.Constants;
+import com.nyfaria.spookybats.init.BlockInit;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.TagsProvider;
+import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
@@ -43,7 +45,9 @@ public class ModTagProvider {
 
         @Override
         protected void addTags(HolderLookup.Provider pProvider) {
-
+            populateTag(BlockTags.LOGS, BlockInit.SPOOKY_OAK.log());
+            populateTag(BlockTags.LEAVES, BlockInit.SPOOKY_OAK.leaves());
+            populateTag(BlockTags.SAPLINGS, BlockInit.SPOOKY_OAK.sapling());
         }
         public  <T extends Block>void populateTag(TagKey<Block> tag, Supplier<?>... items){
             for (Supplier<?> item : items) {

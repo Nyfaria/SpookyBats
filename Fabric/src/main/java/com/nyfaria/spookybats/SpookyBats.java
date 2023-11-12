@@ -35,5 +35,6 @@ public class SpookyBats implements ModInitializer {
                 BiomeModifications.addSpawn(BiomeSelectors.foundInTheEnd(), MobCategory.MONSTER, spawnerData.type, spawnerData.getWeight().asInt(), spawnerData.minCount, spawnerData.maxCount)
         );
         CommonSpawning.placements();
+        CommonClass.setupTerraBlender();
     }
 }

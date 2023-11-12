@@ -18,6 +18,7 @@ dependencies {
     implementation group: 'com.google.code.findbugs', name: 'jsr305', version: '3.0.1'
     implementation project(":Common")
     modImplementation "net.tslat.smartbrainlib:SmartBrainLib-fabric-${project.minecraft_version}:${project.sbl_version}"
+    modImplementation "com.github.glitchfiend:TerraBlender-fabric:${terrablender_version}"
 }
 
 loom {
@@ -28,12 +29,14 @@ loom {
     runs {
         client {
             client()
+            vmArgs("-XX:+AllowEnhancedClassRedefinition")
             setConfigName("Fabric Client")
             ideConfigGenerated(true)
             runDir("run")
         }
         server {
             server()
+            vmArgs("-XX:+AllowEnhancedClassRedefinition")
             setConfigName("Fabric Server")
             ideConfigGenerated(true)
             runDir("run")

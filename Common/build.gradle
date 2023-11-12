@@ -29,6 +29,7 @@ dependencies {
     implementation group: 'com.google.code.findbugs', name: 'jsr305', version: '3.0.1'
     implementation "net.tslat.smartbrainlib:SmartBrainLib-common-${project.minecraft_version}:${project.sbl_version}"
 
+    implementation "com.github.glitchfiend:TerraBlender-common:${terrablender_version}"
 }
 sourceSets.main.resources.srcDir './src/generated/resources'
 processResources {

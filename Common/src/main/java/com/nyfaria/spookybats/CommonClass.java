@@ -26,18 +26,28 @@ import com.nyfaria.spookybats.entity.api.SpookyBat;
 import com.nyfaria.spookybats.init.BlockInit;
 import com.nyfaria.spookybats.init.EntityInit;
 import com.nyfaria.spookybats.init.ItemInit;
+import com.nyfaria.spookybats.worldgen.SpookyBatsOverworldRegion;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.entity.ThrownItemRenderer;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.resources.ResourceKey;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.SpawnPlacements;
 import net.minecraft.world.entity.monster.Slime;
+import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.levelgen.Heightmap;
+import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
+import net.minecraft.world.level.levelgen.placement.PlacedFeature;
+import terrablender.api.Regions;
 
 import java.util.Map;
 import java.util.function.Supplier;
 
 public class CommonClass {
-
+    public static final ResourceKey<Biome> SPOOKY_OAK_FOREST = ResourceKey.create(Registries.BIOME, new ResourceLocation(Constants.MODID, "spooky_oak_forest"));
+    public static final ResourceKey<PlacedFeature> SPOOKY_OAK_TREE = ResourceKey.create(Registries.PLACED_FEATURE, new ResourceLocation(Constants.MODID, "spooky_oak"));
+    public static final ResourceKey<ConfiguredFeature<?,?>> SPOOKY_OAK_TREE_CF = ResourceKey.create(Registries.CONFIGURED_FEATURE, new ResourceLocation(Constants.MODID, "spooky_oak"));
 
 
     public static void init() {
@@ -46,4 +56,7 @@ public class CommonClass {
         EntityInit.loadClass();
     }
 
+    public static void setupTerraBlender(){
+        Regions.register(new SpookyBatsOverworldRegion(1));
+    }
 }

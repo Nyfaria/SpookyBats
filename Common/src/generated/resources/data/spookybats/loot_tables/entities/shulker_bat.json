@@ -6,6 +6,12 @@
       "entries": [
         {
           "type": "minecraft:item",
+          "conditions": [
+            {
+              "chance": 0.01,
+              "condition": "minecraft:random_chance"
+            }
+          ],
           "functions": [
             {
               "add": false,

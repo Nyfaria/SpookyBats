@@ -13,6 +13,7 @@ archivesBaseName = "${mod_id}-forge-${minecraft_version}"
 minecraft {
     mappings channel: mappings_channel, version: mappings_version
 
+
     if (project.hasProperty('forge_ats_enabled') && project.findProperty('forge_ats_enabled').toBoolean()) {
         // This location is hardcoded in Forge and can not be changed.
         // https://github.com/MinecraftForge/MinecraftForge/blob/be1698bb1554f9c8fa2f58e32b9ab70bc4385e60/fmlloader/src/main/java/net/minecraftforge/fml/loading/moddiscovery/ModFile.java#L123
@@ -23,6 +24,7 @@ minecraft {
     runs {
         client {
             workingDirectory project.file('run')
+            jvmArg("-XX:+AllowEnhancedClassRedefinition")
             ideaModule "${rootProject.name}.${project.name}.main"
             taskName 'Client'
             property 'mixin.env.remapRefMap', 'true'
@@ -37,6 +39,7 @@ minecraft {
 
         server {
             workingDirectory project.file('run')
+            jvmArg("-XX:+AllowEnhancedClassRedefinition")
             ideaModule "${rootProject.name}.${project.name}.main"
             taskName 'Server'
             property 'mixin.env.remapRefMap', 'true'
@@ -81,7 +84,7 @@ dependencies {
     compileOnly project(":Common")
     annotationProcessor "org.spongepowered:mixin:${mixin_version}:processor"
     implementation fg.deobf("net.tslat.smartbrainlib:SmartBrainLib-neoforge-${project.minecraft_version}:${project.sbl_version}")
-
+    implementation fg.deobf("com.github.glitchfiend:TerraBlender-forge:${terrablender_version}")
 }
 
 tasks.withType(JavaCompile) {

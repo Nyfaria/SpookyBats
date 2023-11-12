@@ -1,7 +1,10 @@
-// 1.20.1	2023-10-31T14:22:53.3018438	Registries
+// 1.20.1	2023-11-04T22:10:22.8386691	Registries
 9903e0c879a67dbfe9984c3d2bc6a59d8a91a8ed data/spookybats/forge/biome_modifier/deep_dark_bat_spawns.json
 16fa1dba2d699358e961150239cfa97f60049676 data/spookybats/forge/biome_modifier/mountain_bat_spawns.json
 45215e3a87bd158b7eef6c766cdef3ff53264788 data/spookybats/forge/biome_modifier/nether_bat_spawns.json
 58743d41da5ba5c8b105a8ff40199b5778844e4a data/spookybats/forge/biome_modifier/overworld_bat_spawns.json
 0c159d4ac64a087422c5185239fba381a9889518 data/spookybats/forge/biome_modifier/swamp_bat_spawns.json
 393412b1450dd91b59e47c2b5a0f5220be2e7560 data/spookybats/forge/biome_modifier/the_end_bat_spawns.json
+2f3500579da50a90e5daf288555dfdbb5df13528 data/spookybats/worldgen/biome/spooky_oak_forest.json
+55f09d95af1d950d33d2592fcd37482bad36dd0a data/spookybats/worldgen/configured_feature/spooky_oak.json
+54b8c5255ff1257571658e29d18f0d5c65205621 data/spookybats/worldgen/placed_feature/spooky_oak.json
