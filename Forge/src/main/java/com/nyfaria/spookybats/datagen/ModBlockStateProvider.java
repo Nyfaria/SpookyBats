@@ -35,12 +35,15 @@ public class ModBlockStateProvider extends BlockStateProvider {
                 BlockInit.SPOOKY_OAK
         ).forEach(this::woodCollection);
     }
+
     private String name(Block block) {
         return key(block).getPath();
     }
+
     private ResourceLocation key(Block block) {
         return ForgeRegistries.BLOCKS.getKey(block);
     }
+
     protected void simpleCubeBottomTopBlockState(Block block) {
         simpleBlock(block, blockCubeTopModel(block));
     }
@@ -55,28 +58,29 @@ public class ModBlockStateProvider extends BlockStateProvider {
     }
 
     public void woodCollection(WoodCollection collection) {
-        ResourceLocation location = modLoc("block/" + collection.name() + "_planks");
+//        ResourceLocation location = modLoc("block/" + collection.name() + "_planks");
         logBlock(collection.log().get());
-        logBlock(collection.strippedLog().get());
-        logBlock(collection.wood().get());
-        logBlock(collection.strippedWood().get());
-        simpleBlock(collection.planks().get());
-        stairsBlock(collection.stairs().get(), location);
-        fenceBlock(collection.fence().get(), location);
-        fenceGateBlock(collection.fenceGate().get(), location);
-        slabBlock(collection.slab().get(), location, location);
-        doorBlockWithRenderType(collection.door().get(), new ResourceLocation(Constants.MODID,"block/" + collection.name() + "_door_bottom"), new ResourceLocation(Constants.MODID,"block/" + collection.name() + "_door_top"),"cutout");
-        trapdoorBlockWithRenderType(collection.trapdoor().get(), new ResourceLocation(Constants.MODID,"block/" + collection.name() + "_trapdoor"), true, "cutout");
-        buttonBlock(collection.button().get(), location);
-        pressurePlateBlock(collection.pressurePlate().get(), location);
-        signBlock(collection.sign().get(), collection.wallSign().get(), location);
-        leaves(collection.leaves().get());
+//        logBlock(collection.strippedLog().get());
+//        logBlock(collection.wood().get());
+//        logBlock(collection.strippedWood().get());
+//        simpleBlock(collection.planks().get());
+//        stairsBlock(collection.stairs().get(), location);
+//        fenceBlock(collection.fence().get(), location);
+//        fenceGateBlock(collection.fenceGate().get(), location);
+//        slabBlock(collection.slab().get(), location, location);
+//        doorBlockWithRenderType(collection.door().get(), new ResourceLocation(Constants.MODID,"block/" + collection.name() + "_door_bottom"), new ResourceLocation(Constants.MODID,"block/" + collection.name() + "_door_top"),"cutout");
+//        trapdoorBlockWithRenderType(collection.trapdoor().get(), new ResourceLocation(Constants.MODID,"block/" + collection.name() + "_trapdoor"), true, "cutout");
+//        buttonBlock(collection.button().get(), location);
+//        pressurePlateBlock(collection.pressurePlate().get(), location);
+//        signBlock(collection.sign().get(), collection.wallSign().get(), location);
         simpleLeavesBlockState(collection.leaves().get());
 
     }
+
     protected void simpleLeavesBlockState(Block block) {
         simpleBlock(block, leaves(block));
     }
+
     protected BlockModelBuilder leaves(Block block) {
         String name = getName(block);
         return models().withExistingParent(name, "block/leaves")

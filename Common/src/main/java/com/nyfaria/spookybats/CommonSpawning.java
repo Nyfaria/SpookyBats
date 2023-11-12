@@ -20,6 +20,10 @@ public class CommonSpawning {
                     new MobSpawnSettings.SpawnerData(EntityInit.SKELETON_BAT.get(), 5, 1, 3),
                     new MobSpawnSettings.SpawnerData(EntityInit.PLAYER_BAT.get(), 5, 1, 2)
             );
+    public static List<MobSpawnSettings.SpawnerData> OVERWORLD_SPAWNS =
+            List.of(
+              new MobSpawnSettings.SpawnerData(EntityInit.SLIME_BAT.get(), 2, 1,1)
+            );
     public static List<MobSpawnSettings.SpawnerData> NETHER_SPAWNS = List.of(
             new MobSpawnSettings.SpawnerData(EntityInit.WITHER_SKELETON_BAT.get(), 5, 1, 3),
             new MobSpawnSettings.SpawnerData(EntityInit.UNDEAD_BAT.get(), 7, 1, 3)

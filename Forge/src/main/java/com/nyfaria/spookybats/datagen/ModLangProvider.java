@@ -16,6 +16,7 @@ import net.minecraftforge.common.data.LanguageProvider;
 import org.apache.commons.lang3.StringUtils;
 
 import java.util.Arrays;
+import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
@@ -34,7 +35,9 @@ public class ModLangProvider extends LanguageProvider {
     protected void addTranslations() {
         ItemInit.ITEMS.getEntries().forEach(this::itemLang);
         EntityInit.ENTITIES.getEntries().forEach(this::entityLang);
-        BlockInit.BLOCKS.getEntries().forEach(this::blockLang);
+        BlockInit.BLOCKS.getEntries().stream().filter(block -> !List.of(
+                BlockInit.SPOOKY_OAK.wallSign()
+        ).contains(block)).forEach(this::blockLang);
         add("itemGroup." + Constants.MODID + ".tab", Constants.MOD_NAME);
         add("advancements." + Constants.MODID + ".massacre", "Bat Massacre");
         add("advancements." + Constants.MODID + ".massacre.desc", "You MONSTER! You killed so many bats, and earned yourself a Pair of Bat Wings!");
