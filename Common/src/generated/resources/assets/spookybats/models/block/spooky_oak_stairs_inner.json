@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/inner_stairs",
+  "textures": {
+    "bottom": "spookybats:block/spooky_oak_planks",
+    "side": "spookybats:block/spooky_oak_planks",
+    "top": "spookybats:block/spooky_oak_planks"
+  }
+}

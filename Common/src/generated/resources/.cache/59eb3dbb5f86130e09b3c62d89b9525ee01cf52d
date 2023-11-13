@@ -1,8 +1,9 @@
-// 1.20.1	2023-11-12T15:42:24.5125016	Loot Tables
+// 1.20.1	2023-11-13T12:36:06.8723302	Loot Tables
 dd83a95829ff07ef85808454d472571b8c565030 data/spookybats/loot_tables/blocks/spooky_oak_button.json
 09d297e593060e234c3f97b1e4b8825737d44e5e data/spookybats/loot_tables/blocks/spooky_oak_door.json
 dfc9821d6c9f1e513749458e423cc5069bf21585 data/spookybats/loot_tables/blocks/spooky_oak_fence.json
 9999afa07862ec7156a2ca6443ef966c109438c6 data/spookybats/loot_tables/blocks/spooky_oak_fence_gate.json
+7321375b5a1e24d1aee2de17de7fe5bc7d5841c2 data/spookybats/loot_tables/blocks/spooky_oak_hanging_sign.json
 47e75ed5acf38cf5c64a3844142ece81919e72cf data/spookybats/loot_tables/blocks/spooky_oak_leaves.json
 116a095165f37c14074c6d4b847794b8739cd0f5 data/spookybats/loot_tables/blocks/spooky_oak_log.json
 d5e8e7ae57bee82f297145a03ffd257d2992b0db data/spookybats/loot_tables/blocks/spooky_oak_planks.json
@@ -14,6 +15,7 @@ dd5682f0f8efd7be2e182077803e41b6b2718c9d data/spookybats/loot_tables/blocks/spoo
 08f0104b2f36626340f9f362243e5d60029747e2 data/spookybats/loot_tables/blocks/spooky_oak_stripped_log.json
 e313e6a3c6bbc5d70959ca852cda03d315406d44 data/spookybats/loot_tables/blocks/spooky_oak_stripped_wood.json
 a66f1427e6132dc9dcf2f2e350d973ae46681655 data/spookybats/loot_tables/blocks/spooky_oak_trapdoor.json
+0d0b7ec0c84a9a017137ab64ec467a0d37c72f54 data/spookybats/loot_tables/blocks/spooky_oak_wall_hanging_sign.json
 846fcddf48ba6bb4e31146bf3170a84d232d8766 data/spookybats/loot_tables/blocks/spooky_oak_wall_sign.json
 7e0d1560874c720cda27bdc3a6bd4605f44036a8 data/spookybats/loot_tables/blocks/spooky_oak_wood.json
 05dd4db408d4ebd2e9fe2abb3d7dd463922f6650 data/spookybats/loot_tables/blocks/spooky_pedestal.json

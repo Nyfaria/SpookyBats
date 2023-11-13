@@ -36,7 +36,9 @@ public class ModLangProvider extends LanguageProvider {
         ItemInit.ITEMS.getEntries().forEach(this::itemLang);
         EntityInit.ENTITIES.getEntries().forEach(this::entityLang);
         BlockInit.BLOCKS.getEntries().stream().filter(block -> !List.of(
-                BlockInit.SPOOKY_OAK.wallSign()
+                BlockInit.SPOOKY_OAK.wallSign(),
+                BlockInit.SPOOKY_OAK.wallSign(),
+                BlockInit.SPOOKY_OAK.hangingWallSign()
         ).contains(block)).forEach(this::blockLang);
         add("itemGroup." + Constants.MODID + ".tab", Constants.MOD_NAME);
         add("advancements." + Constants.MODID + ".massacre", "Bat Massacre");

@@ -1,0 +1,24 @@
+{
+	"credit": "Made with Blockbench",
+	"parent": "block/thin_block",
+	"texture_size": [32, 32],
+	"textures": {
+		"0": "spookybats:block/spooky_oak_trapdoor",
+		"particle": "spookybats:block/spooky_oak_trapdoor"
+	},
+	"elements": [
+		{
+			"from": [0, 0, 13],
+			"to": [16, 16, 16],
+			"rotation": {"angle": 0, "axis": "y", "origin": [0, 0, 16]},
+			"faces": {
+				"north": {"uv": [8, 8, 0, 16], "rotation": 180, "texture": "#0", "cullface": "down"},
+				"east": {"uv": [8, 1.5, 16, 3], "rotation": 270, "texture": "#0", "cullface": "east"},
+				"south": {"uv": [8, 8, 0, 0], "texture": "#0"},
+				"west": {"uv": [8, 4.5, 16, 6], "rotation": 90, "texture": "#0", "cullface": "west"},
+				"up": {"uv": [8, 0, 16, 1.5], "rotation": 180, "texture": "#0", "cullface": "north"},
+				"down": {"uv": [8, 3, 16, 4.5], "texture": "#0", "cullface": "south"}
+			}
+		}
+	]
+}

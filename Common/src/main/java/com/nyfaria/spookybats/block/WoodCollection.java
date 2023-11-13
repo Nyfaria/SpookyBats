@@ -5,10 +5,12 @@ import com.nyfaria.spookybats.init.BlockInit;
 import com.nyfaria.spookybats.init.ItemInit;
 import com.nyfaria.spookybats.registration.RegistryObject;
 import com.nyfaria.spookybats.worldgen.SpookOakTreeGrower;
+import net.minecraft.world.item.HangingSignItem;
 import net.minecraft.world.item.SignItem;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.ButtonBlock;
+import net.minecraft.world.level.block.CeilingHangingSignBlock;
 import net.minecraft.world.level.block.DoorBlock;
 import net.minecraft.world.level.block.FenceBlock;
 import net.minecraft.world.level.block.FenceGateBlock;
@@ -21,11 +23,14 @@ import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.StairBlock;
 import net.minecraft.world.level.block.StandingSignBlock;
 import net.minecraft.world.level.block.TrapDoorBlock;
+import net.minecraft.world.level.block.WallHangingSignBlock;
 import net.minecraft.world.level.block.WallSignBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.properties.BlockSetType;
 import net.minecraft.world.level.block.state.properties.WoodType;
 import net.minecraft.world.level.material.MapColor;
+
+import java.util.List;
 
 public record WoodCollection(String name, WoodType woodType, RegistryObject<SaplingBlock> sapling,
                              RegistryObject<RotatedPillarBlock> log, RegistryObject<RotatedPillarBlock> strippedLog,
@@ -35,19 +40,10 @@ public record WoodCollection(String name, WoodType woodType, RegistryObject<Sapl
                              RegistryObject<FenceGateBlock> fenceGate, RegistryObject<DoorBlock> door,
                              RegistryObject<TrapDoorBlock> trapdoor, RegistryObject<ButtonBlock> button,
                              RegistryObject<PressurePlateBlock> pressurePlate, RegistryObject<StandingSignBlock> sign,
-                             RegistryObject<WallSignBlock> wallSign, RegistryObject<LeavesBlock> leaves) {
+                             RegistryObject<WallSignBlock> wallSign, RegistryObject<CeilingHangingSignBlock> hangingSign,
+                             RegistryObject<WallHangingSignBlock> hangingWallSign, RegistryObject<LeavesBlock> leaves) {
 
-    public static WoodCollection registerCollection(String name, WoodType woodType, RegistryObject<SaplingBlock> sapling,
-                                                    RegistryObject<RotatedPillarBlock> log, RegistryObject<RotatedPillarBlock> strippedLog,
-                                                    RegistryObject<RotatedPillarBlock> wood, RegistryObject<RotatedPillarBlock> strippedWood,
-                                                    RegistryObject<Block> planks, RegistryObject<StairBlock> stairs,
-                                                    RegistryObject<SlabBlock> slab, RegistryObject<FenceBlock> fence,
-                                                    RegistryObject<FenceGateBlock> fenceGate, RegistryObject<DoorBlock> door,
-                                                    RegistryObject<TrapDoorBlock> trapdoor, RegistryObject<ButtonBlock> button,
-                                                    RegistryObject<PressurePlateBlock> pressurePlate, RegistryObject<StandingSignBlock> sign,
-                                                    RegistryObject<WallSignBlock> wallSign, RegistryObject<LeavesBlock> leaves) {
-        return new WoodCollection(name, woodType, sapling, log, strippedLog, wood, strippedWood, planks, stairs, slab, fence, fenceGate, door, trapdoor, button, pressurePlate, sign, wallSign, leaves);
-    }
+
     public static WoodCollection registerCollection(String name) {
         BlockSetType blockSetType = BlockSetType.register(new BlockSetType(Constants.MODID + ":" + name));
         WoodType woodType = WoodType.register(new WoodType(Constants.MODID + ":" + name, blockSetType));
@@ -68,7 +64,14 @@ public record WoodCollection(String name, WoodType woodType, RegistryObject<Sapl
         RegistryObject<StandingSignBlock> sign = BlockInit.registerBlockWithoutItem(name + "_sign", () -> new StandingSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_SIGN), woodType));
         RegistryObject<WallSignBlock> wallSign = BlockInit.registerBlockWithoutItem(name + "_wall_sign", () -> new WallSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WALL_SIGN), woodType));
         ItemInit.ITEMS.register(name + "_sign", () -> new SignItem(ItemInit.getItemProperties(), sign.get(), wallSign.get()));
+        RegistryObject<CeilingHangingSignBlock> hangingSign = BlockInit.registerBlockWithoutItem(name + "_hanging_sign", () -> new CeilingHangingSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_SIGN), woodType));
+        RegistryObject<WallHangingSignBlock> wallHangingSign = BlockInit.registerBlockWithoutItem(name + "_wall_hanging_sign", () -> new WallHangingSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WALL_SIGN), woodType));
+        ItemInit.ITEMS.register(name + "_hanging_sign", () -> new HangingSignItem(hangingSign.get(), wallHangingSign.get(), ItemInit.getItemProperties()));
         RegistryObject<LeavesBlock> leaves = BlockInit.registerBlock(name + "_leaves", () -> BlockInit.leaves(SoundType.GRASS));
-        return registerCollection(name, woodType, sapling, log, strippedLog, wood, strippedWood, planks, stairs, slab, fence, fenceGate, door, trapdoor, button, pressurePlate, sign, wallSign, leaves);
+        return new WoodCollection(name, woodType, sapling, log, strippedLog, wood, strippedWood, planks, stairs, slab, fence, fenceGate, door, trapdoor, button, pressurePlate, sign, wallSign, hangingSign,wallHangingSign, leaves);
+    }
+
+    public List<RegistryObject<? extends Block>> getAll() {
+        return List.of(sapling, log, strippedLog, wood, strippedWood, planks, stairs, slab, fence, fenceGate, door, trapdoor, button, pressurePlate, sign, leaves, hangingSign);
     }
 }

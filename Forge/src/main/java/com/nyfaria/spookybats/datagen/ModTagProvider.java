@@ -48,6 +48,14 @@ public class ModTagProvider {
             populateTag(BlockTags.LOGS, BlockInit.SPOOKY_OAK.log());
             populateTag(BlockTags.LEAVES, BlockInit.SPOOKY_OAK.leaves());
             populateTag(BlockTags.SAPLINGS, BlockInit.SPOOKY_OAK.sapling());
+            populateTag(BlockTags.PLANKS, BlockInit.SPOOKY_OAK.planks());
+            populateTag(BlockTags.WOODEN_BUTTONS, BlockInit.SPOOKY_OAK.button());
+            populateTag(BlockTags.WOODEN_DOORS, BlockInit.SPOOKY_OAK.door());
+            populateTag(BlockTags.WOODEN_FENCES, BlockInit.SPOOKY_OAK.fence());
+            populateTag(BlockTags.WOODEN_PRESSURE_PLATES, BlockInit.SPOOKY_OAK.pressurePlate());
+            populateTag(BlockTags.WOODEN_SLABS, BlockInit.SPOOKY_OAK.slab());
+            populateTag(BlockTags.WOODEN_STAIRS, BlockInit.SPOOKY_OAK.stairs());
+            populateTag(BlockTags.WOODEN_TRAPDOORS, BlockInit.SPOOKY_OAK.trapdoor());
         }
         public  <T extends Block>void populateTag(TagKey<Block> tag, Supplier<?>... items){
             for (Supplier<?> item : items) {

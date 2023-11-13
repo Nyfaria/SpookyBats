@@ -57,6 +57,9 @@ public class ItemInit {
                         output.accept(SLIME_CORE.get());
                         output.accept(UNDEAD_CORE.get());
                         output.accept(BlockInit.SPOOKY_PEDESTAL.get());
+                        BlockInit.SPOOKY_OAK.getAll().forEach(
+                                (registryObject) -> output.accept(new ItemStack(registryObject.get()))
+                        );
                     }).title(Component.translatable("itemGroup." + Constants.MODID + ".tab"))
             .build());
 
