@@ -36,12 +36,16 @@ import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.SpawnPlacements;
 import net.minecraft.world.entity.monster.Slime;
 import net.minecraft.world.level.biome.Biome;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.levelgen.Heightmap;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.placement.PlacedFeature;
 import terrablender.api.Regions;
 
+import java.util.HashSet;
 import java.util.Map;
+import java.util.Set;
 import java.util.function.Supplier;
 
 public class CommonClass {
@@ -58,5 +62,12 @@ public class CommonClass {
 
     public static void setupTerraBlender(){
         Regions.register(new SpookyBatsOverworldRegion(1));
+    }
+
+    public static void setupBlockEntities(){
+        Set<Block> hangingSignBlocks = new HashSet<>(BlockEntityType.HANGING_SIGN.validBlocks);
+        hangingSignBlocks.add(BlockInit.SPOOKY_OAK.hangingSign().get());
+        hangingSignBlocks.add(BlockInit.SPOOKY_OAK.hangingWallSign().get());
+        BlockEntityType.HANGING_SIGN.validBlocks = hangingSignBlocks;
     }
 }

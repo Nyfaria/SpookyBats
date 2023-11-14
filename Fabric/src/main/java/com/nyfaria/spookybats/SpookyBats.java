@@ -33,5 +33,6 @@ public class SpookyBats implements ModInitializer {
         );
         CommonSpawning.placements();
         CommonClass.setupTerraBlender();
+        CommonClass.setupBlockEntities();
     }
 }

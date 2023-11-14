@@ -20,5 +20,6 @@ public class CommonModEvents {
     @SubscribeEvent
     public static void onFMLCommon(FMLCommonSetupEvent event){
         event.enqueueWork(CommonClass::setupTerraBlender);
+        CommonClass.setupBlockEntities();
     }
 }
