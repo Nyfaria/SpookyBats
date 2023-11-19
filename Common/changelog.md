@@ -4,6 +4,17 @@
 ## Changes
 ### Slime Bat
 - Drops bitesized jelly
+- Add ambient particles
+- Add natural regeneration every three seconds
+### Undead Bat
+- Add ambient particles
+- Add natural regeneration every three seconds
+### Shulker Bat
+- Add ambient particles
+- Add natural regeneration every three seconds
+### Sculk Bat
+- Add ambient particles
+- Add natural regeneration every three seconds
 
 # Version 0.6.1 Beta
 ## Bug Fixes

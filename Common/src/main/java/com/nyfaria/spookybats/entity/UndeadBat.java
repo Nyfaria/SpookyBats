@@ -1,6 +1,8 @@
 package com.nyfaria.spookybats.entity;
 
 import com.nyfaria.spookybats.entity.api.SpookyBat;
+import net.minecraft.core.particles.ParticleOptions;
+import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
@@ -12,7 +14,7 @@ import net.minecraft.world.entity.monster.RangedAttackMob;
 import net.minecraft.world.entity.projectile.LargeFireball;
 import net.minecraft.world.level.Level;
 
-public class UndeadBat extends FireProofBat implements RangedAttackMob {
+public class UndeadBat extends CoreDroppingBat implements RangedAttackMob {
 	private int shootCooldown = 1;
 
 	public UndeadBat(EntityType<? extends SpookyBat> entityType, Level level) {
@@ -49,5 +51,15 @@ public class UndeadBat extends FireProofBat implements RangedAttackMob {
 		} else {
 			this.shootCooldown++;
 		}
+	}
+
+	@Override
+	public boolean fireImmune() {
+		return true;
+	}
+
+	@Override
+	public ParticleOptions getAmbientParticle() {
+		return ParticleTypes.DRIPPING_LAVA;
 	}
 }

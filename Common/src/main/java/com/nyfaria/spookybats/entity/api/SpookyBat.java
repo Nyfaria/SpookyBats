@@ -1,5 +1,6 @@
 package com.nyfaria.spookybats.entity.api;
 
+import com.nyfaria.spookybats.entity.SlimeBat;
 import com.nyfaria.spookybats.entity.ai.control.BatMoveControl;
 import com.nyfaria.spookybats.init.EntityInit;
 import net.minecraft.core.BlockPos;
@@ -253,7 +254,7 @@ public class SpookyBat extends PathfinderMob {
     public static <T extends Mob> boolean checkSpookyBatSpawnRules(EntityType<T> tEntityType, ServerLevelAccessor serverLevelAccessor, MobSpawnType spawnType, BlockPos pos, RandomSource randomSource) {
         return true;
     }
-    public static boolean checkSlimeSpawnRules(EntityType<SpookyBat> $$0, LevelAccessor $$1, MobSpawnType $$2, BlockPos $$3, RandomSource $$4) {
+    public static boolean checkSlimeSpawnRules(EntityType<SlimeBat> $$0, LevelAccessor $$1, MobSpawnType $$2, BlockPos $$3, RandomSource $$4) {
         if ($$1.getDifficulty() != Difficulty.PEACEFUL) {
             if ($$1.getBiome($$3).is(BiomeTags.ALLOWS_SURFACE_SLIME_SPAWNS) && $$3.getY() > 50 && $$3.getY() < 70 && $$4.nextFloat() < 0.5F && $$4.nextFloat() < $$1.getMoonBrightness() && $$1.getMaxLocalRawBrightness($$3) <= $$4.nextInt(8)) {
                 return checkMobSpawnRules($$0, $$1, $$2, $$3, $$4);

@@ -2,6 +2,8 @@ package com.nyfaria.spookybats.entity;
 
 import com.nyfaria.spookybats.entity.api.SpookyBat;
 import net.minecraft.core.NonNullList;
+import net.minecraft.core.particles.ParticleOptions;
+import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
@@ -25,7 +27,7 @@ import net.minecraft.world.level.block.entity.ShulkerBoxBlockEntity;
 import java.util.EnumSet;
 import java.util.List;
 
-public class ShulkerBat extends SpookyBat implements InventoryCarrier {
+public class ShulkerBat extends CoreDroppingBat implements InventoryCarrier {
     private final SimpleContainer inventory = new SimpleContainer(27);
     private static final EntityDataAccessor<Integer> OPEN_TICKS = SynchedEntityData.defineId(ShulkerBat.class, EntityDataSerializers.INT);
     private static final EntityDataAccessor<Integer> HOLD_OPEN_TICKS = SynchedEntityData.defineId(ShulkerBat.class, EntityDataSerializers.INT);
@@ -112,9 +114,10 @@ public class ShulkerBat extends SpookyBat implements InventoryCarrier {
     }
 
     @Override
-    protected void customServerAiStep() {
-        super.customServerAiStep();
+    public ParticleOptions getAmbientParticle() {
+        return ParticleTypes.END_ROD;
     }
+
     private void tickLid(){
         if(level().isClientSide)return;
         if(tickCount % 20 == 0 && getRandom().nextInt(20) == 0 && this.entityData.get(OPEN_TICKS) == 0){
