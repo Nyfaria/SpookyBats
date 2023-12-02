@@ -6,6 +6,6 @@ import org.slf4j.LoggerFactory;
 public class Constants {
 
 	public static final String MODID = "spookybats";
-	public static final String MOD_NAME = "Spooky Bats";
+	public static final String MOD_NAME = "Bats Galore";
 	public static final Logger LOG = LoggerFactory.getLogger(MOD_NAME);
 }
