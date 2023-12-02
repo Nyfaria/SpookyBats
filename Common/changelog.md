@@ -8,6 +8,8 @@
   - New Spooky Oak tree, leaves, and sapling
   - New Spooky Oak wood set; almost all things wood can be made from Spooky Oak!
 ## Changes
+### Misc
+- Fix wording of a couple of advancements
 ### Slime Bat
 - Drops bitesized jelly
 - Add ambient particles
