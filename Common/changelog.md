@@ -1,6 +1,14 @@
 # Version 1.0.0
 ## Additions
 - New "bitesized jelly" candy
+- New Staff of Turmoil Drop for the Winged Turmoil
+- New Biome Spooky Oak Forest 
+  - Most Bat Variants Spawn Here now.
+  - Altar of Turmoil only Spawns in this Biome now.
+  - New Spooky Oak Tree
+  - New Spooky Oak Leaves
+  - New Spooky Oak Sapling
+  - New Spooky Oak Wood Set, Almost all things wood can be made from Spooky Oak!
 ## Changes
 ### Slime Bat
 - Drops bitesized jelly

@@ -40,7 +40,9 @@ public class ModItemModelProvider extends ItemModelProvider {
                         ItemInit.BAT_WINGS,
                         ItemInit.SCULK_CANDY,
                         ItemInit.WITCHS_BROOM,
-                        ItemInit.BITESIZED_JELLY
+                        ItemInit.BITESIZED_JELLY,
+                        ItemInit.SPOOKY_OAK_BOAT_ITEM,
+                        ItemInit.SPOOKY_OAK_CHEST_BOAT_ITEM
                 )
                 .map(Supplier::get)
                 .forEach(this::simpleGeneratedModel);
