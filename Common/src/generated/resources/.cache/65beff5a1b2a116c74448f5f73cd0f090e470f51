@@ -1,4 +1,4 @@
-// 1.20.1	2023-12-01T14:22:42.2170025	Block States: spookybats
+// 1.20.1	2023-12-02T14:37:23.5897936	Block States: spookybats
 bbf9cc79ddf0c4286bf91da980719e635a9f95d6 assets/spookybats/blockstates/spooky_oak_button.json
 9bbe4dd588d754dc6136aa8ba26b8448458106d7 assets/spookybats/blockstates/spooky_oak_door.json
 456ea6fe210182f79d0e2a6005455bac2143d489 assets/spookybats/blockstates/spooky_oak_fence.json
@@ -32,8 +32,6 @@ a8c5b3809833da3ddd0dc0de3909cc9e2ba84f95 assets/spookybats/models/block/spooky_o
 4485d8476055c94d3b89de997c21903c3f097724 assets/spookybats/models/block/spooky_oak_log.json
 b962b85c45e25aa930a73ff9f12f41e2cc9c6478 assets/spookybats/models/block/spooky_oak_log_horizontal.json
 6ff647fbd091d708c6298336604d41e731f98075 assets/spookybats/models/block/spooky_oak_planks.json
-50932d61371f56b7f655e087d16afe3236743351 assets/spookybats/models/block/spooky_oak_pressure_plate.json
-4216b435012cdfbddcde2e1ef567400899b939bd assets/spookybats/models/block/spooky_oak_pressure_plate_down.json
 d3c79883ebbf0fd2aaeb8ea9d885993e2c7b9b28 assets/spookybats/models/block/spooky_oak_sapling.json
 f8b93d4a7ad7f0acc8b21eafbe8089b1140db713 assets/spookybats/models/block/spooky_oak_sign.json
 258e096caad65e5fec352e16c442ae5ba07488df assets/spookybats/models/block/spooky_oak_slab.json

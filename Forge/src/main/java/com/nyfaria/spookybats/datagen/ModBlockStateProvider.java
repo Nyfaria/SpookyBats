@@ -12,6 +12,7 @@ import net.minecraft.world.level.block.ButtonBlock;
 import net.minecraft.world.level.block.CrossCollisionBlock;
 import net.minecraft.world.level.block.FenceBlock;
 import net.minecraft.world.level.block.PipeBlock;
+import net.minecraft.world.level.block.PressurePlateBlock;
 import net.minecraft.world.level.block.SlabBlock;
 import net.minecraft.world.level.block.TrapDoorBlock;
 import net.minecraft.world.level.block.state.properties.AttachFace;
@@ -76,7 +77,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
         doorBlockWithRenderType(collection.door().get(), new ResourceLocation(Constants.MODID, "block/" + collection.name() + "_door_bottom"), new ResourceLocation(Constants.MODID, "block/" + collection.name() + "_door_top"), "cutout");
         spookyTrapdoorBlock(collection.trapdoor().get(), getName(collection.trapdoor().get()));
         customButtonBlock(collection.button().get());
-        pressurePlateBlock(collection.pressurePlate().get(), location);
+        spookyPressurePlate(collection.pressurePlate().get(), getName(collection.pressurePlate().get()));
         signBlock(collection.sign().get(), collection.wallSign().get(), location);
         simpleLeavesBlockState(collection.leaves().get());
         simpleBlock(collection.sapling().get(),models().cross(name(collection.sapling().get()),modLoc("item/"+name(collection.sapling().get()))).renderType("cutout"));
@@ -120,6 +121,11 @@ public class ModBlockStateProvider extends BlockStateProvider {
 //                    type == SlabType.BOTTOM ? models().slab(name(SLAB), location,location,location) :
 //                            models().getExistingFile(location);
 //        });
+    }
+    public void spookyPressurePlate(PressurePlateBlock block, String baseName){
+        ModelFile pressurePlate = models().getExistingFile(modLoc(baseName));
+        ModelFile pressurePlateDown = models().getExistingFile(modLoc(baseName + "_down"));
+        pressurePlateBlock(block, pressurePlate, pressurePlateDown);
     }
 
     private void spookyTrapdoorBlock(TrapDoorBlock block, String baseName) {
