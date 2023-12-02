@@ -1,10 +1,27 @@
 package com.nyfaria.spookybats.client;
 
-import com.nyfaria.spookybats.client.model.*;
+import com.nyfaria.spookybats.client.model.EvilBatModel;
+import com.nyfaria.spookybats.client.model.ExperienceOrbBatModel;
+import com.nyfaria.spookybats.client.model.GhostBatModel;
+import com.nyfaria.spookybats.client.model.HatBatModel;
+import com.nyfaria.spookybats.client.model.ModBoatModel;
+import com.nyfaria.spookybats.client.model.ModChestBoatModel;
+import com.nyfaria.spookybats.client.model.PumpkinBatModel;
+import com.nyfaria.spookybats.client.model.SculkBatModel;
+import com.nyfaria.spookybats.client.model.ShulkerBatModel;
+import com.nyfaria.spookybats.client.model.SkeletonBatModel;
+import com.nyfaria.spookybats.client.model.SlimeBatModel;
+import com.nyfaria.spookybats.client.model.SpookyOakHangingSignModel;
+import com.nyfaria.spookybats.client.model.SpookyOakSignModel;
+import com.nyfaria.spookybats.client.model.UndeadBatModel;
+import com.nyfaria.spookybats.client.model.WingedTurmoilModel;
+import com.nyfaria.spookybats.client.model.WitchBatModel;
+import com.nyfaria.spookybats.client.model.WitchsBroomModel;
 import com.nyfaria.spookybats.client.renderer.BlockProjectileRenderer;
 import com.nyfaria.spookybats.client.renderer.CreeperBatRenderer;
 import com.nyfaria.spookybats.client.renderer.EmissiveBatRenderer;
 import com.nyfaria.spookybats.client.renderer.GhostBatRenderer;
+import com.nyfaria.spookybats.client.renderer.ModBoatRenderer;
 import com.nyfaria.spookybats.client.renderer.PlayerBatRenderer;
 import com.nyfaria.spookybats.client.renderer.PumpkinBatRenderer;
 import com.nyfaria.spookybats.client.renderer.SculkBatRenderer;
@@ -13,7 +30,7 @@ import com.nyfaria.spookybats.client.renderer.UndeadBatRenderer;
 import com.nyfaria.spookybats.client.renderer.VoidBatRenderer;
 import com.nyfaria.spookybats.client.renderer.WitchsBroomRenderer;
 import com.nyfaria.spookybats.client.renderer.api.SpookyBatRenderer;
-import com.nyfaria.spookybats.entity.api.SpookyBat;
+import com.nyfaria.spookybats.entity.api.ModBoatType;
 import com.nyfaria.spookybats.init.EntityInit;
 import net.minecraft.client.model.geom.ModelLayerLocation;
 import net.minecraft.client.model.geom.builders.CubeDeformation;
@@ -23,6 +40,7 @@ import net.minecraft.client.renderer.entity.ThrownItemRenderer;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Supplier;
 
@@ -46,17 +64,20 @@ public class CommonClientClass {
                 new Renderers(EntityInit.SLIME_BAT, context -> new SlimeBatRenderer(context, new SlimeBatModel<>(context.bakeLayer(SlimeBatModel.LAYER_LOCATION)))),
                 new Renderers(EntityInit.EXPERIENCE_ORB_BAT, context -> new EmissiveBatRenderer(context, new ExperienceOrbBatModel<>(context.bakeLayer(ExperienceOrbBatModel.LAYER_LOCATION)), "experience_orb_bat")),
                 new Renderers(EntityInit.SHULKER_BAT, context -> new SpookyBatRenderer<>(context, new ShulkerBatModel<>(context.bakeLayer(ShulkerBatModel.LAYER_LOCATION)))),
-                new Renderers(EntityInit.WINGED_TURMOIL, context -> new SpookyBatRenderer<>(context, new WingedTurmoilModel<>(context.bakeLayer(WingedTurmoilModel.LAYER_LOCATION)),2f)),
+                new Renderers(EntityInit.WINGED_TURMOIL, context -> new SpookyBatRenderer<>(context, new WingedTurmoilModel<>(context.bakeLayer(WingedTurmoilModel.LAYER_LOCATION)), 2f)),
                 new Renderers(EntityInit.JACK_O_LANTERN_PROJECTILE, context -> new ThrownItemRenderer<>(context, 1.0f, true)),
                 new Renderers(EntityInit.WITCHS_BROOM, WitchsBroomRenderer::new),
-                new Renderers(EntityInit.BLOCK_PROJECTILE, BlockProjectileRenderer::new)
+                new Renderers(EntityInit.BLOCK_PROJECTILE, BlockProjectileRenderer::new),
+                new Renderers(EntityInit.MOD_BOAT, context -> new ModBoatRenderer(context, false)),
+                new Renderers(EntityInit.MOD_CHEST_BOAT, context -> new ModBoatRenderer(context, true))
         );
     }
 
     public static List<LayerDefinitions> getLayerDefinitions() {
-        return List.of(
+        List<LayerDefinitions> definitions = new ArrayList<>();
+        definitions.addAll(List.of(
                 new LayerDefinitions(PumpkinBatModel.LAYER_LOCATION, PumpkinBatModel.createBodyLayer(CubeDeformation.NONE)),
-                new LayerDefinitions(PumpkinBatModel.OVERLAY_LOCATION,PumpkinBatModel.createBodyLayer(new CubeDeformation(0.1f))),
+                new LayerDefinitions(PumpkinBatModel.OVERLAY_LOCATION, PumpkinBatModel.createBodyLayer(new CubeDeformation(0.1f))),
                 new LayerDefinitions(WitchBatModel.LAYER_LOCATION, WitchBatModel.createBodyLayer()),
                 new LayerDefinitions(HatBatModel.LAYER_LOCATION, HatBatModel.createBodyLayer()),
                 new LayerDefinitions(SkeletonBatModel.LAYER_LOCATION, SkeletonBatModel.createBodyLayer()),
@@ -69,8 +90,16 @@ public class CommonClientClass {
                 new LayerDefinitions(ExperienceOrbBatModel.LAYER_LOCATION, ExperienceOrbBatModel.createBodyLayer()),
                 new LayerDefinitions(ShulkerBatModel.LAYER_LOCATION, ShulkerBatModel.createBodyLayer()),
                 new LayerDefinitions(WingedTurmoilModel.LAYER_LOCATION, WingedTurmoilModel.createBodyLayer()),
-                new LayerDefinitions(SpookyOakHangingSignModel.LAYER_LOCATION, SpookyOakHangingSignModel.createBodyLayer())
-        );
+                new LayerDefinitions(SpookyOakHangingSignModel.LAYER_LOCATION, SpookyOakHangingSignModel.createBodyLayer()),
+                new LayerDefinitions(SpookyOakSignModel.LAYER_LOCATION, SpookyOakSignModel.createBodyLayer())
+        ));
+        LayerDefinition layerdefinition19 = ModBoatModel.createBodyModel();
+        LayerDefinition layerdefinition20 = ModChestBoatModel.createBodyModel();
+        for (ModBoatType boat$type : ModBoatType.values()) {
+            definitions.add(new LayerDefinitions(ModBoatRenderer.createBoatModelName(boat$type), layerdefinition19));
+            definitions.add(new LayerDefinitions(ModBoatRenderer.createChestBoatModelName(boat$type), layerdefinition20));
+        }
+        return definitions;
     }
 
     public record Renderers<T extends Entity>(Supplier<EntityType<T>> type, EntityRendererProvider<T> renderer) {

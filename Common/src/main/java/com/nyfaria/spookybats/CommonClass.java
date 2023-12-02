@@ -41,6 +41,7 @@ import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.levelgen.Heightmap;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.placement.PlacedFeature;
+import net.minecraft.world.level.levelgen.structure.Structure;
 import terrablender.api.Regions;
 
 import java.util.HashSet;
@@ -51,6 +52,7 @@ import java.util.function.Supplier;
 public class CommonClass {
     public static final ResourceKey<Biome> SPOOKY_OAK_FOREST = ResourceKey.create(Registries.BIOME, new ResourceLocation(Constants.MODID, "spooky_oak_forest"));
     public static final ResourceKey<PlacedFeature> SPOOKY_OAK_TREE = ResourceKey.create(Registries.PLACED_FEATURE, new ResourceLocation(Constants.MODID, "spooky_oak"));
+    public static final ResourceKey<Structure> ALTAR_OF_TURMOIL = ResourceKey.create(Registries.STRUCTURE, new ResourceLocation(Constants.MODID, "altar_of_turmoil"));
     public static final ResourceKey<ConfiguredFeature<?,?>> SPOOKY_OAK_TREE_CF = ResourceKey.create(Registries.CONFIGURED_FEATURE, new ResourceLocation(Constants.MODID, "spooky_oak"));
 
 
@@ -69,5 +71,9 @@ public class CommonClass {
         hangingSignBlocks.add(BlockInit.SPOOKY_OAK.hangingSign().get());
         hangingSignBlocks.add(BlockInit.SPOOKY_OAK.hangingWallSign().get());
         BlockEntityType.HANGING_SIGN.validBlocks = hangingSignBlocks;
+        Set<Block> signBlocks = new HashSet<>(BlockEntityType.SIGN.validBlocks);
+        signBlocks.add(BlockInit.SPOOKY_OAK.sign().get());
+        signBlocks.add(BlockInit.SPOOKY_OAK.wallSign().get());
+        BlockEntityType.SIGN.validBlocks = signBlocks;
     }
 }

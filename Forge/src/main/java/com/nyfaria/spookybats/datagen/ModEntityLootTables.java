@@ -60,6 +60,7 @@ public class ModEntityLootTables extends EntityLootSubProvider {
                 new LootEntry(ItemInit.BITESIZED_JELLY.get(), 1.0f, ConstantValue.exactly(1)),
                 new LootEntry(ItemInit.SLIME_CORE.get(), 0.01f, ConstantValue.exactly(1))
         );
+        dropSingle(EntityInit.WINGED_TURMOIL.get(), ItemInit.STAFF_OF_TURMOIL.get());
     }
 
     private void multiDrops(EntityType<?> type, NumberProvider rolls, LootEntry... entries) {

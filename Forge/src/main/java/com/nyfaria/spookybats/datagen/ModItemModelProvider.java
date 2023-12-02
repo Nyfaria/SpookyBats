@@ -1,6 +1,7 @@
 package com.nyfaria.spookybats.datagen;
 
 import com.nyfaria.spookybats.Constants;
+import com.nyfaria.spookybats.block.WoodCollection;
 import com.nyfaria.spookybats.init.BlockInit;
 import com.nyfaria.spookybats.init.ItemInit;
 import net.minecraft.data.PackOutput;
@@ -45,17 +46,20 @@ public class ModItemModelProvider extends ItemModelProvider {
                 .forEach(this::simpleGeneratedModel);
         ItemInit.ITEMS.getEntries().stream().filter(item -> item.get() instanceof SpawnEggItem).map(Supplier::get).forEach(this::spawnEgg);
         Stream.of(
-                        BlockInit.SPOOKY_PEDESTAL,
-                        BlockInit.SPOOKY_OAK.leaves(),
-                        BlockInit.SPOOKY_OAK.log()
+                        BlockInit.SPOOKY_PEDESTAL
                 )
                 .map(Supplier::get)
                 .forEach(this::simpleBlockItemModel);
+        woodCollection(BlockInit.SPOOKY_OAK);
     }
 
     protected ItemModelBuilder simpleBlockItemModel(Block block) {
         String name = getName(block);
         return withExistingParent(name, modLoc("block/" + name));
+    }
+    protected ItemModelBuilder simpleTrapdoorBlockItemModel(Block block) {
+        String name = getName(block);
+        return withExistingParent(name, modLoc("block/" + name + "_bottom"));
     }
 
     protected ItemModelBuilder simpleGeneratedModel(Item item) {
@@ -82,5 +86,33 @@ public class ModItemModelProvider extends ItemModelProvider {
 
     protected String getName(Block item) {
         return ForgeRegistries.BLOCKS.getKey(item).getPath();
+    }
+
+    protected void woodCollection(WoodCollection collection) {
+        Stream.of(
+                        collection.leaves(),
+                        collection.log(),
+                        collection.planks(),
+                        collection.slab(),
+                        collection.stairs(),
+                        collection.wood(),
+                        collection.strippedWood(),
+                        collection.strippedLog(),
+                        collection.pressurePlate()
+                )
+                .map(Supplier::get)
+                .forEach(this::simpleBlockItemModel);
+        Stream.of(
+                        collection.sign(),
+                        collection.hangingSign(),
+                        collection.sapling(),
+                        collection.door()
+                )
+                .map(s -> s.get().asItem())
+                .forEach(this::simpleGeneratedModel);
+        fenceInventory(getName(collection.fence().get()), new ResourceLocation(Constants.MODID, "block/" + getName(collection.planks().get())));
+        fenceGate(getName(collection.fenceGate().get()), new ResourceLocation(Constants.MODID, "block/" + getName(collection.planks().get())));
+        buttonInventory(getName(collection.button().get()), new ResourceLocation(Constants.MODID, "block/" + getName(collection.planks().get())));
+        simpleTrapdoorBlockItemModel(collection.trapdoor().get());
     }
 }

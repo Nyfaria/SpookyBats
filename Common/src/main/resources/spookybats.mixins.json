@@ -6,9 +6,11 @@
   "refmap": "${mod_id}.refmap.json",
   "mixins": [
     "BatWingsMixin",
-    "HangingSignRendererMixin"
+    "ModChestBoatMixin"
   ],
   "client": [
+    "SignRendererMixin",
+    "HangingSignRendererMixin"
   ],
   "injectors": {
     "defaultRequire": 1

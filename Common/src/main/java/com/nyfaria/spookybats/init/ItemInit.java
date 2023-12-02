@@ -1,8 +1,11 @@
 package com.nyfaria.spookybats.init;
 
 import com.nyfaria.spookybats.Constants;
+import com.nyfaria.spookybats.entity.api.ModBoatType;
 import com.nyfaria.spookybats.item.BatWings;
 import com.nyfaria.spookybats.item.CoreItem;
+import com.nyfaria.spookybats.item.ModBoatItem;
+import com.nyfaria.spookybats.item.StaffOfTurmoil;
 import com.nyfaria.spookybats.item.WitchsBroomItem;
 import com.nyfaria.spookybats.platform.Services;
 import com.nyfaria.spookybats.registration.RegistrationProvider;
@@ -43,8 +46,11 @@ public class ItemInit {
     public static final RegistryObject<Item> SHULKER_CORE = ITEMS.register("shulker_core", ()->new CoreItem(getItemProperties().stacksTo(1), Blocks.PURPUR_PILLAR));
     public static final RegistryObject<Item> SLIME_CORE = ITEMS.register("slime_core", ()->new CoreItem(getItemProperties().stacksTo(1), Blocks.CHISELED_STONE_BRICKS));
     public static final RegistryObject<Item> UNDEAD_CORE = ITEMS.register("undead_core", ()->new CoreItem(getItemProperties().stacksTo(1), Blocks.GILDED_BLACKSTONE));
+    public static final RegistryObject<Item> STAFF_OF_TURMOIL = ITEMS.register("staff_of_turmoil", ()->new StaffOfTurmoil(getItemProperties().stacksTo(1)));
 
     public static final RegistrationProvider<CreativeModeTab> CREATIVE_MODE_TABS = RegistrationProvider.get(Registries.CREATIVE_MODE_TAB, Constants.MODID);
+    public static final RegistryObject<Item> SPOOKY_OAK_BOAT_ITEM = ITEMS.register("spooky_oak_boat", () -> new ModBoatItem(false, ModBoatType.SPOOKY_OAK, getItemProperties().stacksTo(1)));
+    public static final RegistryObject<Item> SPOOKY_OAK_CHEST_BOAT_ITEM = ITEMS.register("spooky_oak_chest_boat", () -> new ModBoatItem(true, ModBoatType.SPOOKY_OAK, getItemProperties().stacksTo(1)));
     public static final RegistryObject<CreativeModeTab> TAB = CREATIVE_MODE_TABS.register(Constants.MODID, () -> CreativeModeTab.builder(CreativeModeTab.Row.TOP, 0)
             .icon(() -> new ItemStack(ItemInit.WITCHES_BREW.get()))
             .displayItems(
@@ -60,8 +66,12 @@ public class ItemInit {
                         BlockInit.SPOOKY_OAK.getAll().forEach(
                                 (registryObject) -> output.accept(new ItemStack(registryObject.get()))
                         );
+                        output.accept(STAFF_OF_TURMOIL.get());
+                        output.accept(SPOOKY_OAK_BOAT_ITEM.get());
+                        output.accept(SPOOKY_OAK_CHEST_BOAT_ITEM.get());
                     }).title(Component.translatable("itemGroup." + Constants.MODID + ".tab"))
             .build());
+
 
     public static Item.Properties getItemProperties() {
         return new Item.Properties();

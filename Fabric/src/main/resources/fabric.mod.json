@@ -16,6 +16,9 @@
     ],
     "client": [
       "com.nyfaria.spookybats.SpookyBatsClient"
+    ],
+    "terrablender": [
+      "com.nyfaria.spookybats.TerraBlenderSetup"
     ]
   },
   "mixins": [

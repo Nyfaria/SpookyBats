@@ -2,6 +2,7 @@ package com.nyfaria.spookybats;
 
 import com.nyfaria.spookybats.init.EntityInit;
 import net.fabricmc.api.ModInitializer;
+import net.fabricmc.fabric.api.biome.v1.BiomeModification;
 import net.fabricmc.fabric.api.biome.v1.BiomeModifications;
 import net.fabricmc.fabric.api.biome.v1.BiomeSelectors;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
@@ -31,8 +32,8 @@ public class SpookyBats implements ModInitializer {
         CommonSpawning.END_SPAWNS.forEach(spawnerData ->
                 BiomeModifications.addSpawn(BiomeSelectors.foundInTheEnd(), MobCategory.MONSTER, spawnerData.type, spawnerData.getWeight().asInt(), spawnerData.minCount, spawnerData.maxCount)
         );
+
         CommonSpawning.placements();
-        CommonClass.setupTerraBlender();
         CommonClass.setupBlockEntities();
     }
 }

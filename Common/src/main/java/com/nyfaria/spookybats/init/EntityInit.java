@@ -49,6 +49,8 @@ public class EntityInit {
     public static final RegistryObject<EntityType<WitchsBroom>> WITCHS_BROOM = registerLivingEntity("witchs_broom", () -> EntityType.Builder.of(WitchsBroom::new, MobCategory.MISC).sized(1F, 0.4F), WitchsBroom::createAttributes);
     public static final RegistryObject<EntityType<JackOLanternProjectile>> JACK_O_LANTERN_PROJECTILE = registerEntity("jack_o_lantern_projectile", () -> EntityType.Builder.<JackOLanternProjectile>of(JackOLanternProjectile::new, MobCategory.MISC).sized(0.25F, 0.25F));
     public static final RegistryObject<EntityType<BlockProjectile>> BLOCK_PROJECTILE = registerEntity("block_projectile", () -> EntityType.Builder.<BlockProjectile>of(BlockProjectile::new, MobCategory.MISC).sized(1F, 1F));
+    public static final RegistryObject<EntityType<ModBoat>> MOD_BOAT = registerEntity("mod_boat", () -> EntityType.Builder.<ModBoat>of(ModBoat::new, MobCategory.MISC).sized(1.375F, 0.5625F).clientTrackingRange(10));
+    public static final RegistryObject<EntityType<ModChestBoat>> MOD_CHEST_BOAT = registerEntity("mod_chest_boat", () -> EntityType.Builder.<ModChestBoat>of(ModChestBoat::new, MobCategory.MISC).sized(1.375F, 0.5625F).clientTrackingRange(10));
 
 
     private static <T extends Entity> RegistryObject<EntityType<T>> registerEntity(String name, Supplier<EntityType.Builder<T>> supplier) {

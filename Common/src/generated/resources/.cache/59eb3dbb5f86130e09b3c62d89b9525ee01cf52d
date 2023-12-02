@@ -1,4 +1,4 @@
-// 1.20.1	2023-11-13T12:36:06.8723302	Loot Tables
+// 1.20.1	2023-12-01T19:49:58.6741412	Loot Tables
 dd83a95829ff07ef85808454d472571b8c565030 data/spookybats/loot_tables/blocks/spooky_oak_button.json
 09d297e593060e234c3f97b1e4b8825737d44e5e data/spookybats/loot_tables/blocks/spooky_oak_door.json
 dfc9821d6c9f1e513749458e423cc5069bf21585 data/spookybats/loot_tables/blocks/spooky_oak_fence.json
@@ -30,6 +30,7 @@ f3125e874d79450fc8f4f81ed7ac3b8f6dd46410 data/spookybats/loot_tables/entities/sk
 d8bdd6835529a5905cde60a101c30f209fbeed68 data/spookybats/loot_tables/entities/slime_bat.json
 e14a06d744197d16181ac590d2dff7e98e617486 data/spookybats/loot_tables/entities/steve_bat.json
 433ffa2e8c007ec51977a76ced658ddfff456b11 data/spookybats/loot_tables/entities/undead_bat.json
+35a91eeb0a0e1775055c58b1c317ed229c85d45f data/spookybats/loot_tables/entities/winged_turmoil.json
 7e8677b43857ae724152d73660cd16892e7715aa data/spookybats/loot_tables/entities/witchs_broom.json
 097eb662462747da2dec08bd227d939ebb76f5a7 data/spookybats/loot_tables/entities/witch_bat.json
 a7257ee92188f03ababad28dde8c5dafd64da745 data/spookybats/loot_tables/entities/wither_skeleton_bat.json

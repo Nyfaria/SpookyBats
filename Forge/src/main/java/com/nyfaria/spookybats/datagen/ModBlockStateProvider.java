@@ -7,13 +7,17 @@ import net.minecraft.core.Direction;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.ButtonBlock;
 import net.minecraft.world.level.block.CrossCollisionBlock;
 import net.minecraft.world.level.block.FenceBlock;
 import net.minecraft.world.level.block.PipeBlock;
+import net.minecraft.world.level.block.SlabBlock;
 import net.minecraft.world.level.block.TrapDoorBlock;
 import net.minecraft.world.level.block.state.properties.AttachFace;
+import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.Half;
+import net.minecraft.world.level.block.state.properties.SlabType;
 import net.minecraftforge.client.model.generators.BlockModelBuilder;
 import net.minecraftforge.client.model.generators.BlockStateProvider;
 import net.minecraftforge.client.model.generators.ConfiguredModel;
@@ -32,16 +36,6 @@ public class ModBlockStateProvider extends BlockStateProvider {
     @Override
     protected void registerStatesAndModels() {
 
-        // Stream.of(
-        //
-        //         )
-        //         .map(Supplier::get)
-        //         .forEach(this::simpleCubeBottomTopBlockState);
-        //
-        // Stream.of(
-        //
-        // ).map(Supplier::get)
-        //         .forEach(this::simpleBlock);
         Stream.of(
                 BlockInit.SPOOKY_OAK
         ).forEach(this::spookyWoodCollection);
@@ -71,21 +65,21 @@ public class ModBlockStateProvider extends BlockStateProvider {
     public void spookyWoodCollection(WoodCollection collection) {
         ResourceLocation location = modLoc("block/" + collection.name() + "_planks");
         logBlock(collection.log().get());
-//        logBlock(collection.strippedLog().get());
-
+        logBlock(collection.strippedLog().get());
         axisBlock(collection.wood().get(), blockTexture(collection.log().get()), blockTexture(collection.log().get()));
-//        logBlock(collection.strippedWood().get());
+        logBlock(collection.strippedWood().get());
         simpleBlock(collection.planks().get());
         stairsBlock(collection.stairs().get(), location);
         fenceBlock(collection.fence().get());
-//        fenceGateBlock(collection.fenceGate().get(), location);
+        fenceGateBlock(collection.fenceGate().get(), location);
         slabBlock(collection.slab().get(), location, location);
-        doorBlockWithRenderType(collection.door().get(), new ResourceLocation(Constants.MODID,"block/" + collection.name() + "_door_bottom"), new ResourceLocation(Constants.MODID,"block/" + collection.name() + "_door_top"),"cutout");
-        spookyTrapdoorBlock(collection.trapdoor().get(),getName(collection.trapdoor().get()));
+        doorBlockWithRenderType(collection.door().get(), new ResourceLocation(Constants.MODID, "block/" + collection.name() + "_door_bottom"), new ResourceLocation(Constants.MODID, "block/" + collection.name() + "_door_top"), "cutout");
+        spookyTrapdoorBlock(collection.trapdoor().get(), getName(collection.trapdoor().get()));
         customButtonBlock(collection.button().get());
-//        pressurePlateBlock(collection.pressurePlate().get(), location);
+        pressurePlateBlock(collection.pressurePlate().get(), location);
         signBlock(collection.sign().get(), collection.wallSign().get(), location);
         simpleLeavesBlockState(collection.leaves().get());
+        simpleBlock(collection.sapling().get(),models().cross(name(collection.sapling().get()),modLoc("item/"+name(collection.sapling().get()))).renderType("cutout"));
 
     }
 
@@ -99,11 +93,13 @@ public class ModBlockStateProvider extends BlockStateProvider {
                 .texture("all", modLoc("block/" + name)
                 ).renderType("cut_out");
     }
+
     public void customButtonBlock(ButtonBlock block) {
         ModelFile button = models().getExistingFile(modLoc(name(block)));
         ModelFile buttonPressed = models().getExistingFile(modLoc(name(block) + "_pressed"));
         customButtonBlock(block, button, buttonPressed);
     }
+
     public void customButtonBlock(ButtonBlock block, ModelFile button, ModelFile buttonPressed) {
         getVariantBuilder(block).forAllStates(state -> {
             Direction facing = state.getValue(ButtonBlock.FACING);
@@ -116,7 +112,16 @@ public class ModBlockStateProvider extends BlockStateProvider {
                     .rotationY((int) (face == AttachFace.CEILING ? facing : facing.getOpposite()).toYRot())
                     .build();
         });
+//        Block SLAB = Blocks.OAK_SLAB;
+//        horizontalBlock(SLAB, state ->{
+//            SlabType type = state.getValue(SlabBlock.TYPE);
+//            ResourceLocation location = modLoc("block/my_planks");
+//            return type == SlabType.TOP ? models().slabTop(name(SLAB), location,location,location) :
+//                    type == SlabType.BOTTOM ? models().slab(name(SLAB), location,location,location) :
+//                            models().getExistingFile(location);
+//        });
     }
+
     private void spookyTrapdoorBlock(TrapDoorBlock block, String baseName) {
         ModelFile bottom = models().getExistingFile(modLoc(baseName + "_bottom"));
         ModelFile top = models().getExistingFile(modLoc(baseName + "_top"));
@@ -137,11 +142,13 @@ public class ModBlockStateProvider extends BlockStateProvider {
                     .build();
         }, TrapDoorBlock.POWERED, TrapDoorBlock.WATERLOGGED);
     }
+
     public void fenceBlock(FenceBlock block) {
         fourWayBlock(block,
                 models().getExistingFile(modLoc(name(block) + "_post")),
                 models().getExistingFile(modLoc(name(block) + "_side")));
     }
+
     public void fourWayBlock(CrossCollisionBlock block, ModelFile post, ModelFile side) {
         MultiPartBlockStateBuilder builder = getMultipartBuilder(block)
                 .part().modelFile(post).addModel().end();

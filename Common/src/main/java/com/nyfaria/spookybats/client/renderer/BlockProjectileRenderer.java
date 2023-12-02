@@ -16,7 +16,10 @@ public class BlockProjectileRenderer extends EntityRenderer<BlockProjectile> {
 
     @Override
     public void render(BlockProjectile blockProjectile, float yaw, float partialTick, PoseStack stack, MultiBufferSource bufferSource, int light) {
+        stack.pushPose();
+        stack.translate(-0.5, 0, -0.5);
         Minecraft.getInstance().getBlockRenderer().renderSingleBlock(blockProjectile.getBlockState(), stack, bufferSource, light, OverlayTexture.NO_OVERLAY);
+        stack.popPose();
     }
 
     @Override
