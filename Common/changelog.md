@@ -10,6 +10,7 @@
 ## Changes
 ### Misc
 - Fix wording of a couple of advancements
+- Touch up texture of bat wings
 ### Slime Bat
 - Drops bitesized jelly
 - Add ambient particles

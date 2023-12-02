@@ -1,4 +1,4 @@
-// 1.20.1	2023-12-01T13:24:55.8725726	Item Models: spookybats
+// 1.20.1	2023-12-02T14:37:47.7483301	Item Models: spookybats
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/spookybats/models/item/alex_bat_spawn_egg.json
 679c6e6b8baefa1f8eb7e1aaffc3ebc0139a0770 assets/spookybats/models/item/bat_wings.json
 103df43ce6e778005473f9e60eb7ce771e71035e assets/spookybats/models/item/bitesized_jelly.json
@@ -17,7 +17,9 @@ c633e56bfa49d1de83f1a4ad59248e26a0e87f2b assets/spookybats/models/item/pumpkin_c
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/spookybats/models/item/skeleton_bat_spawn_egg.json
 0ee85940a7f4ebf62cc843188b32cf30f594f469 assets/spookybats/models/item/skull_candy.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/spookybats/models/item/slime_bat_spawn_egg.json
+96afb2ba989d1c481a60e58574a7904d5eb58581 assets/spookybats/models/item/spooky_oak_boat.json
 9a409d47eb673037275f5f14230a54bd773e2f95 assets/spookybats/models/item/spooky_oak_button.json
+d19497f9163fd55ec26a0d6e1d3e81f32cc6f24f assets/spookybats/models/item/spooky_oak_chest_boat.json
 ad7efacf5221287404c2e7d81d4294989ea7cfc0 assets/spookybats/models/item/spooky_oak_door.json
 8728fa7545582c855c771cec4a5e8be88524f34c assets/spookybats/models/item/spooky_oak_fence.json
 557c22c9dba2e6bd789531b3b48c8c79ac296eef assets/spookybats/models/item/spooky_oak_fence_gate.json
