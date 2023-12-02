@@ -1,6 +1,7 @@
 package com.nyfaria.spookybats.item;
 
 import com.nyfaria.spookybats.entity.BlockProjectile;
+import com.nyfaria.spookybats.init.TagInit;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.NbtUtils;
 import net.minecraft.world.InteractionHand;
@@ -66,8 +67,10 @@ public class StaffOfTurmoil extends Item {
             ItemStack stack = context.getItemInHand();
             if (stack.getItem() instanceof StaffOfTurmoil) {
                 if (context.getLevel().getBlockEntity(context.getClickedPos()) == null) {
-                    if (!stack.getOrCreateTag().contains("stored_block") || !context.getLevel().isLoaded(NbtUtils.readBlockPos(stack.getTag().getCompound("stored_block")))) {
-                        stack.getTag().put("stored_block", NbtUtils.writeBlockPos(context.getClickedPos()));
+                    if(!context.getLevel().getBlockState(context.getClickedPos()).is(TagInit.SOT_EXCLUSION)) {
+                        if (!stack.getOrCreateTag().contains("stored_block") || !context.getLevel().isLoaded(NbtUtils.readBlockPos(stack.getTag().getCompound("stored_block")))) {
+                            stack.getTag().put("stored_block", NbtUtils.writeBlockPos(context.getClickedPos()));
+                        }
                     }
                 }
             }

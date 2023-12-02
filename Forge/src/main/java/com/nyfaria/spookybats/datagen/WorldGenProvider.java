@@ -83,7 +83,7 @@ public class WorldGenProvider extends DatapackBuiltinEntriesProvider {
 
     public static void spawns(BootstapContext<BiomeModifier> context) {
         context.register(OVERWORLD,
-                new ForgeBiomeModifiers.AddSpawnsBiomeModifier(context.lookup(Registries.BIOME).getOrThrow(BiomeTags.IS_OVERWORLD), CommonSpawning.SPOOKY_OAK_FOREST_SPAWNS)
+                new ForgeBiomeModifiers.AddSpawnsBiomeModifier(context.lookup(Registries.BIOME).getOrThrow(BiomeTags.IS_OVERWORLD), CommonSpawning.OVERWORLD_SPAWNS)
         );
         context.register(NETHER,
                 new ForgeBiomeModifiers.AddSpawnsBiomeModifier(context.lookup(Registries.BIOME).getOrThrow(BiomeTags.IS_NETHER), CommonSpawning.NETHER_SPAWNS)

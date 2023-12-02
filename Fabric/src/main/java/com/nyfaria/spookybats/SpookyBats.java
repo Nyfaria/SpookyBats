@@ -32,6 +32,9 @@ public class SpookyBats implements ModInitializer {
         CommonSpawning.END_SPAWNS.forEach(spawnerData ->
                 BiomeModifications.addSpawn(BiomeSelectors.foundInTheEnd(), MobCategory.MONSTER, spawnerData.type, spawnerData.getWeight().asInt(), spawnerData.minCount, spawnerData.maxCount)
         );
+        CommonSpawning.OVERWORLD_SPAWNS.forEach(spawnerData ->
+                BiomeModifications.addSpawn(BiomeSelectors.foundInOverworld(), MobCategory.MONSTER, spawnerData.type, spawnerData.getWeight().asInt(), spawnerData.minCount, spawnerData.maxCount)
+        );
 
         CommonSpawning.placements();
         CommonClass.setupBlockEntities();
