@@ -34,12 +34,8 @@ public class SpookyBatsClient implements ClientModInitializer {
             }
         });
 
-        BlockRenderLayerMap.INSTANCE.putBlock(BlockInit.SPOOKY_PEDESTAL.get(), RenderType.translucent());
-        registerCutout(BlockInit.SPOOKY_OAK.sapling());
+        BlockRenderLayerMap.INSTANCE.putBlock(BlockInit.SPOOKY_PEDESTAL.get(), RenderType.cutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(BlockInit.SPOOKY_OAK.sapling().get(), RenderType.cutout());
         BlockEntityRenderers.register(BlockInit.SPOOKY_PEDESTAL_BLOCK_ENTITY.get(), (a) -> new SpookyPedestalRenderer());
-    }
-
-    private static void registerCutout(RegistryObject<? extends Block> block) {
-        BlockRenderLayerMap.INSTANCE.putBlock(block.get(), RenderType.cutout());
     }
 }
