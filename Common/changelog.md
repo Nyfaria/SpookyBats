@@ -9,21 +9,22 @@
   - New Spooky Oak wood set; almost all things wood can be made from Spooky Oak!
 ## Changes
 ### Misc
-- Fix wording of a couple of advancements
-- Touch up texture of bat wings
+- Fixed wording of a couple of advancements
+- Touched up texture of bat wings
+- Fixed render layer of spooky pedestal
 ### Slime Bat
 - Drops bitesized jelly
-- Add ambient particles
-- Add natural regeneration every three seconds
+- Added ambient particles
+- Added natural regeneration every three seconds
 ### Undead Bat
-- Add ambient particles
-- Add natural regeneration every three seconds
+- Added ambient particles
+- Added natural regeneration every three seconds
 ### Shulker Bat
-- Add ambient particles
-- Add natural regeneration every three seconds
+- Added ambient particles
+- Added natural regeneration every three seconds
 ### Sculk Bat
-- Add ambient particles
-- Add natural regeneration every three seconds
+- Added ambient particles
+- Added natural regeneration every three seconds
 
 # Version 0.6.1 Beta
 ## Bug Fixes
