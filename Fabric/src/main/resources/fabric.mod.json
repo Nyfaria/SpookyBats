@@ -37,6 +37,7 @@
     "loom:injected_interfaces": {
       "com/nyfaria/spookybats/item/BatWings.java":["net/fabricmc/fabric/api/entity/event/v1/FabricElytraItem"]
     }
-  }
+  },
+  "accessWidener" : "${mod_id}.accesswidener"
 }
   
