@@ -1,1 +1,13 @@
-// 1.20.1	2023-09-21T13:27:28.6878378	Tags for minecraft:item mod id spookybats
+// 1.20.1	2023-12-05T18:55:43.5701893	Tags for minecraft:item mod id spookybats
+c5903fb94deb46c87ead7bb61678703e9d88df6f data/minecraft/tags/items/leaves.json
+9b40d8f31cc201a1399f612286bce8feecacfc25 data/minecraft/tags/items/logs_that_burn.json
+fc585196eff575643465d29372c3225cbd40577d data/minecraft/tags/items/planks.json
+9d1c545b94fd5ecc4fe5d8f28f356da53812f55d data/minecraft/tags/items/saplings.json
+27f95e7c4ed6a6d01580487e23f1e7be83190bd0 data/minecraft/tags/items/wooden_buttons.json
+923b09e21cba20a4b55286c653112a6127e355f4 data/minecraft/tags/items/wooden_doors.json
+1ce7291a7016959640cfd43e20ff99c0a39b31c5 data/minecraft/tags/items/wooden_fences.json
+caee3535616c2fd9b1a27f88df08869f9cda2d7d data/minecraft/tags/items/wooden_pressure_plates.json
+0025aa6d1c1ffeea208bb3cee53e386877880d6e data/minecraft/tags/items/wooden_slabs.json
+d25c5746b2d07b63972ba916c3038325c14ad66e data/minecraft/tags/items/wooden_stairs.json
+8cfe36f996d97318ac3ebac875e530b75c75822f data/minecraft/tags/items/wooden_trapdoors.json
+cbcfa5da279aadfe2feb33eedfbffb94e583d614 data/spookybats/tags/items/spooky_oak_logs.json

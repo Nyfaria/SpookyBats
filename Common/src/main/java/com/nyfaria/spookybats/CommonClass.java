@@ -26,6 +26,7 @@ import com.nyfaria.spookybats.entity.api.SpookyBat;
 import com.nyfaria.spookybats.init.BlockInit;
 import com.nyfaria.spookybats.init.EntityInit;
 import com.nyfaria.spookybats.init.ItemInit;
+import com.nyfaria.spookybats.init.TagInit;
 import com.nyfaria.spookybats.worldgen.SpookyBatsOverworldRegion;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.entity.ThrownItemRenderer;
@@ -60,6 +61,7 @@ public class CommonClass {
         ItemInit.loadClass();
         BlockInit.loadClass();
         EntityInit.loadClass();
+        TagInit.loadClass();
     }
 
     public static void setupTerraBlender(){

@@ -17,3 +17,4 @@ accessible method net/minecraft/world/entity/vehicle/Boat setBubbleTime (I)V
 accessible method net/minecraft/world/entity/vehicle/Boat getBubbleTime ()I
 extendable method net/minecraft/world/entity/vehicle/Boat setBubbleTime (I)V
 extendable method net/minecraft/world/entity/vehicle/Boat getBubbleTime ()I
+accessible method net/minecraft/data/BlockFamilies familyBuilder (Lnet/minecraft/world/level/block/Block;)Lnet/minecraft/data/BlockFamily$Builder;

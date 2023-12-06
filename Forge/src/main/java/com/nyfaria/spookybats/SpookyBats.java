@@ -32,15 +32,15 @@ public class SpookyBats {
         ExistingFileHelper existingFileHelper = event.getExistingFileHelper();
         boolean includeServer = event.includeServer();
         boolean includeClient = event.includeClient();
-        generator.addProvider(includeServer, new ModRecipeProvider(packOutput));
         generator.addProvider(includeServer, new ModLootTableProvider(packOutput));
         generator.addProvider(includeServer, new ModSoundProvider(packOutput, existingFileHelper));
-        generator.addProvider(includeServer, new ModTagProvider.BlockTags(packOutput,event.getLookupProvider(), existingFileHelper));
-        generator.addProvider(includeServer, new ModTagProvider.ItemTags(packOutput,event.getLookupProvider(), existingFileHelper));
+        generator.addProvider(includeServer, new ModTagProvider.BlockTag(packOutput,event.getLookupProvider(), existingFileHelper));
+        generator.addProvider(includeServer, new ModTagProvider.ItemTag(packOutput,event.getLookupProvider(), existingFileHelper));
         generator.addProvider(includeClient, new ModBlockStateProvider(packOutput, existingFileHelper));
         generator.addProvider(includeClient, new ModItemModelProvider(packOutput, existingFileHelper));
         generator.addProvider(includeClient, new ModLangProvider(packOutput));
         generator.addProvider(includeServer, new ModAdvancementProvider(packOutput,event.getLookupProvider(), existingFileHelper));
         generator.addProvider(includeServer, new WorldGenProvider(packOutput,event.getLookupProvider()));
+        generator.addProvider(includeServer, new ModRecipeProvider(packOutput));
     }
 }

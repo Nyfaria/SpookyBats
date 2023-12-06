@@ -5,6 +5,7 @@ import net.minecraft.resources.ResourceKey;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.block.grower.AbstractMegaTreeGrower;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
+import net.minecraft.world.level.storage.loot.BuiltInLootTables;
 import org.jetbrains.annotations.Nullable;
 
 public class SpookOakTreeGrower extends AbstractMegaTreeGrower {
