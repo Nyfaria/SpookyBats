@@ -39,6 +39,7 @@ public class ItemInit {
     public static final RegistryObject<Item> SUSPICIOUS_CANDY = registerCandy("suspicious_candy", MobEffects.CONFUSION);
     public static final RegistryObject<Item> SCULK_CANDY = registerCandy("sculk_candy", MobEffects.DARKNESS);
     public static final RegistryObject<Item> BITESIZED_JELLY = registerCandy("bitesized_jelly", MobEffects.JUMP);
+    public static final RegistryObject<Item> CANDY_CANE = registerCandy("candy_cane", MobEffects.MOVEMENT_SPEED);
 
     public static final RegistryObject<Item> WITCHS_BROOM = ITEMS.register("witchs_broom", ()->new WitchsBroomItem(getItemProperties().stacksTo(1)));
 
@@ -80,7 +81,7 @@ public class ItemInit {
     public static void loadClass() {
     }
 
-    public static RegistryObject<Item> registerCandy(String name, MobEffect effect){
+    public static RegistryObject<Item> registerCandy(String name, MobEffect effect) {
         RegistryObject<Item> item = ITEMS.register(name, () -> new Item(getItemProperties().food(new FoodProperties.Builder().alwaysEat().nutrition(1).saturationMod(0.5f).fast().effect(new MobEffectInstance(effect,100),1).build())));
         CANDY_LIST.add(item);
         return item;

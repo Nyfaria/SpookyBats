@@ -29,29 +29,35 @@ public class ModItemModelProvider extends ItemModelProvider {
         //         .forEach(this::simpleHandHeldModel);
 
         Stream.of(
-                        ItemInit.PUMPKIN_CHOCOLATE_BAR,
-                        ItemInit.GENERIC_CANDY,
-                        ItemInit.SUSPICIOUS_CANDY,
-                        ItemInit.SKULL_CANDY,
-                        ItemInit.WITHER_SKULL_CANDY,
-                        ItemInit.TNT_LOLLIPOP,
-                        ItemInit.ZOMBIE_FLESH_LOLLIPOP,
-                        ItemInit.WITCHES_BREW,
-                        ItemInit.BAT_WINGS,
-                        ItemInit.SCULK_CANDY,
-                        ItemInit.WITCHS_BROOM,
-                        ItemInit.BITESIZED_JELLY,
-                        ItemInit.SPOOKY_OAK_BOAT_ITEM,
-                        ItemInit.SPOOKY_OAK_CHEST_BOAT_ITEM
-                )
+                ItemInit.PUMPKIN_CHOCOLATE_BAR,
+                ItemInit.GENERIC_CANDY,
+                ItemInit.SUSPICIOUS_CANDY,
+                ItemInit.SKULL_CANDY,
+                ItemInit.WITHER_SKULL_CANDY,
+                ItemInit.TNT_LOLLIPOP,
+                ItemInit.ZOMBIE_FLESH_LOLLIPOP,
+                ItemInit.WITCHES_BREW,
+                ItemInit.BAT_WINGS,
+                ItemInit.SCULK_CANDY,
+                ItemInit.WITCHS_BROOM,
+                ItemInit.BITESIZED_JELLY,
+                ItemInit.CANDY_CANE,
+                ItemInit.SPOOKY_OAK_BOAT_ITEM,
+                ItemInit.SPOOKY_OAK_CHEST_BOAT_ITEM
+        )
+        .map(Supplier::get)
+        .forEach(this::simpleGeneratedModel);
+
+        ItemInit.ITEMS.getEntries().stream().filter(item -> item.get() instanceof SpawnEggItem)
                 .map(Supplier::get)
-                .forEach(this::simpleGeneratedModel);
-        ItemInit.ITEMS.getEntries().stream().filter(item -> item.get() instanceof SpawnEggItem).map(Supplier::get).forEach(this::spawnEgg);
+                .forEach(this::spawnEgg);
+
         Stream.of(
-                        BlockInit.SPOOKY_PEDESTAL
-                )
-                .map(Supplier::get)
-                .forEach(this::simpleBlockItemModel);
+                BlockInit.SPOOKY_PEDESTAL
+        )
+        .map(Supplier::get)
+        .forEach(this::simpleBlockItemModel);
+
         woodCollection(BlockInit.SPOOKY_OAK);
     }
 
@@ -59,6 +65,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         String name = getName(block);
         return withExistingParent(name, modLoc("block/" + name));
     }
+
     protected ItemModelBuilder simpleTrapdoorBlockItemModel(Block block) {
         String name = getName(block);
         return withExistingParent(name, modLoc("block/" + name + "_bottom"));

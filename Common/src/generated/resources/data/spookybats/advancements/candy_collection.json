@@ -13,6 +13,18 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
+    "candy_cane": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "spookybats:candy_cane"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "generic_candy": {
       "conditions": {
         "items": [
@@ -168,6 +180,9 @@
     ],
     [
       "bitesized_jelly"
+    ],
+    [
+      "candy_cane"
     ]
   ],
   "sends_telemetry_event": true
