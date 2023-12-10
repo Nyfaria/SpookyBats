@@ -1,3 +1,18 @@
+# Version 1.1.0
+## Additions
+- New candy cane food item
+## Changes
+### Misc
+- Make Vanilla bats spawn in Spooky Oak biome
+
+# Version 1.0.2
+## Bugfixes
+- Fixed missing crafting recipes for Spooky Oak wood set 
+
+# Version 1.0.1
+## Bugfixes
+- Fixed access widener issue for Fabric
+
 # Version 1.0.0
 ## Additions
 - New "bitesized jelly" candy

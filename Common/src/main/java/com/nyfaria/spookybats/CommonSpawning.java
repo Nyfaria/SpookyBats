@@ -3,6 +3,7 @@ package com.nyfaria.spookybats;
 import com.nyfaria.spookybats.entity.MonsterBat;
 import com.nyfaria.spookybats.entity.api.SpookyBat;
 import com.nyfaria.spookybats.init.EntityInit;
+import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.SpawnPlacements;
 import net.minecraft.world.level.biome.MobSpawnSettings;
 import net.minecraft.world.level.levelgen.Heightmap;
@@ -18,6 +19,7 @@ public class CommonSpawning {
                     new MobSpawnSettings.SpawnerData(EntityInit.ALEX_BAT.get(), 5, 1, 3),
                     new MobSpawnSettings.SpawnerData(EntityInit.HEROBRINE_BAT.get(), 4, 1, 1),
                     new MobSpawnSettings.SpawnerData(EntityInit.SKELETON_BAT.get(), 5, 1, 3),
+                    new MobSpawnSettings.SpawnerData(EntityType.BAT, 4, 1, 2),
                     new MobSpawnSettings.SpawnerData(EntityInit.PLAYER_BAT.get(), 5, 1, 2)
             );
     public static List<MobSpawnSettings.SpawnerData> OVERWORLD_SPAWNS =
