@@ -47,6 +47,7 @@ public class ModLangProvider extends LanguageProvider {
         add("advancements." + Constants.MODID + ".bat_death.desc", "You killed some bats and earned yourself some candy!");
         add("advancements." + Constants.MODID + ".candy_collection", "Candy Collection");
         add("advancements." + Constants.MODID + ".candy_collection.desc", "Collect all the candy!");
+        add("biome.spookybats.spooky_oak_biome", "Spooky Oak Biome");
 //        add("item." + Constants.MODID + ".staff_of_turmoil.description", "Right click almost any block and then right click an entity!");
     }
 
