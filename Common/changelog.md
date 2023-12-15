@@ -1,9 +1,10 @@
 # Version 1.1.0
 ## Additions
 - New candy cane food item
-## Changes
+## Changes/Bugfixes
 ### Misc
 - Make Vanilla bats spawn in Spooky Oak biome
+- Add translation for Spooky Oak biome
 
 # Version 1.0.2
 ## Bugfixes
