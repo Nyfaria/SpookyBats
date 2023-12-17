@@ -1,6 +1,7 @@
 # Version 1.1.0
 ## Additions
 - New candy cane food item
+- Advancement for killing Winged Turmoil
 ## Changes/Bugfixes
 ### Misc
 - Make Vanilla bats spawn in Spooky Oak biome
@@ -13,6 +14,7 @@
 # Version 1.0.1
 ## Bugfixes
 - Fixed access widener issue for Fabric
+
 # Version 1.0.0
 ## Additions
 - New "bitesized jelly" candy
