@@ -13,7 +13,6 @@
 # Version 1.0.1
 ## Bugfixes
 - Fixed access widener issue for Fabric
-
 # Version 1.0.0
 ## Additions
 - New "bitesized jelly" candy
