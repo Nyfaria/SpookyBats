@@ -4,6 +4,7 @@ import com.nyfaria.batsgalore.entity.SlimeBat;
 import com.nyfaria.batsgalore.entity.ai.control.BatMoveControl;
 import com.nyfaria.batsgalore.init.EntityInit;
 import net.minecraft.core.BlockPos;
+import net.minecraft.data.worldgen.StructureSets;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
@@ -38,6 +39,8 @@ import net.minecraft.world.level.ServerLevelAccessor;
 import net.minecraft.world.level.WorldGenLevel;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.levelgen.WorldgenRandom;
+import net.minecraft.world.level.levelgen.structure.BuiltinStructures;
+import net.minecraft.world.level.levelgen.structure.StructureStart;
 import net.minecraft.world.phys.Vec3;
 
 import javax.annotation.Nullable;
@@ -252,7 +255,7 @@ public class SpookyBat extends PathfinderMob {
     }
 
     public static <T extends Mob> boolean checkSpookyBatSpawnRules(EntityType<T> tEntityType, ServerLevelAccessor serverLevelAccessor, MobSpawnType spawnType, BlockPos pos, RandomSource randomSource) {
-        return true;
+        return serverLevelAccessor.getLevel().structureManager().getStructureWithPieceAt(pos,BuiltinStructures.END_CITY) != StructureStart.INVALID_START;
     }
     public static boolean checkSlimeSpawnRules(EntityType<SlimeBat> $$0, LevelAccessor $$1, MobSpawnType $$2, BlockPos $$3, RandomSource $$4) {
         if ($$1.getDifficulty() != Difficulty.PEACEFUL) {
