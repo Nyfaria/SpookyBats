@@ -4,6 +4,7 @@
 - Advancement for killing Winged Turmoil
 ## Changes/Bugfixes
 ### Misc
+- Fix chains of Spooky Oak sign being invisible from one side
 - Make Vanilla bats spawn in Spooky Oak biome
 - Add translation for Spooky Oak biome
 
