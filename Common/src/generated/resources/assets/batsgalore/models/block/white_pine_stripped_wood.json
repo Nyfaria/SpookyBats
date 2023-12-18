@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "batsgalore:block/white_pine_stripped_wood_top",
+    "side": "batsgalore:block/white_pine_stripped_wood"
+  }
+}

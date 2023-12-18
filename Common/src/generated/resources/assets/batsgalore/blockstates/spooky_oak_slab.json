@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "batsgalore:block/spooky_oak_slab"
+    },
+    "type=double": {
+      "model": "batsgalore:block/spooky_oak_planks"
+    },
+    "type=top": {
+      "model": "batsgalore:block/spooky_oak_slab_top"
+    }
+  }
+}

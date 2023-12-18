@@ -1,7 +1,0 @@
-{
-  "parent": "minecraft:block/cube_column_horizontal",
-  "textures": {
-    "end": "spookybats:block/spooky_oak_log",
-    "side": "spookybats:block/spooky_oak_log"
-  }
-}

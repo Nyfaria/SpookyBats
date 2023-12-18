@@ -1,0 +1,15 @@
+{
+  "name": "batsgalore:altar_of_turmoil",
+  "fallback": "minecraft:empty",
+  "elements": [
+    {
+      "weight": 1,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "batsgalore:altar_of_turmoil",
+        "projection": "rigid",
+        "processors": "minecraft:empty"
+      }
+    }
+  ]
+}

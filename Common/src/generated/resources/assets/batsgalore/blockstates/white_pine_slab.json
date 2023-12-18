@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "batsgalore:block/white_pine_slab"
+    },
+    "type=double": {
+      "model": "batsgalore:block/white_pine_planks"
+    },
+    "type=top": {
+      "model": "batsgalore:block/white_pine_slab_top"
+    }
+  }
+}

@@ -1,7 +1,0 @@
-{
-  "parent": "minecraft:block/leaves",
-  "render_type": "minecraft:cut_out",
-  "textures": {
-    "all": "spookybats:block/spooky_oak_leaves"
-  }
-}

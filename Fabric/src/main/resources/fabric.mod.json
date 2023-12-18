@@ -12,13 +12,13 @@
   "environment": "*",
   "entrypoints": {
     "main": [
-      "com.nyfaria.spookybats.SpookyBats"
+      "com.nyfaria.batsgalore.SpookyBats"
     ],
     "client": [
-      "com.nyfaria.spookybats.SpookyBatsClient"
+      "com.nyfaria.batsgalore.SpookyBatsClient"
     ],
     "terrablender": [
-      "com.nyfaria.spookybats.TerraBlenderSetup"
+      "com.nyfaria.batsgalore.TerraBlenderSetup"
     ]
   },
   "mixins": [
@@ -35,7 +35,7 @@
   },
   "custom": {
     "loom:injected_interfaces": {
-      "com/nyfaria/spookybats/item/BatWings.java":["net/fabricmc/fabric/api/entity/event/v1/FabricElytraItem"]
+      "com/nyfaria/batsgalore/item/BatWings.java":["net/fabricmc/fabric/api/entity/event/v1/FabricElytraItem"]
     }
   },
   "accessWidener" : "${mod_id}.accesswidener"

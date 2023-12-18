@@ -1,0 +1,20 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "com.nyfaria.batsgalore.mixins",
+  "compatibilityLevel": "JAVA_17",
+  "refmap": "${mod_id}.refmap.json",
+  "mixins": [
+    "BatWingsMixin",
+    "ModChestBoatMixin",
+    "ResourceLocationMixin"
+  ],
+  "client": [
+    "HangingSignRendererMixin",
+    "SignRendererMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
+  

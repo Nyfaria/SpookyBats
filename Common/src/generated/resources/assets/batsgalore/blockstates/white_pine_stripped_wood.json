@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "batsgalore:block/white_pine_stripped_wood_horizontal",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "batsgalore:block/white_pine_stripped_wood"
+    },
+    "axis=z": {
+      "model": "batsgalore:block/white_pine_stripped_wood_horizontal",
+      "x": 90
+    }
+  }
+}

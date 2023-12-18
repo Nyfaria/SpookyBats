@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "lit=false": {
+      "model": "batsgalore:block/spooky_pedestal"
+    },
+    "lit=true": {
+      "model": "batsgalore:block/spooky_pedestal_on"
+    }
+  }
+}

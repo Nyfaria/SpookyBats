@@ -1,0 +1,7 @@
+{
+  "parent": "batsgalore:block/spooky_pedestal",
+  "textures": {
+    "0": "batsgalore:block/spooky_pedestal_on",
+    "particle": "batsgalore:block/spooky_pedestal_on"
+  }
+}

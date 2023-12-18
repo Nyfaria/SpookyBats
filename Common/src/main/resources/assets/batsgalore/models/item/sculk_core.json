@@ -1,0 +1,112 @@
+{
+	"credit": "Made with Blockbench",
+	"texture_size": [64, 64],
+	"textures": {
+		"0": "batsgalore:item/sculk_core",
+		"particle": "batsgalore:item/sculk_core"
+	},
+	"elements": [
+		{
+			"from": [3.3, 4.3, 3.3],
+			"to": [12.7, 13.7, 12.7],
+			"faces": {
+				"north": {"uv": [0.008, 0.008, 1.992, 1.992], "texture": "#0"},
+				"east": {"uv": [0.008, 2.008, 1.992, 3.992], "texture": "#0"},
+				"south": {"uv": [2.008, 0.008, 3.992, 1.992], "texture": "#0"},
+				"west": {"uv": [2.008, 2.008, 3.992, 3.992], "texture": "#0"},
+				"up": {"uv": [1.992, 5.992, 0.008, 4.008], "texture": "#0"},
+				"down": {"uv": [5.992, 0.008, 4.008, 1.992], "texture": "#0"}
+			}
+		},
+		{
+			"name": "cube inverted",
+			"from": [12.7, 13.7, 12.7],
+			"to": [3.3, 4.3, 3.3],
+			"faces": {
+				"north": {"uv": [2.008, 1.992, 3.992, 0.008], "texture": "#0"},
+				"east": {"uv": [2.008, 3.992, 3.992, 2.008], "texture": "#0"},
+				"south": {"uv": [0.008, 1.992, 1.992, 0.008], "texture": "#0"},
+				"west": {"uv": [0.008, 3.992, 1.992, 2.008], "texture": "#0"},
+				"up": {"uv": [4.008, 0.008, 5.992, 1.992], "texture": "#0"},
+				"down": {"uv": [0.008, 5.992, 1.992, 4.008], "texture": "#0"}
+			}
+		},
+		{
+			"from": [4, 5, 4],
+			"to": [12, 13, 12],
+			"faces": {
+				"north": {"uv": [2.008, 4.008, 3.992, 5.992], "texture": "#0"},
+				"east": {"uv": [4.008, 2.008, 5.992, 3.992], "texture": "#0"},
+				"south": {"uv": [4.008, 4.008, 5.992, 5.992], "texture": "#0"},
+				"west": {"uv": [0.008, 6.008, 1.992, 7.992], "texture": "#0"},
+				"up": {"uv": [7.992, 1.992, 6.008, 0.008], "texture": "#0"},
+				"down": {"uv": [3.992, 6.008, 2.008, 7.992], "texture": "#0"}
+			}
+		},
+		{
+			"from": [4.2, 5.2, 4.2],
+			"to": [11.8, 12.8, 11.8],
+			"faces": {
+				"north": {"uv": [6.008, 2.008, 7.992, 3.992], "texture": "#0"},
+				"east": {"uv": [4.008, 6.008, 5.992, 7.992], "texture": "#0"},
+				"south": {"uv": [6.008, 4.008, 7.992, 5.992], "texture": "#0"},
+				"west": {"uv": [6.008, 6.008, 7.992, 7.992], "texture": "#0"},
+				"up": {"uv": [1.992, 9.992, 0.008, 8.008], "texture": "#0"},
+				"down": {"uv": [9.992, 0.008, 8.008, 1.992], "texture": "#0"}
+			}
+		}
+	],
+	"display": {
+		"firstperson_righthand": {
+			"rotation": [6, 0, 0],
+			"translation": [0, 0, -0.75],
+			"scale": [1, 1, 0.875]
+		},
+		"firstperson_lefthand": {
+			"rotation": [6, 0, 0],
+			"translation": [0, 0, -0.75],
+			"scale": [1, 1, 0.875]
+		},
+		"ground": {
+			"translation": [0, -0.5, 0],
+			"scale": [0.8, 0.8, 0.8]
+		},
+		"gui": {
+			"rotation": [31.94, -45.13, 8.09],
+			"translation": [0, -0.75, 0]
+		},
+		"head": {
+			"translation": [0, 9.5, 0]
+		},
+		"fixed": {
+			"translation": [0, -0.5, 0]
+		}
+	},
+	"groups": [
+		{
+			"name": "sculk_core",
+			"origin": [0, 0, 0],
+			"color": 0,
+			"children": [
+				{
+					"name": "outer",
+					"origin": [0, 0, 0],
+					"color": 0,
+					"children": [0, 1]
+				},
+				{
+					"name": "mid",
+					"origin": [0, 0, 0],
+					"color": 0,
+					"children": [2]
+				},
+				{
+					"name": "inner",
+					"origin": [8, 8, 8],
+					"color": 0,
+					"children": [3]
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/leaves",
+  "render_type": "minecraft:cut_out",
+  "textures": {
+    "all": "batsgalore:block/spooky_oak_leaves"
+  }
+}

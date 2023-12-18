@@ -1,0 +1,18 @@
+{
+  "type": "forge:add_spawns",
+  "biomes": "#forge:is_swamp",
+  "spawners": [
+    {
+      "type": "batsgalore:witch_bat",
+      "maxCount": 3,
+      "minCount": 1,
+      "weight": 5
+    },
+    {
+      "type": "batsgalore:experience_orb_bat",
+      "maxCount": 1,
+      "minCount": 1,
+      "weight": 3
+    }
+  ]
+}

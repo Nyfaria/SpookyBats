@@ -1,7 +1,0 @@
-{
-  "parent": "spookybats:block/spooky_pedestal",
-  "textures": {
-    "0": "spookybats:block/spooky_pedestal_on",
-    "particle": "spookybats:block/spooky_pedestal_on"
-  }
-}

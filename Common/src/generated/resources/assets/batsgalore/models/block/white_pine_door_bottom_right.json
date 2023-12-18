@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/door_bottom_right",
+  "render_type": "minecraft:cutout",
+  "textures": {
+    "bottom": "batsgalore:block/white_pine_door_bottom",
+    "top": "batsgalore:block/white_pine_door_top"
+  }
+}

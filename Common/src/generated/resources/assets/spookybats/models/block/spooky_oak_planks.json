@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:block/cube_all",
-  "textures": {
-    "all": "spookybats:block/spooky_oak_planks"
-  }
-}

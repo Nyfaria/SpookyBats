@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:block/button_inventory",
-  "textures": {
-    "texture": "spookybats:block/spooky_oak_planks"
-  }
-}

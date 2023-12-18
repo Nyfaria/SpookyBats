@@ -1,0 +1,39 @@
+{
+  "parent": "batsgalore:bat_death",
+  "criteria": {
+    "bat_wings": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "batsgalore:bat_wings"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "background": "minecraft:textures/gui/advancements/backgrounds/husbandry.png",
+    "description": {
+      "translate": "advancements.batsgalore.massacre.desc"
+    },
+    "frame": "challenge",
+    "hidden": true,
+    "icon": {
+      "item": "batsgalore:bat_wings"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancements.batsgalore.massacre"
+    }
+  },
+  "requirements": [
+    [
+      "bat_wings"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

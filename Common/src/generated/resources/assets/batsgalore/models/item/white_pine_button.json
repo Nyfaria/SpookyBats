@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/button_inventory",
+  "textures": {
+    "texture": "batsgalore:block/white_pine_planks"
+  }
+}

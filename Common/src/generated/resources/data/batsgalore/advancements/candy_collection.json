@@ -1,0 +1,189 @@
+{
+  "parent": "batsgalore:bat_death",
+  "criteria": {
+    "bitesized_jelly": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "batsgalore:bitesized_jelly"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "candy_cane": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "batsgalore:candy_cane"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "generic_candy": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "batsgalore:generic_candy"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "pumpkin_chocolate_bar": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "batsgalore:pumpkin_chocolate_bar"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "sculk_candy": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "batsgalore:sculk_candy"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "skull_candy": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "batsgalore:skull_candy"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "suspicious_candy": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "batsgalore:suspicious_candy"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "tnt_lollipop": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "batsgalore:tnt_lollipop"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "witches_brew": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "batsgalore:witches_brew"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "wither_skull_candy": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "batsgalore:wither_skull_candy"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "zombie_flesh_lollipop": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "batsgalore:zombie_flesh_lollipop"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "background": "minecraft:textures/gui/advancements/backgrounds/husbandry.png",
+    "description": {
+      "translate": "advancements.batsgalore.candy_collection.desc"
+    },
+    "frame": "challenge",
+    "hidden": false,
+    "icon": {
+      "item": "batsgalore:pumpkin_chocolate_bar"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancements.batsgalore.candy_collection"
+    }
+  },
+  "requirements": [
+    [
+      "pumpkin_chocolate_bar"
+    ],
+    [
+      "tnt_lollipop"
+    ],
+    [
+      "witches_brew"
+    ],
+    [
+      "skull_candy"
+    ],
+    [
+      "wither_skull_candy"
+    ],
+    [
+      "zombie_flesh_lollipop"
+    ],
+    [
+      "generic_candy"
+    ],
+    [
+      "suspicious_candy"
+    ],
+    [
+      "sculk_candy"
+    ],
+    [
+      "bitesized_jelly"
+    ],
+    [
+      "candy_cane"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

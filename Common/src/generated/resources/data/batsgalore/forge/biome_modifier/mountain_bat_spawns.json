@@ -1,0 +1,10 @@
+{
+  "type": "forge:add_spawns",
+  "biomes": "#forge:is_mountain",
+  "spawners": {
+    "type": "batsgalore:experience_orb_bat",
+    "maxCount": 1,
+    "minCount": 1,
+    "weight": 3
+  }
+}

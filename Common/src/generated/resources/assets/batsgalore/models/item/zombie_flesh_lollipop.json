@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "batsgalore:item/zombie_flesh_lollipop"
+  }
+}
