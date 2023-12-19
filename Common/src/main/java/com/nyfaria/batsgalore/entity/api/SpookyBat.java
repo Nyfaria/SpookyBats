@@ -1,5 +1,6 @@
 package com.nyfaria.batsgalore.entity.api;
 
+import com.nyfaria.batsgalore.entity.ShulkerBat;
 import com.nyfaria.batsgalore.entity.SlimeBat;
 import com.nyfaria.batsgalore.entity.ai.control.BatMoveControl;
 import com.nyfaria.batsgalore.init.EntityInit;
@@ -255,8 +256,13 @@ public class SpookyBat extends PathfinderMob {
     }
 
     public static <T extends Mob> boolean checkSpookyBatSpawnRules(EntityType<T> tEntityType, ServerLevelAccessor serverLevelAccessor, MobSpawnType spawnType, BlockPos pos, RandomSource randomSource) {
+        return true;
+    }
+
+    public static boolean checkShulkerSpawnRules(EntityType<ShulkerBat> tEntityType, ServerLevelAccessor serverLevelAccessor, MobSpawnType spawnType, BlockPos pos, RandomSource randomSource) {
         return serverLevelAccessor.getLevel().structureManager().getStructureWithPieceAt(pos,BuiltinStructures.END_CITY) != StructureStart.INVALID_START;
     }
+
     public static boolean checkSlimeSpawnRules(EntityType<SlimeBat> $$0, LevelAccessor $$1, MobSpawnType $$2, BlockPos $$3, RandomSource $$4) {
         if ($$1.getDifficulty() != Difficulty.PEACEFUL) {
             if ($$1.getBiome($$3).is(BiomeTags.ALLOWS_SURFACE_SLIME_SPAWNS) && $$3.getY() > 50 && $$3.getY() < 70 && $$4.nextFloat() < 0.5F && $$4.nextFloat() < $$1.getMoonBrightness() && $$1.getMaxLocalRawBrightness($$3) <= $$4.nextInt(8)) {

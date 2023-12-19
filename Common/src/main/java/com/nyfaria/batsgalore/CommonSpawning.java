@@ -57,6 +57,6 @@ public class CommonSpawning {
         SpawnPlacements.register(EntityInit.SCULK_BAT.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, SpookyBat::checkSpookyBatSpawnRules);
         SpawnPlacements.register(EntityInit.EXPERIENCE_ORB_BAT.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, SpookyBat::checkSpookyBatSpawnRules);
         SpawnPlacements.register(EntityInit.SLIME_BAT.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, SpookyBat::checkSlimeSpawnRules);
-        SpawnPlacements.register(EntityInit.SHULKER_BAT.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, SpookyBat::checkSpookyBatSpawnRules);
+        SpawnPlacements.register(EntityInit.SHULKER_BAT.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, SpookyBat::checkShulkerSpawnRules);
     }
 }
