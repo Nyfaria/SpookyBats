@@ -7,6 +7,7 @@
 - Fix chains of Spooky Oak sign being invisible from one side
 - Make Vanilla bats spawn in Spooky Oak biome
 - Add translation for Spooky Oak biome
+- Retexture spooky oak boat (including item textures)
 
 # Version 1.0.2
 ## Bugfixes
