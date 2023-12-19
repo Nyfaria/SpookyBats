@@ -8,6 +8,8 @@
 - Make Vanilla bats spawn in Spooky Oak biome
 - Add translation for Spooky Oak biome
 - Retexture spooky oak boat (including item textures)
+### Shulker Bat
+- Make Shulker bats only spawn in End Cities
 
 # Version 1.0.2
 ## Bugfixes
