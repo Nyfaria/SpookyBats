@@ -1,6 +1,6 @@
 package com.nyfaria.batsgalore.entity;
 
-import com.nyfaria.batsgalore.init.EntityInit;
+import com.nyfaria.batsgalore.init.entity.EntityInit;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.NbtOps;
 import net.minecraft.network.syncher.EntityDataAccessor;

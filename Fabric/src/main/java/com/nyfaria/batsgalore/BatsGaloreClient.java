@@ -4,7 +4,6 @@ import com.nyfaria.batsgalore.client.CommonClientClass;
 import com.nyfaria.batsgalore.client.renderer.SpookyPedestalRenderer;
 import com.nyfaria.batsgalore.client.renderer.layer.BatWingsLayer;
 import com.nyfaria.batsgalore.init.BlockInit;
-import com.nyfaria.batsgalore.registration.RegistryObject;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityModelLayerRegistry;
@@ -14,9 +13,8 @@ import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderers;
 import net.minecraft.client.renderer.entity.player.PlayerRenderer;
 import net.minecraft.world.entity.EntityType;
-import net.minecraft.world.level.block.Block;
 
-public class SpookyBatsClient implements ClientModInitializer {
+public class BatsGaloreClient implements ClientModInitializer {
 
     @Override
     public void onInitializeClient() {

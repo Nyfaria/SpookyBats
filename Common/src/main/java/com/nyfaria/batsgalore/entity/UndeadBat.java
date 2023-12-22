@@ -1,6 +1,6 @@
 package com.nyfaria.batsgalore.entity;
 
-import com.nyfaria.batsgalore.entity.api.SpookyBat;
+import com.nyfaria.batsgalore.entity.api.ModBat;
 import net.minecraft.core.particles.ParticleOptions;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.sounds.SoundEvents;
@@ -17,7 +17,7 @@ import net.minecraft.world.level.Level;
 public class UndeadBat extends CoreDroppingBat implements RangedAttackMob {
 	private int shootCooldown = 1;
 
-	public UndeadBat(EntityType<? extends SpookyBat> entityType, Level level) {
+	public UndeadBat(EntityType<? extends ModBat> entityType, Level level) {
 		super(entityType, level);
 	}
 

@@ -1,12 +1,10 @@
 package com.nyfaria.batsgalore.block.entity;
 
 import com.nyfaria.batsgalore.init.BlockInit;
-import com.nyfaria.batsgalore.init.EntityInit;
-import it.unimi.dsi.fastutil.objects.Object2IntMap;
+import com.nyfaria.batsgalore.init.entity.EntityInit;
+import com.nyfaria.batsgalore.init.entity.SpookyBatEntityInit;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
-import net.minecraft.core.particles.ParticleOptions;
-import net.minecraft.core.particles.ParticleType;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.nbt.CompoundTag;
@@ -240,7 +238,7 @@ public class SpookyPedestalBlockEntity extends BlockEntity {
                 if(blockEntity.getPillarDirection() == Direction.NORTH) {
                     BlockPos thePos = blockPos.relative(pillarDirection.getOpposite(), 13).below(1);
                     ((ServerLevel) level).sendParticles(ParticleTypes.EXPLOSION_EMITTER, thePos.getX(), thePos.getY(), thePos.getZ(), 100, 1, 1, 1, 1);
-                    EntityInit.WINGED_TURMOIL.get().spawn((ServerLevel) level, blockPos.relative(pillarDirection.getOpposite(), 13).below(1), MobSpawnType.EVENT);
+                    SpookyBatEntityInit.WINGED_TURMOIL.get().spawn((ServerLevel) level, blockPos.relative(pillarDirection.getOpposite(), 13).below(1), MobSpawnType.EVENT);
                 }
                 setCore(null);
             }

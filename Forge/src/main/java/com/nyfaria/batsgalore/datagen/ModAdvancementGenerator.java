@@ -1,8 +1,9 @@
 package com.nyfaria.batsgalore.datagen;
 
 import com.nyfaria.batsgalore.Constants;
-import com.nyfaria.batsgalore.init.EntityInit;
+import com.nyfaria.batsgalore.init.entity.EntityInit;
 import com.nyfaria.batsgalore.init.ItemInit;
+import com.nyfaria.batsgalore.init.entity.SpookyBatEntityInit;
 import net.minecraft.advancements.Advancement;
 import net.minecraft.advancements.FrameType;
 import net.minecraft.advancements.RequirementsStrategy;
@@ -43,7 +44,7 @@ public class ModAdvancementGenerator implements ForgeAdvancementProvider.Advance
         Advancement.Builder turmoilBuilder = Advancement.Builder.advancement()
                 .parent(bats)
                 .display(ItemInit.STAFF_OF_TURMOIL.get(), Component.translatable("advancements.batsgalore.winged_turmoil_kill"), Component.translatable("advancements.batsgalore.winged_turmoil_kill.desc"), new ResourceLocation("textures/gui/advancements/backgrounds/husbandry.png"), FrameType.CHALLENGE, true, true, false)
-                .addCriterion("kill_winged_turmoil", KilledTrigger.TriggerInstance.playerKilledEntity(EntityPredicate.Builder.entity().of(EntityInit.WINGED_TURMOIL.get())));
+                .addCriterion("kill_winged_turmoil", KilledTrigger.TriggerInstance.playerKilledEntity(EntityPredicate.Builder.entity().of(SpookyBatEntityInit.WINGED_TURMOIL.get())));
         turmoilBuilder.save(saver, Constants.MODID + ":winged_turmoil_kill");
     }
 }

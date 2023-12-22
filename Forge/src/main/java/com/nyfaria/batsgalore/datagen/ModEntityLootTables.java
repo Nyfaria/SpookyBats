@@ -1,7 +1,8 @@
 package com.nyfaria.batsgalore.datagen;
 
-import com.nyfaria.batsgalore.init.EntityInit;
+import com.nyfaria.batsgalore.init.entity.EntityInit;
 import com.nyfaria.batsgalore.init.ItemInit;
+import com.nyfaria.batsgalore.init.entity.SpookyBatEntityInit;
 import net.minecraft.data.loot.EntityLootSubProvider;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.flag.FeatureFlags;
@@ -32,35 +33,35 @@ public class ModEntityLootTables extends EntityLootSubProvider {
 
     @Override
     public void generate() {
-        dropSingle(EntityInit.PUMPKIN_BAT.get(), ItemInit.PUMPKIN_CHOCOLATE_BAR.get());
-        dropSingle(EntityInit.CREEPER_BAT.get(), ItemInit.TNT_LOLLIPOP.get());
-        multiDrops(EntityInit.WITCH_BAT.get(), ConstantValue.exactly(1),
+        dropSingle(SpookyBatEntityInit.PUMPKIN_BAT.get(), ItemInit.PUMPKIN_CHOCOLATE_BAR.get());
+        dropSingle(SpookyBatEntityInit.CREEPER_BAT.get(), ItemInit.TNT_LOLLIPOP.get());
+        multiDrops(SpookyBatEntityInit.WITCH_BAT.get(), ConstantValue.exactly(1),
                 new LootEntry(ItemInit.WITCHES_BREW.get(), 1.0f, ConstantValue.exactly(1)),
                 new LootEntry(ItemInit.WITCHS_BROOM.get(), 0.1f, ConstantValue.exactly(1))
         );
-        dropSingle(EntityInit.SKELETON_BAT.get(), ItemInit.SKULL_CANDY.get());
-        dropSingle(EntityInit.WITHER_SKELETON_BAT.get(), ItemInit.WITHER_SKULL_CANDY.get());
-        playerHead(EntityInit.PLAYER_BAT.get());
-        dropSingle(EntityInit.STEVE_BAT.get(), ItemInit.GENERIC_CANDY.get());
-        dropSingle(EntityInit.ALEX_BAT.get(), ItemInit.GENERIC_CANDY.get());
-        multiDrops(EntityInit.UNDEAD_BAT.get(), ConstantValue.exactly(1),
+        dropSingle(SpookyBatEntityInit.SKELETON_BAT.get(), ItemInit.SKULL_CANDY.get());
+        dropSingle(SpookyBatEntityInit.WITHER_SKELETON_BAT.get(), ItemInit.WITHER_SKULL_CANDY.get());
+        playerHead(SpookyBatEntityInit.PLAYER_BAT.get());
+        dropSingle(SpookyBatEntityInit.STEVE_BAT.get(), ItemInit.GENERIC_CANDY.get());
+        dropSingle(SpookyBatEntityInit.ALEX_BAT.get(), ItemInit.GENERIC_CANDY.get());
+        multiDrops(SpookyBatEntityInit.UNDEAD_BAT.get(), ConstantValue.exactly(1),
                 new LootEntry(ItemInit.ZOMBIE_FLESH_LOLLIPOP.get(), 1.0f, ConstantValue.exactly(1)),
                 new LootEntry(ItemInit.UNDEAD_CORE.get(), 0.01f, ConstantValue.exactly(1))
         );
-        dropSingle(EntityInit.HEROBRINE_BAT.get(), ItemInit.SUSPICIOUS_CANDY.get());
-        multiDrops(EntityInit.SCULK_BAT.get(), ConstantValue.exactly(1),
+        dropSingle(SpookyBatEntityInit.HEROBRINE_BAT.get(), ItemInit.SUSPICIOUS_CANDY.get());
+        multiDrops(SpookyBatEntityInit.SCULK_BAT.get(), ConstantValue.exactly(1),
                 new LootEntry(ItemInit.SCULK_CANDY.get(), 1.0f, ConstantValue.exactly(1)),
                 new LootEntry(ItemInit.SCULK_CORE.get(), 0.01f, ConstantValue.exactly(1))
         );
-        dropSingle(EntityInit.WITCHS_BROOM.get(), ItemInit.WITCHS_BROOM.get());
-        multiDrops(EntityInit.SHULKER_BAT.get(), ConstantValue.exactly(1),
+        dropSingle(SpookyBatEntityInit.WITCHS_BROOM.get(), ItemInit.WITCHS_BROOM.get());
+        multiDrops(SpookyBatEntityInit.SHULKER_BAT.get(), ConstantValue.exactly(1),
                 new LootEntry(ItemInit.SHULKER_CORE.get(), 0.01f, ConstantValue.exactly(1))
         );
-        multiDrops(EntityInit.SLIME_BAT.get(), ConstantValue.exactly(1),
+        multiDrops(SpookyBatEntityInit.SLIME_BAT.get(), ConstantValue.exactly(1),
                 new LootEntry(ItemInit.BITESIZED_JELLY.get(), 1.0f, ConstantValue.exactly(1)),
                 new LootEntry(ItemInit.SLIME_CORE.get(), 0.01f, ConstantValue.exactly(1))
         );
-        dropSingle(EntityInit.WINGED_TURMOIL.get(), ItemInit.STAFF_OF_TURMOIL.get());
+        dropSingle(SpookyBatEntityInit.WINGED_TURMOIL.get(), ItemInit.STAFF_OF_TURMOIL.get());
     }
 
     private void multiDrops(EntityType<?> type, NumberProvider rolls, LootEntry... entries) {

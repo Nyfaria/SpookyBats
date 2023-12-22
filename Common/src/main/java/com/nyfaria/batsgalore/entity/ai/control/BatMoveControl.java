@@ -1,6 +1,6 @@
 package com.nyfaria.batsgalore.entity.ai.control;
 
-import com.nyfaria.batsgalore.entity.api.SpookyBat;
+import com.nyfaria.batsgalore.entity.api.ModBat;
 import net.minecraft.core.BlockPos;
 import net.minecraft.util.Mth;
 import net.minecraft.world.entity.ai.attributes.Attributes;
@@ -14,7 +14,7 @@ public class BatMoveControl extends MoveControl {
     @Nullable
     private BlockPos targetPosition;
 
-    public BatMoveControl(SpookyBat pMob, int pMaxTurn) {
+    public BatMoveControl(ModBat pMob, int pMaxTurn) {
         super(pMob);
         this.maxTurn = pMaxTurn;
     }
@@ -80,7 +80,7 @@ public class BatMoveControl extends MoveControl {
         mob.zza = 0.5F;
         mob.setYRot(mob.getYRot() + f1);
         if (mob.getRandom().nextInt(100) == 0 && mob.level().getBlockState(blockpos1).isRedstoneConductor(mob.level(), blockpos1)) {
-            ((SpookyBat) mob).setResting(true);
+            ((ModBat) mob).setResting(true);
         }
     }
 }

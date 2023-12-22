@@ -1,12 +1,11 @@
 package com.nyfaria.batsgalore.entity;
 
-import com.nyfaria.batsgalore.entity.api.SpookyBat;
+import com.nyfaria.batsgalore.entity.api.ModBat;
 import net.minecraft.world.entity.EntityType;
-import net.minecraft.world.entity.ambient.Bat;
 import net.minecraft.world.level.Level;
 
-public class FireProofBat extends SpookyBat {
-    public FireProofBat(EntityType<? extends SpookyBat> entityType, Level level) {
+public class FireProofBat extends ModBat {
+    public FireProofBat(EntityType<? extends ModBat> entityType, Level level) {
         super(entityType, level);
     }
 

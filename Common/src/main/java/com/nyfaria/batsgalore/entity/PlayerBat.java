@@ -1,6 +1,6 @@
 package com.nyfaria.batsgalore.entity;
 
-import com.nyfaria.batsgalore.entity.api.SpookyBat;
+import com.nyfaria.batsgalore.entity.api.ModBat;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
@@ -10,8 +10,8 @@ import net.minecraft.world.entity.ai.goal.target.HurtByTargetGoal;
 import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.level.Level;
 
-public class PlayerBat extends SpookyBat {
-	public PlayerBat(EntityType<? extends SpookyBat> pEntityType, Level pLevel) {
+public class PlayerBat extends ModBat {
+	public PlayerBat(EntityType<? extends ModBat> pEntityType, Level pLevel) {
 		super(pEntityType, pLevel);
 	}
 
@@ -29,7 +29,7 @@ public class PlayerBat extends SpookyBat {
 	}
 
 	public static AttributeSupplier.Builder createPlayerBatAttributes() {
-		return SpookyBat
+		return ModBat
 			.createBatAttributes()
 			.add(Attributes.ATTACK_DAMAGE, 1);
 	}

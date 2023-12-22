@@ -2,7 +2,7 @@ package com.nyfaria.batsgalore.event;
 
 import com.nyfaria.batsgalore.CommonClass;
 import com.nyfaria.batsgalore.CommonSpawning;
-import com.nyfaria.batsgalore.init.EntityInit;
+import com.nyfaria.batsgalore.init.entity.EntityInit;
 import net.minecraftforge.event.entity.EntityAttributeCreationEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;

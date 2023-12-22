@@ -40,6 +40,7 @@ public class BlockInit {
             .lightLevel((state) -> state.getValue(BlockStateProperties.LIT) ? 15 : 0)
             )
     );
+    public static RegistryObject<Block> DECORATED_WHITE_PINE_LEAVES = registerBlock("decorated_white_pine_leaves", () -> leaves(SoundType.GRASS));
     public static WoodCollection SPOOKY_OAK = WoodCollection.registerCollection("spooky_oak", new SpookOakTreeGrower(),()->ModBoatType.SPOOKY_OAK);
     public static WoodCollection WHITE_PINE = WoodCollection.registerCollection("white_pine", new WhitePineTreeGrower(),()->ModBoatType.WHITE_PINE);
 

@@ -3,11 +3,8 @@ package com.nyfaria.batsgalore.client.model;// Made with Blockbench 4.8.3
 // Paste this class into your mod and generate all required imports
 
 
-import com.mojang.blaze3d.vertex.PoseStack;
-import com.mojang.math.Axis;
 import com.nyfaria.batsgalore.Constants;
-import com.nyfaria.batsgalore.entity.api.SpookyBat;
-import net.minecraft.client.model.ArmedModel;
+import com.nyfaria.batsgalore.entity.api.ModBat;
 import net.minecraft.client.model.geom.ModelLayerLocation;
 import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.model.geom.PartPose;
@@ -17,9 +14,8 @@ import net.minecraft.client.model.geom.builders.LayerDefinition;
 import net.minecraft.client.model.geom.builders.MeshDefinition;
 import net.minecraft.client.model.geom.builders.PartDefinition;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.entity.HumanoidArm;
 
-public class HatBatModel<T extends SpookyBat> extends SpookyBatModel<T> {
+public class HatBatModel<T extends ModBat> extends SpookyBatModel<T> {
 	// This layer location should be baked with EntityRendererProvider.Context in the entity renderer and passed into this model's constructor
 	public static final ModelLayerLocation LAYER_LOCATION = new ModelLayerLocation(new ResourceLocation(Constants.MODID, "hat_bat"), "main");
 

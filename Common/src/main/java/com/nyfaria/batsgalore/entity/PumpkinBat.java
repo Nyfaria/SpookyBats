@@ -1,6 +1,6 @@
 package com.nyfaria.batsgalore.entity;
 
-import com.nyfaria.batsgalore.entity.api.SpookyBat;
+import com.nyfaria.batsgalore.entity.api.ModBat;
 import com.nyfaria.batsgalore.entity.projectile.JackOLanternProjectile;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.entity.EntityType;
@@ -11,8 +11,8 @@ import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
 import net.minecraft.world.entity.monster.RangedAttackMob;
 import net.minecraft.world.level.Level;
 
-public class PumpkinBat extends SpookyBat implements RangedAttackMob {
-	public PumpkinBat(EntityType<? extends SpookyBat> entityType, Level level) {
+public class PumpkinBat extends ModBat implements RangedAttackMob {
+	public PumpkinBat(EntityType<? extends ModBat> entityType, Level level) {
 		super(entityType, level);
 	}
 

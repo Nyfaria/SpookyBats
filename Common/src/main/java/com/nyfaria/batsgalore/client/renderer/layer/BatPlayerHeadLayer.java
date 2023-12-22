@@ -4,7 +4,7 @@ import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import com.nyfaria.batsgalore.client.model.HatBatModel;
 import com.nyfaria.batsgalore.client.model.SpookyBatModel;
-import com.nyfaria.batsgalore.entity.api.SpookyBat;
+import com.nyfaria.batsgalore.entity.api.ModBat;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.model.geom.EntityModelSet;
 import net.minecraft.client.renderer.MultiBufferSource;
@@ -16,18 +16,18 @@ import net.minecraft.resources.ResourceLocation;
 
 import java.util.Optional;
 
-public class BatPlayerHeadLayer extends RenderLayer<SpookyBat, SpookyBatModel<SpookyBat>> {
+public class BatPlayerHeadLayer extends RenderLayer<ModBat, SpookyBatModel<ModBat>> {
     private Optional<ResourceLocation> resourceLocation = Optional.empty();
-    private final HatBatModel<SpookyBat> model;
+    private final HatBatModel<ModBat> model;
 
-    public BatPlayerHeadLayer(RenderLayerParent<SpookyBat, SpookyBatModel<SpookyBat>> pRenderer, EntityModelSet pModelSet) {
+    public BatPlayerHeadLayer(RenderLayerParent<ModBat, SpookyBatModel<ModBat>> pRenderer, EntityModelSet pModelSet) {
         super(pRenderer);
         this.model = new HatBatModel<>(pModelSet.bakeLayer(HatBatModel.LAYER_LOCATION));
     }
 
     @Override
-    public void render(PoseStack pMatrixStack, MultiBufferSource pBuffer, int pPackedLight, SpookyBat pLivingEntity, float pLimbSwing, float pLimbSwingAmount, float pPartialTicks, float pAgeInTicks, float pNetHeadYaw, float pHeadPitch) {
-        HatBatModel<SpookyBat> entitymodel = this.model();
+    public void render(PoseStack pMatrixStack, MultiBufferSource pBuffer, int pPackedLight, ModBat pLivingEntity, float pLimbSwing, float pLimbSwingAmount, float pPartialTicks, float pAgeInTicks, float pNetHeadYaw, float pHeadPitch) {
+        HatBatModel<ModBat> entitymodel = this.model();
         entitymodel.hideForPlayer();
         entitymodel.prepareMobModel(pLivingEntity, pLimbSwing, pLimbSwingAmount, pPartialTicks);
         this.getParentModel().copyPropertiesTo(entitymodel);
@@ -36,7 +36,7 @@ public class BatPlayerHeadLayer extends RenderLayer<SpookyBat, SpookyBatModel<Sp
         entitymodel.renderToBuffer(pMatrixStack, vertexconsumer, pPackedLight, OverlayTexture.NO_OVERLAY, 0.5F, 0.5F, 0.5F, 1.0F);
     }
 
-    protected ResourceLocation getTextureLocation(SpookyBat bop) {
+    protected ResourceLocation getTextureLocation(ModBat bop) {
         resourceLocation.ifPresentOrElse(
                 (r) -> {
                 },
@@ -44,7 +44,7 @@ public class BatPlayerHeadLayer extends RenderLayer<SpookyBat, SpookyBatModel<Sp
         return resourceLocation.get();
     }
 
-    protected HatBatModel<SpookyBat> model() {
+    protected HatBatModel<ModBat> model() {
         return this.model;
     }
 }

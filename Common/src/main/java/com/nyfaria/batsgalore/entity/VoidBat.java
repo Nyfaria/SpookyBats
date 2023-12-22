@@ -1,14 +1,13 @@
 package com.nyfaria.batsgalore.entity;
 
-import com.nyfaria.batsgalore.entity.api.SpookyBat;
+import com.nyfaria.batsgalore.entity.api.ModBat;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.ambient.Bat;
 import net.minecraft.world.level.Level;
 
-public class VoidBat extends SpookyBat {
-	public VoidBat(EntityType<? extends SpookyBat> entityType, Level level) {
+public class VoidBat extends ModBat {
+	public VoidBat(EntityType<? extends ModBat> entityType, Level level) {
 		super(entityType, level);
 	}
 

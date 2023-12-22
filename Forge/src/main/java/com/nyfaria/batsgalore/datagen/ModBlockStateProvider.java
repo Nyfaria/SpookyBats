@@ -41,6 +41,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
                 BlockInit.SPOOKY_OAK,
                 BlockInit.WHITE_PINE
         ).forEach(this::spookyWoodCollection);
+        simpleBlock(BlockInit.DECORATED_WHITE_PINE_LEAVES.get(),leaves(BlockInit.DECORATED_WHITE_PINE_LEAVES.get()));
     }
 
     private String name(Block block) {

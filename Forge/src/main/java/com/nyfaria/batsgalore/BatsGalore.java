@@ -18,9 +18,9 @@ import net.minecraftforge.fml.common.Mod;
 
 @Mod(Constants.MODID)
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
-public class SpookyBats {
+public class BatsGalore {
     
-    public SpookyBats() {
+    public BatsGalore() {
         Constants.LOG.info("Hello Forge world!");
         CommonClass.init();
     }

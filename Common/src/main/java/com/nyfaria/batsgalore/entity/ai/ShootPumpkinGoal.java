@@ -1,6 +1,6 @@
 package com.nyfaria.batsgalore.entity.ai;
 
-import com.nyfaria.batsgalore.entity.api.SpookyBat;
+import com.nyfaria.batsgalore.entity.api.ModBat;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.goal.Goal;
 import net.minecraft.world.entity.projectile.ThrowableItemProjectile;
@@ -10,10 +10,10 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
 
 public class ShootPumpkinGoal extends Goal {
-	private final SpookyBat bat;
+	private final ModBat bat;
 	private int cooldown;
 
-	public ShootPumpkinGoal(SpookyBat bat) {
+	public ShootPumpkinGoal(ModBat bat) {
 		this.bat = bat;
 	}
 

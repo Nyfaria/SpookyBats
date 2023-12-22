@@ -1,6 +1,7 @@
 package com.nyfaria.batsgalore.entity.projectile;
 
-import com.nyfaria.batsgalore.init.EntityInit;
+import com.nyfaria.batsgalore.init.entity.EntityInit;
+import com.nyfaria.batsgalore.init.entity.SpookyBatEntityInit;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
@@ -9,8 +10,6 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.EntityHitResult;
 import net.minecraft.world.phys.HitResult;
 
@@ -20,11 +19,11 @@ public class JackOLanternProjectile extends ThrowableItemProjectile {
     }
 
     public JackOLanternProjectile(Level $$0, LivingEntity $$1) {
-        super(EntityInit.JACK_O_LANTERN_PROJECTILE.get(), $$1, $$0);
+        super(SpookyBatEntityInit.JACK_O_LANTERN_PROJECTILE.get(), $$1, $$0);
     }
 
     public JackOLanternProjectile(Level $$0, double $$1, double $$2, double $$3) {
-        super(EntityInit.JACK_O_LANTERN_PROJECTILE.get(), $$1, $$2, $$3, $$0);
+        super(SpookyBatEntityInit.JACK_O_LANTERN_PROJECTILE.get(), $$1, $$2, $$3, $$0);
     }
 
     @Override

@@ -4,7 +4,7 @@ package com.nyfaria.batsgalore.client.model;// Made with Blockbench 4.8.3
 
 
 import com.nyfaria.batsgalore.Constants;
-import com.nyfaria.batsgalore.entity.api.SpookyBat;
+import com.nyfaria.batsgalore.entity.api.ModBat;
 import net.minecraft.client.model.geom.ModelLayerLocation;
 import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.model.geom.PartPose;
@@ -14,9 +14,8 @@ import net.minecraft.client.model.geom.builders.LayerDefinition;
 import net.minecraft.client.model.geom.builders.MeshDefinition;
 import net.minecraft.client.model.geom.builders.PartDefinition;
 import net.minecraft.resources.ResourceLocation;
-import org.joml.Vector3f;
 
-public class PumpkinBatModel<T extends SpookyBat> extends SpookyBatModel<T> {
+public class PumpkinBatModel<T extends ModBat> extends SpookyBatModel<T> {
 	// This layer location should be baked with EntityRendererProvider.Context in the entity renderer and passed into this model's constructor
 	public static final ModelLayerLocation LAYER_LOCATION = new ModelLayerLocation(new ResourceLocation(Constants.MODID, "pumpkin_bat"), "main");
 	public static final ModelLayerLocation OVERLAY_LOCATION = new ModelLayerLocation(new ResourceLocation(Constants.MODID, "bat_overlay"), "overlay");

@@ -1,13 +1,13 @@
 package com.nyfaria.batsgalore.client.model;
 
-import com.nyfaria.batsgalore.entity.api.SpookyBat;
+import com.nyfaria.batsgalore.entity.api.ModBat;
 import net.minecraft.client.model.geom.ModelLayerLocation;
 import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.model.geom.PartPose;
 import net.minecraft.client.model.geom.builders.*;
 import net.minecraft.resources.ResourceLocation;
 
-public class SlimeBatModel<T extends SpookyBat> extends SpookyBatModel<T> {
+public class SlimeBatModel<T extends ModBat> extends SpookyBatModel<T> {
 	public static final ModelLayerLocation LAYER_LOCATION = new ModelLayerLocation(new ResourceLocation("modid", "slimebat"), "main");
 
 	public SlimeBatModel(ModelPart pRoot) {

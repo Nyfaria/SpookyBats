@@ -1,8 +1,8 @@
 package com.nyfaria.batsgalore.entity;
 
 import com.nyfaria.batsgalore.entity.ai.TeleportAwayGoal;
-import com.nyfaria.batsgalore.entity.api.SpookyBat;
-import com.nyfaria.batsgalore.init.EntityInit;
+import com.nyfaria.batsgalore.entity.api.ModBat;
+import com.nyfaria.batsgalore.init.entity.SpookyBatEntityInit;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.DifficultyInstance;
@@ -22,7 +22,7 @@ import net.minecraft.world.level.ServerLevelAccessor;
 import org.jetbrains.annotations.Nullable;
 
 public class HerobrineBat extends  MonsterBat {
-	public HerobrineBat(EntityType<? extends SpookyBat> entityType, Level level) {
+	public HerobrineBat(EntityType<? extends ModBat> entityType, Level level) {
 		super(entityType, level);
 		this.xpReward = 7;
 	}
@@ -58,7 +58,7 @@ public class HerobrineBat extends  MonsterBat {
 	@Override
 	protected void tickDeath() {
 		if (deathTime == 5 && this.random.nextInt(1) == 0) {
-			EvilBat evilBat = EntityInit.EVIL_BAT.get().create(this.level());
+			EvilBat evilBat = SpookyBatEntityInit.EVIL_BAT.get().create(this.level());
 			evilBat.moveTo(this.getX(), this.getY(), this.getZ(), this.getYRot(), 0);
 			this.level().addFreshEntity(evilBat);
 		}
@@ -77,7 +77,7 @@ public class HerobrineBat extends  MonsterBat {
 	}
 
 	public static AttributeSupplier.Builder createHerobrineBatAttributes() {
-		return SpookyBat
+		return ModBat
 			.createBatAttributes()
 			.add(Attributes.ATTACK_DAMAGE, 2);
 	}

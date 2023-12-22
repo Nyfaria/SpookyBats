@@ -1,6 +1,6 @@
 package com.nyfaria.batsgalore.entity;
 
-import com.nyfaria.batsgalore.entity.api.SpookyBat;
+import com.nyfaria.batsgalore.entity.api.ModBat;
 import net.minecraft.core.NonNullList;
 import net.minecraft.core.particles.ParticleOptions;
 import net.minecraft.core.particles.ParticleTypes;
@@ -22,7 +22,6 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntityType;
-import net.minecraft.world.level.block.entity.ShulkerBoxBlockEntity;
 
 import java.util.EnumSet;
 import java.util.List;
@@ -33,7 +32,7 @@ public class ShulkerBat extends CoreDroppingBat implements InventoryCarrier {
     private static final EntityDataAccessor<Integer> HOLD_OPEN_TICKS = SynchedEntityData.defineId(ShulkerBat.class, EntityDataSerializers.INT);
     private static final EntityDataAccessor<Boolean> OPENING = SynchedEntityData.defineId(ShulkerBat.class, EntityDataSerializers.BOOLEAN);
 
-    public ShulkerBat(EntityType<? extends SpookyBat> pEntityType, Level pLevel) {
+    public ShulkerBat(EntityType<? extends ModBat> pEntityType, Level pLevel) {
         super(pEntityType, pLevel);
         this.setCanPickUpLoot(canPickUpLoot());
     }
@@ -50,7 +49,7 @@ public class ShulkerBat extends CoreDroppingBat implements InventoryCarrier {
 
 
     public static AttributeSupplier.Builder createShulkerBatAttributes() {
-        return SpookyBat
+        return ModBat
                 .createBatAttributes()
                 .add(Attributes.MAX_HEALTH, 14);
     }

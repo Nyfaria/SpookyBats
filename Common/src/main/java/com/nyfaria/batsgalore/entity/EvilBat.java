@@ -1,7 +1,7 @@
 package com.nyfaria.batsgalore.entity;
 
 import com.nyfaria.batsgalore.entity.api.Minion;
-import com.nyfaria.batsgalore.entity.api.SpookyBat;
+import com.nyfaria.batsgalore.entity.api.ModBat;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
@@ -23,7 +23,7 @@ import java.util.UUID;
 public class EvilBat extends MonsterBat implements Enemy, Minion<WingedTurmoil> {
 	private static final EntityDataAccessor<Optional<UUID>> MASTER = SynchedEntityData.defineId(EvilBat.class, EntityDataSerializers.OPTIONAL_UUID);
 
-	public EvilBat(EntityType<? extends SpookyBat> entityType, Level level) {
+	public EvilBat(EntityType<? extends ModBat> entityType, Level level) {
 		super(entityType, level);
 		this.xpReward = 5;
 	}
@@ -42,7 +42,7 @@ public class EvilBat extends MonsterBat implements Enemy, Minion<WingedTurmoil> 
 	}
 
 	public static AttributeSupplier.Builder createEvilBatAttributes() {
-		return SpookyBat
+		return ModBat
 			.createBatAttributes()
 			.add(Attributes.ATTACK_DAMAGE, 1);
 	}

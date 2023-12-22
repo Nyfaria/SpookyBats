@@ -1,12 +1,12 @@
 package com.nyfaria.batsgalore.entity;
 
-import com.nyfaria.batsgalore.entity.api.SpookyBat;
+import com.nyfaria.batsgalore.entity.api.ModBat;
 import net.minecraft.core.particles.ParticleOptions;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.level.Level;
 
-abstract public class CoreDroppingBat extends SpookyBat {
-	public CoreDroppingBat(EntityType<? extends SpookyBat> pEntityType, Level pLevel) {
+abstract public class CoreDroppingBat extends ModBat {
+	public CoreDroppingBat(EntityType<? extends ModBat> pEntityType, Level pLevel) {
 		super(pEntityType, pLevel);
 	}
 

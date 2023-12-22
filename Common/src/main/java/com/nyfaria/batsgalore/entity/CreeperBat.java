@@ -1,6 +1,6 @@
 package com.nyfaria.batsgalore.entity;
 
-import com.nyfaria.batsgalore.entity.api.SpookyBat;
+import com.nyfaria.batsgalore.entity.api.ModBat;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.PowerableMob;
 import net.minecraft.world.entity.ai.goal.AvoidEntityGoal;
@@ -11,7 +11,7 @@ import net.minecraft.world.level.Level;
 
 public class CreeperBat extends MonsterBat implements PowerableMob {
 
-	public CreeperBat(EntityType<? extends SpookyBat> entityType, Level level) {
+	public CreeperBat(EntityType<? extends ModBat> entityType, Level level) {
 		super(entityType, level);
 	}
 

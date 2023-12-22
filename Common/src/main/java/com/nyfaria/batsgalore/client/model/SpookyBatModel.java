@@ -6,7 +6,7 @@ package com.nyfaria.batsgalore.client.model;// Made with Blockbench 4.8.3
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import com.mojang.math.Axis;
-import com.nyfaria.batsgalore.entity.api.SpookyBat;
+import com.nyfaria.batsgalore.entity.api.ModBat;
 import net.minecraft.client.model.ArmedModel;
 import net.minecraft.client.model.HierarchicalModel;
 import net.minecraft.client.model.geom.ModelPart;
@@ -14,7 +14,7 @@ import net.minecraft.util.Mth;
 import net.minecraft.world.entity.HumanoidArm;
 import org.joml.Vector3f;
 
-public class SpookyBatModel<T extends SpookyBat> extends HierarchicalModel<T> implements ArmedModel {
+public class SpookyBatModel<T extends ModBat> extends HierarchicalModel<T> implements ArmedModel {
 	protected final ModelPart root;
 	protected final ModelPart head;
 	protected final ModelPart body;
@@ -39,7 +39,7 @@ public class SpookyBatModel<T extends SpookyBat> extends HierarchicalModel<T> im
 
 
 	@Override
-	public void setupAnim(SpookyBat pEntity, float pLimbSwing, float pLimbSwingAmount, float pAgeInTicks, float pNetHeadYaw, float pHeadPitch) {
+	public void setupAnim(ModBat pEntity, float pLimbSwing, float pLimbSwingAmount, float pAgeInTicks, float pNetHeadYaw, float pHeadPitch) {
 		if (pEntity.isResting()) {
 			this.head.xRot = pHeadPitch * ((float)Math.PI / 180F);
 			this.head.yRot = (float)Math.PI - pNetHeadYaw * ((float)Math.PI / 180F);
@@ -63,7 +63,7 @@ public class SpookyBatModel<T extends SpookyBat> extends HierarchicalModel<T> im
 			this.leftWing.setPos(0.0F, 0.0F, 0.0F);
 			this.body.xRot = ((float)Math.PI / 4F) + Mth.cos(pAgeInTicks * 0.1F) * 0.15F;
 			this.body.yRot = 0.0F;
-			this.rightWing.yRot = Mth.cos(pAgeInTicks * SpookyBat.FLAP_DEGREES_PER_TICK * ((float)Math.PI / 180F)) * (float)Math.PI * 0.25F;
+			this.rightWing.yRot = Mth.cos(pAgeInTicks * ModBat.FLAP_DEGREES_PER_TICK * ((float)Math.PI / 180F)) * (float)Math.PI * 0.25F;
 			this.leftWing.yRot = -this.rightWing.yRot;
 			this.rightWingTip.yRot = this.rightWing.yRot * 0.5F;
 			this.leftWingTip.yRot = -this.rightWing.yRot * 0.5F;

@@ -1,4 +1,5 @@
-// 1.20.1	2023-12-17T23:03:17.8011431	Block States: batsgalore
+// 1.20.1	2023-12-22T12:48:33.0776363	Block States: batsgalore
+486fcee8f6173e277ca60ae62801378b5d02b6b6 assets/batsgalore/blockstates/decorated_white_pine_leaves.json
 5adbb57b2bd82f51e0c2f6157e7df394f4588eee assets/batsgalore/blockstates/spooky_oak_button.json
 cded7ffe45468ddaf3bd8868952647f7e00e77ad assets/batsgalore/blockstates/spooky_oak_door.json
 61343335a40f206052550365f4774bad1213a1ad assets/batsgalore/blockstates/spooky_oak_fence.json
@@ -33,6 +34,7 @@ fc1a70f61da0d8d4d191340fcec33714e020ef95 assets/batsgalore/blockstates/white_pin
 6784e8de17a087b2b2ff1b3ec42dca08d2489fdf assets/batsgalore/blockstates/white_pine_trapdoor.json
 fc1a70f61da0d8d4d191340fcec33714e020ef95 assets/batsgalore/blockstates/white_pine_wall_sign.json
 28eed5b7657cb42853ab7331e57c20dbe950a980 assets/batsgalore/blockstates/white_pine_wood.json
+f22476e26a612b03176bc3d886e8770e66f32df7 assets/batsgalore/models/block/decorated_white_pine_leaves.json
 549d5a787f25015265b79be9955fb26b22c1912c assets/batsgalore/models/block/spooky_oak_door_bottom_left.json
 adb5b22060393dee2f77c812b918cca3729a590a assets/batsgalore/models/block/spooky_oak_door_bottom_left_open.json
 2f0d9053cb073aaa847e46e712185a8861d83eb4 assets/batsgalore/models/block/spooky_oak_door_bottom_right.json

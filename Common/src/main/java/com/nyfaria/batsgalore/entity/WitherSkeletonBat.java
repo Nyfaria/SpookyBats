@@ -1,8 +1,7 @@
 package com.nyfaria.batsgalore.entity;
 
 import com.nyfaria.batsgalore.entity.ai.TeleportAwayGoal;
-import com.nyfaria.batsgalore.entity.api.SpookyBat;
-import net.minecraft.world.effect.MobEffect;
+import com.nyfaria.batsgalore.entity.api.ModBat;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.Entity;
@@ -16,7 +15,7 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 
 public class WitherSkeletonBat extends MonsterBat {
-	public WitherSkeletonBat(EntityType<? extends SpookyBat> pEntityType, Level pLevel) {
+	public WitherSkeletonBat(EntityType<? extends ModBat> pEntityType, Level pLevel) {
 		super(pEntityType, pLevel);
 	}
 
@@ -41,7 +40,7 @@ public class WitherSkeletonBat extends MonsterBat {
 	}
 
 	public static AttributeSupplier.Builder createWitherSkeletonBatAttributes() {
-		return SpookyBat
+		return ModBat
 			.createBatAttributes()
 			.add(Attributes.ATTACK_DAMAGE, 1);
 	}

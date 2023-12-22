@@ -12,12 +12,12 @@ public class WhitePineTreeGrower extends AbstractMegaTreeGrower {
     @Nullable
     @Override
     protected ResourceKey<ConfiguredFeature<?, ?>> getConfiguredMegaFeature(RandomSource randomSource) {
-        return CommonClass.MEGA_WHITE_PINE_TREE_CF;
+        return randomSource.nextInt(100) == 0 ? CommonClass.DECORATED_MEGA_WHITE_PINE_TREE_CF : CommonClass.MEGA_WHITE_PINE_TREE_CF;
     }
 
     @Nullable
     @Override
     protected ResourceKey<ConfiguredFeature<?, ?>> getConfiguredFeature(RandomSource randomSource, boolean b) {
-        return CommonClass.WHITE_PINE_TREE_CF;
+        return randomSource.nextInt(100) == 0 ? CommonClass.DECORATED_WHITE_PINE_TREE_CF : CommonClass.WHITE_PINE_TREE_CF;
     }
 }

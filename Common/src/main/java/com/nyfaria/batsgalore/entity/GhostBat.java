@@ -1,6 +1,6 @@
 package com.nyfaria.batsgalore.entity;
 
-import com.nyfaria.batsgalore.entity.api.SpookyBat;
+import com.nyfaria.batsgalore.entity.api.ModBat;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.damagesource.DamageTypes;
 import net.minecraft.world.effect.MobEffectInstance;
@@ -14,8 +14,8 @@ import net.minecraft.world.entity.ai.goal.FleeSunGoal;
 import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.level.Level;
 
-public class GhostBat extends SpookyBat {
-	public GhostBat(EntityType<? extends SpookyBat> pEntityType, Level pLevel) {
+public class GhostBat extends ModBat {
+	public GhostBat(EntityType<? extends ModBat> pEntityType, Level pLevel) {
 		super(pEntityType, pLevel);
 	}
 
@@ -27,7 +27,7 @@ public class GhostBat extends SpookyBat {
 	}
 
 	public static AttributeSupplier.Builder createGhostBatAttributes() {
-		return SpookyBat
+		return ModBat
 			.createBatAttributes()
 			.add(Attributes.MAX_HEALTH, 2);
 	}

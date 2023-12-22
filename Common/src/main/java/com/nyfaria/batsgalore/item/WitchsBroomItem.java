@@ -1,7 +1,8 @@
 package com.nyfaria.batsgalore.item;
 
 import com.nyfaria.batsgalore.entity.WitchsBroom;
-import com.nyfaria.batsgalore.init.EntityInit;
+import com.nyfaria.batsgalore.init.entity.EntityInit;
+import com.nyfaria.batsgalore.init.entity.SpookyBatEntityInit;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.item.Item;
@@ -15,7 +16,7 @@ public class WitchsBroomItem extends Item {
     @Override
     public InteractionResult useOn(UseOnContext $$0) {
         BlockPos blockPos = $$0.getClickedPos().above();
-        WitchsBroom witchsBroom = EntityInit.WITCHS_BROOM.get().create($$0.getLevel());
+        WitchsBroom witchsBroom = SpookyBatEntityInit.WITCHS_BROOM.get().create($$0.getLevel());
         witchsBroom.setPos(blockPos.getX() + 0.5, blockPos.getY(), blockPos.getZ() + 0.5);
         witchsBroom.setOwnerUUID($$0.getPlayer().getUUID());
         witchsBroom.setTame(true);

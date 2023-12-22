@@ -31,6 +31,7 @@ public class WhitePineFoliagePlacer extends FoliagePlacer {
                                  int maxFreeTreeHeight, FoliagePlacer.FoliageAttachment attachment, int foliageHeight, int foliageRadius, int offset) {
         BlockPos blockpos = attachment.pos();
         if(attachment.doubleTrunk()){
+            int y = 0;
             for (int l = 1; l <= foliageHeight; l++) {
                 int range = 7 - Mth.ceil(l / 3d);
                 this.placeLeavesRow(level, blockSetter, random, config, blockpos, range + 1, l - maxFreeTreeHeight, attachment.doubleTrunk());

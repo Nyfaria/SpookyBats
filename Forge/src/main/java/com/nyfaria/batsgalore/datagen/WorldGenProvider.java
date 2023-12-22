@@ -22,6 +22,7 @@ import net.minecraft.data.worldgen.placement.VegetationPlacements;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BiomeTags;
+import net.minecraft.util.Mth;
 import net.minecraft.util.random.SimpleWeightedRandomList;
 import net.minecraft.util.valueproviders.ConstantInt;
 import net.minecraft.util.valueproviders.IntProvider;
@@ -45,11 +46,9 @@ import net.minecraft.world.level.levelgen.feature.configurations.TreeConfigurati
 import net.minecraft.world.level.levelgen.feature.featuresize.ThreeLayersFeatureSize;
 import net.minecraft.world.level.levelgen.feature.foliageplacers.DarkOakFoliagePlacer;
 import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvider;
-import net.minecraft.world.level.levelgen.feature.stateproviders.SimpleStateProvider;
 import net.minecraft.world.level.levelgen.feature.stateproviders.WeightedStateProvider;
 import net.minecraft.world.level.levelgen.feature.trunkplacers.DarkOakTrunkPlacer;
 import net.minecraft.world.level.levelgen.feature.trunkplacers.GiantTrunkPlacer;
-import net.minecraft.world.level.levelgen.feature.trunkplacers.StraightTrunkPlacer;
 import net.minecraft.world.level.levelgen.placement.BiomeFilter;
 import net.minecraft.world.level.levelgen.placement.BlockPredicateFilter;
 import net.minecraft.world.level.levelgen.placement.CountPlacement;
@@ -135,12 +134,40 @@ public class WorldGenProvider extends DatapackBuiltinEntriesProvider {
                         ).build()
                 )
         );
+        context.register(CommonClass.DECORATED_WHITE_PINE_TREE_CF, new ConfiguredFeature<>(
+                        Feature.TREE,
+                        new TreeConfiguration.TreeConfigurationBuilder(
+                                BlockStateProvider.simple(BlockInit.WHITE_PINE.log().get().defaultBlockState().setValue(RotatedPillarBlock.AXIS, Direction.Axis.Y)),
+//                                BlockStateProvider.simple(Blocks.OAK_LOG.defaultBlockState().setValue(RotatedPillarBlock.AXIS, Direction.Axis.Y)),
+                                new WhitePineTrunkPlacer(),
+                                new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder()
+                                        .add(BlockInit.WHITE_PINE.leaves().get().defaultBlockState(), 2)
+                                        .add(BlockInit.DECORATED_WHITE_PINE_LEAVES.get().defaultBlockState(), 1)),
+//                                BlockStateProvider.simple(Blocks.OAK_LEAVES),
+                                new WhitePineFoliagePlacer(UniformInt.of(0, 4), ConstantInt.of(0)),
+                                new ThreeLayersFeatureSize(1, 1, 0, 1, 2, OptionalInt.empty())
+                        ).build()
+                )
+        );
         context.register(CommonClass.MEGA_WHITE_PINE_TREE_CF, new ConfiguredFeature<>(
                         Feature.TREE,
                         new TreeConfiguration.TreeConfigurationBuilder(
                                 BlockStateProvider.simple(BlockInit.WHITE_PINE.log().get().defaultBlockState().setValue(RotatedPillarBlock.AXIS, Direction.Axis.Y)),
                                 new GiantTrunkPlacer(22, 0, 0),
                                 BlockStateProvider.simple(BlockInit.WHITE_PINE.leaves().get()),
+                                new WhitePineFoliagePlacer(UniformInt.of(0, 4), ConstantInt.of(0)),
+                                new ThreeLayersFeatureSize(1, 1, 0, 1, 2, OptionalInt.empty())
+                        ).build()
+                )
+        );
+        context.register(CommonClass.DECORATED_MEGA_WHITE_PINE_TREE_CF, new ConfiguredFeature<>(
+                        Feature.TREE,
+                        new TreeConfiguration.TreeConfigurationBuilder(
+                                BlockStateProvider.simple(BlockInit.WHITE_PINE.log().get().defaultBlockState().setValue(RotatedPillarBlock.AXIS, Direction.Axis.Y)),
+                                new GiantTrunkPlacer(22, 0, 0),
+                                new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder()
+                                        .add(BlockInit.WHITE_PINE.leaves().get().defaultBlockState(), 2)
+                                        .add(BlockInit.DECORATED_WHITE_PINE_LEAVES.get().defaultBlockState(), 1)),
                                 new WhitePineFoliagePlacer(UniformInt.of(0, 4), ConstantInt.of(0)),
                                 new ThreeLayersFeatureSize(1, 1, 0, 1, 2, OptionalInt.empty())
                         ).build()
@@ -164,11 +191,67 @@ public class WorldGenProvider extends DatapackBuiltinEntriesProvider {
                         )
                 )
         );
+        context.register(CommonClass.WHITE_PINE_TREE, new PlacedFeature(context.lookup(Registries.CONFIGURED_FEATURE).get(CommonClass.WHITE_PINE_TREE_CF).get(),
+                        List.of(
+                                CountPlacement.of(new WeightedListInt(SimpleWeightedRandomList.<IntProvider>builder()
+                                        .add(ConstantInt.of(3), 3)
+                                        .add(ConstantInt.of(4), 7)
+                                        .build())),
+                                InSquarePlacement.spread(),
+                                SurfaceWaterDepthFilter.forMaxDepth(0),
+                                HeightmapPlacement.onHeightmap(Heightmap.Types.OCEAN_FLOOR),
+                                BiomeFilter.biome(),
+                                BlockPredicateFilter.forPredicate(BlockPredicate.wouldSurvive(BlockInit.WHITE_PINE.sapling().get().defaultBlockState(), Vec3i.ZERO))
+                        )
+                )
+        );
+        context.register(CommonClass.MEGA_WHITE_PINE_TREE, new PlacedFeature(context.lookup(Registries.CONFIGURED_FEATURE).get(CommonClass.MEGA_WHITE_PINE_TREE_CF).get(),
+                        List.of(
+                                CountPlacement.of(new WeightedListInt(SimpleWeightedRandomList.<IntProvider>builder()
+                                        .add(ConstantInt.of(1), 1)
+                                        .add(ConstantInt.of(0), 49)
+                                        .build())),
+                                InSquarePlacement.spread(),
+                                SurfaceWaterDepthFilter.forMaxDepth(0),
+                                HeightmapPlacement.onHeightmap(Heightmap.Types.OCEAN_FLOOR),
+                                BiomeFilter.biome(),
+                                BlockPredicateFilter.forPredicate(BlockPredicate.wouldSurvive(BlockInit.WHITE_PINE.sapling().get().defaultBlockState(), Vec3i.ZERO))
+                        )
+                )
+        );
+        context.register(CommonClass.DECORATED_WHITE_PINE_TREE, new PlacedFeature(context.lookup(Registries.CONFIGURED_FEATURE).get(CommonClass.DECORATED_WHITE_PINE_TREE_CF).get(),
+                        List.of(
+                                CountPlacement.of(new WeightedListInt(SimpleWeightedRandomList.<IntProvider>builder()
+                                        .add(ConstantInt.of(3), 3)
+                                        .add(ConstantInt.of(4), 7)
+                                        .build())),
+                                InSquarePlacement.spread(),
+                                SurfaceWaterDepthFilter.forMaxDepth(0),
+                                HeightmapPlacement.onHeightmap(Heightmap.Types.OCEAN_FLOOR),
+                                BiomeFilter.biome(),
+                                BlockPredicateFilter.forPredicate(BlockPredicate.wouldSurvive(BlockInit.WHITE_PINE.sapling().get().defaultBlockState(), Vec3i.ZERO))
+                        )
+                )
+        );
+        context.register(CommonClass.DECORATED_MEGA_WHITE_PINE_TREE, new PlacedFeature(context.lookup(Registries.CONFIGURED_FEATURE).get(CommonClass.DECORATED_MEGA_WHITE_PINE_TREE_CF).get(),
+                        List.of(
+                                CountPlacement.of(new WeightedListInt(SimpleWeightedRandomList.<IntProvider>builder()
+                                        .add(ConstantInt.of(1), 1)
+                                        .add(ConstantInt.of(0), 99)
+                                        .build())),
+                                InSquarePlacement.spread(),
+                                SurfaceWaterDepthFilter.forMaxDepth(0),
+                                HeightmapPlacement.onHeightmap(Heightmap.Types.OCEAN_FLOOR),
+                                BiomeFilter.biome(),
+                                BlockPredicateFilter.forPredicate(BlockPredicate.wouldSurvive(BlockInit.WHITE_PINE.sapling().get().defaultBlockState(), Vec3i.ZERO))
+                        )
+                )
+        );
     }
 
     public static void biomes(BootstapContext<Biome> context) {
-        MobSpawnSettings.Builder builder = new MobSpawnSettings.Builder();
-        CommonSpawning.SPOOKY_OAK_FOREST_SPAWNS.forEach(spawnerData -> builder.addSpawn(MobCategory.MONSTER, spawnerData));
+        MobSpawnSettings.Builder sOFBuilder = new MobSpawnSettings.Builder();
+        CommonSpawning.SPOOKY_OAK_FOREST_SPAWNS.forEach(spawnerData -> sOFBuilder.addSpawn(MobCategory.MONSTER, spawnerData));
         context.register(CommonClass.SPOOKY_OAK_FOREST,
                 new Biome.BiomeBuilder()
                         .specialEffects(
@@ -185,54 +268,92 @@ public class WorldGenProvider extends DatapackBuiltinEntriesProvider {
                         .temperature(0.7F)
                         .downfall(0.8F)
                         .mobSpawnSettings(
-                                builder.build()
+                                sOFBuilder.build()
                         )
                         .generationSettings(
-                                new BiomeGenerationSettings.Builder(context.lookup(Registries.PLACED_FEATURE), context.lookup(Registries.CONFIGURED_CARVER))
-                                        .addFeature(GenerationStep.Decoration.LAKES, context.lookup(Registries.PLACED_FEATURE).get(MiscOverworldPlacements.LAKE_LAVA_UNDERGROUND).get())
-                                        .addFeature(GenerationStep.Decoration.LAKES, context.lookup(Registries.PLACED_FEATURE).get(MiscOverworldPlacements.LAKE_LAVA_SURFACE).get())
-                                        .addFeature(GenerationStep.Decoration.LOCAL_MODIFICATIONS, context.lookup(Registries.PLACED_FEATURE).get(CavePlacements.AMETHYST_GEODE).get())
-                                        .addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, context.lookup(Registries.PLACED_FEATURE).get(OrePlacements.ORE_DIRT).get())
-                                        .addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, context.lookup(Registries.PLACED_FEATURE).get(OrePlacements.ORE_GRAVEL).get())
-                                        .addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, context.lookup(Registries.PLACED_FEATURE).get(OrePlacements.ORE_GRANITE_UPPER).get())
-                                        .addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, context.lookup(Registries.PLACED_FEATURE).get(OrePlacements.ORE_GRANITE_LOWER).get())
-                                        .addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, context.lookup(Registries.PLACED_FEATURE).get(OrePlacements.ORE_DIORITE_UPPER).get())
-                                        .addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, context.lookup(Registries.PLACED_FEATURE).get(OrePlacements.ORE_DIORITE_LOWER).get())
-                                        .addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, context.lookup(Registries.PLACED_FEATURE).get(OrePlacements.ORE_ANDESITE_UPPER).get())
-                                        .addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, context.lookup(Registries.PLACED_FEATURE).get(OrePlacements.ORE_ANDESITE_LOWER).get())
-                                        .addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, context.lookup(Registries.PLACED_FEATURE).get(OrePlacements.ORE_TUFF).get())
-                                        .addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, context.lookup(Registries.PLACED_FEATURE).get(OrePlacements.ORE_COAL_UPPER).get())
-                                        .addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, context.lookup(Registries.PLACED_FEATURE).get(OrePlacements.ORE_COAL_LOWER).get())
-                                        .addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, context.lookup(Registries.PLACED_FEATURE).get(OrePlacements.ORE_IRON_UPPER).get())
-                                        .addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, context.lookup(Registries.PLACED_FEATURE).get(OrePlacements.ORE_IRON_MIDDLE).get())
-                                        .addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, context.lookup(Registries.PLACED_FEATURE).get(OrePlacements.ORE_IRON_SMALL).get())
-                                        .addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, context.lookup(Registries.PLACED_FEATURE).get(OrePlacements.ORE_GOLD).get())
-                                        .addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, context.lookup(Registries.PLACED_FEATURE).get(OrePlacements.ORE_GOLD_LOWER).get())
-                                        .addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, context.lookup(Registries.PLACED_FEATURE).get(OrePlacements.ORE_REDSTONE).get())
-                                        .addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, context.lookup(Registries.PLACED_FEATURE).get(OrePlacements.ORE_REDSTONE_LOWER).get())
-                                        .addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, context.lookup(Registries.PLACED_FEATURE).get(OrePlacements.ORE_DIAMOND).get())
-                                        .addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, context.lookup(Registries.PLACED_FEATURE).get(OrePlacements.ORE_DIAMOND_LARGE).get())
-                                        .addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, context.lookup(Registries.PLACED_FEATURE).get(OrePlacements.ORE_DIAMOND_BURIED).get())
-                                        .addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, context.lookup(Registries.PLACED_FEATURE).get(OrePlacements.ORE_LAPIS).get())
-                                        .addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, context.lookup(Registries.PLACED_FEATURE).get(OrePlacements.ORE_LAPIS_BURIED).get())
-                                        .addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, context.lookup(Registries.PLACED_FEATURE).get(OrePlacements.ORE_COPPER).get())
-                                        .addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, context.lookup(Registries.PLACED_FEATURE).get(CavePlacements.UNDERWATER_MAGMA).get())
-                                        .addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, context.lookup(Registries.PLACED_FEATURE).get(MiscOverworldPlacements.DISK_SAND).get())
-                                        .addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, context.lookup(Registries.PLACED_FEATURE).get(MiscOverworldPlacements.DISK_CLAY).get())
-                                        .addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, context.lookup(Registries.PLACED_FEATURE).get(MiscOverworldPlacements.DISK_GRAVEL).get())
-                                        .addFeature(GenerationStep.Decoration.FLUID_SPRINGS, context.lookup(Registries.PLACED_FEATURE).get(MiscOverworldPlacements.SPRING_WATER).get())
-                                        .addFeature(GenerationStep.Decoration.FLUID_SPRINGS, context.lookup(Registries.PLACED_FEATURE).get(MiscOverworldPlacements.SPRING_LAVA).get())
-                                        .addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, context.lookup(Registries.PLACED_FEATURE).get(CavePlacements.GLOW_LICHEN).get())
-                                        .addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, context.lookup(Registries.PLACED_FEATURE).get(VegetationPlacements.FOREST_FLOWERS).get())
-                                        .addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, context.lookup(Registries.PLACED_FEATURE).get(VegetationPlacements.FLOWER_DEFAULT).get())
-                                        .addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, context.lookup(Registries.PLACED_FEATURE).get(CommonClass.SPOOKY_OAK_TREE).get())
-                                        .addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, context.lookup(Registries.PLACED_FEATURE).get(VegetationPlacements.PATCH_GRASS_FOREST).get())
-                                        .addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, context.lookup(Registries.PLACED_FEATURE).get(VegetationPlacements.BROWN_MUSHROOM_NORMAL).get())
-                                        .addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, context.lookup(Registries.PLACED_FEATURE).get(VegetationPlacements.RED_MUSHROOM_NORMAL).get())
-                                        .addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, context.lookup(Registries.PLACED_FEATURE).get(VegetationPlacements.PATCH_SUGAR_CANE).get())
-                                        .addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, context.lookup(Registries.PLACED_FEATURE).get(VegetationPlacements.PATCH_PUMPKIN).get())
-                                        .build()
+                                baseSettings(context)
+                                        .addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, context.lookup(Registries.PLACED_FEATURE).get(CommonClass.SPOOKY_OAK_TREE).get()).build()
                         ).build()
         );
+        MobSpawnSettings.Builder pFBuilder = new MobSpawnSettings.Builder();
+        CommonSpawning.WHITE_PINE_FOREST_SPAWNS.forEach(spawnerData -> pFBuilder.addSpawn(MobCategory.MONSTER, spawnerData));
+        context.register(CommonClass.CHRISTMAS_FOREST,
+                new Biome.BiomeBuilder()
+                        .specialEffects(
+                                new BiomeSpecialEffects.Builder()
+                                        .skyColor(calculateSkyColor(-0.5f))
+                                        .fogColor(12638463)
+                                        .waterColor(4020182)
+                                        .waterFogColor(329011)
+                                        .grassColorOverride(1668352)
+                                        .grassColorModifier(BiomeSpecialEffects.GrassColorModifier.NONE)
+                                        .build()
+                        )
+                        .hasPrecipitation(true)
+                        .temperature(-0.5F)
+                        .downfall(1.0F)
+                        .mobSpawnSettings(
+                                sOFBuilder.build()
+                        )
+                        .generationSettings(
+                                baseSettings(context)
+                                        .addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, context.lookup(Registries.PLACED_FEATURE).get(CommonClass.WHITE_PINE_TREE).get())
+                                        .addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, context.lookup(Registries.PLACED_FEATURE).get(CommonClass.DECORATED_WHITE_PINE_TREE).get())
+                                        .addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, context.lookup(Registries.PLACED_FEATURE).get(CommonClass.DECORATED_MEGA_WHITE_PINE_TREE).get())
+                                        .addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, context.lookup(Registries.PLACED_FEATURE).get(CommonClass.MEGA_WHITE_PINE_TREE).get())
+                                        .addFeature(GenerationStep.Decoration.TOP_LAYER_MODIFICATION, context.lookup(Registries.PLACED_FEATURE).get(MiscOverworldPlacements.FREEZE_TOP_LAYER).get()).build()
+                        ).build()
+        );
+    }
+
+    protected static int calculateSkyColor(float pTemperature) {
+        float $$1 = pTemperature / 3.0F;
+        $$1 = Mth.clamp($$1, -1.0F, 1.0F);
+        return Mth.hsvToRgb(0.62222224F - $$1 * 0.05F, 0.5F + $$1 * 0.1F, 1.0F);
+    }
+
+    public static BiomeGenerationSettings.PlainBuilder baseSettings(BootstapContext<Biome> context) {
+        return new BiomeGenerationSettings.Builder(context.lookup(Registries.PLACED_FEATURE), context.lookup(Registries.CONFIGURED_CARVER))
+                .addFeature(GenerationStep.Decoration.LAKES, context.lookup(Registries.PLACED_FEATURE).get(MiscOverworldPlacements.LAKE_LAVA_UNDERGROUND).get())
+                .addFeature(GenerationStep.Decoration.LAKES, context.lookup(Registries.PLACED_FEATURE).get(MiscOverworldPlacements.LAKE_LAVA_SURFACE).get())
+                .addFeature(GenerationStep.Decoration.LOCAL_MODIFICATIONS, context.lookup(Registries.PLACED_FEATURE).get(CavePlacements.AMETHYST_GEODE).get())
+                .addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, context.lookup(Registries.PLACED_FEATURE).get(OrePlacements.ORE_DIRT).get())
+                .addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, context.lookup(Registries.PLACED_FEATURE).get(OrePlacements.ORE_GRAVEL).get())
+                .addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, context.lookup(Registries.PLACED_FEATURE).get(OrePlacements.ORE_GRANITE_UPPER).get())
+                .addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, context.lookup(Registries.PLACED_FEATURE).get(OrePlacements.ORE_GRANITE_LOWER).get())
+                .addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, context.lookup(Registries.PLACED_FEATURE).get(OrePlacements.ORE_DIORITE_UPPER).get())
+                .addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, context.lookup(Registries.PLACED_FEATURE).get(OrePlacements.ORE_DIORITE_LOWER).get())
+                .addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, context.lookup(Registries.PLACED_FEATURE).get(OrePlacements.ORE_ANDESITE_UPPER).get())
+                .addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, context.lookup(Registries.PLACED_FEATURE).get(OrePlacements.ORE_ANDESITE_LOWER).get())
+                .addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, context.lookup(Registries.PLACED_FEATURE).get(OrePlacements.ORE_TUFF).get())
+                .addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, context.lookup(Registries.PLACED_FEATURE).get(OrePlacements.ORE_COAL_UPPER).get())
+                .addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, context.lookup(Registries.PLACED_FEATURE).get(OrePlacements.ORE_COAL_LOWER).get())
+                .addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, context.lookup(Registries.PLACED_FEATURE).get(OrePlacements.ORE_IRON_UPPER).get())
+                .addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, context.lookup(Registries.PLACED_FEATURE).get(OrePlacements.ORE_IRON_MIDDLE).get())
+                .addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, context.lookup(Registries.PLACED_FEATURE).get(OrePlacements.ORE_IRON_SMALL).get())
+                .addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, context.lookup(Registries.PLACED_FEATURE).get(OrePlacements.ORE_GOLD).get())
+                .addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, context.lookup(Registries.PLACED_FEATURE).get(OrePlacements.ORE_GOLD_LOWER).get())
+                .addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, context.lookup(Registries.PLACED_FEATURE).get(OrePlacements.ORE_REDSTONE).get())
+                .addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, context.lookup(Registries.PLACED_FEATURE).get(OrePlacements.ORE_REDSTONE_LOWER).get())
+                .addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, context.lookup(Registries.PLACED_FEATURE).get(OrePlacements.ORE_DIAMOND).get())
+                .addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, context.lookup(Registries.PLACED_FEATURE).get(OrePlacements.ORE_DIAMOND_LARGE).get())
+                .addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, context.lookup(Registries.PLACED_FEATURE).get(OrePlacements.ORE_DIAMOND_BURIED).get())
+                .addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, context.lookup(Registries.PLACED_FEATURE).get(OrePlacements.ORE_LAPIS).get())
+                .addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, context.lookup(Registries.PLACED_FEATURE).get(OrePlacements.ORE_LAPIS_BURIED).get())
+                .addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, context.lookup(Registries.PLACED_FEATURE).get(OrePlacements.ORE_COPPER).get())
+                .addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, context.lookup(Registries.PLACED_FEATURE).get(CavePlacements.UNDERWATER_MAGMA).get())
+                .addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, context.lookup(Registries.PLACED_FEATURE).get(MiscOverworldPlacements.DISK_SAND).get())
+                .addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, context.lookup(Registries.PLACED_FEATURE).get(MiscOverworldPlacements.DISK_CLAY).get())
+                .addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, context.lookup(Registries.PLACED_FEATURE).get(MiscOverworldPlacements.DISK_GRAVEL).get())
+                .addFeature(GenerationStep.Decoration.FLUID_SPRINGS, context.lookup(Registries.PLACED_FEATURE).get(MiscOverworldPlacements.SPRING_WATER).get())
+                .addFeature(GenerationStep.Decoration.FLUID_SPRINGS, context.lookup(Registries.PLACED_FEATURE).get(MiscOverworldPlacements.SPRING_LAVA).get())
+                .addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, context.lookup(Registries.PLACED_FEATURE).get(CavePlacements.GLOW_LICHEN).get())
+                .addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, context.lookup(Registries.PLACED_FEATURE).get(VegetationPlacements.FOREST_FLOWERS).get())
+                .addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, context.lookup(Registries.PLACED_FEATURE).get(VegetationPlacements.FLOWER_DEFAULT).get())
+                .addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, context.lookup(Registries.PLACED_FEATURE).get(VegetationPlacements.PATCH_GRASS_FOREST).get())
+                .addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, context.lookup(Registries.PLACED_FEATURE).get(VegetationPlacements.BROWN_MUSHROOM_NORMAL).get())
+                .addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, context.lookup(Registries.PLACED_FEATURE).get(VegetationPlacements.RED_MUSHROOM_NORMAL).get())
+                .addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, context.lookup(Registries.PLACED_FEATURE).get(VegetationPlacements.PATCH_SUGAR_CANE).get())
+                .addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, context.lookup(Registries.PLACED_FEATURE).get(VegetationPlacements.PATCH_PUMPKIN).get());
     }
 }

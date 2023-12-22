@@ -3,7 +3,7 @@ package com.nyfaria.batsgalore.datagen;
 import com.google.common.collect.ImmutableMap;
 import com.nyfaria.batsgalore.Constants;
 import com.nyfaria.batsgalore.init.BlockInit;
-import com.nyfaria.batsgalore.init.EntityInit;
+import com.nyfaria.batsgalore.init.entity.EntityInit;
 import com.nyfaria.batsgalore.init.ItemInit;
 import com.nyfaria.batsgalore.registration.RegistryObject;
 import net.minecraft.data.PackOutput;

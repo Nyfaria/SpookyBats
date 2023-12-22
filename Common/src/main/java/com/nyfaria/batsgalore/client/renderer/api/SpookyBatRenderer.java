@@ -2,7 +2,7 @@ package com.nyfaria.batsgalore.client.renderer.api;
 
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.nyfaria.batsgalore.client.model.SpookyBatModel;
-import com.nyfaria.batsgalore.entity.api.SpookyBat;
+import com.nyfaria.batsgalore.entity.api.ModBat;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.entity.MobRenderer;
 import net.minecraft.client.renderer.entity.layers.ItemInHandLayer;
@@ -13,7 +13,7 @@ import net.minecraft.util.Mth;
 import java.util.HashMap;
 import java.util.Map;
 
-public class SpookyBatRenderer<T extends SpookyBat> extends MobRenderer<T, SpookyBatModel<T>> {
+public class SpookyBatRenderer<T extends ModBat> extends MobRenderer<T, SpookyBatModel<T>> {
     private static final Map<ResourceLocation, ResourceLocation> BAT_LOCATIONS = new HashMap<>();
     private final float scale;
 

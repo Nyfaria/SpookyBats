@@ -3,9 +3,8 @@ package com.nyfaria.batsgalore.entity.api;
 import com.nyfaria.batsgalore.entity.ShulkerBat;
 import com.nyfaria.batsgalore.entity.SlimeBat;
 import com.nyfaria.batsgalore.entity.ai.control.BatMoveControl;
-import com.nyfaria.batsgalore.init.EntityInit;
+import com.nyfaria.batsgalore.init.entity.SpookyBatEntityInit;
 import net.minecraft.core.BlockPos;
-import net.minecraft.data.worldgen.StructureSets;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
@@ -31,7 +30,6 @@ import net.minecraft.world.entity.ai.control.MoveControl;
 import net.minecraft.world.entity.ai.navigation.FlyingPathNavigation;
 import net.minecraft.world.entity.ai.navigation.PathNavigation;
 import net.minecraft.world.entity.ai.targeting.TargetingConditions;
-import net.minecraft.world.entity.monster.Slime;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.ChunkPos;
 import net.minecraft.world.level.Level;
@@ -46,14 +44,14 @@ import net.minecraft.world.phys.Vec3;
 
 import javax.annotation.Nullable;
 
-public class SpookyBat extends PathfinderMob {
+public class ModBat extends PathfinderMob {
     public static final float FLAP_DEGREES_PER_TICK = 74.48451F;
     public static final int TICKS_PER_FLAP = Mth.ceil(2.4166098F);
-    private static final EntityDataAccessor<Byte> DATA_ID_FLAGS = SynchedEntityData.defineId(SpookyBat.class, EntityDataSerializers.BYTE);
+    private static final EntityDataAccessor<Byte> DATA_ID_FLAGS = SynchedEntityData.defineId(ModBat.class, EntityDataSerializers.BYTE);
     private static final int FLAG_RESTING = 1;
     private static final TargetingConditions BAT_RESTING_TARGETING = TargetingConditions.forNonCombat().range(4.0D);
 
-    public SpookyBat(EntityType<? extends SpookyBat> pEntityType, Level pLevel) {
+    public ModBat(EntityType<? extends ModBat> pEntityType, Level pLevel) {
         super(pEntityType, pLevel);
         this.moveControl = new BatMoveControl(this, 10);
         if (!pLevel.isClientSide) {
@@ -108,7 +106,7 @@ public class SpookyBat extends PathfinderMob {
     protected void spawnOnDeath() {
         if (spawnsGhostBat() && deathTime == 19 && !this.level().isClientSide) {
             if (this.random.nextInt(ghostBatChance()) == 0) {
-                EntityInit.GHOST_BAT.get().spawn((ServerLevel) this.level(), blockPosition(), MobSpawnType.CONVERSION);
+                SpookyBatEntityInit.GHOST_BAT.get().spawn((ServerLevel) this.level(), blockPosition(), MobSpawnType.CONVERSION);
             }
         }
     }
@@ -255,7 +253,7 @@ public class SpookyBat extends PathfinderMob {
         return pSize.height / 2.0F;
     }
 
-    public static <T extends Mob> boolean checkSpookyBatSpawnRules(EntityType<T> tEntityType, ServerLevelAccessor serverLevelAccessor, MobSpawnType spawnType, BlockPos pos, RandomSource randomSource) {
+    public static <T extends Mob> boolean checkModBatSpawnRules(EntityType<T> tEntityType, ServerLevelAccessor serverLevelAccessor, MobSpawnType spawnType, BlockPos pos, RandomSource randomSource) {
         return true;
     }
 

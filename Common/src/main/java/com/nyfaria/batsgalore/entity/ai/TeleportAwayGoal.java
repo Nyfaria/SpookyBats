@@ -1,15 +1,13 @@
 package com.nyfaria.batsgalore.entity.ai;
 
-import com.nyfaria.batsgalore.entity.api.SpookyBat;
-import net.minecraft.core.particles.ParticleTypes;
+import com.nyfaria.batsgalore.entity.api.ModBat;
 import net.minecraft.world.entity.ai.goal.Goal;
-import net.minecraft.world.entity.ai.util.AirRandomPos;
 import net.minecraft.world.phys.Vec3;
 
 public class TeleportAwayGoal extends Goal {
-	private final SpookyBat mob;
+	private final ModBat mob;
 
-	public TeleportAwayGoal(SpookyBat mob) {
+	public TeleportAwayGoal(ModBat mob) {
 		this.mob = mob;
 	}
 

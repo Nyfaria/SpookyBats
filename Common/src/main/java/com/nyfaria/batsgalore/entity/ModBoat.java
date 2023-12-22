@@ -2,8 +2,7 @@ package com.nyfaria.batsgalore.entity;
 
 import com.nyfaria.batsgalore.entity.api.ModBoatType;
 import com.nyfaria.batsgalore.init.BlockInit;
-import com.nyfaria.batsgalore.init.EntityInit;
-import com.nyfaria.batsgalore.init.ItemInit;
+import com.nyfaria.batsgalore.init.entity.EntityInit;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;

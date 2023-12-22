@@ -1,6 +1,6 @@
 package com.nyfaria.batsgalore.entity;
 
-import com.nyfaria.batsgalore.entity.api.SpookyBat;
+import com.nyfaria.batsgalore.entity.api.ModBat;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
@@ -10,8 +10,8 @@ import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.monster.Enemy;
 import net.minecraft.world.level.Level;
 
-public class WitchBat extends SpookyBat implements Enemy {
-	public WitchBat(EntityType<? extends SpookyBat> pEntityType, Level pLevel) {
+public class WitchBat extends ModBat implements Enemy {
+	public WitchBat(EntityType<? extends ModBat> pEntityType, Level pLevel) {
 		super(pEntityType, pLevel);
 	}
 
@@ -41,7 +41,7 @@ public class WitchBat extends SpookyBat implements Enemy {
 	}
 
 	public static AttributeSupplier.Builder createWitchBatAttributes() {
-		return SpookyBat
+		return ModBat
 			.createBatAttributes()
 			.add(Attributes.MAX_HEALTH, 14);
 	}

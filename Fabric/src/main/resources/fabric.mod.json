@@ -12,10 +12,10 @@
   "environment": "*",
   "entrypoints": {
     "main": [
-      "com.nyfaria.batsgalore.SpookyBats"
+      "com.nyfaria.batsgalore.BatsGalore"
     ],
     "client": [
-      "com.nyfaria.batsgalore.SpookyBatsClient"
+      "com.nyfaria.batsgalore.BatsGaloreClient"
     ],
     "terrablender": [
       "com.nyfaria.batsgalore.TerraBlenderSetup"

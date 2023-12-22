@@ -1,17 +1,14 @@
 package com.nyfaria.batsgalore;
 
-import com.nyfaria.batsgalore.CommonClass;
-import com.nyfaria.batsgalore.CommonSpawning;
-import com.nyfaria.batsgalore.init.EntityInit;
+import com.nyfaria.batsgalore.init.entity.EntityInit;
 import net.fabricmc.api.ModInitializer;
-import net.fabricmc.fabric.api.biome.v1.BiomeModification;
 import net.fabricmc.fabric.api.biome.v1.BiomeModifications;
 import net.fabricmc.fabric.api.biome.v1.BiomeSelectors;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
 import net.minecraft.world.entity.MobCategory;
 import net.minecraft.world.level.biome.Biomes;
 
-public class SpookyBats implements ModInitializer {
+public class BatsGalore implements ModInitializer {
 
     @Override
     public void onInitialize() {

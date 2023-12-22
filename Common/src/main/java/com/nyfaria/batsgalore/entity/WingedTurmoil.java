@@ -1,8 +1,8 @@
 package com.nyfaria.batsgalore.entity;
 
 import com.nyfaria.batsgalore.entity.api.Master;
-import com.nyfaria.batsgalore.entity.api.SpookyBat;
-import com.nyfaria.batsgalore.init.EntityInit;
+import com.nyfaria.batsgalore.entity.api.ModBat;
+import com.nyfaria.batsgalore.init.entity.SpookyBatEntityInit;
 import it.unimi.dsi.fastutil.objects.ObjectArrayList;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
@@ -19,9 +19,6 @@ import net.minecraft.world.entity.ai.Brain;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.targeting.TargetingConditions;
-import net.minecraft.world.entity.animal.IronGolem;
-import net.minecraft.world.entity.animal.Turtle;
-import net.minecraft.world.entity.animal.Wolf;
 import net.minecraft.world.entity.monster.RangedAttackMob;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
@@ -38,17 +35,15 @@ import net.tslat.smartbrainlib.api.core.behaviour.custom.target.SetPlayerLookTar
 import net.tslat.smartbrainlib.api.core.behaviour.custom.target.SetRandomLookTarget;
 import net.tslat.smartbrainlib.api.core.behaviour.custom.target.TargetOrRetaliate;
 import net.tslat.smartbrainlib.api.core.sensor.ExtendedSensor;
-import net.tslat.smartbrainlib.api.core.sensor.custom.NearbyBlocksSensor;
 import net.tslat.smartbrainlib.api.core.sensor.vanilla.NearbyLivingEntitySensor;
 import net.tslat.smartbrainlib.api.core.sensor.vanilla.NearbyPlayersSensor;
-import net.tslat.smartbrainlib.example.SBLSkeleton;
 
 import java.util.List;
 
-public class WingedTurmoil extends SpookyBat implements SmartBrainOwner<WingedTurmoil>, RangedAttackMob, Master {
+public class WingedTurmoil extends ModBat implements SmartBrainOwner<WingedTurmoil>, RangedAttackMob, Master {
     private final ServerBossEvent bossEvent = (ServerBossEvent) (new ServerBossEvent(this.getDisplayName(), BossEvent.BossBarColor.WHITE, BossEvent.BossBarOverlay.PROGRESS)).setDarkenScreen(true);
     private int minionCount = 0;
-    public WingedTurmoil(EntityType<? extends SpookyBat> pEntityType, Level pLevel) {
+    public WingedTurmoil(EntityType<? extends ModBat> pEntityType, Level pLevel) {
         super(pEntityType, pLevel);
         xpReward = 200;
     }
@@ -59,7 +54,7 @@ public class WingedTurmoil extends SpookyBat implements SmartBrainOwner<WingedTu
     }
 
     public static AttributeSupplier.Builder createWingedTurmoilAttributes() {
-        return SpookyBat
+        return ModBat
                 .createBatAttributes()
                 .add(Attributes.ATTACK_DAMAGE, 5)
                 .add(Attributes.MAX_HEALTH, 300);
@@ -129,7 +124,7 @@ public class WingedTurmoil extends SpookyBat implements SmartBrainOwner<WingedTu
             int i = random.nextInt(5);
             for (int i1 = 0; i1 < i; i1++) {
                 BlockPos pos = this.blockPosition().offset(random.nextInt(10) - 5, random.nextInt(5) - 2, random.nextInt(10) - 5);
-                EvilBat bat = EntityInit.EVIL_BAT.get().spawn((ServerLevel) level(), pos, MobSpawnType.EVENT);
+                EvilBat bat = SpookyBatEntityInit.EVIL_BAT.get().spawn((ServerLevel) level(), pos, MobSpawnType.EVENT);
                 bat.setTarget(livingEntity);
                 bat.setMaster(this);
             }
