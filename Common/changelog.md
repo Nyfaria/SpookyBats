@@ -1,15 +1,16 @@
 # Version 1.1.0
 ## Additions
-- New candy cane food item
-- Advancement for killing Winged Turmoil
+- Added new candy cane food item
+- Added advancement for killing Winged Turmoil
 ## Changes/Bugfixes
 ### Misc
-- Fix chains of Spooky Oak sign being invisible from one side
-- Make Vanilla bats spawn in Spooky Oak biome
-- Add translation for Spooky Oak biome
-- Retexture spooky oak boat (including item textures)
+- Fixed chains of Spooky Oak sign being invisible from one side
+- Made Vanilla bats spawn in Spooky Oak biome
+- Added translation for Spooky Oak biome
+- Retextured spooky oak boat (including item textures)
+- Refined texture of spooky oak wood planks
 ### Shulker Bat
-- Make Shulker bats only spawn in End Cities
+- Made Shulker bats only spawn in End Cities
 
 # Version 1.0.2
 ## Bugfixes
