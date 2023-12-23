@@ -9,20 +9,11 @@ import com.nyfaria.batsgalore.client.model.ModSignModel;
 import com.nyfaria.batsgalore.client.model.christmas.ChristmasBatLayers;
 import com.nyfaria.batsgalore.client.model.christmas.ElfHatModel;
 import com.nyfaria.batsgalore.client.model.christmas.ReindeerNoseModel;
-import com.nyfaria.batsgalore.client.model.spooky.EvilBatModel;
-import com.nyfaria.batsgalore.client.model.spooky.ExperienceOrbBatModel;
-import com.nyfaria.batsgalore.client.model.spooky.GhostBatModel;
-import com.nyfaria.batsgalore.client.model.spooky.PumpkinBatModel;
-import com.nyfaria.batsgalore.client.model.spooky.SculkBatModel;
-import com.nyfaria.batsgalore.client.model.spooky.ShulkerBatModel;
-import com.nyfaria.batsgalore.client.model.spooky.SkeletonBatModel;
-import com.nyfaria.batsgalore.client.model.spooky.SlimeBatModel;
-import com.nyfaria.batsgalore.client.model.spooky.UndeadBatModel;
+import com.nyfaria.batsgalore.client.model.spooky.SpookyBatLayers;
 import com.nyfaria.batsgalore.client.model.spooky.WingedTurmoilModel;
-import com.nyfaria.batsgalore.client.model.spooky.WitchBatModel;
 import com.nyfaria.batsgalore.client.model.spooky.WitchsBroomModel;
 import com.nyfaria.batsgalore.client.renderer.BlockProjectileRenderer;
-import com.nyfaria.batsgalore.client.renderer.CreeperBatRenderer;
+import com.nyfaria.batsgalore.client.renderer.PoweredBatRenderer;
 import com.nyfaria.batsgalore.client.renderer.EmissiveBatRenderer;
 import com.nyfaria.batsgalore.client.renderer.GhostBatRenderer;
 import com.nyfaria.batsgalore.client.renderer.ModBoatRenderer;
@@ -53,24 +44,24 @@ import java.util.function.Supplier;
 public class CommonClientClass {
     public static <T extends Entity> List<Renderers<?>> getRenderers() {
         return List.of(
-                new Renderers(SpookyBatEntityInit.PUMPKIN_BAT, (context) -> new PumpkinBatRenderer(context, new PumpkinBatModel<>(context.bakeLayer(PumpkinBatModel.LAYER_LOCATION)), "pumpkin_bat")),
-                new Renderers(SpookyBatEntityInit.UNDEAD_BAT, context -> new UndeadBatRenderer(context, new UndeadBatModel<>(context.bakeLayer(UndeadBatModel.LAYER_LOCATION)))),
-                new Renderers(SpookyBatEntityInit.CREEPER_BAT, CreeperBatRenderer::new),
-                new Renderers(SpookyBatEntityInit.WITCH_BAT, context -> new ModBatRenderer<>(context, new WitchBatModel<>(context.bakeLayer(WitchBatModel.LAYER_LOCATION)))),
-                new Renderers(SpookyBatEntityInit.SCULK_BAT, context -> new SculkBatRenderer(context, new SculkBatModel<>(context.bakeLayer(SculkBatModel.LAYER_LOCATION)), "sculk_bat")),
-                new Renderers(SpookyBatEntityInit.GHOST_BAT, context -> new GhostBatRenderer(context, new GhostBatModel<>(context.bakeLayer(GhostBatModel.LAYER_LOCATION)))),
-                new Renderers(SpookyBatEntityInit.STEVE_BAT, context -> new ModBatRenderer<>(context, new HatBatModel<>(context.bakeLayer(HatBatModel.LAYER_LOCATION)))),
-                new Renderers(SpookyBatEntityInit.ALEX_BAT, context -> new ModBatRenderer<>(context, new HatBatModel<>(context.bakeLayer(HatBatModel.LAYER_LOCATION)))),
-                new Renderers(SpookyBatEntityInit.HEROBRINE_BAT, context -> new EmissiveBatRenderer(context, new HatBatModel<>(context.bakeLayer(HatBatModel.LAYER_LOCATION)), "herobrine_bat")),
-                new Renderers(SpookyBatEntityInit.SKELETON_BAT, context -> new ModBatRenderer<>(context, new SkeletonBatModel<>(context.bakeLayer(SkeletonBatModel.LAYER_LOCATION)))),
-                new Renderers(SpookyBatEntityInit.WITHER_SKELETON_BAT, context -> new ModBatRenderer<>(context, new SkeletonBatModel<>(context.bakeLayer(SkeletonBatModel.LAYER_LOCATION)))),
-                new Renderers(SpookyBatEntityInit.PLAYER_BAT, context -> new PlayerBatRenderer(context, new HatBatModel<>(context.bakeLayer(HatBatModel.LAYER_LOCATION)))),
-                new Renderers(SpookyBatEntityInit.EVIL_BAT, context -> new ModBatRenderer<>(context, new EvilBatModel<>(context.bakeLayer(EvilBatModel.LAYER_LOCATION)))),
-                new Renderers(SpookyBatEntityInit.VOID_BAT, context -> new VoidBatRenderer(context, new HatBatModel<>(context.bakeLayer(HatBatModel.LAYER_LOCATION)))),
-                new Renderers(SpookyBatEntityInit.SLIME_BAT, context -> new SlimeBatRenderer(context, new SlimeBatModel<>(context.bakeLayer(SlimeBatModel.LAYER_LOCATION)))),
-                new Renderers(SpookyBatEntityInit.EXPERIENCE_ORB_BAT, context -> new EmissiveBatRenderer(context, new ExperienceOrbBatModel<>(context.bakeLayer(ExperienceOrbBatModel.LAYER_LOCATION)), "experience_orb_bat")),
-                new Renderers(SpookyBatEntityInit.SHULKER_BAT, context -> new ModBatRenderer<>(context, new ShulkerBatModel<>(context.bakeLayer(ShulkerBatModel.LAYER_LOCATION)))),
-                new Renderers(SpookyBatEntityInit.WINGED_TURMOIL, context -> new ModBatRenderer<>(context, new WingedTurmoilModel<>(context.bakeLayer(WingedTurmoilModel.LAYER_LOCATION)), 2f)),
+                new Renderers(SpookyBatEntityInit.PUMPKIN_BAT, (context) -> new PumpkinBatRenderer(context, new ModBatModel<>(context.bakeLayer(SpookyBatLayers.PUMPKIN_BAT_LAYER_LOCATION)), "pumpkin_bat")),
+                new Renderers(SpookyBatEntityInit.UNDEAD_BAT, context -> new UndeadBatRenderer(context, new ModBatModel<>(context.bakeLayer(SpookyBatLayers.UNDEAD_BAT_LAYER_LOCATION)))),
+                new Renderers(SpookyBatEntityInit.CREEPER_BAT, context -> new PoweredBatRenderer(context, new ModBatModel<>(context.bakeLayer(SpookyBatLayers.PUMPKIN_BAT_LAYER_LOCATION)))),
+                new Renderers(SpookyBatEntityInit.WITCH_BAT, context -> new ModBatRenderer<>(context, new ModBatModel<>(context.bakeLayer(SpookyBatLayers.WITCH_BAT_LAYER_LOCATION)))),
+                new Renderers(SpookyBatEntityInit.SCULK_BAT, context -> new SculkBatRenderer(context, new ModBatModel<>(context.bakeLayer(SpookyBatLayers.SCULK_BAT_LAYER_LOCATION)), "sculk_bat")),
+                new Renderers(SpookyBatEntityInit.GHOST_BAT, context -> new GhostBatRenderer(context, new ModBatModel<>(context.bakeLayer(SpookyBatLayers.GHOST_BAT_LAYER_LOCATION)))),
+                new Renderers(SpookyBatEntityInit.STEVE_BAT, context -> new ModBatRenderer<>(context, new HatBatModel<>(context.bakeLayer(SpookyBatLayers.HAT_BAT_LAYER_LOCATION)))),
+                new Renderers(SpookyBatEntityInit.ALEX_BAT, context -> new ModBatRenderer<>(context, new HatBatModel<>(context.bakeLayer(SpookyBatLayers.HAT_BAT_LAYER_LOCATION)))),
+                new Renderers(SpookyBatEntityInit.HEROBRINE_BAT, context -> new EmissiveBatRenderer(context, new HatBatModel<>(context.bakeLayer(SpookyBatLayers.HAT_BAT_LAYER_LOCATION)), "herobrine_bat")),
+                new Renderers(SpookyBatEntityInit.SKELETON_BAT, context -> new ModBatRenderer<>(context, new ModBatModel<>(context.bakeLayer(SpookyBatLayers.SKELETON_BAT_LAYER_LOCATION)))),
+                new Renderers(SpookyBatEntityInit.WITHER_SKELETON_BAT, context -> new ModBatRenderer<>(context, new ModBatModel<>(context.bakeLayer(SpookyBatLayers.SKELETON_BAT_LAYER_LOCATION)))),
+                new Renderers(SpookyBatEntityInit.PLAYER_BAT, context -> new PlayerBatRenderer(context, new HatBatModel<>(context.bakeLayer(SpookyBatLayers.HAT_BAT_LAYER_LOCATION)))),
+                new Renderers(SpookyBatEntityInit.EVIL_BAT, context -> new ModBatRenderer<>(context, new ModBatModel<>(context.bakeLayer(SpookyBatLayers.EVIL_BAT_LAYER_LOCATION)))),
+                new Renderers(SpookyBatEntityInit.VOID_BAT, context -> new VoidBatRenderer(context, new HatBatModel<>(context.bakeLayer(SpookyBatLayers.HAT_BAT_LAYER_LOCATION)))),
+                new Renderers(SpookyBatEntityInit.SLIME_BAT, context -> new SlimeBatRenderer(context, new ModBatModel<>(context.bakeLayer(SpookyBatLayers.SLIME_BAT_LAYER_LOCATION)))),
+                new Renderers(SpookyBatEntityInit.EXPERIENCE_ORB_BAT, context -> new EmissiveBatRenderer(context, new ModBatModel<>(context.bakeLayer(SpookyBatLayers.EXPERIENCE_BAT_LAYER_LOCATION)), "experience_orb_bat")),
+                new Renderers(SpookyBatEntityInit.SHULKER_BAT, context -> new ModBatRenderer<>(context, new ModBatModel<>(context.bakeLayer(SpookyBatLayers.SHULKER_BAT_LAYER_LOCATION)))),
+                new Renderers(SpookyBatEntityInit.WINGED_TURMOIL, context -> new ModBatRenderer<>(context, new WingedTurmoilModel<>(context.bakeLayer(SpookyBatLayers.WINGED_TURMOIL_LAYER_LOCATION)), 2f)),
                 new Renderers(ChristmasBatEntityInit.CANDY_CANE_BAT, context -> new ModBatRenderer<>(context, new ModBatModel<>(context.bakeLayer(ChristmasBatLayers.CANDY_CANE_BAT_LAYER_LOCATION)))),
                 new Renderers(ChristmasBatEntityInit.ELF_BAT, context -> new ModBatRenderer<>(context, new ModBatModel<>(context.bakeLayer(ChristmasBatLayers.ELF_BAT_LAYER_LOCATION)))),
                 new Renderers(ChristmasBatEntityInit.REINDEER_BAT, context -> new EmissiveBatRenderer(context, new ModBatModel<>(context.bakeLayer(ChristmasBatLayers.REINDEER_BAT_LAYER_LOCATION)),"reindeer_bat")),
@@ -85,20 +76,20 @@ public class CommonClientClass {
     public static List<LayerDefinitions> getLayerDefinitions() {
         List<LayerDefinitions> definitions = new ArrayList<>();
         definitions.addAll(List.of(
-                new LayerDefinitions(PumpkinBatModel.LAYER_LOCATION, PumpkinBatModel.createBodyLayer(CubeDeformation.NONE)),
-                new LayerDefinitions(PumpkinBatModel.OVERLAY_LOCATION, PumpkinBatModel.createBodyLayer(new CubeDeformation(0.1f))),
-                new LayerDefinitions(WitchBatModel.LAYER_LOCATION, WitchBatModel.createBodyLayer()),
-                new LayerDefinitions(HatBatModel.LAYER_LOCATION, HatBatModel.createBodyLayer()),
-                new LayerDefinitions(SkeletonBatModel.LAYER_LOCATION, SkeletonBatModel.createBodyLayer()),
-                new LayerDefinitions(UndeadBatModel.LAYER_LOCATION, UndeadBatModel.createBodyLayer()),
-                new LayerDefinitions(SculkBatModel.LAYER_LOCATION, SculkBatModel.createBodyLayer()),
-                new LayerDefinitions(GhostBatModel.LAYER_LOCATION, GhostBatModel.createBodyLayer()),
+                new LayerDefinitions(SpookyBatLayers.PUMPKIN_BAT_LAYER_LOCATION, SpookyBatLayers.createPumpkinBatLayer(CubeDeformation.NONE)),
+                new LayerDefinitions(SpookyBatLayers.BAT_OVERLAY_LOCATION, SpookyBatLayers.createPumpkinBatLayer(new CubeDeformation(0.1f))),
+                new LayerDefinitions(SpookyBatLayers.WITCH_BAT_LAYER_LOCATION, SpookyBatLayers.createWitchBatLayer()),
+                new LayerDefinitions(SpookyBatLayers.HAT_BAT_LAYER_LOCATION, SpookyBatLayers.createHatBatLayer()),
+                new LayerDefinitions(SpookyBatLayers.SKELETON_BAT_LAYER_LOCATION, SpookyBatLayers.createSkeletonBatLayer()),
+                new LayerDefinitions(SpookyBatLayers.UNDEAD_BAT_LAYER_LOCATION, SpookyBatLayers.createUndeadBatLayer()),
+                new LayerDefinitions(SpookyBatLayers.SCULK_BAT_LAYER_LOCATION, SpookyBatLayers.createSculkBatLayer()),
+                new LayerDefinitions(SpookyBatLayers.GHOST_BAT_LAYER_LOCATION, SpookyBatLayers.createGhostBatLayer()),
                 new LayerDefinitions(WitchsBroomModel.LAYER_LOCATION, WitchsBroomModel.createBodyLayer()),
-                new LayerDefinitions(EvilBatModel.LAYER_LOCATION, EvilBatModel.createBodyLayer()),
-                new LayerDefinitions(SlimeBatModel.LAYER_LOCATION, SlimeBatModel.createBodyLayer()),
-                new LayerDefinitions(ExperienceOrbBatModel.LAYER_LOCATION, ExperienceOrbBatModel.createBodyLayer()),
-                new LayerDefinitions(ShulkerBatModel.LAYER_LOCATION, ShulkerBatModel.createBodyLayer()),
-                new LayerDefinitions(WingedTurmoilModel.LAYER_LOCATION, WingedTurmoilModel.createBodyLayer()),
+                new LayerDefinitions(SpookyBatLayers.EVIL_BAT_LAYER_LOCATION, SpookyBatLayers.createEvilBatLayer()),
+                new LayerDefinitions(SpookyBatLayers.SLIME_BAT_LAYER_LOCATION, SpookyBatLayers.createSlimBatLayer()),
+                new LayerDefinitions(SpookyBatLayers.EXPERIENCE_BAT_LAYER_LOCATION, SpookyBatLayers.createExperienceBatLayer()),
+                new LayerDefinitions(SpookyBatLayers.SHULKER_BAT_LAYER_LOCATION, SpookyBatLayers.createBodyLayer()),
+                new LayerDefinitions(SpookyBatLayers.WINGED_TURMOIL_LAYER_LOCATION, SpookyBatLayers.createWingedTurmoilLayer()),
                 new LayerDefinitions(ChristmasBatLayers.CANDY_CANE_BAT_LAYER_LOCATION, ChristmasBatLayers.createCandyCaneBatLayer()),
                 new LayerDefinitions(ChristmasBatLayers.REINDEER_BAT_LAYER_LOCATION, ChristmasBatLayers.createReindeerBatLayer()),
                 new LayerDefinitions(ChristmasBatLayers.ELF_BAT_LAYER_LOCATION, ChristmasBatLayers.createElfBatLayer()),

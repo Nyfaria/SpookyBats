@@ -16,7 +16,6 @@ import net.minecraft.client.renderer.blockentity.HangingSignRenderer;
 import net.minecraft.resources.ResourceLocation;
 
 public class ModHangingSignModel extends HangingSignRenderer.HangingSignModel {
-    // This layer location should be baked with EntityRendererProvider.Context in the entity renderer and passed into this model's constructor
     public static final ModelLayerLocation LAYER_LOCATION = new ModelLayerLocation(new ResourceLocation(Constants.MODID, "hanging_sign/spooky_oak"), "main2");
     private final ModelPart bone;
 

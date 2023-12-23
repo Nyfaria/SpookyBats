@@ -1,21 +1,23 @@
 package com.nyfaria.batsgalore.client.renderer.layer;
 
-import com.nyfaria.batsgalore.client.model.spooky.PumpkinBatModel;
 import com.nyfaria.batsgalore.client.model.ModBatModel;
+import com.nyfaria.batsgalore.client.model.spooky.SpookyBatLayers;
 import com.nyfaria.batsgalore.entity.CreeperBat;
+import com.nyfaria.batsgalore.entity.api.ModBat;
 import net.minecraft.client.model.EntityModel;
 import net.minecraft.client.model.geom.EntityModelSet;
 import net.minecraft.client.renderer.entity.RenderLayerParent;
 import net.minecraft.client.renderer.entity.layers.EnergySwirlLayer;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.entity.PowerableMob;
 
-public class BatPowerLayer extends EnergySwirlLayer<CreeperBat, ModBatModel<CreeperBat>> {
+public class BatPowerLayer<T extends ModBat & PowerableMob> extends EnergySwirlLayer<T, ModBatModel<T>> {
 	private static final ResourceLocation POWER_LOCATION = new ResourceLocation("textures/entity/creeper/creeper_armor.png");
-	private final ModBatModel<CreeperBat> model;
+	private final ModBatModel<T> model;
 
-	public BatPowerLayer(RenderLayerParent<CreeperBat, ModBatModel<CreeperBat>> pRenderer, EntityModelSet pModelSet) {
+	public BatPowerLayer(RenderLayerParent<T, ModBatModel<T>> pRenderer, EntityModelSet pModelSet) {
 		super(pRenderer);
-		this.model = new ModBatModel<>(pModelSet.bakeLayer(PumpkinBatModel.OVERLAY_LOCATION));
+		this.model = new ModBatModel<>(pModelSet.bakeLayer(SpookyBatLayers.BAT_OVERLAY_LOCATION));
 	}
 
 	@Override
@@ -29,11 +31,14 @@ public class BatPowerLayer extends EnergySwirlLayer<CreeperBat, ModBatModel<Cree
 	}
 
 	@Override
-	protected EntityModel<CreeperBat> model() {
+	protected EntityModel<T> model() {
 		model.root().getChild("body").visible = false;
-		model.root().getChild("head").getChild("right_ear").visible = false;
-		model.root().getChild("head").getChild("left_ear").visible = false;
-
+		if(model.getHead().hasChild("right_ear")) {
+			model.getHead().getChild("right_ear").visible = false;
+		}
+		if(model.getHead().hasChild("left_ear")) {
+			model.getHead().getChild("left_ear").visible = false;
+		}
 		return this.model;
 	}
 }

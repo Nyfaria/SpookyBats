@@ -37,6 +37,13 @@ public class ModBatModel<T extends ModBat> extends HierarchicalModel<T> implemen
 		return this.root;
 	}
 
+	public ModelPart getHead() {
+		return head;
+	}
+
+	public ModelPart getBody() {
+		return body;
+	}
 
 	@Override
 	public void setupAnim(ModBat pEntity, float pLimbSwing, float pLimbSwingAmount, float pAgeInTicks, float pNetHeadYaw, float pHeadPitch) {
