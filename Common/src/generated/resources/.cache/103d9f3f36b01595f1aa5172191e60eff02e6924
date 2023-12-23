@@ -1,11 +1,11 @@
-// 1.20.1	2023-12-23T02:04:35.3111731	Registries
+// 1.20.1	2023-12-23T09:33:48.0034183	Registries
 71d14791775210d5cc4f7bf344c9f05529a2ed33 data/batsgalore/forge/biome_modifier/deep_dark_bat_spawns.json
 a195ba46bb892ffe78e0526b71aa3f5960f38d77 data/batsgalore/forge/biome_modifier/mountain_bat_spawns.json
 4faade4313e164a08b894c0175573e910049864f data/batsgalore/forge/biome_modifier/nether_bat_spawns.json
 c60316290c761014974b926848c4eaead977a45d data/batsgalore/forge/biome_modifier/overworld_bat_spawns.json
 9da4fb7167d58bb9cea52cc5cea9f67076d954b0 data/batsgalore/forge/biome_modifier/swamp_bat_spawns.json
 f3520604732b026e4515ae303f221b8af7e15f4b data/batsgalore/forge/biome_modifier/the_end_bat_spawns.json
-18e5c4b5abdff27d17b672e6941ccb4512662eb5 data/batsgalore/worldgen/biome/christmas_forest.json
+2851ee9b7401196936af53e82d7de89de353a8f5 data/batsgalore/worldgen/biome/christmas_forest.json
 25729bf9fed377ebd2791ca713603172b866d5f5 data/batsgalore/worldgen/biome/spooky_oak_forest.json
 e434aae0e523fbb59c67918b576bfa3ed7099962 data/batsgalore/worldgen/configured_feature/decorated_mega_white_pine.json
 c24e5b24e91fb6ce95f27567b92de14cb76ef84a data/batsgalore/worldgen/configured_feature/decorated_white_pine.json

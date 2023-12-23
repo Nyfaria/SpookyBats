@@ -14,7 +14,8 @@ import java.util.List;
 public class CommonSpawning {
     public static List<MobSpawnSettings.SpawnerData> WHITE_PINE_FOREST_SPAWNS = List.of(
             new MobSpawnSettings.SpawnerData(ChristmasBatEntityInit.CANDY_CANE_BAT.get(), 7, 1, 3),
-            new MobSpawnSettings.SpawnerData(ChristmasBatEntityInit.REINDEER_BAT.get(), 7, 1, 3)
+            new MobSpawnSettings.SpawnerData(ChristmasBatEntityInit.REINDEER_BAT.get(), 7, 1, 3),
+            new MobSpawnSettings.SpawnerData(ChristmasBatEntityInit.ELF_BAT.get(), 7, 1, 3)
     );
     public static List<MobSpawnSettings.SpawnerData> SPOOKY_OAK_FOREST_SPAWNS =
             List.of(

@@ -42,6 +42,20 @@
       },
       "trigger": "minecraft:player_killed_entity"
     },
+    "elf_bat": {
+      "conditions": {
+        "entity": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "type": "batsgalore:elf_bat"
+            }
+          }
+        ]
+      },
+      "trigger": "minecraft:player_killed_entity"
+    },
     "evil_bat": {
       "conditions": {
         "entity": [
@@ -318,7 +332,8 @@
       "void_bat",
       "winged_turmoil",
       "candy_cane_bat",
-      "reindeer_bat"
+      "reindeer_bat",
+      "elf_bat"
     ]
   ],
   "sends_telemetry_event": true

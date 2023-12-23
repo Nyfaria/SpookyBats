@@ -1,17 +1,17 @@
 package com.nyfaria.batsgalore.client;
 
 import com.nyfaria.batsgalore.client.model.HatBatModel;
+import com.nyfaria.batsgalore.client.model.ModBatModel;
+import com.nyfaria.batsgalore.client.model.ModBoatModel;
+import com.nyfaria.batsgalore.client.model.ModChestBoatModel;
 import com.nyfaria.batsgalore.client.model.ModHangingSignModel;
 import com.nyfaria.batsgalore.client.model.ModSignModel;
+import com.nyfaria.batsgalore.client.model.christmas.ChristmasBatLayers;
 import com.nyfaria.batsgalore.client.model.christmas.ElfHatModel;
-import com.nyfaria.batsgalore.client.model.christmas.FlyingCandyCaneModel;
-import com.nyfaria.batsgalore.client.model.christmas.ReindeerBatModel;
 import com.nyfaria.batsgalore.client.model.christmas.ReindeerNoseModel;
 import com.nyfaria.batsgalore.client.model.spooky.EvilBatModel;
 import com.nyfaria.batsgalore.client.model.spooky.ExperienceOrbBatModel;
 import com.nyfaria.batsgalore.client.model.spooky.GhostBatModel;
-import com.nyfaria.batsgalore.client.model.ModBoatModel;
-import com.nyfaria.batsgalore.client.model.ModChestBoatModel;
 import com.nyfaria.batsgalore.client.model.spooky.PumpkinBatModel;
 import com.nyfaria.batsgalore.client.model.spooky.SculkBatModel;
 import com.nyfaria.batsgalore.client.model.spooky.ShulkerBatModel;
@@ -71,8 +71,9 @@ public class CommonClientClass {
                 new Renderers(SpookyBatEntityInit.EXPERIENCE_ORB_BAT, context -> new EmissiveBatRenderer(context, new ExperienceOrbBatModel<>(context.bakeLayer(ExperienceOrbBatModel.LAYER_LOCATION)), "experience_orb_bat")),
                 new Renderers(SpookyBatEntityInit.SHULKER_BAT, context -> new ModBatRenderer<>(context, new ShulkerBatModel<>(context.bakeLayer(ShulkerBatModel.LAYER_LOCATION)))),
                 new Renderers(SpookyBatEntityInit.WINGED_TURMOIL, context -> new ModBatRenderer<>(context, new WingedTurmoilModel<>(context.bakeLayer(WingedTurmoilModel.LAYER_LOCATION)), 2f)),
-                new Renderers(ChristmasBatEntityInit.CANDY_CANE_BAT, context -> new ModBatRenderer<>(context, new FlyingCandyCaneModel<>(context.bakeLayer(FlyingCandyCaneModel.LAYER_LOCATION)))),
-                new Renderers(ChristmasBatEntityInit.REINDEER_BAT, context -> new EmissiveBatRenderer(context, new ReindeerBatModel<>(context.bakeLayer(ReindeerBatModel.LAYER_LOCATION)),"reindeer_bat")),
+                new Renderers(ChristmasBatEntityInit.CANDY_CANE_BAT, context -> new ModBatRenderer<>(context, new ModBatModel<>(context.bakeLayer(ChristmasBatLayers.CANDY_CANE_BAT_LAYER_LOCATION)))),
+                new Renderers(ChristmasBatEntityInit.ELF_BAT, context -> new ModBatRenderer<>(context, new ModBatModel<>(context.bakeLayer(ChristmasBatLayers.ELF_BAT_LAYER_LOCATION)))),
+                new Renderers(ChristmasBatEntityInit.REINDEER_BAT, context -> new EmissiveBatRenderer(context, new ModBatModel<>(context.bakeLayer(ChristmasBatLayers.REINDEER_BAT_LAYER_LOCATION)),"reindeer_bat")),
                 new Renderers(SpookyBatEntityInit.JACK_O_LANTERN_PROJECTILE, context -> new ThrownItemRenderer<>(context, 1.0f, true)),
                 new Renderers(SpookyBatEntityInit.WITCHS_BROOM, WitchsBroomRenderer::new),
                 new Renderers(EntityInit.BLOCK_PROJECTILE, BlockProjectileRenderer::new),
@@ -98,8 +99,9 @@ public class CommonClientClass {
                 new LayerDefinitions(ExperienceOrbBatModel.LAYER_LOCATION, ExperienceOrbBatModel.createBodyLayer()),
                 new LayerDefinitions(ShulkerBatModel.LAYER_LOCATION, ShulkerBatModel.createBodyLayer()),
                 new LayerDefinitions(WingedTurmoilModel.LAYER_LOCATION, WingedTurmoilModel.createBodyLayer()),
-                new LayerDefinitions(FlyingCandyCaneModel.LAYER_LOCATION, FlyingCandyCaneModel.createBodyLayer()),
-                new LayerDefinitions(ReindeerBatModel.LAYER_LOCATION, ReindeerBatModel.createBodyLayer()),
+                new LayerDefinitions(ChristmasBatLayers.CANDY_CANE_BAT_LAYER_LOCATION, ChristmasBatLayers.createCandyCaneBatLayer()),
+                new LayerDefinitions(ChristmasBatLayers.REINDEER_BAT_LAYER_LOCATION, ChristmasBatLayers.createReindeerBatLayer()),
+                new LayerDefinitions(ChristmasBatLayers.ELF_BAT_LAYER_LOCATION, ChristmasBatLayers.createElfBatLayer()),
                 new LayerDefinitions(ModHangingSignModel.LAYER_LOCATION, ModHangingSignModel.createBodyLayer()),
                 new LayerDefinitions(ModSignModel.LAYER_LOCATION, ModSignModel.createBodyLayer()),
                 new LayerDefinitions(ElfHatModel.LAYER_LOCATION, ElfHatModel.createBodyLayer()),
