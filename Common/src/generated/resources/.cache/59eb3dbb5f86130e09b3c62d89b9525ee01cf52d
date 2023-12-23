@@ -1,4 +1,4 @@
-// 1.20.1	2023-12-22T15:51:46.8738204	Loot Tables
+// 1.20.1	2023-12-23T11:03:04.5238665	Loot Tables
 862316e82a239cd0c3a459cadef9495d854102ee data/batsgalore/loot_tables/blocks/decorated_white_pine_leaves.json
 a19e84bf459174b46119fe580b6f5fe9207153e8 data/batsgalore/loot_tables/blocks/spooky_oak_button.json
 3f12ed16d7b95843db53c822e88ee3807eb160cd data/batsgalore/loot_tables/blocks/spooky_oak_door.json
@@ -42,9 +42,11 @@ ebff87a05feeca7bb96e5bb2dd80dceb14a21b23 data/batsgalore/loot_tables/blocks/whit
 95940f380410945c5746f17c8f6e94153a071075 data/batsgalore/loot_tables/entities/alex_bat.json
 c68310ee3200a031cf199149faa0381fa946e128 data/batsgalore/loot_tables/entities/candy_cane_bat.json
 d24b54da1c019f4fdc3b7ec60a87301cc86b629f data/batsgalore/loot_tables/entities/creeper_bat.json
+1098847ad60e82fb6472066e7543a2b4f9d10a90 data/batsgalore/loot_tables/entities/elf_bat.json
 91c94774352377b988b7e7bda72b554a2106882f data/batsgalore/loot_tables/entities/herobrine_bat.json
 a17b886faad595632db5f900593313684371bdd2 data/batsgalore/loot_tables/entities/player_bat.json
 6c53880bc1f3d3902945856d9f6089dffea35820 data/batsgalore/loot_tables/entities/pumpkin_bat.json
+8599e4a382261656a0758fcb5ef8bd957346c1c9 data/batsgalore/loot_tables/entities/reindeer_bat.json
 80ba9df3f98b5b9eebbe813f56824272aec0fc56 data/batsgalore/loot_tables/entities/sculk_bat.json
 69112cc51a29db684e356301e702c81b28c74b1c data/batsgalore/loot_tables/entities/shulker_bat.json
 8b1dd2432235c24f74b80a293e56d4e50d7eaf2b data/batsgalore/loot_tables/entities/skeleton_bat.json
