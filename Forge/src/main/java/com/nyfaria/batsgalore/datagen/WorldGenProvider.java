@@ -293,7 +293,7 @@ public class WorldGenProvider extends DatapackBuiltinEntriesProvider {
                         .temperature(-0.5F)
                         .downfall(1.0F)
                         .mobSpawnSettings(
-                                sOFBuilder.build()
+                                pFBuilder.build()
                         )
                         .generationSettings(
                                 baseSettings(context)

@@ -5,6 +5,7 @@ import com.nyfaria.batsgalore.block.WoodCollection;
 import com.nyfaria.batsgalore.entity.api.ModBoatType;
 import com.nyfaria.batsgalore.item.BatWings;
 import com.nyfaria.batsgalore.item.CoreItem;
+import com.nyfaria.batsgalore.item.CosmeticItem;
 import com.nyfaria.batsgalore.item.ModBoatItem;
 import com.nyfaria.batsgalore.item.StaffOfTurmoil;
 import com.nyfaria.batsgalore.item.WitchsBroomItem;
@@ -16,6 +17,7 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
+import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.*;
 import net.minecraft.world.level.block.Blocks;
@@ -49,6 +51,8 @@ public class ItemInit {
     public static final RegistryObject<Item> SLIME_CORE = ITEMS.register("slime_core", ()->new CoreItem(getItemProperties().stacksTo(1), Blocks.CHISELED_STONE_BRICKS));
     public static final RegistryObject<Item> UNDEAD_CORE = ITEMS.register("undead_core", ()->new CoreItem(getItemProperties().stacksTo(1), Blocks.GILDED_BLACKSTONE));
     public static final RegistryObject<Item> STAFF_OF_TURMOIL = ITEMS.register("staff_of_turmoil", ()->new StaffOfTurmoil(getItemProperties().stacksTo(1)));
+    public static final RegistryObject<Item> ELF_HAT = ITEMS.register("elf_hat", ()->new CosmeticItem(getItemProperties().stacksTo(1), EquipmentSlot.HEAD));
+    public static final RegistryObject<Item> REINDEER_NOSE = ITEMS.register("reindeer_nose", ()->new CosmeticItem(getItemProperties().stacksTo(1), EquipmentSlot.HEAD));
 
     public static final RegistrationProvider<CreativeModeTab> CREATIVE_MODE_TABS = RegistrationProvider.get(Registries.CREATIVE_MODE_TAB, Constants.MODID);
     public static final RegistryObject<CreativeModeTab> TAB = CREATIVE_MODE_TABS.register(Constants.MODID, () -> CreativeModeTab.builder(CreativeModeTab.Row.TOP, 0)

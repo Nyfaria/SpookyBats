@@ -1,13 +1,15 @@
 package com.nyfaria.batsgalore.client;
 
+import com.nyfaria.batsgalore.client.model.HatBatModel;
 import com.nyfaria.batsgalore.client.model.ModHangingSignModel;
 import com.nyfaria.batsgalore.client.model.ModSignModel;
+import com.nyfaria.batsgalore.client.model.christmas.ElfHatModel;
 import com.nyfaria.batsgalore.client.model.christmas.FlyingCandyCaneModel;
 import com.nyfaria.batsgalore.client.model.christmas.ReindeerBatModel;
+import com.nyfaria.batsgalore.client.model.christmas.ReindeerNoseModel;
 import com.nyfaria.batsgalore.client.model.spooky.EvilBatModel;
 import com.nyfaria.batsgalore.client.model.spooky.ExperienceOrbBatModel;
 import com.nyfaria.batsgalore.client.model.spooky.GhostBatModel;
-import com.nyfaria.batsgalore.client.model.HatBatModel;
 import com.nyfaria.batsgalore.client.model.ModBoatModel;
 import com.nyfaria.batsgalore.client.model.ModChestBoatModel;
 import com.nyfaria.batsgalore.client.model.spooky.PumpkinBatModel;
@@ -99,7 +101,9 @@ public class CommonClientClass {
                 new LayerDefinitions(FlyingCandyCaneModel.LAYER_LOCATION, FlyingCandyCaneModel.createBodyLayer()),
                 new LayerDefinitions(ReindeerBatModel.LAYER_LOCATION, ReindeerBatModel.createBodyLayer()),
                 new LayerDefinitions(ModHangingSignModel.LAYER_LOCATION, ModHangingSignModel.createBodyLayer()),
-                new LayerDefinitions(ModSignModel.LAYER_LOCATION, ModSignModel.createBodyLayer())
+                new LayerDefinitions(ModSignModel.LAYER_LOCATION, ModSignModel.createBodyLayer()),
+                new LayerDefinitions(ElfHatModel.LAYER_LOCATION, ElfHatModel.createBodyLayer()),
+                new LayerDefinitions(ReindeerNoseModel.LAYER_LOCATION, ReindeerNoseModel.createBodyLayer())
         ));
         LayerDefinition layerdefinition19 = ModBoatModel.createBodyModel();
         LayerDefinition layerdefinition20 = ModChestBoatModel.createBodyModel();

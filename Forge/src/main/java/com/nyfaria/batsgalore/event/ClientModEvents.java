@@ -3,6 +3,7 @@ package com.nyfaria.batsgalore.event;
 import com.nyfaria.batsgalore.client.CommonClientClass;
 import com.nyfaria.batsgalore.client.renderer.SpookyPedestalRenderer;
 import com.nyfaria.batsgalore.client.renderer.layer.BatWingsLayer;
+import com.nyfaria.batsgalore.client.renderer.layer.CosmeticsLayer;
 import com.nyfaria.batsgalore.init.BlockInit;
 import net.minecraft.client.renderer.entity.player.PlayerRenderer;
 import net.minecraft.world.entity.EntityType;
@@ -35,6 +36,7 @@ public class ClientModEvents {
         for (String name : event.getSkins()) {
             PlayerRenderer parent = event.getSkin(name);
             parent.addLayer(new BatWingsLayer<>(parent, event.getEntityModels()));
+            parent.addLayer(new CosmeticsLayer<>(parent, event.getEntityModels()));
         }
     }
 }

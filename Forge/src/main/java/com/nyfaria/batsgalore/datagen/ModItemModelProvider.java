@@ -7,6 +7,7 @@ import com.nyfaria.batsgalore.init.ItemInit;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemDisplayContext;
 import net.minecraft.world.item.SpawnEggItem;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.client.model.generators.ItemModelBuilder;
@@ -29,32 +30,38 @@ public class ModItemModelProvider extends ItemModelProvider {
         //         .forEach(this::simpleHandHeldModel);
 
         Stream.of(
-                ItemInit.PUMPKIN_CHOCOLATE_BAR,
-                ItemInit.GENERIC_CANDY,
-                ItemInit.SUSPICIOUS_CANDY,
-                ItemInit.SKULL_CANDY,
-                ItemInit.WITHER_SKULL_CANDY,
-                ItemInit.TNT_LOLLIPOP,
-                ItemInit.ZOMBIE_FLESH_LOLLIPOP,
-                ItemInit.WITCHES_BREW,
-                ItemInit.BAT_WINGS,
-                ItemInit.SCULK_CANDY,
-                ItemInit.WITCHS_BROOM,
-                ItemInit.BITESIZED_JELLY,
-                ItemInit.CANDY_CANE
-        )
-        .map(Supplier::get)
-        .forEach(this::simpleGeneratedModel);
+                        ItemInit.PUMPKIN_CHOCOLATE_BAR,
+                        ItemInit.GENERIC_CANDY,
+                        ItemInit.SUSPICIOUS_CANDY,
+                        ItemInit.SKULL_CANDY,
+                        ItemInit.WITHER_SKULL_CANDY,
+                        ItemInit.TNT_LOLLIPOP,
+                        ItemInit.ZOMBIE_FLESH_LOLLIPOP,
+                        ItemInit.WITCHES_BREW,
+                        ItemInit.BAT_WINGS,
+                        ItemInit.SCULK_CANDY,
+                        ItemInit.WITCHS_BROOM,
+                        ItemInit.BITESIZED_JELLY,
+                        ItemInit.CANDY_CANE
+                )
+                .map(Supplier::get)
+                .forEach(this::simpleGeneratedModel);
+
+        Stream.of(
+                        ItemInit.ELF_HAT,
+                        ItemInit.REINDEER_NOSE
+                ).map(Supplier::get)
+                .forEach(this::cosmeticModel);
 
         ItemInit.ITEMS.getEntries().stream().filter(item -> item.get() instanceof SpawnEggItem)
                 .map(Supplier::get)
                 .forEach(this::spawnEgg);
 
         Stream.of(
-                BlockInit.SPOOKY_PEDESTAL
-        )
-        .map(Supplier::get)
-        .forEach(this::simpleBlockItemModel);
+                        BlockInit.SPOOKY_PEDESTAL
+                )
+                .map(Supplier::get)
+                .forEach(this::simpleBlockItemModel);
 
         woodCollection(BlockInit.SPOOKY_OAK);
         woodCollection(BlockInit.WHITE_PINE);
@@ -72,6 +79,10 @@ public class ModItemModelProvider extends ItemModelProvider {
 
     protected ItemModelBuilder simpleGeneratedModel(Item item) {
         return simpleModel(item, mcLoc("item/generated"));
+    }
+
+    protected ItemModelBuilder cosmeticModel(Item item) {
+        return simpleModel(item, mcLoc("item/generated")).transforms().transform(ItemDisplayContext.HEAD).scale(0).end().end();
     }
 
     protected ItemModelBuilder simpleHandHeldModel(Item item) {

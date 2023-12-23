@@ -3,6 +3,7 @@ package com.nyfaria.batsgalore;
 import com.nyfaria.batsgalore.client.CommonClientClass;
 import com.nyfaria.batsgalore.client.renderer.SpookyPedestalRenderer;
 import com.nyfaria.batsgalore.client.renderer.layer.BatWingsLayer;
+import com.nyfaria.batsgalore.client.renderer.layer.CosmeticsLayer;
 import com.nyfaria.batsgalore.init.BlockInit;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
@@ -29,6 +30,7 @@ public class BatsGaloreClient implements ClientModInitializer {
         LivingEntityFeatureRendererRegistrationCallback.EVENT.register((entityType, entityRenderer, registrationHelper, context) -> {
             if (entityType == EntityType.PLAYER) {
                 registrationHelper.register(new BatWingsLayer<>((PlayerRenderer) entityRenderer, context.getModelSet()));
+                registrationHelper.register(new CosmeticsLayer<>((PlayerRenderer) entityRenderer, context.getModelSet()));
             }
         });
 

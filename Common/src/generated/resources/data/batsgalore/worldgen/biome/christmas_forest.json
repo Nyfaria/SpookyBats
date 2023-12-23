@@ -82,52 +82,16 @@
     "misc": [],
     "monster": [
       {
-        "type": "batsgalore:pumpkin_bat",
+        "type": "batsgalore:candy_cane_bat",
         "maxCount": 3,
         "minCount": 1,
         "weight": 7
       },
       {
-        "type": "batsgalore:creeper_bat",
+        "type": "batsgalore:reindeer_bat",
         "maxCount": 3,
         "minCount": 1,
-        "weight": 5
-      },
-      {
-        "type": "batsgalore:steve_bat",
-        "maxCount": 3,
-        "minCount": 1,
-        "weight": 5
-      },
-      {
-        "type": "batsgalore:alex_bat",
-        "maxCount": 3,
-        "minCount": 1,
-        "weight": 5
-      },
-      {
-        "type": "batsgalore:herobrine_bat",
-        "maxCount": 1,
-        "minCount": 1,
-        "weight": 4
-      },
-      {
-        "type": "batsgalore:skeleton_bat",
-        "maxCount": 3,
-        "minCount": 1,
-        "weight": 5
-      },
-      {
-        "type": "minecraft:bat",
-        "maxCount": 2,
-        "minCount": 1,
-        "weight": 4
-      },
-      {
-        "type": "batsgalore:player_bat",
-        "maxCount": 2,
-        "minCount": 1,
-        "weight": 5
+        "weight": 7
       }
     ],
     "underground_water_creature": [],
