@@ -1,6 +1,7 @@
-package com.nyfaria.batsgalore.client.model;
+package com.nyfaria.batsgalore.client.model.spooky;
 
 import com.nyfaria.batsgalore.Constants;
+import com.nyfaria.batsgalore.client.model.ModBatModel;
 import com.nyfaria.batsgalore.entity.api.ModBat;
 import net.minecraft.client.model.geom.ModelLayerLocation;
 import net.minecraft.client.model.geom.ModelPart;
@@ -12,7 +13,7 @@ import net.minecraft.client.model.geom.builders.MeshDefinition;
 import net.minecraft.client.model.geom.builders.PartDefinition;
 import net.minecraft.resources.ResourceLocation;
 
-public class WitchBatModel<T extends ModBat> extends SpookyBatModel<T> {
+public class WitchBatModel<T extends ModBat> extends ModBatModel<T> {
 	// This layer location should be baked with EntityRendererProvider.Context in the entity renderer and passed into this model's constructor
 	public static final ModelLayerLocation LAYER_LOCATION = new ModelLayerLocation(new ResourceLocation(Constants.MODID, "witch_bat"), "main");
 

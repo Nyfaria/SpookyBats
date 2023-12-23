@@ -24,7 +24,7 @@ import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobCategory;
 
 public class SpookyBatEntityInit extends EntityInit {
-    /* spooky bats */
+    /* these are bats */
     public static final RegistryObject<EntityType<PumpkinBat>> PUMPKIN_BAT = registerEntityWithEgg("pumpkin_bat", () -> EntityType.Builder.of(PumpkinBat::new, MobCategory.MONSTER).sized(0.5F, 0.9F), ModBat::createBatAttributes, 0xdd993e);
     public static final RegistryObject<EntityType<CreeperBat>> CREEPER_BAT = registerEntityWithEgg("creeper_bat", () -> EntityType.Builder.of(CreeperBat::new, MobCategory.MONSTER).sized(0.5F, 0.9F), ModBat::createBatAttributes, 0x4fbc44);
     public static final RegistryObject<EntityType<WitchBat>> WITCH_BAT = registerEntityWithEgg("witch_bat", () -> EntityType.Builder.of(WitchBat::new, MobCategory.MONSTER).sized(0.5F, 0.9F), WitchBat::createWitchBatAttributes, 0xe388c2);

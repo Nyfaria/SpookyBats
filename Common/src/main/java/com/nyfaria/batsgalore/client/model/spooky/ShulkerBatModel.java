@@ -1,5 +1,6 @@
-package com.nyfaria.batsgalore.client.model;
+package com.nyfaria.batsgalore.client.model.spooky;
 
+import com.nyfaria.batsgalore.client.model.ModBatModel;
 import com.nyfaria.batsgalore.entity.ShulkerBat;
 import net.minecraft.client.model.geom.ModelLayerLocation;
 import net.minecraft.client.model.geom.ModelPart;
@@ -11,7 +12,7 @@ import net.minecraft.client.model.geom.builders.MeshDefinition;
 import net.minecraft.client.model.geom.builders.PartDefinition;
 import net.minecraft.resources.ResourceLocation;
 
-public class ShulkerBatModel<T extends ShulkerBat> extends SpookyBatModel<T> {
+public class ShulkerBatModel<T extends ShulkerBat> extends ModBatModel<T> {
     public static final ModelLayerLocation LAYER_LOCATION = new ModelLayerLocation(new ResourceLocation("modid", "shulker_bat"), "main");
     protected final ModelPart lid;
 

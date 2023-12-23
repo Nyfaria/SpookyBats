@@ -1,4 +1,4 @@
-package com.nyfaria.batsgalore.client.model;
+package com.nyfaria.batsgalore.client.model.spooky;
 
 import com.google.common.collect.ImmutableList;
 import net.minecraft.client.model.AgeableListModel;

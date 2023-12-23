@@ -1,8 +1,7 @@
 package com.nyfaria.batsgalore.mixins;
 
 import com.nyfaria.batsgalore.block.WoodCollection;
-import com.nyfaria.batsgalore.client.model.SpookyOakHangingSignModel;
-import com.nyfaria.batsgalore.init.BlockInit;
+import com.nyfaria.batsgalore.client.model.ModHangingSignModel;
 import net.minecraft.client.renderer.blockentity.BlockEntityRendererProvider;
 import net.minecraft.client.renderer.blockentity.HangingSignRenderer;
 import net.minecraft.world.level.block.state.properties.WoodType;
@@ -26,7 +25,7 @@ public class HangingSignRendererMixin {
     public void addSign(BlockEntityRendererProvider.Context context, CallbackInfo ci) {
         Map<WoodType, HangingSignRenderer.HangingSignModel> map = new HashMap<>(hangingSignModels);
         WoodCollection.WOOD_COLLECTIONS.forEach(
-                woodCollection -> map.put(woodCollection.woodType(), new HangingSignRenderer.HangingSignModel(context.bakeLayer(SpookyOakHangingSignModel.LAYER_LOCATION)))
+                woodCollection -> map.put(woodCollection.woodType(), new HangingSignRenderer.HangingSignModel(context.bakeLayer(ModHangingSignModel.LAYER_LOCATION)))
         );
         hangingSignModels = map;
     }

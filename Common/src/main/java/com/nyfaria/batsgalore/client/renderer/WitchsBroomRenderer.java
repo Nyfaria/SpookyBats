@@ -1,9 +1,8 @@
 package com.nyfaria.batsgalore.client.renderer;
 
 import com.nyfaria.batsgalore.Constants;
-import com.nyfaria.batsgalore.client.model.WitchsBroomModel;
+import com.nyfaria.batsgalore.client.model.spooky.WitchsBroomModel;
 import com.nyfaria.batsgalore.entity.WitchsBroom;
-import com.nyfaria.batsgalore.registration.RegistryObject;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.entity.LivingEntityRenderer;
 import net.minecraft.resources.ResourceLocation;

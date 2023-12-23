@@ -1,12 +1,12 @@
 package com.nyfaria.batsgalore.client.renderer;
 
 import com.mojang.blaze3d.vertex.PoseStack;
-import com.nyfaria.batsgalore.client.model.SpookyBatModel;
+import com.nyfaria.batsgalore.client.model.ModBatModel;
 import com.nyfaria.batsgalore.entity.api.ModBat;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 
 public class SculkBatRenderer extends EmissiveBatRenderer {
-	public SculkBatRenderer(EntityRendererProvider.Context context, SpookyBatModel<ModBat> model, String name) {
+	public SculkBatRenderer(EntityRendererProvider.Context context, ModBatModel<ModBat> model, String name) {
 		super(context, model, name);
 	}
 

@@ -1,8 +1,9 @@
-// 1.20.1	2023-12-17T23:03:17.803127	Item Models: batsgalore
+// 1.20.1	2023-12-22T16:26:27.15671	Item Models: batsgalore
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/batsgalore/models/item/alex_bat_spawn_egg.json
 b4a5a3c7717ecb5f3f94cc624e872df67d00fc2b assets/batsgalore/models/item/bat_wings.json
 be75196d164a35d51643beae208a2dc85e36902b assets/batsgalore/models/item/bitesized_jelly.json
 49f1e1fbee8ec8f0a96042b59dde9acd8c838548 assets/batsgalore/models/item/candy_cane.json
+63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/batsgalore/models/item/candy_cane_bat_spawn_egg.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/batsgalore/models/item/creeper_bat_spawn_egg.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/batsgalore/models/item/evil_bat_spawn_egg.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/batsgalore/models/item/experience_orb_bat_spawn_egg.json
@@ -12,6 +13,7 @@ be75196d164a35d51643beae208a2dc85e36902b assets/batsgalore/models/item/bitesized
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/batsgalore/models/item/player_bat_spawn_egg.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/batsgalore/models/item/pumpkin_bat_spawn_egg.json
 e1c5848f452057318394495f8aaa8ce631ad5a22 assets/batsgalore/models/item/pumpkin_chocolate_bar.json
+63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/batsgalore/models/item/reindeer_bat_spawn_egg.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/batsgalore/models/item/sculk_bat_spawn_egg.json
 30ef3c1296e4191927906a27eb4bbd95cc1dbc38 assets/batsgalore/models/item/sculk_candy.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/batsgalore/models/item/shulker_bat_spawn_egg.json

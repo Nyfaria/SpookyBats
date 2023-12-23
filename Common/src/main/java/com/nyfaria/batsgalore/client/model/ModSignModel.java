@@ -12,11 +12,11 @@ import net.minecraft.client.model.geom.builders.PartDefinition;
 import net.minecraft.client.renderer.blockentity.SignRenderer;
 import net.minecraft.resources.ResourceLocation;
 
-public class SpookyOakSignModel extends SignRenderer.SignModel {
+public class ModSignModel extends SignRenderer.SignModel {
 	// This layer location should be baked with EntityRendererProvider.Context in the entity renderer and passed into this model's constructor
 	public static final ModelLayerLocation LAYER_LOCATION = new ModelLayerLocation(new ResourceLocation(Constants.MODID, "spookyoaksignmodel"), "main");
 
-	public SpookyOakSignModel(ModelPart root) {
+	public ModSignModel(ModelPart root) {
 		super(root);
 	}
 

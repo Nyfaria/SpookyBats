@@ -1,4 +1,4 @@
-package com.nyfaria.batsgalore.client.model;
+package com.nyfaria.batsgalore.client.model.spooky;
 
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;

@@ -1,5 +1,6 @@
 package com.nyfaria.batsgalore.datagen;
 
+import com.nyfaria.batsgalore.init.entity.ChristmasBatEntityInit;
 import com.nyfaria.batsgalore.init.entity.EntityInit;
 import com.nyfaria.batsgalore.init.ItemInit;
 import com.nyfaria.batsgalore.init.entity.SpookyBatEntityInit;
@@ -54,6 +55,7 @@ public class ModEntityLootTables extends EntityLootSubProvider {
                 new LootEntry(ItemInit.SCULK_CORE.get(), 0.01f, ConstantValue.exactly(1))
         );
         dropSingle(SpookyBatEntityInit.WITCHS_BROOM.get(), ItemInit.WITCHS_BROOM.get());
+        dropSingle(ChristmasBatEntityInit.CANDY_CANE_BAT.get(), ItemInit.CANDY_CANE.get());
         multiDrops(SpookyBatEntityInit.SHULKER_BAT.get(), ConstantValue.exactly(1),
                 new LootEntry(ItemInit.SHULKER_CORE.get(), 0.01f, ConstantValue.exactly(1))
         );

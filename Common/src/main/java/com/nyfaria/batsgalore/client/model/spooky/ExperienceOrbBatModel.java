@@ -1,6 +1,7 @@
-package com.nyfaria.batsgalore.client.model;
+package com.nyfaria.batsgalore.client.model.spooky;
 
 import com.nyfaria.batsgalore.Constants;
+import com.nyfaria.batsgalore.client.model.ModBatModel;
 import com.nyfaria.batsgalore.entity.api.ModBat;
 import net.minecraft.client.model.geom.ModelLayerLocation;
 import net.minecraft.client.model.geom.ModelPart;
@@ -8,7 +9,7 @@ import net.minecraft.client.model.geom.PartPose;
 import net.minecraft.client.model.geom.builders.*;
 import net.minecraft.resources.ResourceLocation;
 
-public class ExperienceOrbBatModel<T extends ModBat> extends SpookyBatModel<T> {
+public class ExperienceOrbBatModel<T extends ModBat> extends ModBatModel<T> {
 	public static final ModelLayerLocation LAYER_LOCATION = new ModelLayerLocation(new ResourceLocation(Constants.MODID, "experiencebat"), "main");
 
 	public ExperienceOrbBatModel(ModelPart pRoot) {

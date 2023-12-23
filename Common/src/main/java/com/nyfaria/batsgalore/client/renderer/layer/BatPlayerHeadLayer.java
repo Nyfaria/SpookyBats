@@ -3,7 +3,7 @@ package com.nyfaria.batsgalore.client.renderer.layer;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import com.nyfaria.batsgalore.client.model.HatBatModel;
-import com.nyfaria.batsgalore.client.model.SpookyBatModel;
+import com.nyfaria.batsgalore.client.model.ModBatModel;
 import com.nyfaria.batsgalore.entity.api.ModBat;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.model.geom.EntityModelSet;
@@ -16,11 +16,11 @@ import net.minecraft.resources.ResourceLocation;
 
 import java.util.Optional;
 
-public class BatPlayerHeadLayer extends RenderLayer<ModBat, SpookyBatModel<ModBat>> {
+public class BatPlayerHeadLayer extends RenderLayer<ModBat, ModBatModel<ModBat>> {
     private Optional<ResourceLocation> resourceLocation = Optional.empty();
     private final HatBatModel<ModBat> model;
 
-    public BatPlayerHeadLayer(RenderLayerParent<ModBat, SpookyBatModel<ModBat>> pRenderer, EntityModelSet pModelSet) {
+    public BatPlayerHeadLayer(RenderLayerParent<ModBat, ModBatModel<ModBat>> pRenderer, EntityModelSet pModelSet) {
         super(pRenderer);
         this.model = new HatBatModel<>(pModelSet.bakeLayer(HatBatModel.LAYER_LOCATION));
     }

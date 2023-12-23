@@ -14,7 +14,7 @@ import net.minecraft.util.Mth;
 import net.minecraft.world.entity.HumanoidArm;
 import org.joml.Vector3f;
 
-public class SpookyBatModel<T extends ModBat> extends HierarchicalModel<T> implements ArmedModel {
+public class ModBatModel<T extends ModBat> extends HierarchicalModel<T> implements ArmedModel {
 	protected final ModelPart root;
 	protected final ModelPart head;
 	protected final ModelPart body;
@@ -23,7 +23,7 @@ public class SpookyBatModel<T extends ModBat> extends HierarchicalModel<T> imple
 	protected final ModelPart rightWingTip;
 	protected final ModelPart leftWingTip;
 
-	public SpookyBatModel(ModelPart pRoot) {
+	public ModBatModel(ModelPart pRoot) {
 		this.root = pRoot;
 		this.head = pRoot.getChild("head");
 		this.body = pRoot.getChild("body");
