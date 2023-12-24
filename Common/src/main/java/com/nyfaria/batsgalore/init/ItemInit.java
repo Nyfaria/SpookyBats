@@ -66,7 +66,10 @@ public class ItemInit {
                         output.accept(SHULKER_CORE.get());
                         output.accept(SLIME_CORE.get());
                         output.accept(UNDEAD_CORE.get());
+                        output.accept(ELF_HAT.get());
+                        output.accept(REINDEER_NOSE.get());
                         output.accept(BlockInit.SPOOKY_PEDESTAL.get());
+                        output.accept(BlockInit.STATUE_OF_TURMOIL.get());
                         WoodCollection.WOOD_COLLECTIONS.forEach(collection->collection.getAll().forEach(
                                 (registryObject) -> output.accept(new ItemStack(registryObject.get()))
                         ));
