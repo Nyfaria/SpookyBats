@@ -1,7 +1,6 @@
 # Version 1.1.0
 ## Additions
 - Added new candy cane food item
-- Added advancement for killing Winged Turmoil
 - Added new White Pine wood set
 - Added new Christmas Forest biome
 - Added three new Christmas-themed bats:
@@ -10,6 +9,9 @@
   - Elf Bat
 - Added wearable Reindeer Nose
 - Added wearable Elf hat
+### Winged Turmoil
+- Added Winged Turmoil Statue
+- Added advancement for killing Winged Turmoil
 ## Changes/Bugfixes
 ### Misc
 - Fixed some random crafting recipes with 
