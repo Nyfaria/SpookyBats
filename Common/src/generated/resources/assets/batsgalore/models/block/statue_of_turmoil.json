@@ -1,7 +1,5 @@
 {
-  "parent": "block",
   "textures": {
-    "all": "batsgalore:block/statue_of_turmoil",
-    "particles": "batsgalore:block/statue_of_turmoil"
+    "particle": "batsgalore:block/statue_of_turmoil"
   }
 }
