@@ -158,6 +158,9 @@ publishMods {
                 requires {
                     slug = "smartbrainlib"
                 }
+                requires {
+                    slug = "terrablender"
+                }
             }
         }
         if (modrinth_publishing_enabled.toBoolean()) {
@@ -167,6 +170,9 @@ publishMods {
                 minecraftVersions.add(minecraft_version)
                 requires {
                     slug = "smartbrainlib"
+                }
+                requires {
+                    slug = "terrablender"
                 }
             }
         }

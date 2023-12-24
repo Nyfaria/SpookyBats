@@ -1,3 +1,6 @@
+# Version 1.1.1
+## Addtitions
+- Added Config to turn of specific bioms
 # Version 1.1.0
 ## Additions
 - Added new candy cane food item

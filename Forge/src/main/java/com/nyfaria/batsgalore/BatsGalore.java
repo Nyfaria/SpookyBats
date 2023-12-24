@@ -1,5 +1,6 @@
 package com.nyfaria.batsgalore;
 
+import com.nyfaria.batsgalore.config.CommonConfig;
 import com.nyfaria.batsgalore.datagen.ModAdvancementProvider;
 import com.nyfaria.batsgalore.datagen.ModBlockStateProvider;
 import com.nyfaria.batsgalore.datagen.ModItemModelProvider;
@@ -14,7 +15,9 @@ import net.minecraft.data.PackOutput;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.data.event.GatherDataEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.config.ModConfig;
 
 @Mod(Constants.MODID)
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
@@ -23,6 +26,7 @@ public class BatsGalore {
     public BatsGalore() {
         Constants.LOG.info("Hello Forge world!");
         CommonClass.init();
+        ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, CommonConfig.CONFIG_SPEC);
     }
 
     @SubscribeEvent

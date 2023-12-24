@@ -30,6 +30,7 @@ dependencies {
     implementation "net.tslat.smartbrainlib:SmartBrainLib-common-${project.minecraft_version}:${project.sbl_version}"
 
     implementation "com.github.glitchfiend:TerraBlender-common:${terrablender_version}"
+    implementation "fuzs.forgeconfigapiport:forgeconfigapiport-common:${project.forge_config_api_port_version}"
 }
 sourceSets.main.resources.srcDir './src/generated/resources'
 processResources {

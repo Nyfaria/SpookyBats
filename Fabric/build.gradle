@@ -19,6 +19,8 @@ dependencies {
     implementation project(":Common")
     modImplementation "net.tslat.smartbrainlib:SmartBrainLib-fabric-${project.minecraft_version}:${project.sbl_version}"
     modImplementation "com.github.glitchfiend:TerraBlender-fabric:${terrablender_version}"
+    modApi "fuzs.forgeconfigapiport:forgeconfigapiport-fabric:${project.forge_config_api_port_version}"
+    include "fuzs.forgeconfigapiport:forgeconfigapiport-fabric:${project.forge_config_api_port_version}"
 }
 
 loom {
@@ -123,6 +125,12 @@ publishMods {
                 requires {
                     slug = "smartbrainlib"
                 }
+                requires {
+                    slug = "terrablender-fabric"
+                }
+                requires {
+                    slug = "forge-config-api-port-fabric"
+                }
             }
         }
         if (modrinth_publishing_enabled.toBoolean()) {
@@ -135,6 +143,12 @@ publishMods {
                 }
                 requires {
                     slug = "smartbrainlib"
+                }
+                requires {
+                    slug = "terrablender"
+                }
+                requires {
+                    slug = "forge-config-api-port"
                 }
             }
         }

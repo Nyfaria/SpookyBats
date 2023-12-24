@@ -61,6 +61,10 @@ subprojects {
             name = "SmartBrainLib (SBL) Maven Repo"
             url = "https://dl.cloudsmith.io/public/tslat/sbl/maven/"
         }
+        maven {
+            name = "Fuzs Mod Resources"
+            url = "https://raw.githubusercontent.com/Fuzss/modresources/main/maven/"
+        }
     }
 
     tasks.withType(JavaCompile).configureEach {
