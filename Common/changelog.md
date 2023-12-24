@@ -2,8 +2,19 @@
 ## Additions
 - Added new candy cane food item
 - Added advancement for killing Winged Turmoil
+- Added new White Pine wood set
+- Added new Christmas Forest biome
+- Added three new Christmas-themed bats:
+  - Candy Cane Bat
+  - Reindeer Bat
+  - Elf Bat
+- Added wearable Reindeer Nose
+- Added wearable Elf hat
 ## Changes/Bugfixes
 ### Misc
+- Fixed some random crafting recipes with 
+### Spooky Oak
+- Make Spooky Oak fence GUI model use custom model
 - Fixed chains of Spooky Oak sign being invisible from one side
 - Made Vanilla bats spawn in Spooky Oak biome
 - Added translation for Spooky Oak biome
