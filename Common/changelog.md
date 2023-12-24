@@ -12,6 +12,7 @@
 ### Winged Turmoil
 - Added Winged Turmoil Statue
 - Added advancement for killing Winged Turmoil
+- Changed item group icon to Winged Turmoil Statue
 ## Changes/Bugfixes
 ### Misc
 - Fixed some random crafting recipes with 
