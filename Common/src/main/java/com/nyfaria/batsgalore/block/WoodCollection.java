@@ -7,7 +7,9 @@ import com.nyfaria.batsgalore.init.ItemInit;
 import com.nyfaria.batsgalore.item.ModBoatItem;
 import com.nyfaria.batsgalore.registration.RegistryObject;
 import net.minecraft.data.BlockFamily;
+import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.HangingSignItem;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.SignItem;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Block;
@@ -48,10 +50,10 @@ public record WoodCollection(String name, WoodType woodType, RegistryObject<Sapl
                              RegistryObject<PressurePlateBlock> pressurePlate, RegistryObject<StandingSignBlock> sign,
                              RegistryObject<WallSignBlock> wallSign, RegistryObject<CeilingHangingSignBlock> hangingSign,
                              RegistryObject<WallHangingSignBlock> hangingWallSign, RegistryObject<LeavesBlock> leaves,
-                             RegistryObject<ModBoatItem> boat, RegistryObject<ModBoatItem> chestBoat) {
+                             RegistryObject<ModBoatItem> boat, RegistryObject<ModBoatItem> chestBoat, TagKey<Item> logsTag, TagKey<Block> logsTagBlock) {
     public static List<WoodCollection> WOOD_COLLECTIONS = new ArrayList<>();
 
-    public static WoodCollection registerCollection(String name, AbstractTreeGrower grower, Supplier<ModBoatType> boatType) {
+    public static WoodCollection registerCollection(String name, AbstractTreeGrower grower, Supplier<ModBoatType> boatType, TagKey<Item> logsTag, TagKey<Block> logsTagBlock) {
         BlockSetType blockSetType = BlockSetType.register(new BlockSetType(Constants.MODID + ":" + name));
         WoodType woodType = WoodType.register(new WoodType(Constants.MODID + ":" + name, blockSetType));
         RegistryObject<SaplingBlock> sapling = BlockInit.registerBlock(name + "_sapling", () -> new SaplingBlock(grower, BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING)));
@@ -77,7 +79,7 @@ public record WoodCollection(String name, WoodType woodType, RegistryObject<Sapl
         RegistryObject<LeavesBlock> leaves = BlockInit.registerBlock(name + "_leaves", () -> BlockInit.leaves(SoundType.GRASS));
         RegistryObject<ModBoatItem> boat = ItemInit.ITEMS.register(name + "_boat", () -> new ModBoatItem(false, boatType.get(), ItemInit.getItemProperties().stacksTo(1)));
         RegistryObject<ModBoatItem> chestBoat = ItemInit.ITEMS.register(name + "_chest_boat", () -> new ModBoatItem(true, boatType.get(), ItemInit.getItemProperties().stacksTo(1)));
-        WoodCollection collection = new WoodCollection(name, woodType, sapling, log, strippedLog, wood, strippedWood, planks, stairs, slab, fence, fenceGate, door, trapdoor, button, pressurePlate, sign, wallSign, hangingSign,wallHangingSign, leaves, boat, chestBoat);
+        WoodCollection collection = new WoodCollection(name, woodType, sapling, log, strippedLog, wood, strippedWood, planks, stairs, slab, fence, fenceGate, door, trapdoor, button, pressurePlate, sign, wallSign, hangingSign,wallHangingSign, leaves, boat, chestBoat, logsTag, logsTagBlock);
         WOOD_COLLECTIONS.add(collection);
         return collection;
     }

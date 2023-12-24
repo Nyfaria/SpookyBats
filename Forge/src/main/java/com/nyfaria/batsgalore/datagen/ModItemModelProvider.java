@@ -63,8 +63,8 @@ public class ModItemModelProvider extends ItemModelProvider {
                 .map(Supplier::get)
                 .forEach(this::simpleBlockItemModel);
 
-        woodCollection(BlockInit.SPOOKY_OAK);
-        woodCollection(BlockInit.WHITE_PINE);
+        woodCollection(BlockInit.SPOOKY_OAK, true);
+        woodCollection(BlockInit.WHITE_PINE,true);
     }
 
     protected ItemModelBuilder simpleBlockItemModel(Block block) {
@@ -108,6 +108,9 @@ public class ModItemModelProvider extends ItemModelProvider {
     }
 
     protected void woodCollection(WoodCollection collection) {
+        woodCollection(collection, false);
+    }
+    protected void woodCollection(WoodCollection collection, boolean customFence) {
         Stream.of(
                         collection.leaves(),
                         collection.log(),
@@ -129,7 +132,9 @@ public class ModItemModelProvider extends ItemModelProvider {
                 )
                 .map(s -> s.get().asItem())
                 .forEach(this::simpleGeneratedModel);
-        fenceInventory(getName(collection.fence().get()), new ResourceLocation(Constants.MODID, "block/" + getName(collection.planks().get())));
+        if(!customFence) {
+            fenceInventory(getName(collection.fence().get()), new ResourceLocation(Constants.MODID, "block/" + getName(collection.planks().get())));
+        }
         fenceGate(getName(collection.fenceGate().get()), new ResourceLocation(Constants.MODID, "block/" + getName(collection.planks().get())));
         buttonInventory(getName(collection.button().get()), new ResourceLocation(Constants.MODID, "block/" + getName(collection.planks().get())));
         simpleTrapdoorBlockItemModel(collection.trapdoor().get());

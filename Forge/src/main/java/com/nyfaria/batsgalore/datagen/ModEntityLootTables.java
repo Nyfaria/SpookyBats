@@ -1,5 +1,6 @@
 package com.nyfaria.batsgalore.datagen;
 
+import com.nyfaria.batsgalore.init.BlockInit;
 import com.nyfaria.batsgalore.init.ItemInit;
 import com.nyfaria.batsgalore.init.entity.ChristmasBatEntityInit;
 import com.nyfaria.batsgalore.init.entity.SpookyBatEntityInit;
@@ -63,7 +64,7 @@ public class ModEntityLootTables extends EntityLootSubProvider {
                 new LootEntry(ItemInit.BITESIZED_JELLY.get(), 1.0f, ConstantValue.exactly(1)),
                 new LootEntry(ItemInit.SLIME_CORE.get(), 0.01f, ConstantValue.exactly(1))
         );
-        dropSingle(SpookyBatEntityInit.WINGED_TURMOIL.get(), ItemInit.STAFF_OF_TURMOIL.get());
+        wingedTurmoilDrops();
         dropSetAmountWithChance(ChristmasBatEntityInit.ELF_BAT.get(), ConstantValue.exactly(1f), ItemInit.ELF_HAT.get(), 1, 0.03f);
         dropSetAmountWithChance(ChristmasBatEntityInit.REINDEER_BAT.get(), ConstantValue.exactly(1f), ItemInit.REINDEER_NOSE.get(), 1, 0.03f);
     }
@@ -123,6 +124,22 @@ public class ModEntityLootTables extends EntityLootSubProvider {
                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))));
         builder.withPool(pool);
         add(entityType, builder);
+    }
+    private void wingedTurmoilDrops() {
+        TYPES.add(SpookyBatEntityInit.WINGED_TURMOIL.get());
+        LootTable.Builder builder = LootTable.lootTable();
+        LootPool.Builder pool = LootPool.lootPool().setRolls(ConstantValue.exactly(1));
+        LootPoolSingletonContainer.Builder<?> lootItem = LootItem.lootTableItem(ItemInit.STAFF_OF_TURMOIL.get());
+        pool.add(lootItem.apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))));
+        pool.add(LootItem.lootTableItem(ItemInit.BAT_WINGS.get())
+                .when(LootItemRandomChanceCondition.randomChance(0.01f))
+                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))));
+        builder.withPool(pool);
+        LootPool.Builder pool2 = LootPool.lootPool().setRolls(ConstantValue.exactly(1));
+        LootPoolSingletonContainer.Builder<?> lootItem2 = LootItem.lootTableItem(BlockInit.STATUE_OF_TURMOIL.get());
+        pool2.add(lootItem2.apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))));
+        builder.withPool(pool2);
+        add(SpookyBatEntityInit.WINGED_TURMOIL.get(), builder);
     }
 
 

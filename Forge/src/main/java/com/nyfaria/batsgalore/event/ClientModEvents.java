@@ -2,6 +2,7 @@ package com.nyfaria.batsgalore.event;
 
 import com.nyfaria.batsgalore.client.CommonClientClass;
 import com.nyfaria.batsgalore.client.renderer.SpookyPedestalRenderer;
+import com.nyfaria.batsgalore.client.renderer.StatueBlockEntityRenderer;
 import com.nyfaria.batsgalore.client.renderer.layer.BatWingsLayer;
 import com.nyfaria.batsgalore.client.renderer.layer.CosmeticsLayer;
 import com.nyfaria.batsgalore.init.BlockInit;
@@ -22,6 +23,7 @@ public class ClientModEvents {
                 record -> event.registerEntityRenderer((EntityType) record.type().get(), record.renderer())
         );
         event.registerBlockEntityRenderer(BlockInit.SPOOKY_PEDESTAL_BLOCK_ENTITY.get(), (a)->new SpookyPedestalRenderer());
+        event.registerBlockEntityRenderer(BlockInit.STATUE_BLOCK_ENTITY.get(), StatueBlockEntityRenderer::new);
     }
 
     @SubscribeEvent

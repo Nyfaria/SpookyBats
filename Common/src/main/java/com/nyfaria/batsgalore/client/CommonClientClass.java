@@ -6,6 +6,7 @@ import com.nyfaria.batsgalore.client.model.ModBoatModel;
 import com.nyfaria.batsgalore.client.model.ModChestBoatModel;
 import com.nyfaria.batsgalore.client.model.ModHangingSignModel;
 import com.nyfaria.batsgalore.client.model.ModSignModel;
+import com.nyfaria.batsgalore.client.model.StatueLayers;
 import com.nyfaria.batsgalore.client.model.christmas.ChristmasBatLayers;
 import com.nyfaria.batsgalore.client.model.christmas.ElfHatModel;
 import com.nyfaria.batsgalore.client.model.christmas.ReindeerNoseModel;
@@ -21,11 +22,13 @@ import com.nyfaria.batsgalore.client.renderer.PlayerBatRenderer;
 import com.nyfaria.batsgalore.client.renderer.PumpkinBatRenderer;
 import com.nyfaria.batsgalore.client.renderer.SculkBatRenderer;
 import com.nyfaria.batsgalore.client.renderer.SlimeBatRenderer;
+import com.nyfaria.batsgalore.client.renderer.StatueBlockEntityRenderer;
 import com.nyfaria.batsgalore.client.renderer.UndeadBatRenderer;
 import com.nyfaria.batsgalore.client.renderer.VoidBatRenderer;
 import com.nyfaria.batsgalore.client.renderer.WitchsBroomRenderer;
 import com.nyfaria.batsgalore.client.renderer.api.ModBatRenderer;
 import com.nyfaria.batsgalore.entity.api.ModBoatType;
+import com.nyfaria.batsgalore.init.BlockInit;
 import com.nyfaria.batsgalore.init.entity.ChristmasBatEntityInit;
 import com.nyfaria.batsgalore.init.entity.EntityInit;
 import com.nyfaria.batsgalore.init.entity.SpookyBatEntityInit;
@@ -96,7 +99,8 @@ public class CommonClientClass {
                 new LayerDefinitions(ModHangingSignModel.LAYER_LOCATION, ModHangingSignModel.createBodyLayer()),
                 new LayerDefinitions(ModSignModel.LAYER_LOCATION, ModSignModel.createBodyLayer()),
                 new LayerDefinitions(ElfHatModel.LAYER_LOCATION, ElfHatModel.createBodyLayer()),
-                new LayerDefinitions(ReindeerNoseModel.LAYER_LOCATION, ReindeerNoseModel.createBodyLayer())
+                new LayerDefinitions(ReindeerNoseModel.LAYER_LOCATION, ReindeerNoseModel.createBodyLayer()),
+                new LayerDefinitions(StatueLayers.STATUE_OF_TURMOIL_LAYER_LOCATION, StatueLayers.createStatueOfTurmoilLayer())
         ));
         LayerDefinition layerdefinition19 = ModBoatModel.createBodyModel();
         LayerDefinition layerdefinition20 = ModChestBoatModel.createBodyModel();

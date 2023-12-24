@@ -2,6 +2,7 @@ package com.nyfaria.batsgalore;
 
 import com.nyfaria.batsgalore.client.CommonClientClass;
 import com.nyfaria.batsgalore.client.renderer.SpookyPedestalRenderer;
+import com.nyfaria.batsgalore.client.renderer.StatueBlockEntityRenderer;
 import com.nyfaria.batsgalore.client.renderer.layer.BatWingsLayer;
 import com.nyfaria.batsgalore.client.renderer.layer.CosmeticsLayer;
 import com.nyfaria.batsgalore.init.BlockInit;
@@ -37,5 +38,6 @@ public class BatsGaloreClient implements ClientModInitializer {
         BlockRenderLayerMap.INSTANCE.putBlock(BlockInit.SPOOKY_PEDESTAL.get(), RenderType.cutout());
         BlockRenderLayerMap.INSTANCE.putBlock(BlockInit.SPOOKY_OAK.sapling().get(), RenderType.cutout());
         BlockEntityRenderers.register(BlockInit.SPOOKY_PEDESTAL_BLOCK_ENTITY.get(), (a) -> new SpookyPedestalRenderer());
+        BlockEntityRenderers.register(BlockInit.STATUE_BLOCK_ENTITY.get(), StatueBlockEntityRenderer::new);
     }
 }

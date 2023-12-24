@@ -1,4 +1,4 @@
-// 1.20.1	2023-12-23T11:03:04.5238665	Loot Tables
+// 1.20.1	2023-12-23T19:51:50.4171081	Loot Tables
 862316e82a239cd0c3a459cadef9495d854102ee data/batsgalore/loot_tables/blocks/decorated_white_pine_leaves.json
 a19e84bf459174b46119fe580b6f5fe9207153e8 data/batsgalore/loot_tables/blocks/spooky_oak_button.json
 3f12ed16d7b95843db53c822e88ee3807eb160cd data/batsgalore/loot_tables/blocks/spooky_oak_door.json
@@ -20,6 +20,7 @@ b06220035433155330690660f64e8a61b10ea4eb data/batsgalore/loot_tables/blocks/spoo
 0b4a9b116cd47465023a368e29d127b2cf73364a data/batsgalore/loot_tables/blocks/spooky_oak_wall_sign.json
 efc433d41ad6bf7e1976a4843bbf6b227d28ee6d data/batsgalore/loot_tables/blocks/spooky_oak_wood.json
 2d76a9626b4ab3638b486984bec4fbda858803cc data/batsgalore/loot_tables/blocks/spooky_pedestal.json
+7d9ba6715bb6ce2dbd6b84f6e94d6a29f2c81fe8 data/batsgalore/loot_tables/blocks/statue_of_turmoil.json
 78676d3a3c27852c35d467074b678b38a61d3334 data/batsgalore/loot_tables/blocks/white_pine_button.json
 b98362a88ea944776281b6c3ddab70bfa9f2a22f data/batsgalore/loot_tables/blocks/white_pine_door.json
 10b42a9027e8b42f3cc743bdf56ec3abebababb0 data/batsgalore/loot_tables/blocks/white_pine_fence.json
@@ -53,7 +54,7 @@ a17b886faad595632db5f900593313684371bdd2 data/batsgalore/loot_tables/entities/pl
 ea23964d7dfc9ff58005686c8394200c3d948129 data/batsgalore/loot_tables/entities/slime_bat.json
 622d25195795970ae8fec4520f0c2c22d5093303 data/batsgalore/loot_tables/entities/steve_bat.json
 325bca2e3741e1dfbbb47c7909078d139820ba7c data/batsgalore/loot_tables/entities/undead_bat.json
-f20d2487913a9d07950a44eab79635d5f22b32b6 data/batsgalore/loot_tables/entities/winged_turmoil.json
+6c85f0ef9c9bbde8c459e68a2d22aae4da6c4771 data/batsgalore/loot_tables/entities/winged_turmoil.json
 e978815ac5d048174fd5fe985868bd2d19c75c00 data/batsgalore/loot_tables/entities/witchs_broom.json
 9c7b1f9a430b0801c6afb8213aee40daf5798490 data/batsgalore/loot_tables/entities/witch_bat.json
 67b4ae0d571b770b5c3b862a5307abdd11407639 data/batsgalore/loot_tables/entities/wither_skeleton_bat.json
