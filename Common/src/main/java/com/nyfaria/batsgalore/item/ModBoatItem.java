@@ -22,13 +22,14 @@ import net.minecraft.world.phys.Vec3;
 
 import java.util.List;
 import java.util.function.Predicate;
+import java.util.function.Supplier;
 
 public class ModBoatItem extends Item {
     private static final Predicate<Entity> ENTITY_PREDICATE = EntitySelector.NO_SPECTATORS.and(Entity::isPickable);
-    private final ModBoatType type;
+    private final Supplier<ModBoatType> type;
     private final boolean hasChest;
 
-    public ModBoatItem(boolean pHasChest, ModBoatType pType, Item.Properties pProperties) {
+    public ModBoatItem(boolean pHasChest, Supplier<ModBoatType> pType, Item.Properties pProperties) {
         super(pProperties);
         this.hasChest = pHasChest;
         this.type = pType;
@@ -57,7 +58,7 @@ public class ModBoatItem extends Item {
 
             if (hitresult.getType() == HitResult.Type.BLOCK) {
                 ModBoat boat = this.getBoat(pLevel, hitresult);
-                boat.setModVariant(this.type);
+                boat.setModVariant(this.type.get());
                 boat.setYRot(pPlayer.getYRot());
                 if (!pLevel.noCollision(boat, boat.getBoundingBox())) {
                     return InteractionResultHolder.fail(itemstack);

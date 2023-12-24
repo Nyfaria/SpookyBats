@@ -258,7 +258,9 @@ public class ModBat extends PathfinderMob {
     }
 
     public static boolean checkShulkerSpawnRules(EntityType<ShulkerBat> tEntityType, ServerLevelAccessor serverLevelAccessor, MobSpawnType spawnType, BlockPos pos, RandomSource randomSource) {
-        return serverLevelAccessor.getLevel().structureManager().getStructureWithPieceAt(pos,BuiltinStructures.END_CITY) != StructureStart.INVALID_START;
+
+        boolean bop = serverLevelAccessor.getLevel().structureManager().getStructureWithPieceAt(pos,BuiltinStructures.END_CITY) != StructureStart.INVALID_START;
+        return bop;
     }
 
     public static boolean checkSlimeSpawnRules(EntityType<SlimeBat> $$0, LevelAccessor $$1, MobSpawnType $$2, BlockPos $$3, RandomSource $$4) {

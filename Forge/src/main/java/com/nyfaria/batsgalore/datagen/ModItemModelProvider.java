@@ -65,6 +65,7 @@ public class ModItemModelProvider extends ItemModelProvider {
 
         woodCollection(BlockInit.SPOOKY_OAK, true);
         woodCollection(BlockInit.WHITE_PINE,true);
+        simpleBlockItemModel(BlockInit.DECORATED_WHITE_PINE_LEAVES.get());
     }
 
     protected ItemModelBuilder simpleBlockItemModel(Block block) {

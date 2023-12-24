@@ -77,8 +77,8 @@ public record WoodCollection(String name, WoodType woodType, RegistryObject<Sapl
         RegistryObject<WallHangingSignBlock> wallHangingSign = BlockInit.registerBlockWithoutItem(name + "_wall_hanging_sign", () -> new WallHangingSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WALL_SIGN), woodType));
         ItemInit.ITEMS.register(name + "_hanging_sign", () -> new HangingSignItem(hangingSign.get(), wallHangingSign.get(), ItemInit.getItemProperties()));
         RegistryObject<LeavesBlock> leaves = BlockInit.registerBlock(name + "_leaves", () -> BlockInit.leaves(SoundType.GRASS));
-        RegistryObject<ModBoatItem> boat = ItemInit.ITEMS.register(name + "_boat", () -> new ModBoatItem(false, boatType.get(), ItemInit.getItemProperties().stacksTo(1)));
-        RegistryObject<ModBoatItem> chestBoat = ItemInit.ITEMS.register(name + "_chest_boat", () -> new ModBoatItem(true, boatType.get(), ItemInit.getItemProperties().stacksTo(1)));
+        RegistryObject<ModBoatItem> boat = ItemInit.ITEMS.register(name + "_boat", () -> new ModBoatItem(false, boatType, ItemInit.getItemProperties().stacksTo(1)));
+        RegistryObject<ModBoatItem> chestBoat = ItemInit.ITEMS.register(name + "_chest_boat", () -> new ModBoatItem(true, boatType, ItemInit.getItemProperties().stacksTo(1)));
         WoodCollection collection = new WoodCollection(name, woodType, sapling, log, strippedLog, wood, strippedWood, planks, stairs, slab, fence, fenceGate, door, trapdoor, button, pressurePlate, sign, wallSign, hangingSign,wallHangingSign, leaves, boat, chestBoat, logsTag, logsTagBlock);
         WOOD_COLLECTIONS.add(collection);
         return collection;

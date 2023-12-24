@@ -42,11 +42,8 @@ public class ModBlockStateProvider extends BlockStateProvider {
                 BlockInit.WHITE_PINE
         ).forEach(this::spookyWoodCollection);
         simpleBlock(BlockInit.DECORATED_WHITE_PINE_LEAVES.get(),leaves(BlockInit.DECORATED_WHITE_PINE_LEAVES.get()));
-        leaves(BlockInit.DECORATED_WHITE_PINE_LEAVES.get());
-        simpleBlock(BlockInit.STATUE_OF_TURMOIL.get(), models().withExistingParent("statue_of_turmoil", modLoc("block/statue_of_turmoil"))
-                .texture("all", modLoc("block/statue_of_turmoil"))
-                .texture("particles", modLoc("block/statue_of_turmoil"))
-        );
+//        simpleBlock(BlockInit.STATUE_OF_TURMOIL.get(), models().??
+//        );
     }
 
     private String name(Block block) {

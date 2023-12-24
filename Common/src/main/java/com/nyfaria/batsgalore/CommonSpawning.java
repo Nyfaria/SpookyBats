@@ -63,7 +63,7 @@ public class CommonSpawning {
         SpawnPlacements.register(SpookyBatEntityInit.SCULK_BAT.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, ModBat::checkModBatSpawnRules);
         SpawnPlacements.register(SpookyBatEntityInit.EXPERIENCE_ORB_BAT.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, ModBat::checkModBatSpawnRules);
         SpawnPlacements.register(SpookyBatEntityInit.SLIME_BAT.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, ModBat::checkSlimeSpawnRules);
-        SpawnPlacements.register(SpookyBatEntityInit.SHULKER_BAT.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, ModBat::checkShulkerSpawnRules);
+        SpawnPlacements.register(SpookyBatEntityInit.SHULKER_BAT.get(), SpawnPlacements.Type.NO_RESTRICTIONS, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, ModBat::checkShulkerSpawnRules);
         SpawnPlacements.register(ChristmasBatEntityInit.CANDY_CANE_BAT.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, ModBat::checkModBatSpawnRules);
         SpawnPlacements.register(ChristmasBatEntityInit.REINDEER_BAT.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, ModBat::checkModBatSpawnRules);
     }
