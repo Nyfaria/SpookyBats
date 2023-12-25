@@ -73,6 +73,7 @@ public class ItemInit {
                         WoodCollection.WOOD_COLLECTIONS.forEach(collection->collection.getAll().forEach(
                                 (registryObject) -> output.accept(new ItemStack(registryObject.get()))
                         ));
+                        output.accept(BlockInit.DECORATED_WHITE_PINE_LEAVES.get());
                         output.accept(STAFF_OF_TURMOIL.get());
                     }).title(Component.translatable("itemGroup." + Constants.MODID + ".tab"))
             .build());

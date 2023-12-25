@@ -1,6 +1,7 @@
 # Version 1.2.0
 ## Changes/Bugfixes
 - Added proper display settings for Statue of Turmoil
+- Added Decorated White Pine leaves to creative tab
 
 # Version 1.1.2
 ## Changes/Bugfixes
