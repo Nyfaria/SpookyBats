@@ -1,4 +1,4 @@
-# Version 1.1.3
+# Version 1.2.0
 ## Changes/Bugfixes
 - Added proper display settings for Statue of Turmoil
 
