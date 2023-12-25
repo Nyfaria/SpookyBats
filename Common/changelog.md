@@ -1,10 +1,14 @@
+# Version 1.1.3
+## Changes/Bugfixes
+- Added proper display settings for Statue of Turmoil
+
 # Version 1.1.2
 ## Changes/Bugfixes
 - Leaves now have proper loot tables
 
 # Version 1.1.1
 ## Additions
-- Added Config to turn of specific bioms
+- Added Config to turn of specific biomes
 
 # Version 1.1.0
 ## Additions
