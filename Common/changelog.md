@@ -1,9 +1,11 @@
 # Version 1.1.2
-## Buf Fixes
+## Changes/Bugfixes
 - Leaves now have proper loot tables
+
 # Version 1.1.1
-## Addtitions
+## Additions
 - Added Config to turn of specific bioms
+
 # Version 1.1.0
 ## Additions
 - Added new candy cane food item
