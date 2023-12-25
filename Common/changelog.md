@@ -1,3 +1,6 @@
+# Version 1.1.2
+## Buf Fixes
+- Leaves now have proper loot tables
 # Version 1.1.1
 ## Addtitions
 - Added Config to turn of specific bioms
