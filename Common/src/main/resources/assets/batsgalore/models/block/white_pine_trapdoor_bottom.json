@@ -1,6 +1,7 @@
 {
 	"credit": "Made with Blockbench",
 	"parent": "block/thin_block",
+	"render_type": "cutout",
 	"texture_size": [32, 32],
 	"textures": {
 		"0": "batsgalore:block/white_pine_trapdoor",

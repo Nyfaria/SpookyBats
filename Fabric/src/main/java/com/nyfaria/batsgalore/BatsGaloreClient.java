@@ -37,6 +37,12 @@ public class BatsGaloreClient implements ClientModInitializer {
 
         BlockRenderLayerMap.INSTANCE.putBlock(BlockInit.SPOOKY_PEDESTAL.get(), RenderType.cutout());
         BlockRenderLayerMap.INSTANCE.putBlock(BlockInit.SPOOKY_OAK.sapling().get(), RenderType.cutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(BlockInit.WHITE_PINE.sapling().get(), RenderType.cutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(BlockInit.SPOOKY_OAK.trapdoor().get(), RenderType.cutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(BlockInit.WHITE_PINE.trapdoor().get(), RenderType.cutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(BlockInit.SPOOKY_OAK.door().get(), RenderType.cutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(BlockInit.WHITE_PINE.door().get(), RenderType.cutout());
+
         BlockEntityRenderers.register(BlockInit.SPOOKY_PEDESTAL_BLOCK_ENTITY.get(), (a) -> new SpookyPedestalRenderer());
         BlockEntityRenderers.register(BlockInit.STATUE_BLOCK_ENTITY.get(), StatueBlockEntityRenderer::new);
     }
