@@ -1,3 +1,7 @@
+# Version 1.2.0
+## Changes/Bugfixes
+- Fixed cutouts for doors, trapdoors, and saplings
+
 # Version 1.1.3
 ## Changes/Bugfixes
 - Added proper display settings for Statue of Turmoil
