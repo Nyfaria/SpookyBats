@@ -13,6 +13,7 @@ import java.util.Set;
 import java.util.stream.Stream;
 
 public class ModBlockLootTables extends BlockLootSubProvider {
+    protected static final float[] NORMAL_LEAVES_SAPLING_CHANCES = new float[]{0.05F, 0.0625F, 0.083333336F, 0.1F};
     protected ModBlockLootTables() {
         super(Set.of(), FeatureFlags.REGISTRY.allFlags());
     }
@@ -22,7 +23,7 @@ public class ModBlockLootTables extends BlockLootSubProvider {
         Stream.of(
                 BlockInit.SPOOKY_OAK,
                 BlockInit.WHITE_PINE
-        ).forEach(collection-> add(collection.leaves().get(),createLeavesDrops(collection.leaves().get(), collection.sapling().get())));
+        ).forEach(collection-> add(collection.leaves().get(),createLeavesDrops(collection.leaves().get(), collection.sapling().get(),NORMAL_LEAVES_SAPLING_CHANCES)));
         this.getBlockStream().filter(this::shouldDropSelf).forEach(this::dropSelf);
     }
 

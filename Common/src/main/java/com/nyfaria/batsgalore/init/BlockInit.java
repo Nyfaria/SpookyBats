@@ -45,7 +45,7 @@ public class BlockInit {
             )
     );
     public static RegistryObject<Block> STATUE_OF_TURMOIL = registerBlock("statue_of_turmoil", () -> new StatueBlock(BlockBehaviour.Properties.of().mapColor(MapColor.METAL).instrument(NoteBlockInstrument.IRON_XYLOPHONE).strength(1.5F, 2.0F).sound(SoundType.METAL).noOcclusion()));
-    public static RegistryObject<Block> DECORATED_WHITE_PINE_LEAVES = registerBlock("decorated_white_pine_leaves", () -> new SpookyOakLeaves(BlockBehaviour.Properties.of().strength(0.2F).randomTicks().sound(SoundType.GRASS).noOcclusion().isValidSpawn(BlockInit::ocelotOrParrot).isSuffocating((blockState, blockGetter, blockPos) -> false).isViewBlocking((blockState, blockGetter, blockPos) -> false).lightLevel(state->15)));
+    public static RegistryObject<Block> DECORATED_WHITE_PINE_LEAVES = registerBlock("decorated_white_pine_leaves", () -> new SpookyOakLeaves(BlockBehaviour.Properties.of().strength(0.2F).randomTicks().sound(SoundType.GRASS).noOcclusion().isValidSpawn(BlockInit::ocelotOrParrot).isSuffocating((blockState, blockGetter, blockPos) -> false).isViewBlocking((blockState, blockGetter, blockPos) -> false).lightLevel(state->15), 7));
     public static WoodCollection SPOOKY_OAK = WoodCollection.registerCollection("spooky_oak", new SpookOakTreeGrower(), () -> ModBoatType.SPOOKY_OAK, TagInit.SPOOKY_OAK_LOGS_ITEM, TagInit.SPOOKY_OAK_LOGS);
     public static WoodCollection WHITE_PINE = WoodCollection.registerCollection("white_pine", new WhitePineTreeGrower(), () -> ModBoatType.WHITE_PINE, TagInit.WHITE_PINE_LOGS_ITEM, TagInit.WHITE_PINE_LOGS);
 
@@ -74,8 +74,8 @@ public class BlockInit {
         }).strength(2.0F).sound(SoundType.WOOD));
     }
 
-    public static LeavesBlock leaves(SoundType pType) {
-        return new SpookyOakLeaves(BlockBehaviour.Properties.of().strength(0.2F).randomTicks().sound(pType).noOcclusion().isValidSpawn(BlockInit::ocelotOrParrot).isSuffocating((blockState, blockGetter, blockPos) -> false).isViewBlocking((blockState, blockGetter, blockPos) -> false));
+    public static LeavesBlock leaves(SoundType pType, int decayDistance) {
+        return new SpookyOakLeaves(BlockBehaviour.Properties.of().strength(0.2F).randomTicks().sound(pType).noOcclusion().isValidSpawn(BlockInit::ocelotOrParrot).isSuffocating((blockState, blockGetter, blockPos) -> false).isViewBlocking((blockState, blockGetter, blockPos) -> false), decayDistance);
     }
 
     public static Boolean ocelotOrParrot(BlockState p_50822_, BlockGetter p_50823_, BlockPos p_50824_, EntityType<?> p_50825_) {

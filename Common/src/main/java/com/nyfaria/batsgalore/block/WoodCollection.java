@@ -54,6 +54,9 @@ public record WoodCollection(String name, WoodType woodType, RegistryObject<Sapl
     public static List<WoodCollection> WOOD_COLLECTIONS = new ArrayList<>();
 
     public static WoodCollection registerCollection(String name, AbstractTreeGrower grower, Supplier<ModBoatType> boatType, TagKey<Item> logsTag, TagKey<Block> logsTagBlock) {
+        return registerCollection(name, grower, boatType, logsTag, logsTagBlock, 20);
+    }
+    public static WoodCollection registerCollection(String name, AbstractTreeGrower grower, Supplier<ModBoatType> boatType, TagKey<Item> logsTag, TagKey<Block> logsTagBlock, int leavesDecayDistance) {
         BlockSetType blockSetType = BlockSetType.register(new BlockSetType(Constants.MODID + ":" + name));
         WoodType woodType = WoodType.register(new WoodType(Constants.MODID + ":" + name, blockSetType));
         RegistryObject<SaplingBlock> sapling = BlockInit.registerBlock(name + "_sapling", () -> new SaplingBlock(grower, BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING)));
@@ -76,7 +79,7 @@ public record WoodCollection(String name, WoodType woodType, RegistryObject<Sapl
         RegistryObject<CeilingHangingSignBlock> hangingSign = BlockInit.registerBlockWithoutItem(name + "_hanging_sign", () -> new CeilingHangingSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_SIGN), woodType));
         RegistryObject<WallHangingSignBlock> wallHangingSign = BlockInit.registerBlockWithoutItem(name + "_wall_hanging_sign", () -> new WallHangingSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WALL_SIGN), woodType));
         ItemInit.ITEMS.register(name + "_hanging_sign", () -> new HangingSignItem(hangingSign.get(), wallHangingSign.get(), ItemInit.getItemProperties()));
-        RegistryObject<LeavesBlock> leaves = BlockInit.registerBlock(name + "_leaves", () -> BlockInit.leaves(SoundType.GRASS));
+        RegistryObject<LeavesBlock> leaves = BlockInit.registerBlock(name + "_leaves", () -> BlockInit.leaves(SoundType.GRASS, leavesDecayDistance));
         RegistryObject<ModBoatItem> boat = ItemInit.ITEMS.register(name + "_boat", () -> new ModBoatItem(false, boatType, ItemInit.getItemProperties().stacksTo(1)));
         RegistryObject<ModBoatItem> chestBoat = ItemInit.ITEMS.register(name + "_chest_boat", () -> new ModBoatItem(true, boatType, ItemInit.getItemProperties().stacksTo(1)));
         WoodCollection collection = new WoodCollection(name, woodType, sapling, log, strippedLog, wood, strippedWood, planks, stairs, slab, fence, fenceGate, door, trapdoor, button, pressurePlate, sign, wallSign, hangingSign,wallHangingSign, leaves, boat, chestBoat, logsTag, logsTagBlock);

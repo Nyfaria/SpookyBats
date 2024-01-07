@@ -25,18 +25,20 @@ import java.util.OptionalInt;
 public class SpookyOakLeaves extends LeavesBlock {
     public static final IntegerProperty DISTANCE = IntegerProperty.create("long_distance", 1, 20);
     private static ParticleOptions OPTIONS = new DustColorTransitionOptions(Vec3.fromRGB24(15557120).toVector3f(),Vec3.fromRGB24(0).toVector3f(), 1.0F);
-    public SpookyOakLeaves(Properties $$0) {
+    private final int decayDistance;
+    public SpookyOakLeaves(Properties $$0, int decayDistance) {
         super($$0);
-        this.registerDefaultState(this.stateDefinition.any().setValue(DISTANCE, 20).setValue(PERSISTENT, false).setValue(WATERLOGGED, false));
+        this.registerDefaultState(this.stateDefinition.any().setValue(DISTANCE, decayDistance).setValue(PERSISTENT, false).setValue(WATERLOGGED, false));
+        this.decayDistance = decayDistance;
     }
     /**
      * @return whether this block needs random ticking.
      */
     public boolean isRandomlyTicking(BlockState pState) {
-        return pState.getValue(DISTANCE) == 20 && !pState.getValue(PERSISTENT);
+        return pState.getValue(DISTANCE) == decayDistance && !pState.getValue(PERSISTENT);
     }
     protected boolean decaying(BlockState pState) {
-        return !pState.getValue(PERSISTENT) && pState.getValue(DISTANCE) == 20;
+        return !pState.getValue(PERSISTENT) && pState.getValue(DISTANCE) == decayDistance;
     }
     public BlockState updateShape(BlockState pState, Direction pFacing, BlockState pFacingState, LevelAccessor pLevel, BlockPos pCurrentPos, BlockPos pFacingPos) {
         if (pState.getValue(WATERLOGGED)) {
