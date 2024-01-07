@@ -39,7 +39,7 @@
             "Name": "batsgalore:decorated_white_pine_leaves",
             "Properties": {
               "distance": "1",
-              "long_distance": "20",
+              "long_distance": "7",
               "persistent": "false",
               "waterlogged": "false"
             }

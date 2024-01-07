@@ -1,7 +1,9 @@
-# Version 1.2.0
+# Version 1.1.3
 ## Changes/Bugfixes
 - Added proper display settings for Statue of Turmoil
 - Added Decorated White Pine leaves to creative tab
+- Fixed the leaves Sapling Drop Chances.
+- Fixed White Pine Leaves not Decaying Properly
 
 # Version 1.1.2
 ## Changes/Bugfixes
