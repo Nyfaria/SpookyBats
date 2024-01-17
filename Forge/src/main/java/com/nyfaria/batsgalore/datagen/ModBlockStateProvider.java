@@ -7,18 +7,14 @@ import net.minecraft.core.Direction;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.ButtonBlock;
 import net.minecraft.world.level.block.CrossCollisionBlock;
 import net.minecraft.world.level.block.FenceBlock;
 import net.minecraft.world.level.block.PipeBlock;
 import net.minecraft.world.level.block.PressurePlateBlock;
-import net.minecraft.world.level.block.SlabBlock;
 import net.minecraft.world.level.block.TrapDoorBlock;
 import net.minecraft.world.level.block.state.properties.AttachFace;
-import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.Half;
-import net.minecraft.world.level.block.state.properties.SlabType;
 import net.minecraftforge.client.model.generators.BlockModelBuilder;
 import net.minecraftforge.client.model.generators.BlockStateProvider;
 import net.minecraftforge.client.model.generators.ConfiguredModel;
@@ -41,7 +37,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
                 BlockInit.SPOOKY_OAK,
                 BlockInit.WHITE_PINE
         ).forEach(this::spookyWoodCollection);
-        simpleBlock(BlockInit.DECORATED_WHITE_PINE_LEAVES.get(),leaves(BlockInit.DECORATED_WHITE_PINE_LEAVES.get()));
+        simpleBlock(BlockInit.DECORATED_WHITE_PINE_LEAVES.get(), leaves(BlockInit.DECORATED_WHITE_PINE_LEAVES.get()));
         simpleBlock(BlockInit.STATUE_OF_TURMOIL.get(), models().getBuilder(getName(BlockInit.STATUE_OF_TURMOIL.get())).texture("particle", modLoc("block/statue_of_turmoil")));
     }
 
@@ -83,7 +79,9 @@ public class ModBlockStateProvider extends BlockStateProvider {
         spookyPressurePlate(collection.pressurePlate().get(), getName(collection.pressurePlate().get()));
         signBlock(collection.sign().get(), collection.wallSign().get(), location);
         simpleLeavesBlockState(collection.leaves().get());
-        simpleBlock(collection.sapling().get(),models().cross(name(collection.sapling().get()),modLoc("item/"+name(collection.sapling().get()))).renderType("cutout"));
+        simpleBlock(collection.sapling().get(), models().cross(name(collection.sapling().get()), modLoc("item/" + name(collection.sapling().get()))).renderType("cutout"));
+        blockWithEntity(collection.hangingSign().get(), location);
+        blockWithEntity(collection.hangingWallSign().get(), location);
 
     }
 
@@ -96,6 +94,14 @@ public class ModBlockStateProvider extends BlockStateProvider {
         return models().withExistingParent(name, "block/leaves")
                 .texture("all", modLoc("block/" + name)
                 ).renderType("cut_out");
+    }
+
+    public void blockWithEntity(Block block) {
+        blockWithEntity(block, blockTexture(block));
+    }
+
+    public void blockWithEntity(Block block, ResourceLocation texture) {
+        simpleBlock(block, models().getBuilder(getName(block)).texture("particle", texture));
     }
 
     public void customButtonBlock(ButtonBlock block) {
@@ -125,7 +131,8 @@ public class ModBlockStateProvider extends BlockStateProvider {
 //                            models().getExistingFile(location);
 //        });
     }
-    public void spookyPressurePlate(PressurePlateBlock block, String baseName){
+
+    public void spookyPressurePlate(PressurePlateBlock block, String baseName) {
         ModelFile pressurePlate = models().getExistingFile(modLoc(baseName));
         ModelFile pressurePlateDown = models().getExistingFile(modLoc(baseName + "_down"));
         pressurePlateBlock(block, pressurePlate, pressurePlateDown);

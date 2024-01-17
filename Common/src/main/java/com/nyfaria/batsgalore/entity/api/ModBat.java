@@ -1,5 +1,6 @@
 package com.nyfaria.batsgalore.entity.api;
 
+import com.nyfaria.batsgalore.CommonClass;
 import com.nyfaria.batsgalore.entity.ShulkerBat;
 import com.nyfaria.batsgalore.entity.SlimeBat;
 import com.nyfaria.batsgalore.entity.ai.control.BatMoveControl;
@@ -43,6 +44,7 @@ import net.minecraft.world.level.levelgen.structure.StructureStart;
 import net.minecraft.world.phys.Vec3;
 
 import javax.annotation.Nullable;
+import java.time.LocalDate;
 
 public class ModBat extends PathfinderMob {
     public static final float FLAP_DEGREES_PER_TICK = 74.48451F;
@@ -255,6 +257,9 @@ public class ModBat extends PathfinderMob {
 
     public static <T extends Mob> boolean checkModBatSpawnRules(EntityType<T> tEntityType, ServerLevelAccessor serverLevelAccessor, MobSpawnType spawnType, BlockPos pos, RandomSource randomSource) {
         return true;
+    }
+    public static <T extends Mob> boolean checkBiggestFanBatSpawnRules(EntityType<T> tEntityType, ServerLevelAccessor serverLevelAccessor, MobSpawnType spawnType, BlockPos pos, RandomSource randomSource) {
+        return CommonClass.BIGGEST_FAN_SPAWN_DATES.contains(LocalDate.now());
     }
 
     public static boolean checkShulkerSpawnRules(EntityType<ShulkerBat> tEntityType, ServerLevelAccessor serverLevelAccessor, MobSpawnType spawnType, BlockPos pos, RandomSource randomSource) {

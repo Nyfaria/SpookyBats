@@ -1,4 +1,4 @@
-// 1.20.1	2024-01-03T22:03:42.1334647	Loot Tables
+// 1.20.1	2024-01-16T18:35:27.9108344	Loot Tables
 9a8e91b4bf5b260e4f929f4f9212fe7aeff92252 data/batsgalore/loot_tables/blocks/decorated_white_pine_leaves.json
 a19e84bf459174b46119fe580b6f5fe9207153e8 data/batsgalore/loot_tables/blocks/spooky_oak_button.json
 3f12ed16d7b95843db53c822e88ee3807eb160cd data/batsgalore/loot_tables/blocks/spooky_oak_door.json
@@ -41,6 +41,7 @@ faed6368ab960241a9b81d17b420cf83ac4ccab8 data/batsgalore/loot_tables/blocks/whit
 ebff87a05feeca7bb96e5bb2dd80dceb14a21b23 data/batsgalore/loot_tables/blocks/white_pine_wall_sign.json
 52fe899d9d4c5198ad46691a71079c5046dc4b4f data/batsgalore/loot_tables/blocks/white_pine_wood.json
 95940f380410945c5746f17c8f6e94153a071075 data/batsgalore/loot_tables/entities/alex_bat.json
+7e59ac9b6a13f09631b232783f2932d0108a40ce data/batsgalore/loot_tables/entities/biggest_fan_bat.json
 c68310ee3200a031cf199149faa0381fa946e128 data/batsgalore/loot_tables/entities/candy_cane_bat.json
 d24b54da1c019f4fdc3b7ec60a87301cc86b629f data/batsgalore/loot_tables/entities/creeper_bat.json
 1098847ad60e82fb6472066e7543a2b4f9d10a90 data/batsgalore/loot_tables/entities/elf_bat.json

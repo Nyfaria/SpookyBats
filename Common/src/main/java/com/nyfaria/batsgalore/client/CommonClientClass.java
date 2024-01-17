@@ -10,6 +10,8 @@ import com.nyfaria.batsgalore.client.model.StatueLayers;
 import com.nyfaria.batsgalore.client.model.christmas.ChristmasBatLayers;
 import com.nyfaria.batsgalore.client.model.christmas.ElfHatModel;
 import com.nyfaria.batsgalore.client.model.christmas.ReindeerNoseModel;
+import com.nyfaria.batsgalore.client.model.random.NoveltyDrinkingHatModel;
+import com.nyfaria.batsgalore.client.model.random.RandomBatLayers;
 import com.nyfaria.batsgalore.client.model.spooky.SpookyBatLayers;
 import com.nyfaria.batsgalore.client.model.spooky.WingedTurmoilModel;
 import com.nyfaria.batsgalore.client.model.spooky.WitchsBroomModel;
@@ -22,13 +24,11 @@ import com.nyfaria.batsgalore.client.renderer.PlayerBatRenderer;
 import com.nyfaria.batsgalore.client.renderer.PumpkinBatRenderer;
 import com.nyfaria.batsgalore.client.renderer.SculkBatRenderer;
 import com.nyfaria.batsgalore.client.renderer.SlimeBatRenderer;
-import com.nyfaria.batsgalore.client.renderer.StatueBlockEntityRenderer;
 import com.nyfaria.batsgalore.client.renderer.UndeadBatRenderer;
 import com.nyfaria.batsgalore.client.renderer.VoidBatRenderer;
 import com.nyfaria.batsgalore.client.renderer.WitchsBroomRenderer;
 import com.nyfaria.batsgalore.client.renderer.api.ModBatRenderer;
 import com.nyfaria.batsgalore.entity.api.ModBoatType;
-import com.nyfaria.batsgalore.init.BlockInit;
 import com.nyfaria.batsgalore.init.entity.ChristmasBatEntityInit;
 import com.nyfaria.batsgalore.init.entity.EntityInit;
 import com.nyfaria.batsgalore.init.entity.SpookyBatEntityInit;
@@ -72,7 +72,8 @@ public class CommonClientClass {
                 new Renderers(SpookyBatEntityInit.WITCHS_BROOM, WitchsBroomRenderer::new),
                 new Renderers(EntityInit.BLOCK_PROJECTILE, BlockProjectileRenderer::new),
                 new Renderers(EntityInit.MOD_BOAT, context -> new ModBoatRenderer(context, false)),
-                new Renderers(EntityInit.MOD_CHEST_BOAT, context -> new ModBoatRenderer(context, true))
+                new Renderers(EntityInit.MOD_CHEST_BOAT, context -> new ModBoatRenderer(context, true)),
+                new Renderers(EntityInit.BIGGEST_FAN_BAT, context-> new ModBatRenderer(context, new ModBatModel<>(context.bakeLayer(RandomBatLayers.BIGGEST_FAN_BAT_LAYER_LOCATION))))
         );
     }
 
@@ -100,7 +101,9 @@ public class CommonClientClass {
                 new LayerDefinitions(ModSignModel.LAYER_LOCATION, ModSignModel.createBodyLayer()),
                 new LayerDefinitions(ElfHatModel.LAYER_LOCATION, ElfHatModel.createBodyLayer()),
                 new LayerDefinitions(ReindeerNoseModel.LAYER_LOCATION, ReindeerNoseModel.createBodyLayer()),
-                new LayerDefinitions(StatueLayers.STATUE_OF_TURMOIL_LAYER_LOCATION, StatueLayers.createStatueOfTurmoilLayer())
+                new LayerDefinitions(NoveltyDrinkingHatModel.LAYER_LOCATION, NoveltyDrinkingHatModel.createBodyLayer()),
+                new LayerDefinitions(StatueLayers.STATUE_OF_TURMOIL_LAYER_LOCATION, StatueLayers.createStatueOfTurmoilLayer()),
+                new LayerDefinitions(RandomBatLayers.BIGGEST_FAN_BAT_LAYER_LOCATION, RandomBatLayers.createBiggestFanBatLayer())
         ));
         LayerDefinition layerdefinition19 = ModBoatModel.createBodyModel();
         LayerDefinition layerdefinition20 = ModChestBoatModel.createBodyModel();

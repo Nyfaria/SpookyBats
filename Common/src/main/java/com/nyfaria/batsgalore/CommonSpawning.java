@@ -3,6 +3,7 @@ package com.nyfaria.batsgalore;
 import com.nyfaria.batsgalore.entity.MonsterBat;
 import com.nyfaria.batsgalore.entity.api.ModBat;
 import com.nyfaria.batsgalore.init.entity.ChristmasBatEntityInit;
+import com.nyfaria.batsgalore.init.entity.EntityInit;
 import com.nyfaria.batsgalore.init.entity.SpookyBatEntityInit;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.SpawnPlacements;
@@ -17,21 +18,20 @@ public class CommonSpawning {
             new MobSpawnSettings.SpawnerData(ChristmasBatEntityInit.REINDEER_BAT.get(), 7, 1, 3),
             new MobSpawnSettings.SpawnerData(ChristmasBatEntityInit.ELF_BAT.get(), 7, 1, 3)
     );
-    public static List<MobSpawnSettings.SpawnerData> SPOOKY_OAK_FOREST_SPAWNS =
-            List.of(
-                    new MobSpawnSettings.SpawnerData(SpookyBatEntityInit.PUMPKIN_BAT.get(), 7, 1, 3),
-                    new MobSpawnSettings.SpawnerData(SpookyBatEntityInit.CREEPER_BAT.get(), 5, 1, 3),
-                    new MobSpawnSettings.SpawnerData(SpookyBatEntityInit.STEVE_BAT.get(), 5, 1, 3),
-                    new MobSpawnSettings.SpawnerData(SpookyBatEntityInit.ALEX_BAT.get(), 5, 1, 3),
-                    new MobSpawnSettings.SpawnerData(SpookyBatEntityInit.HEROBRINE_BAT.get(), 4, 1, 1),
-                    new MobSpawnSettings.SpawnerData(SpookyBatEntityInit.SKELETON_BAT.get(), 5, 1, 3),
-                    new MobSpawnSettings.SpawnerData(EntityType.BAT, 4, 1, 2),
-                    new MobSpawnSettings.SpawnerData(SpookyBatEntityInit.PLAYER_BAT.get(), 5, 1, 2)
-            );
-    public static List<MobSpawnSettings.SpawnerData> OVERWORLD_SPAWNS =
-            List.of(
-              new MobSpawnSettings.SpawnerData(SpookyBatEntityInit.SLIME_BAT.get(), 2, 1,1)
-            );
+    public static List<MobSpawnSettings.SpawnerData> SPOOKY_OAK_FOREST_SPAWNS = List.of(
+            new MobSpawnSettings.SpawnerData(SpookyBatEntityInit.PUMPKIN_BAT.get(), 7, 1, 3),
+            new MobSpawnSettings.SpawnerData(SpookyBatEntityInit.CREEPER_BAT.get(), 5, 1, 3),
+            new MobSpawnSettings.SpawnerData(SpookyBatEntityInit.STEVE_BAT.get(), 5, 1, 3),
+            new MobSpawnSettings.SpawnerData(SpookyBatEntityInit.ALEX_BAT.get(), 5, 1, 3),
+            new MobSpawnSettings.SpawnerData(SpookyBatEntityInit.HEROBRINE_BAT.get(), 4, 1, 1),
+            new MobSpawnSettings.SpawnerData(SpookyBatEntityInit.SKELETON_BAT.get(), 5, 1, 3),
+            new MobSpawnSettings.SpawnerData(EntityType.BAT, 4, 1, 2),
+            new MobSpawnSettings.SpawnerData(SpookyBatEntityInit.PLAYER_BAT.get(), 5, 1, 2)
+    );
+    public static List<MobSpawnSettings.SpawnerData> OVERWORLD_SPAWNS = List.of(
+            new MobSpawnSettings.SpawnerData(SpookyBatEntityInit.SLIME_BAT.get(), 2, 1, 1),
+            new MobSpawnSettings.SpawnerData(EntityInit.BIGGEST_FAN_BAT.get(), 2, 1, 1)
+    );
     public static List<MobSpawnSettings.SpawnerData> NETHER_SPAWNS = List.of(
             new MobSpawnSettings.SpawnerData(SpookyBatEntityInit.WITHER_SKELETON_BAT.get(), 5, 1, 3),
             new MobSpawnSettings.SpawnerData(SpookyBatEntityInit.UNDEAD_BAT.get(), 7, 1, 3)
@@ -49,6 +49,7 @@ public class CommonSpawning {
     public static List<MobSpawnSettings.SpawnerData> END_SPAWNS = List.of(
             new MobSpawnSettings.SpawnerData(SpookyBatEntityInit.SHULKER_BAT.get(), 1, 1, 1)
     );
+
     public static void placements() {
         SpawnPlacements.register(SpookyBatEntityInit.PUMPKIN_BAT.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, ModBat::checkModBatSpawnRules);
         SpawnPlacements.register(SpookyBatEntityInit.CREEPER_BAT.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, MonsterBat::checkMonsterBatSpawnRules);
@@ -66,5 +67,6 @@ public class CommonSpawning {
         SpawnPlacements.register(SpookyBatEntityInit.SHULKER_BAT.get(), SpawnPlacements.Type.NO_RESTRICTIONS, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, ModBat::checkShulkerSpawnRules);
         SpawnPlacements.register(ChristmasBatEntityInit.CANDY_CANE_BAT.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, ModBat::checkModBatSpawnRules);
         SpawnPlacements.register(ChristmasBatEntityInit.REINDEER_BAT.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, ModBat::checkModBatSpawnRules);
+        SpawnPlacements.register(EntityInit.BIGGEST_FAN_BAT.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, ModBat::checkModBatSpawnRules);
     }
 }

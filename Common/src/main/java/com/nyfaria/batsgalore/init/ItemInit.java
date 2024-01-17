@@ -53,6 +53,7 @@ public class ItemInit {
     public static final RegistryObject<Item> STAFF_OF_TURMOIL = ITEMS.register("staff_of_turmoil", ()->new StaffOfTurmoil(getItemProperties().stacksTo(1)));
     public static final RegistryObject<Item> ELF_HAT = ITEMS.register("elf_hat", ()->new CosmeticItem(getItemProperties().stacksTo(1), EquipmentSlot.HEAD));
     public static final RegistryObject<Item> REINDEER_NOSE = ITEMS.register("reindeer_nose", ()->new CosmeticItem(getItemProperties().stacksTo(1), EquipmentSlot.HEAD));
+    public static final RegistryObject<Item> NOVELTY_DRINKING_HAT = ITEMS.register("novelty_drinking_hat", ()->new CosmeticItem(getItemProperties().stacksTo(1), EquipmentSlot.HEAD));
 
     public static final RegistrationProvider<CreativeModeTab> CREATIVE_MODE_TABS = RegistrationProvider.get(Registries.CREATIVE_MODE_TAB, Constants.MODID);
     public static final RegistryObject<CreativeModeTab> TAB = CREATIVE_MODE_TABS.register(Constants.MODID, () -> CreativeModeTab.builder(CreativeModeTab.Row.TOP, 0)
@@ -68,6 +69,7 @@ public class ItemInit {
                         output.accept(UNDEAD_CORE.get());
                         output.accept(ELF_HAT.get());
                         output.accept(REINDEER_NOSE.get());
+                        output.accept(NOVELTY_DRINKING_HAT.get());
                         output.accept(BlockInit.SPOOKY_PEDESTAL.get());
                         output.accept(BlockInit.STATUE_OF_TURMOIL.get());
                         WoodCollection.WOOD_COLLECTIONS.forEach(collection->collection.getAll().forEach(

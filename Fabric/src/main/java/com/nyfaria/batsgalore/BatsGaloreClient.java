@@ -45,5 +45,6 @@ public class BatsGaloreClient implements ClientModInitializer {
 
         BlockEntityRenderers.register(BlockInit.SPOOKY_PEDESTAL_BLOCK_ENTITY.get(), (a) -> new SpookyPedestalRenderer());
         BlockEntityRenderers.register(BlockInit.STATUE_BLOCK_ENTITY.get(), StatueBlockEntityRenderer::new);
+
     }
 }

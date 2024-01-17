@@ -49,7 +49,8 @@ public class ModItemModelProvider extends ItemModelProvider {
 
         Stream.of(
                         ItemInit.ELF_HAT,
-                        ItemInit.REINDEER_NOSE
+                        ItemInit.REINDEER_NOSE,
+                        ItemInit.NOVELTY_DRINKING_HAT
                 ).map(Supplier::get)
                 .forEach(this::cosmeticModel);
 

@@ -16,7 +16,9 @@ public class BatsGalore implements ModInitializer {
     @Override
     public void onInitialize() {
         ForgeConfigRegistry.INSTANCE.register(Constants.MODID, ModConfig.Type.COMMON, CommonConfig.CONFIG_SPEC);
+
         CommonClass.init();
+
         EntityInit.attributeSuppliers.forEach(
                 p -> FabricDefaultAttributeRegistry.register(p.entityTypeSupplier().get(), p.factory().get().build())
         );

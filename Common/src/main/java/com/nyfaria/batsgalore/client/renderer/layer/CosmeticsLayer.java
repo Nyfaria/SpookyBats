@@ -5,6 +5,7 @@ import com.mojang.blaze3d.vertex.VertexConsumer;
 import com.nyfaria.batsgalore.Constants;
 import com.nyfaria.batsgalore.client.model.christmas.ElfHatModel;
 import com.nyfaria.batsgalore.client.model.christmas.ReindeerNoseModel;
+import com.nyfaria.batsgalore.client.model.random.NoveltyDrinkingHatModel;
 import com.nyfaria.batsgalore.init.ItemInit;
 import net.minecraft.client.model.PlayerModel;
 import net.minecraft.client.model.geom.EntityModelSet;
@@ -22,13 +23,15 @@ import net.minecraft.world.item.ItemStack;
 public class CosmeticsLayer<T extends LivingEntity, M extends PlayerModel<T>> extends RenderLayer<T, M> {
     private static final ResourceLocation ELF_HAT_LOCATION = new ResourceLocation(Constants.MODID,"textures/cosmetic/elf_hat.png");
     private static final ResourceLocation REINDEER_NOSE_LOCATION = new ResourceLocation(Constants.MODID,"textures/cosmetic/reindeer_nose.png");
-
+    private static final ResourceLocation NOVELTY_DRINKING_HAT_LOCATION = new ResourceLocation(Constants.MODID,"textures/cosmetic/novelty_drinking_hat.png");
     ElfHatModel<T> elfHatModel;
     ReindeerNoseModel<T> reindeerNoseModel;
+    NoveltyDrinkingHatModel<T> noveltyDrinkingHatModel;
     public CosmeticsLayer(RenderLayerParent<T, M> parent, EntityModelSet pModelSet) {
         super(parent);
         this.elfHatModel = new ElfHatModel<>(pModelSet.bakeLayer(ElfHatModel.LAYER_LOCATION));
         this.reindeerNoseModel = new ReindeerNoseModel<>(pModelSet.bakeLayer(ReindeerNoseModel.LAYER_LOCATION));
+        this.noveltyDrinkingHatModel = new NoveltyDrinkingHatModel<>(pModelSet.bakeLayer(NoveltyDrinkingHatModel.LAYER_LOCATION));
     }
 
     @Override
@@ -50,6 +53,15 @@ public class CosmeticsLayer<T extends LivingEntity, M extends PlayerModel<T>> ex
             this.reindeerNoseModel.renderToBuffer(pMatrixStack, vertexconsumer, pPackedLight, OverlayTexture.NO_OVERLAY, 1.0F, 1.0F, 1.0F, 1.0F);
             pMatrixStack.popPose();
         }
+        if (shouldRenderNoveltyDrinkingHat(itemstack,pLivingEntity)){
+            ResourceLocation resourcelocation = getNoveltyDrinkingHatLocation(itemstack, pLivingEntity);
+            pMatrixStack.pushPose();
+            this.getParentModel().getHead().translateAndRotate(pMatrixStack);
+            VertexConsumer vertexconsumer = ItemRenderer.getArmorFoilBuffer(pBuffer, RenderType.armorCutoutNoCull(resourcelocation), false, itemstack.hasFoil());
+            this.noveltyDrinkingHatModel.renderToBuffer(pMatrixStack, vertexconsumer, pPackedLight, OverlayTexture.NO_OVERLAY, 1.0F, 1.0F, 1.0F, 1.0F);
+            pMatrixStack.popPose();
+        }
+
     }
 
     @Override
@@ -63,10 +75,16 @@ public class CosmeticsLayer<T extends LivingEntity, M extends PlayerModel<T>> ex
     public boolean shouldRendeReindeerNose(ItemStack stack, T entity) {
         return stack.getItem() == ItemInit.REINDEER_NOSE.get();
     }
+    public boolean shouldRenderNoveltyDrinkingHat(ItemStack stack, T entity) {
+        return stack.getItem() == ItemInit.NOVELTY_DRINKING_HAT.get();
+    }
     public ResourceLocation getReindeerNoseTexture(ItemStack stack, T entity) {
         return REINDEER_NOSE_LOCATION;
     }
     public ResourceLocation getElfHatLocation(ItemStack stack, T entity) {
         return ELF_HAT_LOCATION;
+    }
+    public ResourceLocation getNoveltyDrinkingHatLocation(ItemStack stack, T entity) {
+        return NOVELTY_DRINKING_HAT_LOCATION;
     }
 }

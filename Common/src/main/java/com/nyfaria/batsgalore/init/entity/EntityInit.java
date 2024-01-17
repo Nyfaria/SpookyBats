@@ -1,7 +1,10 @@
 package com.nyfaria.batsgalore.init.entity;
 
 import com.nyfaria.batsgalore.Constants;
-import com.nyfaria.batsgalore.entity.*;
+import com.nyfaria.batsgalore.entity.BlockProjectile;
+import com.nyfaria.batsgalore.entity.ModBoat;
+import com.nyfaria.batsgalore.entity.ModChestBoat;
+import com.nyfaria.batsgalore.entity.api.ModBat;
 import com.nyfaria.batsgalore.init.ItemInit;
 import com.nyfaria.batsgalore.platform.Services;
 import com.nyfaria.batsgalore.registration.RegistrationProvider;
@@ -23,8 +26,9 @@ public class EntityInit {
     public static final RegistrationProvider<EntityType<?>> ENTITIES = RegistrationProvider.get(Registries.ENTITY_TYPE, Constants.MODID);
     public static final List<AttributesRegister<?>> attributeSuppliers = new ArrayList<>();
 
-    
-  public static final RegistryObject<EntityType<BlockProjectile>> BLOCK_PROJECTILE = registerEntity("block_projectile", () -> EntityType.Builder.<BlockProjectile>of(BlockProjectile::new, MobCategory.MISC).sized(1F, 1F));
+    public static final RegistryObject<EntityType<ModBat>> BIGGEST_FAN_BAT = registerEntityWithEgg("biggest_fan_bat", ()-> EntityType.Builder.of(ModBat::new, MobCategory.MONSTER), ModBat::createBatAttributes, 0xbf1f1f, 0x43e4f2);
+
+    public static final RegistryObject<EntityType<BlockProjectile>> BLOCK_PROJECTILE = registerEntity("block_projectile", () -> EntityType.Builder.<BlockProjectile>of(BlockProjectile::new, MobCategory.MISC).sized(1F, 1F));
     public static final RegistryObject<EntityType<ModBoat>> MOD_BOAT = registerEntity("mod_boat", () -> EntityType.Builder.<ModBoat>of(ModBoat::new, MobCategory.MISC).sized(1.375F, 0.5625F).clientTrackingRange(10));
     public static final RegistryObject<EntityType<ModChestBoat>> MOD_CHEST_BOAT = registerEntity("mod_chest_boat", () -> EntityType.Builder.<ModChestBoat>of(ModChestBoat::new, MobCategory.MISC).sized(1.375F, 0.5625F).clientTrackingRange(10));
 
@@ -34,21 +38,21 @@ public class EntityInit {
     }
 
     protected static <T extends LivingEntity> RegistryObject<EntityType<T>> registerLivingEntity(String name, Supplier<EntityType.Builder<T>> supplier,
-                                                                                               Supplier<AttributeSupplier.Builder> attributeSupplier) {
+                                                                                                 Supplier<AttributeSupplier.Builder> attributeSupplier) {
         RegistryObject<EntityType<T>> entityTypeSupplier = registerEntity(name, supplier);
         attributeSuppliers.add(new AttributesRegister<>(entityTypeSupplier, attributeSupplier));
         return entityTypeSupplier;
     }
 
     protected static <T extends LivingEntity> RegistryObject<EntityType<T>> registerEntityWithEgg(String name, Supplier<EntityType.Builder<T>> supplier,
-                                                                                                Supplier<AttributeSupplier.Builder> attributeSupplier,
-                                                                                                int secondaryColor) {
+                                                                                                  Supplier<AttributeSupplier.Builder> attributeSupplier,
+                                                                                                  int secondaryColor) {
         return registerEntityWithEgg(name, supplier, attributeSupplier, 0x392F24, secondaryColor);
     }
 
     protected static <T extends LivingEntity> RegistryObject<EntityType<T>> registerEntityWithEgg(String name, Supplier<EntityType.Builder<T>> supplier,
-                                                                                                Supplier<AttributeSupplier.Builder> attributeSupplier,
-                                                                                                int primaryColor, int secondaryColor) {
+                                                                                                  Supplier<AttributeSupplier.Builder> attributeSupplier,
+                                                                                                  int primaryColor, int secondaryColor) {
         RegistryObject<EntityType<T>> entityTypeSupplier = registerLivingEntity(name, supplier, attributeSupplier);
         RegistryObject<Item> item = ItemInit.ITEMS.register(name + "_spawn_egg", () -> Services.PLATFORM.createSpawnEggItem(entityTypeSupplier, primaryColor, secondaryColor));
         ItemInit.SPAWN_EGG_LIST.add(item);

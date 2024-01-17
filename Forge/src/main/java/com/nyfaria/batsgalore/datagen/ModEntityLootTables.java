@@ -3,6 +3,7 @@ package com.nyfaria.batsgalore.datagen;
 import com.nyfaria.batsgalore.init.BlockInit;
 import com.nyfaria.batsgalore.init.ItemInit;
 import com.nyfaria.batsgalore.init.entity.ChristmasBatEntityInit;
+import com.nyfaria.batsgalore.init.entity.EntityInit;
 import com.nyfaria.batsgalore.init.entity.SpookyBatEntityInit;
 import net.minecraft.data.loot.EntityLootSubProvider;
 import net.minecraft.world.entity.EntityType;
@@ -67,6 +68,7 @@ public class ModEntityLootTables extends EntityLootSubProvider {
         wingedTurmoilDrops();
         dropSetAmountWithChance(ChristmasBatEntityInit.ELF_BAT.get(), ConstantValue.exactly(1f), ItemInit.ELF_HAT.get(), 1, 0.03f);
         dropSetAmountWithChance(ChristmasBatEntityInit.REINDEER_BAT.get(), ConstantValue.exactly(1f), ItemInit.REINDEER_NOSE.get(), 1, 0.03f);
+        dropSetAmountWithChance(EntityInit.BIGGEST_FAN_BAT.get(), ConstantValue.exactly(1f), ItemInit.NOVELTY_DRINKING_HAT.get(), 1, 0.03f);
     }
 
     private void multiDrops(EntityType<?> type, NumberProvider rolls, LootEntry... entries) {

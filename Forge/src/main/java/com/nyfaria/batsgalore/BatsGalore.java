@@ -22,10 +22,11 @@ import net.minecraftforge.fml.config.ModConfig;
 @Mod(Constants.MODID)
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
 public class BatsGalore {
-    
+
     public BatsGalore() {
         Constants.LOG.info("Hello Forge world!");
         CommonClass.init();
+
         ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, CommonConfig.CONFIG_SPEC);
     }
 
@@ -38,13 +39,13 @@ public class BatsGalore {
         boolean includeClient = event.includeClient();
         generator.addProvider(includeServer, new ModLootTableProvider(packOutput));
         generator.addProvider(includeServer, new ModSoundProvider(packOutput, existingFileHelper));
-        generator.addProvider(includeServer, new ModTagProvider.BlockTag(packOutput,event.getLookupProvider(), existingFileHelper));
-        generator.addProvider(includeServer, new ModTagProvider.ItemTag(packOutput,event.getLookupProvider(), existingFileHelper));
+        generator.addProvider(includeServer, new ModTagProvider.BlockTag(packOutput, event.getLookupProvider(), existingFileHelper));
+        generator.addProvider(includeServer, new ModTagProvider.ItemTag(packOutput, event.getLookupProvider(), existingFileHelper));
         generator.addProvider(includeClient, new ModBlockStateProvider(packOutput, existingFileHelper));
         generator.addProvider(includeClient, new ModItemModelProvider(packOutput, existingFileHelper));
         generator.addProvider(includeClient, new ModLangProvider(packOutput));
-        generator.addProvider(includeServer, new ModAdvancementProvider(packOutput,event.getLookupProvider(), existingFileHelper));
-        generator.addProvider(includeServer, new WorldGenProvider(packOutput,event.getLookupProvider()));
+        generator.addProvider(includeServer, new ModAdvancementProvider(packOutput, event.getLookupProvider(), existingFileHelper));
+        generator.addProvider(includeServer, new WorldGenProvider(packOutput, event.getLookupProvider()));
         generator.addProvider(includeServer, new ModRecipeProvider(packOutput));
     }
 }

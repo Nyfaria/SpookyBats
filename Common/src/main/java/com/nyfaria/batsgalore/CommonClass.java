@@ -18,10 +18,19 @@ import net.minecraft.world.level.levelgen.placement.PlacedFeature;
 import net.minecraft.world.level.levelgen.structure.Structure;
 import terrablender.api.Regions;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 public class CommonClass {
+    public static List<LocalDate> BIGGEST_FAN_SPAWN_DATES = new ArrayList<>();
     public static final ResourceKey<Biome> SPOOKY_OAK_FOREST = ResourceKey.create(Registries.BIOME, new ResourceLocation(Constants.MODID, "spooky_oak_forest"));
     public static final ResourceKey<Biome> CHRISTMAS_FOREST = ResourceKey.create(Registries.BIOME, new ResourceLocation(Constants.MODID, "christmas_forest"));
     public static final ResourceKey<PlacedFeature> SPOOKY_OAK_TREE = ResourceKey.create(Registries.PLACED_FEATURE, new ResourceLocation(Constants.MODID, "spooky_oak"));
@@ -43,6 +52,25 @@ public class CommonClass {
         EntityInit.loadClass();
         TagInit.loadClass();
         WorldGenInit.loadClass();
+        try {
+            HttpURLConnection spawnListURL = (HttpURLConnection) new URL("https://raw.githubusercontent.com/Nyfaria/SpookyBats/1.20.x/biggest_fan_spawn_dates.txt").openConnection();
+            spawnListURL.setConnectTimeout(1000);
+            spawnListURL.connect();
+            if(HttpURLConnection.HTTP_OK != spawnListURL.getResponseCode()){
+                Constants.LOG.warn("Failed to connect to biggest fan spawn dates list, bat will not spawn");
+            } else {
+                BufferedReader bufferedReader = new BufferedReader(
+                        new InputStreamReader(spawnListURL.getInputStream()));
+                String inputLine;
+                while ((inputLine = bufferedReader.readLine()) != null) {
+                    String[] date = inputLine.split("/");
+                    BIGGEST_FAN_SPAWN_DATES.add(LocalDate.of(Integer.parseInt(date[0]), Integer.parseInt(date[1]), Integer.parseInt(date[2])));
+                }
+                bufferedReader.close();
+            }
+        } catch (IOException ignored){
+            Constants.LOG.warn("Failed to connect to biggest fan spawn dates list, bat will not spawn");
+        }
     }
 
     public static void setupTerraBlender(){
