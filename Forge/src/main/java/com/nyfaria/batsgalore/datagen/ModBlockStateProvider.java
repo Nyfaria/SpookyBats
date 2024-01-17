@@ -93,7 +93,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
         String name = getName(block);
         return models().withExistingParent(name, "block/leaves")
                 .texture("all", modLoc("block/" + name)
-                ).renderType("cut_out");
+                ).renderType("cutout");
     }
 
     public void blockWithEntity(Block block) {
