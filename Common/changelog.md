@@ -1,6 +1,10 @@
 # Version 1.2.0
+## Additions
+- New Biggest Fan bat
+- New Soda Hat cosmetic
 ## Changes/Bugfixes
 - Fixed cutouts for doors, trapdoors, and saplings
+- Fixed break particles of hanging signs
 
 # Version 1.1.3
 ## Changes/Bugfixes
