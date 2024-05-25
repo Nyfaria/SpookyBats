@@ -19,7 +19,7 @@ public class ModBlockLootTables extends BlockLootSubProvider {
     }
     @Override
     protected void generate() {
-        add(BlockInit.DECORATED_WHITE_PINE_LEAVES.get(),createLeavesDrops(BlockInit.DECORATED_WHITE_PINE_LEAVES.get(), BlockInit.WHITE_PINE.sapling().get()));
+        add(BlockInit.DECORATED_WHITE_PINE_LEAVES.get(),createLeavesDrops(BlockInit.DECORATED_WHITE_PINE_LEAVES.get(), BlockInit.WHITE_PINE.sapling().get(),NORMAL_LEAVES_SAPLING_CHANCES));
         Stream.of(
                 BlockInit.SPOOKY_OAK,
                 BlockInit.WHITE_PINE

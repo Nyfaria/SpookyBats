@@ -8,6 +8,7 @@ import com.nyfaria.batsgalore.init.BlockInit;
 import com.nyfaria.batsgalore.worldgen.tree.WhitePineFoliagePlacer;
 import com.nyfaria.batsgalore.worldgen.tree.WhitePineTrunkPlacer;
 import net.minecraft.core.Direction;
+import net.minecraft.core.Holder;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.HolderSet;
 import net.minecraft.core.RegistrySetBuilder;
@@ -125,10 +126,8 @@ public class WorldGenProvider extends DatapackBuiltinEntriesProvider {
                         Feature.TREE,
                         new TreeConfiguration.TreeConfigurationBuilder(
                                 BlockStateProvider.simple(BlockInit.WHITE_PINE.log().get().defaultBlockState().setValue(RotatedPillarBlock.AXIS, Direction.Axis.Y)),
-//                                BlockStateProvider.simple(Blocks.OAK_LOG.defaultBlockState().setValue(RotatedPillarBlock.AXIS, Direction.Axis.Y)),
                                 new WhitePineTrunkPlacer(),
                                 BlockStateProvider.simple(BlockInit.WHITE_PINE.leaves().get()),
-//                                BlockStateProvider.simple(Blocks.OAK_LEAVES),
                                 new WhitePineFoliagePlacer(UniformInt.of(0, 4), ConstantInt.of(0)),
                                 new ThreeLayersFeatureSize(1, 1, 0, 1, 2, OptionalInt.empty())
                         ).build()

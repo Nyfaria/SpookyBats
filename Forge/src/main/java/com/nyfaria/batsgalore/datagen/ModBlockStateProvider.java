@@ -101,7 +101,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
     }
 
     public void blockWithEntity(Block block, ResourceLocation texture) {
-        simpleBlock(block, models().getBuilder(getName(block)).texture("particle", texture));
+        simpleBlock(block, models().sign(getName(block), texture));
     }
 
     public void customButtonBlock(ButtonBlock block) {

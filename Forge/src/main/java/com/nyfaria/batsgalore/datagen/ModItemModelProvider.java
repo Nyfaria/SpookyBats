@@ -8,10 +8,13 @@ import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemDisplayContext;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.item.SpawnEggItem;
 import net.minecraft.world.level.block.Block;
+import net.minecraftforge.client.model.SeparateTransformsModel;
 import net.minecraftforge.client.model.generators.ItemModelBuilder;
 import net.minecraftforge.client.model.generators.ItemModelProvider;
+import net.minecraftforge.client.model.generators.loaders.SeparateTransformsModelBuilder;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.registries.ForgeRegistries;
 
@@ -133,14 +136,14 @@ public class ModItemModelProvider extends ItemModelProvider {
                         collection.door()
                 )
                 .map(s -> s.get().asItem())
-                .forEach(this::simpleGeneratedModel);
+                .forEach(this::basicItem);
         if(!customFence) {
             fenceInventory(getName(collection.fence().get()), new ResourceLocation(Constants.MODID, "block/" + getName(collection.planks().get())));
         }
         fenceGate(getName(collection.fenceGate().get()), new ResourceLocation(Constants.MODID, "block/" + getName(collection.planks().get())));
         buttonInventory(getName(collection.button().get()), new ResourceLocation(Constants.MODID, "block/" + getName(collection.planks().get())));
         simpleTrapdoorBlockItemModel(collection.trapdoor().get());
-        simpleGeneratedModel(collection.chestBoat().get());
-        simpleGeneratedModel(collection.boat().get());
+        basicItem(collection.chestBoat().get());
+        basicItem(collection.boat().get());
     }
 }

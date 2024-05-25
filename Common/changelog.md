@@ -1,3 +1,6 @@
+# Version 1.2.1
+## Bugfixes
+- Fixed loottable crash for Decorated White Pine Leaves
 # Version 1.2.0
 ## Additions
 - New Biggest Fan bat

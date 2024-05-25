@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:block/leaves",
-  "render_type": "minecraft:cut_out",
+  "render_type": "minecraft:cutout",
   "textures": {
     "all": "batsgalore:block/decorated_white_pine_leaves"
   }
