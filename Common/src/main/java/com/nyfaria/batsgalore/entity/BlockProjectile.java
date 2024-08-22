@@ -96,7 +96,7 @@ public class BlockProjectile extends AbstractHurtingProjectile {
     public void addAdditionalSaveData(CompoundTag tag) {
         super.addAdditionalSaveData(tag);
         tag.put("block", BlockState.CODEC.encodeStart(NbtOps.INSTANCE, this.getBlockState()).get().orThrow());
-        tag.putUUID("target", target.getUUID());
+        if (target != null) tag.putUUID("target", target.getUUID());
     }
 
     @Override

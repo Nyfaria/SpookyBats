@@ -1,3 +1,7 @@
+# Version 1.2.2
+## Bugfixes
+- Fix rare crash when using Staff of Turmoil
+
 # Version 1.2.1
 ## Bugfixes
 - Fixed loottable crash for Decorated White Pine Leaves
