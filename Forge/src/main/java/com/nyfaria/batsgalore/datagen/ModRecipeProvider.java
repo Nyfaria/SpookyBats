@@ -21,7 +21,7 @@ public class ModRecipeProvider extends RecipeProvider {
     }
     protected void woodCollection(WoodCollection collection, Consumer<FinishedRecipe> recipeSaver){
         planksFromLogs(recipeSaver, collection.planks().get(),collection.logsTag(),4);
-        woodFromLogs(recipeSaver, collection.log().get(), collection.log().get());
+        woodFromLogs(recipeSaver, collection.wood().get(), collection.log().get());
         woodenBoat(recipeSaver, collection.boat().get(), collection.planks().get());
         chestBoat(recipeSaver, collection.chestBoat().get(), collection.planks().get());
         hangingSign(recipeSaver, collection.hangingSign().get(), collection.sign().get());

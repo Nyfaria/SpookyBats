@@ -1,3 +1,7 @@
+# Version 1.2.3
+## Bugfixes
+- Fix wood recipe from logs just giving back logs
+
 # Version 1.2.2
 ## Bugfixes
 - Fix rare crash when using Staff of Turmoil
